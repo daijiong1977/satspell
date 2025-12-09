@@ -1,0 +1,43 @@
+# SAT Vocabulary Image Generation Prompts
+# Total words: 372
+# Format: Word | Filename | Prompt
+====================================================================================================
+
+Word 1: abrupt
+Filename: abrupt.jpg
+Prompt: Generate a cartoon image to help remember the word 'abrupt' related to this sentence: "On painter William H. Johnson's return to the United States in 1938 after a decade in Europe, his style underwent an abrupt transformation." -- The image should NOT include the word 'abrupt' or the sentence text (as it will be used as a flashcard). The image should be interesting and memorable, helping to recall the word in the context of the example sentence. Size: 1080x1920.
+----------------------------------------------------------------------------------------------------
+
+Word 2: abstract
+Filename: abstract.jpg
+Prompt: Generate a cartoon image to help remember the word 'abstract' related to this sentence: "The philosopher's treatise delved into the highly abstract concepts of existential dread and the nature of being, making it challenging for readers accustomed to more tangible subjects." -- The image should NOT include the word 'abstract' or the sentence text (as it will be used as a flashcard). The image should be interesting and memorable, helping to recall the word in the context of the example sentence. Size: 1080x1920.
+----------------------------------------------------------------------------------------------------
+
+Word 3: accentuate
+Filename: accentuate.jpg
+Prompt: Generate a cartoon image to help remember the word 'accentuate' related to this sentence: "The architect chose vibrant colors and strategic lighting to **accentuate** the unique structural features of the building." -- The image should NOT include the word 'accentuate' or the sentence text (as it will be used as a flashcard). The image should be interesting and memorable, helping to recall the word in the context of the example sentence. Size: 1080x1920.
+----------------------------------------------------------------------------------------------------
+
+
+... (362 more words) ...
+
+Word 369: wilt
+Filename: wilt.jpg
+Prompt: Generate a cartoon image to help remember the word 'wilt' related to this sentence: "The flowers were wilting." -- The image should NOT include the word 'wilt' or the sentence text (as it will be used as a flashcard). The image should be interesting and memorable, helping to recall the word in the context of the example sentence. Size: 1080x1920.
+----------------------------------------------------------------------------------------------------
+
+Word 370: wonder
+Filename: wonder.jpg
+Prompt: Generate a cartoon image to help remember the word 'wonder' related to this sentence: "Her immortal lineaments were still a wonder." -- The image should NOT include the word 'wonder' or the sentence text (as it will be used as a flashcard). The image should be interesting and memorable, helping to recall the word in the context of the example sentence. Size: 1080x1920.
+----------------------------------------------------------------------------------------------------
+
+Word 371: yield
+Filename: yield.jpg
+Prompt: Generate a cartoon image to help remember the word 'yield' related to this sentence: "Yielding to the efforts of Karim Adiprasito." -- The image should NOT include the word 'yield' or the sentence text (as it will be used as a flashcard). The image should be interesting and memorable, helping to recall the word in the context of the example sentence. Size: 1080x1920.
+----------------------------------------------------------------------------------------------------
+
+Word 372: zenith
+Filename: zenith.jpg
+Prompt: Generate a cartoon image to help remember the word 'zenith' related to this sentence: "Darting towards the zenith." -- The image should NOT include the word 'zenith' or the sentence text (as it will be used as a flashcard). The image should be interesting and memorable, helping to recall the word in the context of the example sentence. Size: 1080x1920.
+----------------------------------------------------------------------------------------------------
+
