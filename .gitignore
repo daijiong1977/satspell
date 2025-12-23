@@ -1,0 +1,27 @@
+.DS_Store
+
+# Secrets
+.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Xcode / SwiftPM
+*.xcuserstate
+xcuserdata/
+*.xccheckout
+*.xcscmblueprint
+
+# Local derived data / build artifacts
+.derivedData/
+ios/**/.derivedData/
+DerivedData/
+
+# SwiftPM caches (Xcode will regenerate)
+.build/
+
+# Local databases / large artifacts (keep out of git)
+data.db
+

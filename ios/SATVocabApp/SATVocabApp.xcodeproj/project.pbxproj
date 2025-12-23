@@ -1,0 +1,508 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		038EF35676F6BF16340E4A4D /* TaskProgressStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23298250CDDDDCFF00465CC9 /* TaskProgressStore.swift */; };
+		040E4D56BEBB4CC25A700F92 /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E6418C716069BC63A55D8C /* RootTabView.swift */; };
+		05380797B1B06B1178F6F687 /* FlashcardSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53F3094C0E94E1734362321 /* FlashcardSessionView.swift */; };
+		0D44B4E6A611903C0ABC4267 /* GameSessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DA63408E495AC6EDD9E81B /* GameSessionViewModel.swift */; };
+		0DC41AC1F02D40610A62D642 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 231D17F9069875831403361B /* Images */; };
+		1480A8A68BC1DA282E026E24 /* ImageResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0C2418206F2E283DF0411E /* ImageResolver.swift */; };
+		1734544C7FB9F126BAB28162 /* AdventureMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35A7540DB3CB97378C07ACC /* AdventureMapView.swift */; };
+		1AC38B13AEEDA609720A87C8 /* FlashcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267ED7C8296996D9DD850A66 /* FlashcardView.swift */; };
+		2377E061DEE4F2CF1566CDC8 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA3F0AEF6288789A2FFEE9E /* ProfileView.swift */; };
+		30B202032461F46C9BF9B1F4 /* ClozeRoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E312D9DD6070AD652FC4AFD /* ClozeRoundView.swift */; };
+		3FD3A5F16FD2393C35D1FAF9 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A239D5ECD21D2FF67D46D001 /* AppConfig.swift */; };
+		4224F27860BA545C5BFFBD4C /* TextHighlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8299B8E0D9F20713FE42839 /* TextHighlight.swift */; };
+		492241AA9AB9BF1A3BC6CB03 /* LocalIdentity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747F88F0B1CAAC638D4FF341 /* LocalIdentity.swift */; };
+		4F3E3567DDD3273E09F7F801 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 57B5F156A757C0DF74AD683A /* libsqlite3.tbd */; };
+		58FEEB83E40F7B5C9BEE2176 /* DayTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8EBFB371A14A06B1A51B07 /* DayTasksView.swift */; };
+		59600B18470EEE0AC229BC43 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFA46197B95D2D1D415A1DC /* Models.swift */; };
+		78FD1179BDC0B8356982BF8B /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D6DF59969C4D1AB44B55AE /* TimelineView.swift */; };
+		7DA47A0399D87F34D14E2D9F /* DatabasePaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A5E3D20F58164FB12BF894 /* DatabasePaths.swift */; };
+		7F802749C905DAA3BDE81F18 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE4F66EB77F6C3D8FE19DFA /* DashboardViewModel.swift */; };
+		8655E5E89891A5DD2D088935 /* ZoneUnlockReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7DB1F6C9C1B0482232A0F6 /* ZoneUnlockReviewView.swift */; };
+		87BE2291BD1BEE0BF0E49D29 /* FlashcardSessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B59A13EF860BE739C4A3F9 /* FlashcardSessionViewModel.swift */; };
+		93C905F4F2E92BF0BF67BEC6 /* AdventureSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A37B8D548FD02F1F0D5F66 /* AdventureSchedule.swift */; };
+		95E7325339578D6B54997026 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4BD193B929037A402886FF /* StatsView.swift */; };
+		9AB42A112C66C66DF182E3EF /* SatMCQRoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAC0EFF49F558C88FC19402 /* SatMCQRoundView.swift */; };
+		B08C1126157D05B72459F036 /* ZoneReviewSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD22A91CE53E822DBFC52CC /* ZoneReviewSessionView.swift */; };
+		BB22020C435B12B08B647148 /* SATVocabAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDC41FD51BC0D3C591F4382 /* SATVocabAppApp.swift */; };
+		BC917504B313EA0060D59B6F /* GamesHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F765AE6A32122B6273B24B /* GamesHubView.swift */; };
+		BECE14EB6C92D0781667475E /* AdventureProgressStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC602756D33CAEFA1D96AEFC /* AdventureProgressStore.swift */; };
+		BF7BDDF5234113657ADFF544 /* SQLite.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8BA9019EFCDDF2787FBC /* SQLite.swift */; };
+		C4E46F17E3182374CB362530 /* AppBootstrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95A4B9A46D0EFCC429839BA /* AppBootstrap.swift */; };
+		C656D8F34C2489B8648DC1F0 /* ZoneReviewSessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20642B9BBC6CFC099B1C83 /* ZoneReviewSessionViewModel.swift */; };
+		D8368EC014481458C589D26E /* TextFill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB7C0EF0CA3B677C177CF86 /* TextFill.swift */; };
+		D98A8D8F3F76A05D6928086E /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E667FD6967477439CE2CD2C /* DashboardView.swift */; };
+		DD5FC81B08E2DEBF9E933F02 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7CA23D872ADC5B092FA289 /* DataManager.swift */; };
+		EA3BF0D1444D3E700BD46AB6 /* data.db in Resources */ = {isa = PBXBuildFile; fileRef = 2A0A1C2A52AAE3C1ED6C2C14 /* data.db */; };
+		FA763CEFD8A6D8B6E8FE074D /* GameSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C92982161A42ACD13486F34 /* GameSessionView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		07D6DF59969C4D1AB44B55AE /* TimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
+		0E7CA23D872ADC5B092FA289 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		231D17F9069875831403361B /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Images; path = Resources/Images; sourceTree = SOURCE_ROOT; };
+		23298250CDDDDCFF00465CC9 /* TaskProgressStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskProgressStore.swift; sourceTree = "<group>"; };
+		267ED7C8296996D9DD850A66 /* FlashcardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardView.swift; sourceTree = "<group>"; };
+		2A0A1C2A52AAE3C1ED6C2C14 /* data.db */ = {isa = PBXFileReference; path = data.db; sourceTree = "<group>"; };
+		2AAC0EFF49F558C88FC19402 /* SatMCQRoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SatMCQRoundView.swift; sourceTree = "<group>"; };
+		2C20642B9BBC6CFC099B1C83 /* ZoneReviewSessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneReviewSessionViewModel.swift; sourceTree = "<group>"; };
+		2E667FD6967477439CE2CD2C /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		32A37B8D548FD02F1F0D5F66 /* AdventureSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureSchedule.swift; sourceTree = "<group>"; };
+		3FA3F0AEF6288789A2FFEE9E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		42A5E3D20F58164FB12BF894 /* DatabasePaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabasePaths.swift; sourceTree = "<group>"; };
+		49E6418C716069BC63A55D8C /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
+		4E312D9DD6070AD652FC4AFD /* ClozeRoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClozeRoundView.swift; sourceTree = "<group>"; };
+		4FB7C0EF0CA3B677C177CF86 /* TextFill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFill.swift; sourceTree = "<group>"; };
+		50DA63408E495AC6EDD9E81B /* GameSessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSessionViewModel.swift; sourceTree = "<group>"; };
+		57B5F156A757C0DF74AD683A /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		5FD22A91CE53E822DBFC52CC /* ZoneReviewSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneReviewSessionView.swift; sourceTree = "<group>"; };
+		6C92982161A42ACD13486F34 /* GameSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSessionView.swift; sourceTree = "<group>"; };
+		6CE4F66EB77F6C3D8FE19DFA /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		747F88F0B1CAAC638D4FF341 /* LocalIdentity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalIdentity.swift; sourceTree = "<group>"; };
+		7DDC41FD51BC0D3C591F4382 /* SATVocabAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATVocabAppApp.swift; sourceTree = "<group>"; };
+		88F765AE6A32122B6273B24B /* GamesHubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesHubView.swift; sourceTree = "<group>"; };
+		8B8EBFB371A14A06B1A51B07 /* DayTasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTasksView.swift; sourceTree = "<group>"; };
+		8CFA46197B95D2D1D415A1DC /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		9D7DB1F6C9C1B0482232A0F6 /* ZoneUnlockReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneUnlockReviewView.swift; sourceTree = "<group>"; };
+		A239D5ECD21D2FF67D46D001 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		A35A7540DB3CB97378C07ACC /* AdventureMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureMapView.swift; sourceTree = "<group>"; };
+		A4B59A13EF860BE739C4A3F9 /* FlashcardSessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardSessionViewModel.swift; sourceTree = "<group>"; };
+		A8299B8E0D9F20713FE42839 /* TextHighlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextHighlight.swift; sourceTree = "<group>"; };
+		A95A4B9A46D0EFCC429839BA /* AppBootstrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBootstrap.swift; sourceTree = "<group>"; };
+		AB4BD193B929037A402886FF /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		B53F3094C0E94E1734362321 /* FlashcardSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardSessionView.swift; sourceTree = "<group>"; };
+		D326F0DA386B465C45432350 /* SATVocabApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = SATVocabApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6EE8BA9019EFCDDF2787FBC /* SQLite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLite.swift; sourceTree = "<group>"; };
+		DC602756D33CAEFA1D96AEFC /* AdventureProgressStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureProgressStore.swift; sourceTree = "<group>"; };
+		EE0C2418206F2E283DF0411E /* ImageResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResolver.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EF55C8D2B59A83B3ACB6A0CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F3E3567DDD3273E09F7F801 /* libsqlite3.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		17F189049640366F00E67389 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A95A4B9A46D0EFCC429839BA /* AppBootstrap.swift */,
+				6CE4F66EB77F6C3D8FE19DFA /* DashboardViewModel.swift */,
+				A4B59A13EF860BE739C4A3F9 /* FlashcardSessionViewModel.swift */,
+				50DA63408E495AC6EDD9E81B /* GameSessionViewModel.swift */,
+				2C20642B9BBC6CFC099B1C83 /* ZoneReviewSessionViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		277A81C74B06FCDB963CF772 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D326F0DA386B465C45432350 /* SATVocabApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		34505D752FDEAAC6390E1630 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				32A37B8D548FD02F1F0D5F66 /* AdventureSchedule.swift */,
+				8CFA46197B95D2D1D415A1DC /* Models.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3BE992575DDC30387F33934A /* SATVocabApp */ = {
+			isa = PBXGroup;
+			children = (
+				7DDC41FD51BC0D3C591F4382 /* SATVocabAppApp.swift */,
+				69A2A41EBE4E8EFEB9935169 /* Data */,
+				34505D752FDEAAC6390E1630 /* Models */,
+				765E98664B208E9CDF5710B0 /* Utils */,
+				17F189049640366F00E67389 /* ViewModels */,
+				EE053D452F206103F8171706 /* Views */,
+			);
+			name = SATVocabApp;
+			path = Sources/SATVocabApp;
+			sourceTree = "<group>";
+		};
+		69A2A41EBE4E8EFEB9935169 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				DC602756D33CAEFA1D96AEFC /* AdventureProgressStore.swift */,
+				A239D5ECD21D2FF67D46D001 /* AppConfig.swift */,
+				42A5E3D20F58164FB12BF894 /* DatabasePaths.swift */,
+				0E7CA23D872ADC5B092FA289 /* DataManager.swift */,
+				747F88F0B1CAAC638D4FF341 /* LocalIdentity.swift */,
+				D6EE8BA9019EFCDDF2787FBC /* SQLite.swift */,
+				23298250CDDDDCFF00465CC9 /* TaskProgressStore.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		765E98664B208E9CDF5710B0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4FB7C0EF0CA3B677C177CF86 /* TextFill.swift */,
+				A8299B8E0D9F20713FE42839 /* TextHighlight.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		A8797059CB506C575246D04E = {
+			isa = PBXGroup;
+			children = (
+				231D17F9069875831403361B /* Images */,
+				DA28069FA9688290CC227641 /* Resources */,
+				3BE992575DDC30387F33934A /* SATVocabApp */,
+				ACA1892B4A9D8CFBA0915992 /* Frameworks */,
+				277A81C74B06FCDB963CF772 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ACA1892B4A9D8CFBA0915992 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				57B5F156A757C0DF74AD683A /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DA28069FA9688290CC227641 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2A0A1C2A52AAE3C1ED6C2C14 /* data.db */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EE053D452F206103F8171706 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A35A7540DB3CB97378C07ACC /* AdventureMapView.swift */,
+				4E312D9DD6070AD652FC4AFD /* ClozeRoundView.swift */,
+				2E667FD6967477439CE2CD2C /* DashboardView.swift */,
+				8B8EBFB371A14A06B1A51B07 /* DayTasksView.swift */,
+				B53F3094C0E94E1734362321 /* FlashcardSessionView.swift */,
+				267ED7C8296996D9DD850A66 /* FlashcardView.swift */,
+				6C92982161A42ACD13486F34 /* GameSessionView.swift */,
+				88F765AE6A32122B6273B24B /* GamesHubView.swift */,
+				EE0C2418206F2E283DF0411E /* ImageResolver.swift */,
+				3FA3F0AEF6288789A2FFEE9E /* ProfileView.swift */,
+				49E6418C716069BC63A55D8C /* RootTabView.swift */,
+				2AAC0EFF49F558C88FC19402 /* SatMCQRoundView.swift */,
+				AB4BD193B929037A402886FF /* StatsView.swift */,
+				07D6DF59969C4D1AB44B55AE /* TimelineView.swift */,
+				5FD22A91CE53E822DBFC52CC /* ZoneReviewSessionView.swift */,
+				9D7DB1F6C9C1B0482232A0F6 /* ZoneUnlockReviewView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A0F1F193170440B013205173 /* SATVocabApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14C951A96BAAC2E89344F1A4 /* Build configuration list for PBXNativeTarget "SATVocabApp" */;
+			buildPhases = (
+				EF2EA72C69205BE522DBEFEB /* Sources */,
+				7D82C69E8228C6AA3F084DED /* Resources */,
+				EF55C8D2B59A83B3ACB6A0CD /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SATVocabApp;
+			packageProductDependencies = (
+			);
+			productName = SATVocabApp;
+			productReference = D326F0DA386B465C45432350 /* SATVocabApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8603F6CCF628357F67373F4F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					A0F1F193170440B013205173 = {
+						DevelopmentTeam = "";
+					};
+				};
+			};
+			buildConfigurationList = F06A393BF296E83235C9E239 /* Build configuration list for PBXProject "SATVocabApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = A8797059CB506C575246D04E;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A0F1F193170440B013205173 /* SATVocabApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7D82C69E8228C6AA3F084DED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DC41AC1F02D40610A62D642 /* Images in Resources */,
+				EA3BF0D1444D3E700BD46AB6 /* data.db in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EF2EA72C69205BE522DBEFEB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1734544C7FB9F126BAB28162 /* AdventureMapView.swift in Sources */,
+				BECE14EB6C92D0781667475E /* AdventureProgressStore.swift in Sources */,
+				93C905F4F2E92BF0BF67BEC6 /* AdventureSchedule.swift in Sources */,
+				C4E46F17E3182374CB362530 /* AppBootstrap.swift in Sources */,
+				3FD3A5F16FD2393C35D1FAF9 /* AppConfig.swift in Sources */,
+				30B202032461F46C9BF9B1F4 /* ClozeRoundView.swift in Sources */,
+				D98A8D8F3F76A05D6928086E /* DashboardView.swift in Sources */,
+				7F802749C905DAA3BDE81F18 /* DashboardViewModel.swift in Sources */,
+				DD5FC81B08E2DEBF9E933F02 /* DataManager.swift in Sources */,
+				7DA47A0399D87F34D14E2D9F /* DatabasePaths.swift in Sources */,
+				58FEEB83E40F7B5C9BEE2176 /* DayTasksView.swift in Sources */,
+				05380797B1B06B1178F6F687 /* FlashcardSessionView.swift in Sources */,
+				87BE2291BD1BEE0BF0E49D29 /* FlashcardSessionViewModel.swift in Sources */,
+				1AC38B13AEEDA609720A87C8 /* FlashcardView.swift in Sources */,
+				FA763CEFD8A6D8B6E8FE074D /* GameSessionView.swift in Sources */,
+				0D44B4E6A611903C0ABC4267 /* GameSessionViewModel.swift in Sources */,
+				BC917504B313EA0060D59B6F /* GamesHubView.swift in Sources */,
+				1480A8A68BC1DA282E026E24 /* ImageResolver.swift in Sources */,
+				492241AA9AB9BF1A3BC6CB03 /* LocalIdentity.swift in Sources */,
+				59600B18470EEE0AC229BC43 /* Models.swift in Sources */,
+				2377E061DEE4F2CF1566CDC8 /* ProfileView.swift in Sources */,
+				040E4D56BEBB4CC25A700F92 /* RootTabView.swift in Sources */,
+				BB22020C435B12B08B647148 /* SATVocabAppApp.swift in Sources */,
+				BF7BDDF5234113657ADFF544 /* SQLite.swift in Sources */,
+				9AB42A112C66C66DF182E3EF /* SatMCQRoundView.swift in Sources */,
+				95E7325339578D6B54997026 /* StatsView.swift in Sources */,
+				038EF35676F6BF16340E4A4D /* TaskProgressStore.swift in Sources */,
+				D8368EC014481458C589D26E /* TextFill.swift in Sources */,
+				4224F27860BA545C5BFFBD4C /* TextHighlight.swift in Sources */,
+				78FD1179BDC0B8356982BF8B /* TimelineView.swift in Sources */,
+				B08C1126157D05B72459F036 /* ZoneReviewSessionView.swift in Sources */,
+				C656D8F34C2489B8648DC1F0 /* ZoneReviewSessionViewModel.swift in Sources */,
+				8655E5E89891A5DD2D088935 /* ZoneUnlockReviewView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		715058E2D61101472D1CFBF8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		9A708829B9CAD707C9EE9D3C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.satspell.SATVocabApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		AB0552491F88BF03A0CE436E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.satspell.SATVocabApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		FA5B82E73A82FE7E01757A1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		14C951A96BAAC2E89344F1A4 /* Build configuration list for PBXNativeTarget "SATVocabApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA5B82E73A82FE7E01757A1A /* Debug */,
+				715058E2D61101472D1CFBF8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F06A393BF296E83235C9E239 /* Build configuration list for PBXProject "SATVocabApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB0552491F88BF03A0CE436E /* Debug */,
+				9A708829B9CAD707C9EE9D3C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8603F6CCF628357F67373F4F /* Project object */;
+}

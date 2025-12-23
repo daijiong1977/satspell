@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Adventure Map</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#4ade80", // Green for success/action
+                        secondary: "#6366f1", // Indigo/Purple for zone unlock
+                        "background-light": "#f3f4f6", // Light gray for light mode bg
+                        "background-dark": "#0f172a", // Slate 900 for dark mode bg
+                        "panel-light": "#ffffff",
+                        "panel-dark": "#1e293b",
+                    },
+                    fontFamily: {
+                        display: ["Nunito", "sans-serif"],
+                    },
+                    boxShadow: {
+                        'game-btn': '0 4px 0 0 rgba(0,0,0,0.2)',
+                        'game-btn-lg': '0 6px 0 0 rgba(0,0,0,0.2)',
+                    }
+                },
+            },
+        };
+    </script>
+<style>.iso-btn {
+            transform: perspective(500px) rotateX(20deg);
+            transition: transform 0.1s;
+        }
+        .iso-btn:active {
+            transform: perspective(500px) rotateX(20deg) translateY(4px);
+            box-shadow: 0 0 0 0 rgba(0,0,0,0.2);
+        }.zone-unlock-gradient {
+            background: linear-gradient(135deg, #312e81 0%, #581c87 50%, #312e81 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-white font-display min-h-screen flex justify-center items-center p-0 sm:p-4">
+<div class="w-full max-w-md bg-white dark:bg-slate-900 h-[100vh] sm:h-[850px] sm:rounded-3xl shadow-2xl overflow-hidden flex flex-col relative">
+<header class="h-16 flex items-center justify-between px-4 bg-white dark:bg-slate-900 border-b border-gray-200 dark:border-slate-800 shrink-0 z-20">
+<button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-200">
+<span class="material-icons-round text-3xl">chevron_left</span>
+</button>
+<h1 class="text-xl font-extrabold tracking-wide">Adventure Map</h1>
+<div class="w-10"></div> 
+</header>
+<div class="flex-grow relative overflow-hidden bg-green-100 w-full">
+<div class="absolute inset-0 z-0">
+<img alt="Cartoonish garden path background" class="w-full h-full object-cover opacity-90 dark:opacity-70 filter brightness-110 saturate-150 contrast-125" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBj_iDq3X-ELbrDPIzLXBGsPGy5KgZpQ0RdB4i8N1P2SJYoSjDQjoYKRmctKmP3REbWAiuVSW83IxRmHcF7jnbvMMVxfSeV91DQhndvC0WCSRcqnbQ98RRo_wx1d3j5JGUudgHxte1cpKNHk8A3Ir_C09dUSnRYzgrE-SOYCztW8qWr73W2VkQI4NhGWyTxR3b7vgzwEbocy_o7klRxqFRQDELVrWkewnbwZd-3CR821OsEDN87hqPrmna-2fM9i4yFIAvMQ8u2QYw"/>
+<div class="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/60 pointer-events-none"></div>
+</div>
+<div class="relative z-10 w-full h-full flex flex-col">
+<div class="mt-8 text-center">
+<h2 class="text-2xl font-black text-white drop-shadow-md tracking-wider" style="text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Zone 1: Foundation</h2>
+</div>
+<div class="flex-grow relative w-full mt-4">
+<svg class="absolute top-0 left-0 w-full h-full pointer-events-none opacity-40 drop-shadow-md" style="stroke-dasharray: 8,8;">
+<path d="M210 60 Q 210 120, 260 140 T 320 200 T 200 300 T 100 400 T 210 520" fill="none" stroke="white" stroke-linecap="round" stroke-width="25"></path>
+</svg>
+<div class="absolute top-[8%] left-[50%] transform -translate-x-1/2 flex flex-col items-center group cursor-pointer">
+<div class="w-16 h-12 bg-green-500 rounded-2xl shadow-game-btn border-b-4 border-green-700 flex items-center justify-center iso-btn transition-transform hover:-translate-y-1">
+<span class="material-icons-round text-white font-bold text-2xl">check</span>
+</div>
+<span class="mt-2 text-white font-bold text-sm drop-shadow-md bg-black/30 px-2 py-0.5 rounded-full">Day 1-1</span>
+</div>
+<div class="absolute top-[22%] left-[75%] transform -translate-x-1/2 flex flex-col items-center group cursor-pointer">
+<div class="w-16 h-12 bg-green-500 rounded-2xl shadow-game-btn border-b-4 border-green-700 flex items-center justify-center iso-btn transition-transform hover:-translate-y-1">
+<span class="material-icons-round text-white font-bold text-2xl">check</span>
+</div>
+<span class="mt-2 text-white font-bold text-sm drop-shadow-md bg-black/30 px-2 py-0.5 rounded-full">Day 1-2</span>
+</div>
+<div class="absolute top-[38%] left-[45%] transform -translate-x-1/2 flex flex-col items-center group cursor-pointer">
+<div class="w-16 h-12 bg-green-500 rounded-2xl shadow-game-btn border-b-4 border-green-700 flex items-center justify-center iso-btn transition-transform hover:-translate-y-1">
+<span class="material-icons-round text-white font-bold text-2xl">check</span>
+</div>
+<span class="mt-2 text-white font-bold text-sm drop-shadow-md bg-black/30 px-2 py-0.5 rounded-full">Day 1-3</span>
+</div>
+<div class="absolute top-[52%] left-[20%] transform -translate-x-1/2 flex flex-col items-center group cursor-pointer">
+<div class="w-16 h-12 bg-green-500 rounded-2xl shadow-game-btn border-b-4 border-green-700 flex items-center justify-center iso-btn transition-transform hover:-translate-y-1">
+<span class="material-icons-round text-white font-bold text-2xl">check</span>
+</div>
+<span class="mt-2 text-white font-bold text-sm drop-shadow-md bg-black/30 px-2 py-0.5 rounded-full">Day 1-4</span>
+</div>
+<div class="absolute top-[68%] left-[50%] transform -translate-x-1/2 w-full flex flex-col items-center animate-bounce-slow">
+<button class="bg-primary hover:bg-green-400 text-white font-extrabold py-3 px-8 rounded-2xl shadow-game-btn-lg border-b-4 border-green-600 active:border-b-0 active:translate-y-1 transition-all text-lg tracking-wide w-48">
+                            Day 4: Start!
+                        </button>
+</div>
+</div>
+<div class="px-4 mb-6">
+<button class="w-full relative overflow-hidden group rounded-2xl shadow-lg transform transition active:scale-95">
+<div class="absolute inset-0 zone-unlock-gradient opacity-95 group-hover:opacity-100 transition"></div>
+<div class="absolute top-0 right-0 w-20 h-20 bg-white/10 rounded-full blur-2xl transform translate-x-10 -translate-y-10"></div>
+<div class="absolute bottom-0 left-0 w-32 h-32 bg-purple-500/20 rounded-full blur-xl transform -translate-x-10 translate-y-10"></div>
+<div class="relative py-4 px-4 flex items-center justify-center space-x-2">
+<span class="text-white font-bold text-sm sm:text-base tracking-wide drop-shadow-sm">Zone 1 Review &amp; Unlock Zone 2</span>
+<span class="material-icons-round text-white/80">lock_open</span>
+</div>
+</button>
+</div>
+</div>
+</div>
+<div class="bg-slate-100 dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 h-24 shrink-0 flex items-center relative z-20">
+<button class="h-full px-2 text-slate-400 hover:text-slate-600 dark:hover:text-white">
+<span class="material-icons-round text-4xl">chevron_left</span>
+</button>
+<div class="flex-grow flex items-center h-full divide-x divide-slate-300 dark:divide-slate-600">
+<div class="flex-1 flex flex-col items-center justify-center h-full text-center px-1 opacity-60">
+<span class="material-icons-round text-slate-500 dark:text-slate-400 text-2xl mb-1">lock</span>
+<span class="text-xs font-bold text-slate-600 dark:text-slate-300 leading-tight">Zone 2:<br/>Cloud Realm</span>
+</div>
+<div class="flex-1 flex flex-col items-center justify-center h-full text-center px-1 opacity-60">
+<span class="material-icons-round text-slate-500 dark:text-slate-400 text-2xl mb-1">lock</span>
+<span class="text-xs font-bold text-slate-600 dark:text-slate-300 leading-tight">Zone 3:<br/>Island</span>
+</div>
+</div>
+<button class="h-full px-2 text-slate-400 hover:text-slate-600 dark:hover:text-white">
+<span class="material-icons-round text-4xl">chevron_right</span>
+</button>
+</div>
+<nav class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 h-20 shrink-0 pb-4 flex justify-around items-center px-2 z-20">
+<button class="flex flex-col items-center justify-center w-16 group">
+<span class="material-icons-round text-blue-500 text-3xl group-hover:scale-110 transition">map</span>
+<span class="text-[10px] font-bold text-blue-500 mt-1">Map</span>
+</button>
+<button class="flex flex-col items-center justify-center w-16 group text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300">
+<span class="material-icons-round text-3xl group-hover:scale-110 transition">sports_esports</span>
+<span class="text-[10px] font-bold mt-1">Games</span>
+</button>
+<button class="flex flex-col items-center justify-center w-16 group text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300">
+<span class="material-icons-round text-3xl group-hover:scale-110 transition">rate_review</span>
+<span class="text-[10px] font-bold mt-1">Review</span>
+</button>
+<button class="flex flex-col items-center justify-center w-16 group text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300">
+<span class="material-icons-round text-3xl group-hover:scale-110 transition">person</span>
+<span class="text-[10px] font-bold mt-1">Profile</span>
+</button>
+<button class="flex flex-col items-center justify-center w-16 group text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300">
+<span class="material-icons-round text-3xl group-hover:scale-110 transition">bar_chart</span>
+<span class="text-[10px] font-bold mt-1">Stats</span>
+</button>
+</nav>
+</div>
+<style>
+        @keyframes bounce-slow {
+            0%, 100% { transform: translate(-50%, -5%); }
+            50% { transform: translate(-50%, 5%); }
+        }
+        .animate-bounce-slow {
+            animation: bounce-slow 3s infinite;
+        }
+    </style>
+
+</body></html>
