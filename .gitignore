@@ -25,3 +25,9 @@ DerivedData/
 # Local databases / large artifacts (keep out of git)
 data.db
 
+
+# Superpowers brainstorm sessions
+.superpowers/
+
+# Copilot review session logs (keep only clean reviews in docs/reviews/)
+docs/reviews/*.log

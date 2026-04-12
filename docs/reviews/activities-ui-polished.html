@@ -1,0 +1,1972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAT Spell Activities UI - Polished Mockup</title>
+  <style>
+    :root {
+      --bg: #101826;
+      --bg-deep: #0c1321;
+      --panel: rgba(18, 28, 47, 0.92);
+      --text: #f4f8ff;
+      --muted: #96a4bd;
+      --muted-strong: #c3cee1;
+      --green: #58cc02;
+      --purple: #ce82ff;
+      --orange: #ff9600;
+      --gold: #ffc800;
+      --red: #ff4b4b;
+      --blue: #1cb0f6;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      color-scheme: dark;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 18%, rgba(88, 204, 2, 0.12), transparent 26%),
+        radial-gradient(circle at 84% 8%, rgba(206, 130, 255, 0.14), transparent 22%),
+        radial-gradient(circle at 82% 76%, rgba(255, 150, 0, 0.14), transparent 28%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-deep) 100%);
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0) 42%),
+        radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.035), transparent 45%);
+      mix-blend-mode: screen;
+      opacity: 0.8;
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      max-width: 1500px;
+      margin: 0 auto;
+      padding: 48px 24px 88px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(340px, 0.85fr);
+      gap: 24px;
+      align-items: end;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #d8e5ff;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), #fff0a3);
+    }
+
+    h1 {
+      margin: 18px 0 16px;
+      font-size: clamp(40px, 5vw, 64px);
+      line-height: 0.96;
+      letter-spacing: -0.04em;
+      max-width: 12ch;
+    }
+
+    .lead {
+      max-width: 70ch;
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .hero-tags,
+    .reward-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .tag,
+    .panel-chip,
+    .metric-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 16px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .tag strong,
+    .panel-chip strong {
+      font-weight: 900;
+    }
+
+    .mini-dot,
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .gold {
+      color: #ffe995;
+    }
+
+    .gold .mini-dot,
+    .dot.gold {
+      background: linear-gradient(180deg, #ffe78b, #ffc800);
+    }
+
+    .green .mini-dot,
+    .dot.green {
+      background: linear-gradient(180deg, #8df553, #58cc02);
+    }
+
+    .purple .mini-dot,
+    .dot.purple {
+      background: linear-gradient(180deg, #f0ceff, #ce82ff);
+    }
+
+    .orange .mini-dot,
+    .dot.orange {
+      background: linear-gradient(180deg, #ffd278, #ff9600);
+    }
+
+    .hero-card,
+    .phone-panel,
+    .reward-card,
+    .strength-card {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(20, 30, 50, 0.88), rgba(14, 21, 35, 0.96));
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 30px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16), 0 32px 80px rgba(0, 0, 0, 0.28);
+    }
+
+    .hero-card::before,
+    .phone-panel::before,
+    .reward-card::before,
+    .strength-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), transparent 44%);
+      pointer-events: none;
+    }
+
+    .hero-card {
+      padding: 26px;
+    }
+
+    .rule {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 16px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .rule-icon {
+      flex: 0 0 52px;
+      width: 52px;
+      height: 52px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, #5fe113, #3da400);
+      box-shadow: inset 0 -4px 0 rgba(44, 103, 0, 0.45), 0 12px 24px rgba(88, 204, 2, 0.25);
+      display: grid;
+      place-items: center;
+      font-size: 24px;
+    }
+
+    .rule-copy strong {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+
+    .rule-copy p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    .quick-stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .stat-chip {
+      padding: 16px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .stat-chip span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+
+    .stat-chip strong {
+      font-size: 24px;
+      letter-spacing: -0.02em;
+    }
+
+    .section-title {
+      margin: 42px 0 18px;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .section-title h2 {
+      margin: 0;
+      font-size: 30px;
+      letter-spacing: -0.03em;
+    }
+
+    .section-title p {
+      margin: 0;
+      max-width: 56ch;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .phones-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .phone-panel {
+      padding: 24px;
+    }
+
+    .panel-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: flex-start;
+      margin-bottom: 18px;
+    }
+
+    .panel-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      font-weight: 800;
+      color: #d7def1;
+    }
+
+    .panel-copy h3 {
+      margin: 12px 0 8px;
+      font-size: 28px;
+      letter-spacing: -0.03em;
+    }
+
+    .panel-copy p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.6;
+      max-width: 44ch;
+    }
+
+    .panel-chip.gold {
+      background: rgba(255, 200, 0, 0.12);
+      border-color: rgba(255, 200, 0, 0.25);
+      color: #ffe995;
+    }
+
+    .panel-chip.green {
+      background: rgba(88, 204, 2, 0.12);
+      border-color: rgba(88, 204, 2, 0.25);
+      color: #cfff98;
+    }
+
+    .panel-chip.purple {
+      background: rgba(206, 130, 255, 0.14);
+      border-color: rgba(206, 130, 255, 0.25);
+      color: #eed7ff;
+    }
+
+    .panel-chip.orange {
+      background: rgba(255, 150, 0, 0.14);
+      border-color: rgba(255, 150, 0, 0.25);
+      color: #ffe2b4;
+    }
+
+    .iphone {
+      position: relative;
+      max-width: 360px;
+      margin: 0 auto;
+      aspect-ratio: 360 / 760;
+      padding: 10px;
+      border-radius: 46px;
+      background: linear-gradient(180deg, #050810, #0c1018);
+      box-shadow: 0 36px 80px rgba(0, 0, 0, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.14), 0 0 0 1px rgba(255, 255, 255, 0.05);
+    }
+
+    .iphone::before,
+    .iphone::after {
+      content: "";
+      position: absolute;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.04));
+      border-radius: 999px;
+    }
+
+    .iphone::before {
+      width: 4px;
+      height: 100px;
+      left: -2px;
+      top: 140px;
+    }
+
+    .iphone::after {
+      width: 4px;
+      height: 78px;
+      right: -2px;
+      top: 184px;
+    }
+
+    .screen {
+      position: relative;
+      height: 100%;
+      border-radius: 36px;
+      overflow: hidden;
+      background: #101826;
+    }
+
+    .screen::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), transparent 14%, transparent 80%, rgba(255, 255, 255, 0.035));
+      pointer-events: none;
+    }
+
+    .dynamic-island {
+      position: absolute;
+      top: 12px;
+      left: 50%;
+      width: 118px;
+      height: 31px;
+      transform: translateX(-50%);
+      border-radius: 18px;
+      background: #01040a;
+      box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.06), 0 1px 0 rgba(255, 255, 255, 0.05);
+      z-index: 8;
+    }
+
+    .status {
+      position: absolute;
+      top: 16px;
+      left: 22px;
+      right: 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      z-index: 8;
+    }
+
+    .home-indicator {
+      position: absolute;
+      left: 50%;
+      bottom: 8px;
+      transform: translateX(-50%);
+      width: 126px;
+      height: 5px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.28);
+      z-index: 8;
+    }
+
+    .screen-inner {
+      position: absolute;
+      inset: 58px 16px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      z-index: 4;
+    }
+
+    .icon-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 13px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(10px);
+      display: grid;
+      place-items: center;
+      color: white;
+      font-size: 16px;
+      font-weight: 700;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+    }
+
+    .glass-pill {
+      padding: 10px 15px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(0, 0, 0, 0.28);
+      backdrop-filter: blur(14px);
+      color: white;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+    }
+
+    .header-shell {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .step-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      align-items: center;
+      flex: 1;
+    }
+
+    .step-kicker {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted-strong);
+    }
+
+    .activity-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+
+    .progress-track {
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.4);
+    }
+
+    .progress-track span {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+    }
+
+    .theme-green .progress-track span {
+      background: linear-gradient(90deg, #72ef36, #58cc02);
+      box-shadow: 0 0 18px rgba(88, 204, 2, 0.45);
+    }
+
+    .theme-purple .progress-track span {
+      background: linear-gradient(90deg, #ecbaff, #ce82ff);
+      box-shadow: 0 0 18px rgba(206, 130, 255, 0.4);
+    }
+
+    .theme-orange .progress-track span {
+      background: linear-gradient(90deg, #ffc266, #ff9600);
+      box-shadow: 0 0 18px rgba(255, 150, 0, 0.42);
+    }
+
+    .toast {
+      align-self: flex-start;
+      padding: 10px 14px;
+      border-radius: 16px;
+      font-size: 13px;
+      font-weight: 800;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 12px 22px rgba(0, 0, 0, 0.18);
+      animation: bob 4s ease-in-out infinite;
+    }
+
+    .toast.green {
+      background: rgba(88, 204, 2, 0.16);
+      color: #d6ffb3;
+    }
+
+    .toast.purple {
+      background: rgba(206, 130, 255, 0.16);
+      color: #f2e5ff;
+    }
+
+    .toast.orange {
+      background: rgba(255, 150, 0, 0.16);
+      color: #ffe4c1;
+    }
+
+    .floating-xp {
+      position: absolute;
+      right: 26px;
+      padding: 11px 16px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, #5fe113, #58cc02);
+      color: #0b2400;
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: 0.02em;
+      box-shadow: 0 16px 32px rgba(88, 204, 2, 0.28), inset 0 -4px 0 rgba(56, 122, 0, 0.32);
+      animation: float 4.5s ease-in-out infinite;
+    }
+
+    .floating-xp::before {
+      content: "⚡";
+      margin-right: 8px;
+    }
+
+    .metric-pill {
+      background: rgba(13, 21, 37, 0.9);
+      border-color: rgba(255, 255, 255, 0.12);
+      font-size: 13px;
+    }
+
+    .pressable {
+      position: relative;
+      border-radius: 18px;
+      border: 1px solid rgba(16, 24, 38, 0.12);
+      border-bottom: 4px solid rgba(16, 24, 38, 0.24);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(238, 242, 248, 0.98));
+      color: #152033;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+      transition: transform 0.15s ease, border-bottom-width 0.15s ease;
+    }
+
+    .pressable:hover {
+      transform: translateY(2px);
+      border-bottom-width: 2px;
+    }
+
+    .answer-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .answer-card {
+      padding: 16px 12px;
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .answer-card.dim {
+      opacity: 0.78;
+    }
+
+    .answer-card.correct,
+    .definition-card.correct {
+      background: linear-gradient(180deg, #8af54e, #58cc02);
+      color: #082000;
+      border-color: rgba(88, 204, 2, 0.42);
+      border-bottom-color: rgba(41, 105, 0, 0.5);
+    }
+
+    .definition-stack {
+      display: grid;
+      gap: 12px;
+    }
+
+    .definition-card {
+      padding: 16px 18px;
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+      line-height: 1.35;
+    }
+
+    .definition-card.neutral {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(237, 242, 250, 0.95));
+    }
+
+    .flashcard-screen {
+      background: #101826;
+    }
+
+    .flashcard-stage {
+      position: absolute;
+      inset: 0;
+    }
+
+    .flashcard-scene {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 72% 19%, rgba(255, 229, 170, 0.98) 0 13%, transparent 14%),
+        linear-gradient(180deg, #85a3c8 0%, #f7dcc2 34%, #d99273 58%, #28181a 100%);
+    }
+
+    .flashcard-scene::before {
+      content: "";
+      position: absolute;
+      left: 18%;
+      top: 18%;
+      width: 64%;
+      height: 42%;
+      background: linear-gradient(180deg, rgba(248, 243, 233, 0.92), rgba(197, 164, 130, 0.9));
+      border-radius: 52% 52% 18% 18% / 46% 46% 16% 16%;
+      box-shadow: 0 18px 32px rgba(62, 32, 24, 0.18);
+      opacity: 0.88;
+    }
+
+    .flashcard-scene::after {
+      content: "";
+      position: absolute;
+      left: -8%;
+      right: -8%;
+      bottom: -8%;
+      height: 34%;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(255, 190, 110, 0.15), transparent 32%),
+        linear-gradient(180deg, rgba(54, 33, 28, 0), rgba(34, 22, 23, 0.9));
+    }
+
+    .flashcard-scrim-top {
+      position: absolute;
+      inset: 0 0 auto;
+      height: 124px;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.52), transparent);
+      z-index: 3;
+    }
+
+    .flashcard-scrim-bottom {
+      position: absolute;
+      inset: auto 0 0;
+      height: 48%;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.18) 24%, rgba(0, 0, 0, 0.68) 82%, rgba(0, 0, 0, 0.9) 100%);
+      z-index: 3;
+    }
+
+    .flashcard-head {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      right: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 5;
+    }
+
+    .flashcard-copy {
+      position: absolute;
+      left: 20px;
+      right: 20px;
+      bottom: 34px;
+      z-index: 5;
+    }
+
+    .flashcard-copy p {
+      margin: 0 0 16px;
+      font-size: 21px;
+      line-height: 1.45;
+      font-weight: 650;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
+    }
+
+    .flashcard-copy span {
+      color: var(--gold);
+      font-weight: 900;
+      text-shadow: 0 0 16px rgba(255, 200, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.7);
+    }
+
+    .hint-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .unlocked-stamp {
+      position: absolute;
+      right: 22px;
+      bottom: 152px;
+      padding: 10px 16px;
+      border-radius: 16px;
+      background: linear-gradient(180deg, rgba(255, 214, 104, 0.95), rgba(255, 184, 0, 0.95));
+      color: #422700;
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      box-shadow: 0 14px 30px rgba(255, 200, 0, 0.24), inset 0 -4px 0 rgba(158, 113, 0, 0.28);
+      transform: rotate(-9deg);
+      animation: pulse 3.2s ease-in-out infinite;
+      z-index: 5;
+    }
+
+    .image-screen {
+      background: radial-gradient(circle at 50% 0%, rgba(88, 204, 2, 0.12), transparent 42%), linear-gradient(180deg, #121d31 0%, #0e182b 100%);
+    }
+
+    .hero-art-card {
+      position: relative;
+      height: 236px;
+      border-radius: 26px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.22);
+    }
+
+    .hero-art-card.sunset {
+      background:
+        radial-gradient(circle at 70% 21%, rgba(255, 239, 180, 0.95) 0 12%, transparent 13%),
+        linear-gradient(180deg, #637ea4 0%, #ffcf9d 36%, #e78f77 60%, #25171d 100%);
+    }
+
+    .hero-art-card.sunset::before {
+      content: "";
+      position: absolute;
+      left: -6%;
+      right: -6%;
+      bottom: -8%;
+      height: 35%;
+      background: linear-gradient(180deg, rgba(34, 21, 28, 0), rgba(22, 13, 18, 0.92));
+    }
+
+    .hero-art-card.sunset::after {
+      content: "";
+      position: absolute;
+      inset: auto 8% 14% 16%;
+      height: 34%;
+      border-radius: 50% 50% 16% 16% / 58% 58% 16% 16%;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(184, 145, 114, 0.7));
+      opacity: 0.82;
+    }
+
+    .art-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+    }
+
+    .art-badge.gold {
+      background: rgba(255, 200, 0, 0.92);
+      color: #4d3100;
+    }
+
+    .art-caption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 24px 20px 16px;
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(255, 255, 255, 0.92);
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.66));
+    }
+
+    .cloze-card {
+      padding: 18px;
+      border-radius: 22px;
+      background: rgba(248, 250, 255, 0.94);
+      color: #152033;
+      box-shadow: 0 18px 32px rgba(0, 0, 0, 0.16);
+      font-size: 17px;
+      line-height: 1.45;
+      font-weight: 650;
+    }
+
+    .blank {
+      display: inline-block;
+      min-width: 90px;
+      border-bottom: 3px solid var(--gold);
+      transform: translateY(-2px);
+      margin: 0 8px;
+    }
+
+    .image-screen .floating-xp {
+      top: 344px;
+    }
+
+    .recall-screen {
+      background: radial-gradient(circle at 50% 0%, rgba(206, 130, 255, 0.16), transparent 40%), linear-gradient(180deg, #131b31 0%, #0e1527 100%);
+    }
+
+    .recall-hero {
+      padding: 26px 20px 12px;
+      border-radius: 28px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      text-align: center;
+    }
+
+    .recall-kicker {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-weight: 900;
+      color: #c0c8dc;
+    }
+
+    .recall-word {
+      margin: 14px 0 10px;
+      font-size: 36px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: -0.05em;
+    }
+
+    .source-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(206, 130, 255, 0.14);
+      border: 1px solid rgba(206, 130, 255, 0.26);
+      color: #f0e5ff;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .recall-screen .floating-xp {
+      top: 290px;
+      background: linear-gradient(180deg, #e7c5ff, #ce82ff);
+      color: #341152;
+      box-shadow: 0 16px 32px rgba(206, 130, 255, 0.24), inset 0 -4px 0 rgba(103, 49, 150, 0.28);
+    }
+
+    .recall-screen .floating-xp::before {
+      content: "✦";
+    }
+
+    .sat-screen {
+      background: radial-gradient(circle at 50% 0%, rgba(255, 150, 0, 0.14), transparent 42%), linear-gradient(180deg, #121a2b 0%, #0e1524 100%);
+    }
+
+    .paper-card {
+      position: relative;
+      padding: 18px 18px 20px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, #fff6df, #ffeec4);
+      color: #3a2f1a;
+      border: 1px solid rgba(255, 224, 145, 0.8);
+      box-shadow: 0 18px 34px rgba(0, 0, 0, 0.18);
+    }
+
+    .paper-card::after {
+      content: "";
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 0;
+      height: 34px;
+      background: linear-gradient(180deg, rgba(255, 246, 223, 0), rgba(255, 246, 223, 0.92));
+    }
+
+    .paper-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #7f6b35;
+      margin-bottom: 12px;
+    }
+
+    .paper-copy {
+      font-family: ui-serif, Georgia, "Times New Roman", serif;
+      font-size: 16px;
+      line-height: 1.7;
+      max-height: 190px;
+      overflow: hidden;
+    }
+
+    .paper-copy mark {
+      background: linear-gradient(180deg, transparent 52%, #ffe082 52%);
+      color: inherit;
+      font-weight: 700;
+    }
+
+    .question-divider {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .question-divider::before,
+    .question-divider::after {
+      content: "";
+      height: 1px;
+      flex: 1;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .sat-question {
+      font-size: 17px;
+      line-height: 1.5;
+      font-weight: 700;
+    }
+
+    .sat-options {
+      display: grid;
+      gap: 10px;
+    }
+
+    .sat-option {
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 16px;
+      line-height: 1.35;
+    }
+
+    .option-letter {
+      flex: 0 0 28px;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 2px solid rgba(100, 113, 136, 0.42);
+      display: grid;
+      place-items: center;
+      font-size: 14px;
+      font-weight: 900;
+      color: #6c7891;
+    }
+
+    .sat-option.selected {
+      border-color: rgba(28, 176, 246, 0.28);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(232, 243, 252, 0.96));
+    }
+
+    .sat-option.selected .option-letter {
+      background: var(--blue);
+      border-color: var(--blue);
+      color: white;
+    }
+
+    .check-button {
+      align-self: flex-start;
+      padding: 16px 30px;
+      font-size: 15px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background: linear-gradient(180deg, #79ef41, #58cc02);
+      color: #0b2400;
+      border-bottom-color: rgba(41, 105, 0, 0.5);
+    }
+
+    .feedback-sheet {
+      position: absolute;
+      left: 20px;
+      right: 20px;
+      bottom: 22px;
+      padding: 18px;
+      border-radius: 28px 28px 22px 22px;
+      background: linear-gradient(180deg, rgba(16, 38, 17, 0.96), rgba(10, 26, 14, 0.98));
+      border: 1px solid rgba(131, 232, 84, 0.22);
+      box-shadow: 0 28px 48px rgba(0, 0, 0, 0.28);
+      z-index: 6;
+    }
+
+    .feedback-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .feedback-title {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #a4d98d;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .feedback-sheet h4 {
+      margin: 0 0 8px;
+      font-size: 22px;
+      letter-spacing: -0.03em;
+    }
+
+    .feedback-sheet p {
+      margin: 0 0 16px;
+      color: #cfe7d5;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .feedback-pill {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(88, 204, 2, 0.18);
+      border: 1px solid rgba(88, 204, 2, 0.3);
+      color: #dcffc1;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .feedback-xp {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #f7ffef;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .next-button {
+      padding: 14px 18px;
+      font-size: 14px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background: linear-gradient(180deg, #7ff24a, #58cc02);
+      color: #0a2200;
+      border-bottom-color: rgba(41, 105, 0, 0.5);
+    }
+
+    .reward-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    .reward-card,
+    .strength-card {
+      padding: 24px;
+    }
+
+    .reward-surface {
+      display: grid;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .goal-cluster {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 22px;
+      align-items: center;
+      padding: 22px;
+      border-radius: 28px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.03));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .goal-ring {
+      position: relative;
+      width: 136px;
+      height: 136px;
+      border-radius: 50%;
+      background: conic-gradient(from 220deg, rgba(255, 255, 255, 0.08) 0deg 55deg, rgba(255, 255, 255, 0.06) 55deg 85deg, #58cc02 85deg 280deg, rgba(255, 255, 255, 0.08) 280deg 360deg);
+      box-shadow: 0 20px 38px rgba(0, 0, 0, 0.2);
+      animation: slow-spin 10s linear infinite;
+    }
+
+    .goal-ring::after {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      border-radius: 50%;
+      background: linear-gradient(180deg, #0f182a, #121d31);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    }
+
+    .goal-center {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      z-index: 2;
+    }
+
+    .goal-center strong {
+      display: block;
+      font-size: 36px;
+      letter-spacing: -0.05em;
+    }
+
+    .goal-center span {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .goal-copy h3 {
+      margin: 0 0 8px;
+      font-size: 30px;
+      letter-spacing: -0.03em;
+    }
+
+    .goal-copy p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.6;
+      max-width: 36ch;
+    }
+
+    .reward-token {
+      padding: 14px 18px;
+      border-radius: 18px;
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
+      font-size: 15px;
+      font-weight: 900;
+      letter-spacing: 0.02em;
+    }
+
+    .reward-token.xp {
+      background: linear-gradient(180deg, #75ef39, #58cc02);
+      color: #0b2400;
+    }
+
+    .reward-token.combo {
+      background: linear-gradient(180deg, #f0ceff, #ce82ff);
+      color: #3b155a;
+    }
+
+    .reward-token.bonus {
+      background: linear-gradient(180deg, #ffd278, #ff9600);
+      color: #482a00;
+    }
+
+    .reward-rail {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .reward-tile {
+      padding: 18px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      min-height: 180px;
+    }
+
+    .tile-kicker {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 900;
+      color: #ccd5ea;
+      margin-bottom: 14px;
+    }
+
+    .reward-tile h4 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      letter-spacing: -0.03em;
+    }
+
+    .reward-tile p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .flame-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 18px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      margin-bottom: 14px;
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.16);
+    }
+
+    .flame {
+      position: relative;
+      width: 24px;
+      height: 34px;
+      border-radius: 50% 50% 54% 54% / 30% 30% 70% 70%;
+      background: linear-gradient(180deg, #ffe36d, #ff9600);
+      transform: rotate(8deg);
+      box-shadow: 0 0 20px rgba(255, 150, 0, 0.35);
+    }
+
+    .flame::after {
+      content: "";
+      position: absolute;
+      left: 5px;
+      top: 8px;
+      width: 11px;
+      height: 17px;
+      border-radius: 50% 50% 54% 54% / 30% 30% 70% 70%;
+      background: linear-gradient(180deg, #fff7d1, #ffcb66);
+    }
+
+    .mastery-stamp {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(255, 226, 122, 0.94), rgba(255, 191, 24, 0.94));
+      color: #4b3200;
+      font-size: 14px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      box-shadow: 0 16px 30px rgba(255, 200, 0, 0.22), inset 0 -4px 0 rgba(166, 120, 0, 0.28);
+      margin-bottom: 14px;
+    }
+
+    .mastery-stamp::before {
+      content: "✓";
+      display: grid;
+      place-items: center;
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      background: rgba(75, 50, 0, 0.12);
+    }
+
+    .exposure-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      margin-bottom: 14px;
+      color: #e9eef9;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .exposure-tag::before {
+      content: "👁";
+    }
+
+    .strength-meter {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .strength-step {
+      position: relative;
+      padding: 18px 12px 16px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .strength-step:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      right: -10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .strength-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 14px;
+      margin: 0 auto 12px;
+      display: grid;
+      place-items: center;
+      font-size: 16px;
+      font-weight: 900;
+      color: #09101c;
+    }
+
+    .strength-step span {
+      display: block;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #cad3e8;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .strength-step strong {
+      display: block;
+      font-size: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .strength-step small {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .strength-step.current {
+      background: linear-gradient(180deg, rgba(255, 200, 0, 0.16), rgba(255, 200, 0, 0.08));
+      border-color: rgba(255, 200, 0, 0.26);
+      box-shadow: 0 18px 32px rgba(255, 200, 0, 0.16);
+    }
+
+    .strength-step.done {
+      background: linear-gradient(180deg, rgba(88, 204, 2, 0.14), rgba(255, 255, 255, 0.05));
+      border-color: rgba(88, 204, 2, 0.18);
+    }
+
+    .strength-step.mastered {
+      background: linear-gradient(180deg, rgba(88, 204, 2, 0.18), rgba(255, 255, 255, 0.05));
+      border-color: rgba(88, 204, 2, 0.22);
+    }
+
+    .locked .strength-icon {
+      background: linear-gradient(180deg, #ff9a6d, #ff7043);
+    }
+
+    .rising .strength-icon {
+      background: linear-gradient(180deg, #ffc978, #ffab40);
+    }
+
+    .strong .strength-icon {
+      background: linear-gradient(180deg, #ffe78b, #ffc800);
+    }
+
+    .solid .strength-icon {
+      background: linear-gradient(180deg, #b2f469, #89e219);
+    }
+
+    .mastered .strength-icon {
+      background: linear-gradient(180deg, #7ff24a, #58cc02);
+    }
+
+    .strength-note {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 18px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      font-size: 15px;
+      color: #eaf2ff;
+    }
+
+    .mini-pill {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255, 200, 0, 0.16);
+      border: 1px solid rgba(255, 200, 0, 0.28);
+      color: #ffe9a6;
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .strength-footer {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .mini-stat {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .footer-note {
+      margin-top: 22px;
+      padding: 16px 18px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .flashcard-panel .iphone {
+      box-shadow: 0 36px 80px rgba(0, 0, 0, 0.42), 0 0 0 1px rgba(255, 255, 255, 0.05), 0 0 42px rgba(255, 200, 0, 0.16);
+    }
+
+    .image-panel .iphone {
+      box-shadow: 0 36px 80px rgba(0, 0, 0, 0.42), 0 0 0 1px rgba(255, 255, 255, 0.05), 0 0 42px rgba(88, 204, 2, 0.18);
+    }
+
+    .recall-panel .iphone {
+      box-shadow: 0 36px 80px rgba(0, 0, 0, 0.42), 0 0 0 1px rgba(255, 255, 255, 0.05), 0 0 42px rgba(206, 130, 255, 0.18);
+    }
+
+    .sat-panel .iphone {
+      box-shadow: 0 36px 80px rgba(0, 0, 0, 0.42), 0 0 0 1px rgba(255, 255, 255, 0.05), 0 0 42px rgba(255, 150, 0, 0.18);
+    }
+
+    @keyframes bob {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-4px);
+      }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0) rotate(-4deg);
+      }
+      50% {
+        transform: translateY(-8px) rotate(-1deg);
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: rotate(-9deg) scale(1);
+      }
+      50% {
+        transform: rotate(-6deg) scale(1.04);
+      }
+    }
+
+    @keyframes slow-spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+
+    @media (max-width: 1180px) {
+      .hero,
+      .reward-grid,
+      .phones-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .goal-cluster {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+      }
+
+      .reward-rail,
+      .strength-meter,
+      .strength-footer {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        max-width: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        padding: 28px 14px 56px;
+      }
+
+      h1 {
+        font-size: 40px;
+      }
+
+      .panel-head,
+      .section-title {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .phone-panel,
+      .reward-card,
+      .strength-card,
+      .hero-card {
+        padding: 18px;
+      }
+
+      .iphone {
+        max-width: 100%;
+      }
+
+      .quick-stats {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div>
+        <div class="eyebrow">SAT Spell · premium activity system</div>
+        <h1>Polished mockups for the 4 learning views + reward layer.</h1>
+        <p class="lead">
+          A premium iOS direction for flashcards, scored practice, and the XP / Word Strength system:
+          deep navy canvas, real phone shells, sharper type, richer motion cues, and clearer teen-facing rewards.
+        </p>
+        <div class="hero-tags">
+          <div class="tag gold"><span class="mini-dot"></span>Flashcards stay <strong>exposure only</strong></div>
+          <div class="tag green"><span class="mini-dot"></span>Scored answers earn <strong>+10 XP</strong></div>
+          <div class="tag purple"><span class="mini-dot"></span>Combo moments hit at <strong>3 / 5 / 10</strong></div>
+          <div class="tag orange"><span class="mini-dot"></span>Daily goal stays visible at <strong>250 XP</strong></div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="rule">
+          <div class="rule-icon">⚡</div>
+          <div class="rule-copy">
+            <strong>Simple rule, richer reward surface</strong>
+            <p>
+              Correct answer in Image Game, Quick Recall, or SAT = +10 XP. Flashcards stay at 0 XP, while
+              streaks, session bonuses, mastery moments, and the Word Strength meter add the dopamine layer.
+            </p>
+          </div>
+        </div>
+        <div class="quick-stats">
+          <div class="stat-chip">
+            <span>Daily target</span>
+            <strong>250 XP</strong>
+          </div>
+          <div class="stat-chip">
+            <span>Session bonus</span>
+            <strong>+30</strong>
+          </div>
+          <div class="stat-chip">
+            <span>Streak flame</span>
+            <strong>14 days</strong>
+          </div>
+          <div class="stat-chip">
+            <span>Strength meter</span>
+            <strong>5 stages</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-title">
+      <h2>Activity views in real iPhone shells</h2>
+      <p>
+        Each view keeps its own accent identity while sharing one cleaner type ramp, premium depth, rounded progress bars,
+        and Duolingo-style 3D button treatment.
+      </p>
+    </div>
+
+    <section class="phones-grid">
+      <article class="phone-panel flashcard-panel">
+        <div class="panel-head">
+          <div class="panel-copy">
+            <div class="panel-label"><span class="dot gold"></span>Exposure only</div>
+            <h3>Flashcard</h3>
+            <p>Full-bleed mnemonic art, glass header, gold word emphasis, and a subtle non-XP “Word unlocked” reward.</p>
+          </div>
+          <div class="panel-chip gold">0 XP · memory first</div>
+        </div>
+        <div class="iphone">
+          <div class="screen flashcard-screen">
+            <div class="dynamic-island"></div>
+            <div class="status"><span>9:41</span><span>5G 88%</span></div>
+            <div class="flashcard-stage">
+              <div class="flashcard-scene"></div>
+              <div class="flashcard-scrim-top"></div>
+              <div class="flashcard-scrim-bottom"></div>
+              <div class="flashcard-head">
+                <div class="icon-btn">✕</div>
+                <div class="glass-pill">2 / 5 · EXPOSURE</div>
+                <div class="icon-btn">♪</div>
+              </div>
+              <div class="unlocked-stamp">Word unlocked</div>
+              <div class="flashcard-copy">
+                <p>
+                  The minimalist design reflected a particular <span>AESTHETIC</span> philosophy that favored simplicity.
+                </p>
+                <div class="hint-pill">tap to flip · swipe for next →</div>
+              </div>
+            </div>
+            <div class="home-indicator"></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="phone-panel image-panel">
+        <div class="panel-head">
+          <div class="panel-copy">
+            <div class="panel-label"><span class="dot green"></span>Scored game</div>
+            <h3>Image-to-Word</h3>
+            <p>Green action energy, stronger answer buttons, a live +10 chip, and a softer premium treatment for review badges.</p>
+          </div>
+          <div class="panel-chip green">+10 XP per correct</div>
+        </div>
+        <div class="iphone">
+          <div class="screen image-screen">
+            <div class="dynamic-island"></div>
+            <div class="status"><span>9:41</span><span>5G 88%</span></div>
+            <div class="screen-inner theme-green">
+              <div class="header-shell">
+                <div class="header-row">
+                  <div class="icon-btn">✕</div>
+                  <div class="step-stack">
+                    <div class="step-kicker">Step 2 of 3 · scored</div>
+                    <div class="activity-title">Image Practice · 5/12</div>
+                  </div>
+                  <div class="metric-pill">⚡ 1,280</div>
+                </div>
+                <div class="progress-track"><span style="width:58%"></span></div>
+              </div>
+              <div class="toast green">On a roll</div>
+              <div class="hero-art-card sunset">
+                <div class="art-badge gold">FROM STEP 1</div>
+                <div class="art-caption">Choose the best word</div>
+              </div>
+              <div class="cloze-card">The sunset was <span class="blank"></span>, gone in moments.</div>
+              <div class="answer-grid">
+                <div class="pressable answer-card correct">ephemeral</div>
+                <div class="pressable answer-card dim">perpetual</div>
+                <div class="pressable answer-card dim">mundane</div>
+                <div class="pressable answer-card dim">abundant</div>
+              </div>
+            </div>
+            <div class="floating-xp">+10 XP</div>
+            <div class="home-indicator"></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="phone-panel recall-panel">
+        <div class="panel-head">
+          <div class="panel-copy">
+            <div class="panel-label"><span class="dot purple"></span>Scored recall</div>
+            <h3>Quick Recall</h3>
+            <p>Fast purple rhythm, larger word treatment, cleaner definition cards, and a stronger combo surface for evening review.</p>
+          </div>
+          <div class="panel-chip purple">Fast-paced · 11 words</div>
+        </div>
+        <div class="iphone">
+          <div class="screen recall-screen">
+            <div class="dynamic-island"></div>
+            <div class="status"><span>9:41</span><span>5G 88%</span></div>
+            <div class="screen-inner theme-purple">
+              <div class="header-shell">
+                <div class="header-row">
+                  <div class="icon-btn">✕</div>
+                  <div class="step-stack">
+                    <div class="step-kicker">Step 2 of 4 · scored</div>
+                    <div class="activity-title">Quick Recall · 4/11</div>
+                  </div>
+                  <div class="metric-pill">🔥 14</div>
+                </div>
+                <div class="progress-track"><span style="width:43%"></span></div>
+              </div>
+              <div class="toast purple">5 streak · clean</div>
+              <div class="recall-hero">
+                <div class="recall-kicker">What does this mean?</div>
+                <div class="recall-word">EPHEMERAL</div>
+                <div class="source-pill">from this morning</div>
+              </div>
+              <div class="definition-stack">
+                <div class="pressable definition-card neutral">very important or significant</div>
+                <div class="pressable definition-card correct">lasting a very short time</div>
+                <div class="pressable definition-card neutral">extremely complicated</div>
+                <div class="pressable definition-card neutral">widely known and admired</div>
+              </div>
+            </div>
+            <div class="floating-xp">+10 XP</div>
+            <div class="home-indicator"></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="phone-panel sat-panel">
+        <div class="panel-head">
+          <div class="panel-copy">
+            <div class="panel-label"><span class="dot orange"></span>Scored SAT</div>
+            <h3>SAT Question</h3>
+            <p>Paper-textured passage, warmer academic tone, cleaner answer hierarchy, and a springy bottom sheet for explanation.</p>
+          </div>
+          <div class="panel-chip orange">Context + explanation</div>
+        </div>
+        <div class="iphone">
+          <div class="screen sat-screen">
+            <div class="dynamic-island"></div>
+            <div class="status"><span>9:41</span><span>5G 88%</span></div>
+            <div class="screen-inner theme-orange">
+              <div class="header-shell">
+                <div class="header-row">
+                  <div class="icon-btn">✕</div>
+                  <div class="step-stack">
+                    <div class="step-kicker">Step 3 of 3 · scored</div>
+                    <div class="activity-title">SAT Questions · 1/3</div>
+                  </div>
+                  <div class="metric-pill">⚡ 1,280</div>
+                </div>
+                <div class="progress-track"><span style="width:34%"></span></div>
+              </div>
+              <div class="paper-card">
+                <div class="paper-head"><span>Passage</span><span>scroll ↕</span></div>
+                <div class="paper-copy">
+                  The environmental movement has undergone a <mark>profound transformation</mark> in recent decades.
+                  What began as a small network of local advocates has evolved into a globally coordinated force.
+                </div>
+              </div>
+              <div class="question-divider">Question</div>
+              <div class="sat-question">
+                As used in the passage, “profound transformation” most nearly means:
+              </div>
+              <div class="sat-options">
+                <div class="pressable sat-option"><span class="option-letter">A</span><span>a minor adjustment</span></div>
+                <div class="pressable sat-option selected"><span class="option-letter">B</span><span>a fundamental change</span></div>
+                <div class="pressable sat-option"><span class="option-letter">C</span><span>a temporary shift</span></div>
+                <div class="pressable sat-option"><span class="option-letter">D</span><span>a superficial alteration</span></div>
+              </div>
+              <div class="pressable check-button">Check</div>
+            </div>
+            <div class="feedback-sheet">
+              <div class="feedback-top">
+                <div class="feedback-pill">✓ Correct!</div>
+                <div class="feedback-xp">+10 XP</div>
+              </div>
+              <div class="feedback-title">Word · profound transformation</div>
+              <h4>A fundamental change</h4>
+              <p>The passage describes a complete shift in scale and influence, so the strongest match is a deep structural change.</p>
+              <div class="pressable next-button">Next →</div>
+            </div>
+            <div class="home-indicator"></div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <div class="section-title">
+      <h2>Points system + student-facing progression</h2>
+      <p>
+        The reward layer stays simple in the math, but much richer in presentation: one XP rule, a visible daily goal,
+        combo beats, streak identity, and a clearer Word Strength meter instead of raw box terminology.
+      </p>
+    </div>
+
+    <section class="reward-grid">
+      <article class="reward-card">
+        <div class="panel-copy">
+          <div class="panel-label"><span class="dot green"></span>Reward layer</div>
+          <h3>Points system surface</h3>
+          <p>Keep the core scoring rule tiny, then make the feeling of progress bigger through depth, motion, and visible milestones.</p>
+        </div>
+        <div class="reward-surface">
+          <div class="goal-cluster">
+            <div class="goal-ring">
+              <div class="goal-center">
+                <div>
+                  <strong>210</strong>
+                  <span>/ 250 XP</span>
+                </div>
+              </div>
+            </div>
+            <div class="goal-copy">
+              <h3>Daily goal nearly done</h3>
+              <p>
+                The ring makes progress feel immediate, while the app keeps the message emotionally safe when it is unfinished.
+                No penalties, just visible momentum.
+              </p>
+              <div class="reward-chips">
+                <div class="reward-token xp">+10 XP chip</div>
+                <div class="reward-token combo">On a roll · x5</div>
+                <div class="reward-token bonus">Session bonus +30</div>
+              </div>
+            </div>
+          </div>
+          <div class="reward-rail">
+            <div class="reward-tile">
+              <div class="tile-kicker">Streak identity</div>
+              <h4>Flame badge</h4>
+              <div class="flame-badge">
+                <span class="flame"></span>
+                <strong>14-day streak</strong>
+              </div>
+              <p>Always visible in the header, brighter at milestones, and clearly tied to daily rhythm.</p>
+            </div>
+            <div class="reward-tile">
+              <div class="tile-kicker">Mastery beat</div>
+              <h4>Level-up moment</h4>
+              <div class="mastery-stamp">Mastered</div>
+              <p>Reserved for the rare finish line: gold ring, stamp, and confetti without adding bonus math.</p>
+            </div>
+            <div class="reward-tile">
+              <div class="tile-kicker">Exposure reward</div>
+              <h4>Flashcard payoff</h4>
+              <div class="exposure-tag">Word unlocked</div>
+              <p>Flashcards stay at 0 XP, but they still get a satisfying visual beat so they do not feel dead.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="strength-card">
+        <div class="panel-copy">
+          <div class="panel-label"><span class="dot gold"></span>Student-facing progression</div>
+          <h3>Word Strength meter</h3>
+          <p>Hide box terminology. Show a progression vocabulary a teenager can understand in one glance.</p>
+        </div>
+        <div class="strength-meter">
+          <div class="strength-step locked done">
+            <div class="strength-icon">1</div>
+            <span>Stage 1</span>
+            <strong>Locked In</strong>
+            <small>Needs another win tomorrow</small>
+          </div>
+          <div class="strength-step rising done">
+            <div class="strength-icon">2</div>
+            <span>Stage 2</span>
+            <strong>Rising</strong>
+            <small>Recognition is forming</small>
+          </div>
+          <div class="strength-step strong current">
+            <div class="strength-icon">3</div>
+            <span>Stage 3</span>
+            <strong>Strong</strong>
+            <small>Current state</small>
+          </div>
+          <div class="strength-step solid">
+            <div class="strength-icon">4</div>
+            <span>Stage 4</span>
+            <strong>Solid</strong>
+            <small>Reliable recall</small>
+          </div>
+          <div class="strength-step mastered">
+            <div class="strength-icon">5</div>
+            <span>Stage 5</span>
+            <strong>Mastered</strong>
+            <small>Course-complete word</small>
+          </div>
+        </div>
+        <div class="strength-note">
+          <span class="mini-pill">1 more win</span>
+          to level this word up to <strong>Solid</strong>.
+        </div>
+        <div class="strength-footer">
+          <div class="mini-stat">Internal box logic stays backstage. Students only see one premium progression surface.</div>
+          <div class="mini-stat">Mastery celebration is emotional, not mathematical. XP still follows the simple +10 rule.</div>
+        </div>
+      </article>
+    </section>
+
+    <div class="footer-note">
+      Flashcards are exposure-only. XP comes from Image Game, Quick Recall, and SAT Question answers; the UI does the extra work of making those rewards feel premium, legible, and worth coming back for twice a day.
+    </div>
+  </main>
+</body>
+</html>
