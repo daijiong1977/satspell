@@ -95,6 +95,20 @@ actor WordStateStore {
         return 0
     }
 
+    func countWordsLearned(userId: String) throws -> Int {
+        let sql = """
+        SELECT COUNT(DISTINCT word_id) FROM word_state
+        WHERE user_id = ? AND intro_stage > 0;
+        """
+        let stmt = try db.prepare(sql)
+        defer { stmt?.finalize() }
+        try SQLiteDB.bind(stmt, 1, userId)
+        if sqlite3_step(stmt) == SQLITE_ROW {
+            return SQLiteDB.columnInt(stmt, 0)
+        }
+        return 0
+    }
+
     func getBoxDistribution(userId: String) throws -> [Int: Int] {
         let sql = """
         SELECT box_level, COUNT(*) FROM word_state

@@ -5,6 +5,7 @@ struct DayCompleteSummary: View {
     let userId: String
 
     @State private var dailyStats: DailyStats?
+    @State private var wordsLearned: Int = 0
 
     var body: some View {
         VStack(spacing: 14) {
@@ -14,7 +15,7 @@ struct DayCompleteSummary: View {
 
             if let stats = dailyStats {
                 HStack(spacing: 16) {
-                    summaryTile(title: "Words", value: "\(stats.newCount)", icon: "textformat.abc")
+                    summaryTile(title: "Words", value: "\(wordsLearned)", icon: "textformat.abc")
                     summaryTile(title: "XP", value: "\(stats.xpEarned + stats.sessionBonus)", icon: "star.fill")
                     summaryTile(title: "Accuracy", value: stats.totalCount > 0 ? "\(Int(Double(stats.correctCount) / Double(stats.totalCount) * 100))%" : "--", icon: "target")
                 }
@@ -41,6 +42,11 @@ struct DayCompleteSummary: View {
             do {
                 let statsStore = StatsStore.shared
                 dailyStats = try await statsStore.getOrCreateDailyStats(userId: userId, studyDay: studyDay)
+
+                let dm = DataManager.shared
+                try await dm.initializeIfNeeded()
+                let wsStore = WordStateStore(db: dm.db)
+                wordsLearned = try await wsStore.countWordsLearned(userId: userId)
             } catch {
                 // ignore
             }

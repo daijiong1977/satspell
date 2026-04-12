@@ -9,6 +9,7 @@ struct StatsView: View {
     )
     @State private var boxDistribution: [Int: Int] = [:]
     @State private var stubbornWords: [(lemma: String, pos: String?, lapseCount: Int, boxLevel: Int)] = []
+    @State private var wordsLearnedCount: Int = 0
 
     private let userId = LocalIdentity.userId()
 
@@ -19,7 +20,7 @@ struct StatsView: View {
                 HStack(spacing: 12) {
                     StatsHeroTile(title: "Streak", value: "\(streak.currentStreak)", icon: "flame.fill", color: .orange)
                     StatsHeroTile(title: "XP", value: "\(streak.totalXP)", icon: "star.fill", color: .yellow)
-                    StatsHeroTile(title: "Words", value: "\(totalWordsLearned)", icon: "textformat.abc", color: Color(hex: "#58CC02"))
+                    StatsHeroTile(title: "Words", value: "\(wordsLearnedCount)", icon: "textformat.abc", color: Color(hex: "#58CC02"))
                 }
 
                 // Box distribution
@@ -114,10 +115,6 @@ struct StatsView: View {
         }
     }
 
-    private var totalWordsLearned: Int {
-        boxDistribution.filter { $0.key >= 1 }.values.reduce(0, +)
-    }
-
     private func loadStats() async {
         do {
             let dm = DataManager.shared
@@ -129,6 +126,7 @@ struct StatsView: View {
             let wsStore = WordStateStore(db: dm.db)
             boxDistribution = try await wsStore.getBoxDistribution(userId: userId)
             stubbornWords = try await wsStore.getStubbornWords(userId: userId, limit: 10)
+            wordsLearnedCount = try await wsStore.countWordsLearned(userId: userId)
         } catch {
             // ignore
         }
