@@ -30,4 +30,23 @@ enum AppConfig {
     static let bundledImagesFolderName = "Images" // add as folder reference in Xcode
 
     static let xpPerCorrect = 10
+
+    // V2 Learning Model
+    static let morningNewWords = 11
+    static let eveningNewWords = 10
+    static let morningGameRounds = 12
+    static let eveningGameRounds = 12
+    static let morningSATQuestions = 3
+    static let eveningSATQuestions = 2
+    static let eveningUnlockHours = 4
+    static let eveningUnlockFallbackHour = 17
+    static let backPressureReduceAt = 18
+    static let backPressureStopAt = 30
+    static let zoneTestPassThreshold = 0.8
+    static let rushMinGameMs = 1000
+    static let rushMinSATMs = 3000
+    static let sessionBonusXP = 30
+    static let correctAnswerXP = 10
+    static let bonusPracticeXP = 5
+    static let lateNightHour = 20
 }

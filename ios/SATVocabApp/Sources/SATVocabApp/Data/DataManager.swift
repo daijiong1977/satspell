@@ -4,7 +4,7 @@ import SQLite3
 actor DataManager {
     static let shared = DataManager()
 
-    let db = SQLiteDB()
+    nonisolated let db = SQLiteDB()
     private var isInitialized = false
 
     private init() {}
