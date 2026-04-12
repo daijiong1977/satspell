@@ -3,10 +3,31 @@ import SwiftUI
 struct SessionFlowView: View {
     @StateObject var vm: SessionFlowViewModel
     @Environment(\.dismiss) private var dismiss
+    @State private var isLoading = true
+    @State private var loadError: String?
 
     var body: some View {
         ZStack {
-            if vm.isComplete {
+            if isLoading {
+                VStack(spacing: 12) {
+                    ProgressView()
+                    Text("Loading words...")
+                        .font(.system(size: 15, weight: .medium, design: .rounded))
+                        .foregroundColor(.gray)
+                }
+            } else if let error = loadError {
+                VStack(spacing: 12) {
+                    Text("Failed to load")
+                        .font(.system(size: 18, weight: .bold, design: .rounded))
+                    Text(error)
+                        .font(.system(size: 13))
+                        .foregroundColor(.secondary)
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal)
+                    Button("Go Back") { dismiss() }
+                        .buttonStyle(.borderedProminent)
+                }
+            } else if vm.isComplete {
                 SessionCompleteView(
                     xpEarned: vm.xpEarned,
                     totalCorrect: vm.totalCorrect,
@@ -76,7 +97,15 @@ struct SessionFlowView: View {
             }
         }
         .toolbar(.hidden, for: .tabBar)
-        .task { try? await vm.loadWords() }
+        .task {
+            do {
+                try await vm.loadWords()
+                isLoading = false
+            } catch {
+                loadError = String(describing: error)
+                isLoading = false
+            }
+        }
     }
 }
 

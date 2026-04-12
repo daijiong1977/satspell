@@ -66,8 +66,9 @@ struct FlashcardBackView: View {
                     // Definition
                     sectionView(label: "DEFINITION") {
                         Text(card.definition ?? "")
-                            .font(.system(size: 17, weight: .semibold))
-                            .foregroundColor(Color(hex: "#4B4B4B"))
+                            .font(.system(size: 20, weight: .semibold))
+                            .foregroundColor(Color(hex: "#1A1A2E"))
+                            .lineSpacing(4)
                             .fixedSize(horizontal: false, vertical: true)
                     }
 
@@ -77,29 +78,30 @@ struct FlashcardBackView: View {
                             HStack(spacing: 0) {
                                 Rectangle()
                                     .fill(Color(hex: "#FFC800"))
-                                    .frame(width: 3)
+                                    .frame(width: 4)
                                 Text(highlightedExample(example, word: card.lemma))
-                                    .font(.system(size: 15, weight: .regular))
+                                    .font(.system(size: 18, weight: .regular))
                                     .foregroundColor(Color(hex: "#4B4B4B"))
-                                    .padding(10)
+                                    .lineSpacing(4)
+                                    .padding(12)
                             }
                             .background(Color(hex: "#FFFDE7"))
-                            .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
+                            .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
                         }
                     }
 
                     // Collocations
                     if let collocations = card.collocations, !collocations.isEmpty {
                         sectionView(label: "COLLOCATIONS") {
-                            FlowLayout(spacing: 6) {
+                            FlowLayout(spacing: 8) {
                                 ForEach(collocations, id: \.self) { phrase in
                                     Text(phrase)
-                                        .font(.system(size: 14, weight: .medium))
+                                        .font(.system(size: 16, weight: .medium))
                                         .foregroundColor(Color(hex: "#4B4B4B"))
-                                        .padding(.horizontal, 10)
-                                        .padding(.vertical, 6)
+                                        .padding(.horizontal, 12)
+                                        .padding(.vertical, 8)
                                         .background(Color(hex: "#FFF8E1"))
-                                        .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
+                                        .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
                                 }
                             }
                         }
@@ -109,8 +111,9 @@ struct FlashcardBackView: View {
                     if let satContext = card.satContext, !satContext.isEmpty {
                         sectionView(label: "SAT CONTEXT") {
                             Text(satContext)
-                                .font(.system(size: 14, weight: .regular))
+                                .font(.system(size: 16, weight: .regular))
                                 .foregroundColor(Color(hex: "#666666"))
+                                .lineSpacing(3)
                                 .fixedSize(horizontal: false, vertical: true)
                         }
                     }
@@ -159,7 +162,7 @@ struct FlashcardBackView: View {
     private func highlightedExample(_ text: String, word: String) -> AttributedString {
         var attr = AttributedString(text)
         if let range = attr.range(of: word, options: .caseInsensitive) {
-            attr[range].font = .system(size: 15, weight: .bold)
+            attr[range].font = .system(size: 20, weight: .bold)
             attr[range].foregroundColor = Color(hex: "#FFC800")
         }
         return attr

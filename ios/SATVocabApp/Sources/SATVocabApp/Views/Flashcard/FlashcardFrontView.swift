@@ -63,10 +63,11 @@ struct FlashcardFrontView: View {
                     Spacer()
                     if let example = card.example, !example.isEmpty {
                         Text(highlightedSentence(example, word: card.lemma))
-                            .font(.system(size: 16, weight: .medium))
+                            .font(.system(size: 19, weight: .medium))
                             .foregroundColor(.white.opacity(0.9))
-                            .lineSpacing(4)
-                            .padding(.horizontal, 12)
+                            .lineSpacing(5)
+                            .padding(.horizontal, 14)
+                            .padding(.bottom, 6)
                             .shadow(color: .black.opacity(0.8), radius: 4, x: 0, y: 1)
                     }
                     Text("tap to flip \u{00B7} swipe next \u{2192}")
@@ -102,7 +103,7 @@ struct FlashcardFrontView: View {
     private func highlightedSentence(_ text: String, word: String) -> AttributedString {
         var attr = AttributedString(text)
         if let range = attr.range(of: word, options: .caseInsensitive) {
-            attr[range].font = .system(size: 20, weight: .black)
+            attr[range].font = .system(size: 24, weight: .black)
             attr[range].foregroundColor = Color(hex: "#FFC800")
             attr[range].underlineStyle = .single
             attr[range].underlineColor = .init(Color(hex: "#FFC800").opacity(0.4))
