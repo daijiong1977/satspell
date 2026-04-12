@@ -129,9 +129,8 @@ struct AdventureMapView: View {
         .navigationDestination(item: $route) { route in
             switch route {
             case .day:
-                // Days are info-only in the new design; tap goes to Practice tab
-                Text("Day details coming soon")
-                    .font(.system(.headline, design: .rounded))
+                // Navigate to Practice tab
+                PracticeTabView()
             case .zoneTest(let zi):
                 ZoneReviewSessionView(zoneIndex: zi) {
                     AdventureProgressStore.shared.setZoneUnlocked(zoneIndex: zi + 1, unlocked: true)
