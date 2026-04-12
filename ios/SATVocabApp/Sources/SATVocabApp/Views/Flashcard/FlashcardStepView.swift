@@ -99,6 +99,11 @@ struct FlashcardStepView: View {
                 }
             }
         }
+        .onAppear {
+            if words.isEmpty {
+                onComplete([])
+            }
+        }
         .sheet(isPresented: $showPause) {
             PauseSheet(
                 onKeepGoing: { showPause = false },

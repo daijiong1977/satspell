@@ -18,9 +18,26 @@ actor DataManager {
 
         let fm = FileManager.default
         let writableURL = try DatabasePaths.writableDatabaseURL()
-        let needsImport = !fm.fileExists(atPath: writableURL.path)
+        let fileExisted = fm.fileExists(atPath: writableURL.path)
 
         try db.open(path: writableURL.path)
+
+        // Determine if import is needed: either fresh install or a previous
+        // failed import left the DB file with zero words.
+        var needsImport = !fileExisted
+        if fileExisted {
+            let checkStmt = try db.prepare("SELECT COUNT(*) FROM words;")
+            defer { checkStmt?.finalize() }
+            if sqlite3_step(checkStmt) == SQLITE_ROW {
+                let wordCount = SQLiteDB.columnInt(checkStmt, 0)
+                if wordCount == 0 {
+                    needsImport = true
+                }
+            } else {
+                // Table may not exist yet (corrupted state) — re-import
+                needsImport = true
+            }
+        }
 
         if needsImport {
             // Fresh install: create schema, import bundled content, seed user defaults

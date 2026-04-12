@@ -69,7 +69,10 @@ struct SessionFlowView: View {
                             Task { await vm.recordAnswer(correct: correct, wordId: wordId, activityType: .imageGame, durationMs: 0) }
                         },
                         onComplete: { vm.advanceToNextStep() },
-                        onPause: { _, _, _, _ in dismiss() }
+                        onPause: { stepIdx, itemIdx, saIds, rqIds in
+                            Task { await vm.pause(stepIndex: stepIdx, itemIndex: itemIdx, showAgainIds: saIds, requeuedIds: rqIds) }
+                            dismiss()
+                        }
                     )
                 case .quickRecall:
                     QuickRecallStepView(
@@ -80,7 +83,10 @@ struct SessionFlowView: View {
                             Task { await vm.recordAnswer(correct: correct, wordId: wordId, activityType: .quickRecall, durationMs: 0) }
                         },
                         onComplete: { vm.advanceToNextStep() },
-                        onPause: { _, _, _, _ in dismiss() }
+                        onPause: { stepIdx, itemIdx, saIds, rqIds in
+                            Task { await vm.pause(stepIndex: stepIdx, itemIndex: itemIdx, showAgainIds: saIds, requeuedIds: rqIds) }
+                            dismiss()
+                        }
                     )
                 case .satQuestion:
                     SATQuestionStepView(
@@ -91,7 +97,10 @@ struct SessionFlowView: View {
                             Task { await vm.recordAnswer(correct: correct, wordId: wordId, activityType: .satQuestion, durationMs: 0) }
                         },
                         onComplete: { vm.advanceToNextStep() },
-                        onPause: { _, _, _, _ in dismiss() }
+                        onPause: { stepIdx, itemIdx, saIds, rqIds in
+                            Task { await vm.pause(stepIndex: stepIdx, itemIndex: itemIdx, showAgainIds: saIds, requeuedIds: rqIds) }
+                            dismiss()
+                        }
                     )
                 }
             }

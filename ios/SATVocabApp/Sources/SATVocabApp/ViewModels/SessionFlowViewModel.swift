@@ -94,7 +94,19 @@ final class SessionFlowViewModel: ObservableObject {
         let statsStore = StatsStore.shared
         let zoneIdx = studyDay / 4  // approximate zone
         _ = try await sessionStore.getOrCreateDayState(userId: userId, studyDay: studyDay, zoneIndex: zoneIdx)
-        _ = try await sessionStore.createSession(userId: userId, sessionType: sessionType, studyDay: studyDay)
+
+        // Check for an existing paused session before creating a new one
+        if let existingSession = try await sessionStore.getActiveSession(userId: userId),
+           existingSession.sessionType == sessionType,
+           existingSession.studyDay == studyDay {
+            // Resume: restore saved step/item index instead of resetting
+            currentStepIndex = existingSession.stepIndex
+            showAgainWordIds = existingSession.showAgainIds
+            try await sessionStore.resumeSession(userId: userId, studyDay: studyDay, sessionType: sessionType)
+        } else {
+            _ = try await sessionStore.createSession(userId: userId, sessionType: sessionType, studyDay: studyDay)
+        }
+
         _ = try await statsStore.getOrCreateDailyStats(userId: userId, studyDay: studyDay)
 
         let list = try await dm.getDefaultList()

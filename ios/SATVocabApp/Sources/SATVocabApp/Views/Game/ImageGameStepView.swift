@@ -54,6 +54,11 @@ struct ImageGameStepView: View {
                 .id(currentRound)
             }
         }
+        .onAppear {
+            if words.isEmpty {
+                onComplete()
+            }
+        }
         .task { await loadRounds() }
         .sheet(isPresented: $showPause) {
             PauseSheet(
