@@ -3,19 +3,17 @@ import SwiftUI
 struct RootTabView: View {
     enum Tab: Hashable {
         case map
-        case tasks
-        case games
+        case practice
         case stats
         case profile
     }
 
-    @State private var selected: Tab = .map
-    @State private var selectedDayIndex: Int = AdventureSchedule.dayIndexForToday()
+    @State private var selected: Tab = .practice
 
     var body: some View {
         TabView(selection: $selected) {
             NavigationStack {
-                AdventureMapView(selectedDayIndex: $selectedDayIndex)
+                AdventureMapView()
             }
             .tabItem {
                 Label("Map", systemImage: "map")
@@ -23,20 +21,12 @@ struct RootTabView: View {
             .tag(Tab.map)
 
             NavigationStack {
-                DayTasksView(dayIndex: selectedDayIndex)
+                PracticeTabView()
             }
             .tabItem {
-                Label("Tasks", systemImage: "checklist")
+                Label("Practice", systemImage: "pencil.and.list.clipboard")
             }
-            .tag(Tab.tasks)
-
-            NavigationStack {
-                GamesHubView(dayIndex: selectedDayIndex)
-            }
-            .tabItem {
-                Label("Games", systemImage: "gamecontroller")
-            }
-            .tag(Tab.games)
+            .tag(Tab.practice)
 
             NavigationStack {
                 StatsView()
@@ -54,6 +44,27 @@ struct RootTabView: View {
             }
             .tag(Tab.profile)
         }
+        .tint(Color(hex: "#58CC02"))
+    }
+}
+
+// MARK: - Color hex extension
+
+extension Color {
+    init(hex: String) {
+        let hex = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
+        var int: UInt64 = 0
+        Scanner(string: hex).scanHexInt64(&int)
+        let r, g, b: Double
+        switch hex.count {
+        case 6:
+            r = Double((int >> 16) & 0xFF) / 255.0
+            g = Double((int >> 8) & 0xFF) / 255.0
+            b = Double(int & 0xFF) / 255.0
+        default:
+            r = 1; g = 1; b = 1
+        }
+        self.init(red: r, green: g, blue: b)
     }
 }
 
