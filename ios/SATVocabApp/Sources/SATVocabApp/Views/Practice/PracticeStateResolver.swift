@@ -42,16 +42,20 @@ struct PracticeStateResolver {
         return .morningAvailable
     }
 
-    static func calculateEveningUnlock(morningCompleteAt: Date?) -> Date {
+    static func calculateEveningUnlock(morningCompleteAt: Date?, now: Date = Date()) -> Date {
         guard let morningDone = morningCompleteAt else {
-            // Fallback to 5 PM today
-            return Calendar.current.date(bySettingHour: AppConfig.eveningUnlockFallbackHour,
-                                         minute: 0, second: 0, of: Date()) ?? Date()
+            // morningCompleteAt is nil — this can happen if the timestamp was not persisted
+            // or failed to parse. Fall back to current time + unlock hours so the evening
+            // session does not unlock immediately.
+            let hoursFromNow = now.addingTimeInterval(TimeInterval(AppConfig.eveningUnlockHours * 3600))
+            let fallback = Calendar.current.date(bySettingHour: AppConfig.eveningUnlockFallbackHour,
+                                                 minute: 0, second: 0, of: now) ?? now
+            return min(hoursFromNow, fallback)
         }
 
         let hoursLater = morningDone.addingTimeInterval(TimeInterval(AppConfig.eveningUnlockHours * 3600))
         let fallback = Calendar.current.date(bySettingHour: AppConfig.eveningUnlockFallbackHour,
-                                             minute: 0, second: 0, of: Date()) ?? Date()
+                                             minute: 0, second: 0, of: now) ?? now
 
         return min(hoursLater, fallback)
     }
