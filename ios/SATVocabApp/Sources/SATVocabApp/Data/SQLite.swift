@@ -117,4 +117,20 @@ extension SQLiteDB {
     static func columnInt64(_ stmt: OpaquePointer?, _ idx: Int32) -> Int64 {
         sqlite3_column_int64(stmt, idx)
     }
+
+    static func columnDouble(_ stmt: OpaquePointer?, _ idx: Int32) -> Double {
+        sqlite3_column_double(stmt, idx)
+    }
+
+    static func bind(_ stmt: OpaquePointer?, _ index: Int32, _ value: Double?) throws {
+        let rc: Int32
+        if let v = value {
+            rc = sqlite3_bind_double(stmt, index, v)
+        } else {
+            rc = sqlite3_bind_null(stmt, index)
+        }
+        if rc != SQLITE_OK {
+            throw SQLiteError.bindFailed(message: "bind double/null failed")
+        }
+    }
 }
