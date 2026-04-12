@@ -1,125 +1,222 @@
 import SwiftUI
 
 struct StatsView: View {
-    @StateObject private var vm = DashboardViewModel()
+    @State private var streak: StreakInfo = StreakInfo(
+        currentStreak: 0, bestStreak: 0, lastStudyDate: nil,
+        totalXP: 0, totalStudyDays: 0,
+        streak3Claimed: false, streak7Claimed: false,
+        streak14Claimed: false, streak30Claimed: false
+    )
+    @State private var boxDistribution: [Int: Int] = [:]
+    @State private var stubbornWords: [(lemma: String, pos: String?, lapseCount: Int, boxLevel: Int)] = []
+
+    private let userId = LocalIdentity.userId()
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 12) {
-                Text("Words Finished")
-                    .font(.system(.title2, design: .rounded).weight(.bold))
-
+            VStack(alignment: .leading, spacing: 16) {
+                // Hero tiles
                 HStack(spacing: 12) {
-                    StatTile(title: "Streak", value: "\(vm.stats.streakDays)")
-                    StatTile(title: "XP", value: "\(vm.stats.xp)")
+                    StatsHeroTile(title: "Streak", value: "\(streak.currentStreak)", icon: "flame.fill", color: .orange)
+                    StatsHeroTile(title: "XP", value: "\(streak.totalXP)", icon: "star.fill", color: .yellow)
+                    StatsHeroTile(title: "Words", value: "\(totalWordsLearned)", icon: "textformat.abc", color: Color(hex: "#58CC02"))
                 }
 
-                SectionCard(title: "Performance Curve") {
-                    RoundedRectangle(cornerRadius: 14, style: .continuous)
-                        .fill(Color.black.opacity(0.06))
-                        .frame(height: 160)
-                        .overlay(
-                            Text("Performance Curve")
-                                .font(.system(.headline, design: .rounded).weight(.semibold))
-                                .foregroundStyle(.secondary)
-                        )
+                // Box distribution
+                VStack(alignment: .leading, spacing: 12) {
+                    Text("Word Strength")
+                        .font(.system(.headline, design: .rounded).weight(.bold))
+
+                    BoxDistributionBar(distribution: boxDistribution)
+                }
+                .padding(16)
+                .background(.white)
+                .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 18, style: .continuous)
+                        .strokeBorder(Color.black.opacity(0.06), lineWidth: 1)
+                )
+
+                // Words Fighting Back
+                if !stubbornWords.isEmpty {
+                    VStack(alignment: .leading, spacing: 12) {
+                        Text("Words Fighting Back")
+                            .font(.system(.headline, design: .rounded).weight(.bold))
+
+                        Text("These words need extra attention")
+                            .font(.system(.subheadline, design: .rounded))
+                            .foregroundStyle(.secondary)
+
+                        ForEach(Array(stubbornWords.enumerated()), id: \.offset) { _, word in
+                            HStack(spacing: 10) {
+                                Text(word.lemma)
+                                    .font(.system(.body, design: .rounded).weight(.semibold))
+
+                                if let pos = word.pos {
+                                    Text(pos)
+                                        .font(.system(.caption, design: .rounded))
+                                        .foregroundStyle(.secondary)
+                                        .padding(.horizontal, 6)
+                                        .padding(.vertical, 2)
+                                        .background(Color.gray.opacity(0.1))
+                                        .clipShape(Capsule())
+                                }
+
+                                Spacer()
+
+                                Text("Box \(word.boxLevel)")
+                                    .font(.system(.caption, design: .rounded).weight(.semibold))
+                                    .foregroundStyle(.orange)
+
+                                Text("\(word.lapseCount)x")
+                                    .font(.system(.caption, design: .rounded).weight(.bold))
+                                    .foregroundStyle(.red)
+                            }
+                            .padding(.vertical, 4)
+
+                            if word.lemma != stubbornWords.last?.lemma {
+                                Divider().opacity(0.3)
+                            }
+                        }
+                    }
+                    .padding(16)
+                    .background(.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 18, style: .continuous)
+                            .strokeBorder(Color.black.opacity(0.06), lineWidth: 1)
+                    )
                 }
 
-                SectionCard(title: "Games") {
-                    ActionRow(title: "Word Match", subtitle: nil, systemImage: "rectangle.grid.2x2")
+                // Best streak
+                HStack {
+                    Text("Best Streak")
+                        .font(.system(.subheadline, design: .rounded).weight(.semibold))
+                        .foregroundStyle(.secondary)
+                    Spacer()
+                    Text("\(streak.bestStreak) days")
+                        .font(.system(.subheadline, design: .rounded).weight(.bold))
                 }
-
-                SectionCard(title: "Time") {
-                    ActionRow(title: "Avg. Completion Time", subtitle: "15 mins", systemImage: "clock")
-                }
-
-                SectionCard(title: "Word Lists") {
-                    ActionRow(title: "Download Word List", subtitle: nil, systemImage: "arrow.down.circle")
-                    Divider().opacity(0.25)
-                    ActionRow(title: "Switch Word List", subtitle: nil, systemImage: "arrow.triangle.2.circlepath")
-                }
+                .padding(16)
+                .background(.white)
+                .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 18, style: .continuous)
+                        .strokeBorder(Color.black.opacity(0.06), lineWidth: 1)
+                )
             }
             .padding(16)
         }
         .navigationTitle("Stats")
         .navigationBarTitleDisplayMode(.inline)
-        .onAppear { vm.load() }
+        .task {
+            await loadStats()
+        }
+    }
+
+    private var totalWordsLearned: Int {
+        boxDistribution.filter { $0.key >= 1 }.values.reduce(0, +)
+    }
+
+    private func loadStats() async {
+        do {
+            let dm = DataManager.shared
+            try await dm.initializeIfNeeded()
+
+            let statsStore = StatsStore.shared
+            streak = try await statsStore.getStreak(userId: userId)
+
+            let wsStore = WordStateStore(db: dm.db)
+            boxDistribution = try await wsStore.getBoxDistribution(userId: userId)
+            stubbornWords = try await wsStore.getStubbornWords(userId: userId, limit: 10)
+        } catch {
+            // ignore
+        }
     }
 }
 
-private struct StatTile: View {
+// MARK: - Hero Tile
+
+private struct StatsHeroTile: View {
     let title: String
     let value: String
+    let icon: String
+    let color: Color
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            Text(title)
-                .font(.system(.subheadline, design: .rounded).weight(.semibold))
-                .foregroundStyle(.secondary)
+        VStack(spacing: 8) {
+            Image(systemName: icon)
+                .font(.system(size: 22, weight: .semibold))
+                .foregroundStyle(color)
 
             Text(value)
-                .font(.system(.title, design: .rounded).weight(.bold))
-        }
-        .padding(16)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(.white)
-        .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
-        .overlay(
-            RoundedRectangle(cornerRadius: 18, style: .continuous)
-                .strokeBorder(Color.black.opacity(0.06), lineWidth: 1)
-        )
-    }
-}
+                .font(.system(.title2, design: .rounded).weight(.bold))
 
-private struct SectionCard<Content: View>: View {
-    let title: String
-    @ViewBuilder var content: Content
-
-    var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
             Text(title)
-                .font(.system(.headline, design: .rounded).weight(.bold))
-
-            content
-        }
-        .padding(16)
-        .background(.white)
-        .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
-        .overlay(
-            RoundedRectangle(cornerRadius: 18, style: .continuous)
-                .strokeBorder(Color.black.opacity(0.06), lineWidth: 1)
-        )
-    }
-}
-
-private struct ActionRow: View {
-    let title: String
-    let subtitle: String?
-    let systemImage: String
-
-    var body: some View {
-        HStack(spacing: 12) {
-            Image(systemName: systemImage)
-                .font(.system(size: 18, weight: .semibold))
-                .frame(width: 28)
-                .foregroundStyle(.primary)
-
-            VStack(alignment: .leading, spacing: 2) {
-                Text(title)
-                    .font(.system(.subheadline, design: .rounded).weight(.semibold))
-                if let subtitle {
-                    Text(subtitle)
-                        .font(.system(.subheadline, design: .rounded))
-                        .foregroundStyle(.secondary)
-                }
-            }
-
-            Spacer(minLength: 0)
-
-            Image(systemName: "chevron.right")
-                .font(.system(size: 14, weight: .semibold))
+                .font(.system(.caption, design: .rounded).weight(.semibold))
                 .foregroundStyle(.secondary)
         }
-        .contentShape(Rectangle())
+        .frame(maxWidth: .infinity)
+        .padding(.vertical, 16)
+        .background(.white)
+        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+        .overlay(
+            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                .strokeBorder(Color.black.opacity(0.06), lineWidth: 1)
+        )
+    }
+}
+
+// MARK: - Box Distribution Bar
+
+private struct BoxDistributionBar: View {
+    let distribution: [Int: Int]
+
+    private var total: Int {
+        distribution.values.reduce(0, +)
+    }
+
+    var body: some View {
+        if total > 0 {
+            VStack(spacing: 8) {
+                // Stacked bar
+                GeometryReader { geo in
+                    HStack(spacing: 1) {
+                        ForEach(0...5, id: \.self) { box in
+                            let count = distribution[box] ?? 0
+                            let width = geo.size.width * CGFloat(count) / CGFloat(max(1, total))
+                            if count > 0 {
+                                RoundedRectangle(cornerRadius: 3, style: .continuous)
+                                    .fill(Color(hex: WordStrength(rawValue: box)?.colorHex ?? "#E8ECF0"))
+                                    .frame(width: max(4, width))
+                            }
+                        }
+                    }
+                }
+                .frame(height: 20)
+                .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
+
+                // Legend
+                HStack(spacing: 8) {
+                    ForEach(1...5, id: \.self) { box in
+                        let strength = WordStrength(rawValue: box)
+                        let count = distribution[box] ?? 0
+                        HStack(spacing: 4) {
+                            Circle()
+                                .fill(Color(hex: strength?.colorHex ?? "#E8ECF0"))
+                                .frame(width: 8, height: 8)
+                            Text("\(count)")
+                                .font(.system(.caption2, design: .rounded).weight(.semibold))
+                        }
+                    }
+                }
+            }
+        } else {
+            Text("No words studied yet")
+                .font(.system(.subheadline, design: .rounded))
+                .foregroundStyle(.secondary)
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 12)
+        }
     }
 }
