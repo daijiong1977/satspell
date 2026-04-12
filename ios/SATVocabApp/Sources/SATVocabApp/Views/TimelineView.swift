@@ -148,9 +148,4 @@ private struct TaskCard: View {
     }
 }
 
-private extension Array {
-    subscript(safe index: Int) -> Element? {
-        guard indices.contains(index) else { return nil }
-        return self[index]
-    }
-}
+// Array subscript(safe:) moved to SessionFlowView.swift (internal visibility)
