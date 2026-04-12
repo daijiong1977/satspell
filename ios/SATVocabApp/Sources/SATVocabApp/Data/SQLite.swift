@@ -26,6 +26,10 @@ final class SQLiteDB {
         if sqlite3_open(path, &db) != SQLITE_OK {
             throw SQLiteError.openFailed(message: String(cString: sqlite3_errmsg(db)))
         }
+        // WAL mode enables concurrent reads and serializes writes without SQLITE_BUSY
+        _ = sqlite3_exec(db, "PRAGMA journal_mode = WAL;", nil, nil, nil)
+        // Busy timeout: wait up to 5 seconds for locks instead of failing immediately
+        sqlite3_busy_timeout(db, 5000)
         _ = sqlite3_exec(db, "PRAGMA foreign_keys = ON;", nil, nil, nil)
     }
 

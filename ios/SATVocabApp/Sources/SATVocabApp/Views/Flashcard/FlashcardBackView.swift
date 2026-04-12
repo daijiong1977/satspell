@@ -12,15 +12,7 @@ struct FlashcardBackView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            // Header
-            HStack {
-                Spacer()
-                Text("\(cardIndex + 1) / \(totalCards)")
-                    .font(.system(size: 11, weight: .bold, design: .rounded))
-                    .foregroundColor(Color(hex: "#AFAFAF"))
-                Spacer()
-            }
-            .padding(.vertical, 8)
+            // Header removed — SessionHeaderView handles this
 
             ScrollView {
                 VStack(alignment: .leading, spacing: 16) {

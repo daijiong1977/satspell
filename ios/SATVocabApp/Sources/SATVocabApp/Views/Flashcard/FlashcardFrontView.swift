@@ -80,22 +80,7 @@ struct FlashcardFrontView: View {
                         .padding(.bottom, 12)
                 }
 
-                // Top header overlay
-                VStack {
-                    HStack {
-                        Spacer()
-                        Text("\(cardIndex + 1) / \(totalCards)")
-                            .font(.system(size: 11, weight: .bold, design: .rounded))
-                            .foregroundColor(.white)
-                            .padding(.horizontal, 10)
-                            .padding(.vertical, 4)
-                            .background(Color.black.opacity(0.35))
-                            .clipShape(Capsule())
-                        Spacer()
-                    }
-                    .padding(.top, 8)
-                    Spacer()
-                }
+                // Top header removed — SessionHeaderView handles this
             }
         }
     }
