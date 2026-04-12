@@ -19,16 +19,21 @@ enum SQLiteError: Error, CustomStringConvertible {
     }
 }
 
-final class SQLiteDB {
+final class SQLiteDB: @unchecked Sendable {
     private var db: OpaquePointer?
+    private let lock = NSLock()
 
     func open(path: String) throws {
-        if sqlite3_open(path, &db) != SQLITE_OK {
+        // Use FULLMUTEX (serialized mode) so multiple actors/threads can safely
+        // share this connection. Without this, concurrent access from different
+        // actor executors triggers "illegal multi-threaded access" crashes.
+        let flags = SQLITE_OPEN_READWRITE | SQLITE_OPEN_CREATE | SQLITE_OPEN_FULLMUTEX
+        if sqlite3_open_v2(path, &db, flags, nil) != SQLITE_OK {
             throw SQLiteError.openFailed(message: String(cString: sqlite3_errmsg(db)))
         }
-        // WAL mode enables concurrent reads and serializes writes without SQLITE_BUSY
+        // WAL mode allows concurrent reads and serializes writes without SQLITE_BUSY
         _ = sqlite3_exec(db, "PRAGMA journal_mode = WAL;", nil, nil, nil)
-        // Busy timeout: wait up to 5 seconds for locks instead of failing immediately
+        // Busy timeout: wait up to 5 s for locks instead of failing immediately
         sqlite3_busy_timeout(db, 5000)
         _ = sqlite3_exec(db, "PRAGMA foreign_keys = ON;", nil, nil, nil)
     }
@@ -40,7 +45,15 @@ final class SQLiteDB {
         db = nil
     }
 
+    func withLock<T>(_ body: () throws -> T) rethrows -> T {
+        lock.lock()
+        defer { lock.unlock() }
+        return try body()
+    }
+
     func prepare(_ sql: String) throws -> OpaquePointer? {
+        lock.lock()
+        defer { lock.unlock() }
         var stmt: OpaquePointer?
         if sqlite3_prepare_v2(db, sql, -1, &stmt, nil) != SQLITE_OK {
             throw SQLiteError.prepareFailed(message: String(cString: sqlite3_errmsg(db)))
@@ -49,6 +62,8 @@ final class SQLiteDB {
     }
 
     func exec(_ sql: String) throws {
+        lock.lock()
+        defer { lock.unlock() }
         var errMsg: UnsafeMutablePointer<Int8>?
         if sqlite3_exec(db, sql, nil, nil, &errMsg) != SQLITE_OK {
             let msg = errMsg.map { String(cString: $0) } ?? "unknown"
