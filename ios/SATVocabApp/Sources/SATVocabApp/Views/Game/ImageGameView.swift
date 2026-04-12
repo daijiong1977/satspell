@@ -63,7 +63,7 @@ struct ImageGameView: View {
 
             // Cloze sentence
             Text(clozeSentence)
-                .font(.system(size: 16, weight: .medium))
+                .font(.system(size: 20, weight: .medium))
                 .foregroundColor(Color(hex: "#4B4B4B"))
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 16)
