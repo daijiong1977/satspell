@@ -19,6 +19,10 @@ targets:
       - path: Resources/Images
         type: folder
         buildPhase: resources
+      - path: ../../word_list.json
+        buildPhase: resources
+      - path: ../../sat_reading_questions_deduplicated.json
+        buildPhase: resources
     dependencies:
       - sdk: libsqlite3.tbd
     settings:
@@ -26,3 +30,6 @@ targets:
         SWIFT_VERSION: "5.0"
         TARGETED_DEVICE_FAMILY: "1"
         INFOPLIST_FILE: Resources/Info.plist
+        CODE_SIGN_IDENTITY: ""
+        CODE_SIGNING_REQUIRED: "NO"
+        CODE_SIGNING_ALLOWED: "NO"

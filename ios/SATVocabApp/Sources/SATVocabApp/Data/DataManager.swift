@@ -4,7 +4,7 @@ import SQLite3
 actor DataManager {
     static let shared = DataManager()
 
-    private let db = SQLiteDB()
+    let db = SQLiteDB()
     private var isInitialized = false
 
     private init() {}
@@ -18,18 +18,40 @@ actor DataManager {
 
         let fm = FileManager.default
         let writableURL = try DatabasePaths.writableDatabaseURL()
-
-        if !fm.fileExists(atPath: writableURL.path) {
-            guard let bundledURL = Bundle.main.url(forResource: AppConfig.bundledDatabaseName, withExtension: AppConfig.bundledDatabaseExtension) else {
-                throw NSError(domain: "SATVocabApp", code: 1, userInfo: [NSLocalizedDescriptionKey: "Missing bundled data.db. Add data.db to Copy Bundle Resources."])
-            }
-            try fm.copyItem(at: bundledURL, to: writableURL)
-        }
+        let needsImport = !fm.fileExists(atPath: writableURL.path)
 
         try db.open(path: writableURL.path)
 
-        let userId = LocalIdentity.userId()
-        try ensureUserExists(userId: userId)
+        if needsImport {
+            // Fresh install: create schema, import bundled content, seed user defaults
+            try SchemaV2.createAll(db: db)
+            try ContentImporter.importBundledContent(db: db)
+
+            let userId = LocalIdentity.userId()
+            try ensureUserExists(userId: userId)
+
+            // Seed streak_store row
+            let streakSQL = "INSERT OR IGNORE INTO streak_store(user_id) VALUES (?)"
+            let s1 = try db.prepare(streakSQL)
+            defer { s1?.finalize() }
+            try SQLiteDB.bind(s1, 1, userId)
+            if sqlite3_step(s1) != SQLITE_DONE {
+                throw SQLiteError.stepFailed(message: db.errorMessage())
+            }
+
+            // Seed zone_state row for zone 0 (unlocked by default)
+            let zoneSQL = "INSERT OR IGNORE INTO zone_state(user_id, zone_index, unlocked, unlocked_at) VALUES (?, 0, 1, datetime('now'))"
+            let s2 = try db.prepare(zoneSQL)
+            defer { s2?.finalize() }
+            try SQLiteDB.bind(s2, 1, userId)
+            if sqlite3_step(s2) != SQLITE_DONE {
+                throw SQLiteError.stepFailed(message: db.errorMessage())
+            }
+        } else {
+            // Existing DB: just ensure user row exists
+            let userId = LocalIdentity.userId()
+            try ensureUserExists(userId: userId)
+        }
 
         isInitialized = true
     }
