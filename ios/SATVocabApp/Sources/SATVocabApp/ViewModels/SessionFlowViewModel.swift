@@ -197,7 +197,7 @@ final class SessionFlowViewModel: ObservableObject {
                 try await statsStore.recordWrongAnswer(userId: userId, studyDay: studyDay)
             }
         } catch {
-            // Non-fatal for v1
+            print("❌ recordAnswer ERROR: \(error)")
         }
     }
 
@@ -241,7 +241,7 @@ final class SessionFlowViewModel: ObservableObject {
                 let (_, milestoneXP) = try await statsStore.updateStreak(userId: userId, xpToday: xpEarned)
                 xpEarned += milestoneXP
             } catch {
-                // Non-fatal
+                print("❌ completeSession ERROR: \(error)")
             }
         }
     }
@@ -255,6 +255,6 @@ final class SessionFlowViewModel: ObservableObject {
             try await store.pauseSession(userId: userId, studyDay: studyDay, sessionType: sessionType,
                                         stepIndex: stepIndex, itemIndex: itemIndex,
                                         showAgainIds: showAgainIds, requeuedIds: requeuedIds)
-        } catch {}
+        } catch { print("❌ pause ERROR: \(error)") }
     }
 }
