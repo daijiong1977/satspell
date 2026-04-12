@@ -26,7 +26,7 @@ struct StepTransitionView: View {
                         .overlay(
                             step <= stepNumber
                                 ? Image(systemName: "checkmark")
-                                    .font(.system(size: 7, weight: .bold))
+                                    .font(.system(size: 11, weight: .bold))
                                     .foregroundColor(.white)
                                 : nil
                         )
@@ -36,7 +36,7 @@ struct StepTransitionView: View {
             // Next step card
             VStack(spacing: 8) {
                 Text("UP NEXT")
-                    .font(.system(size: 8, weight: .bold, design: .rounded))
+                    .font(.system(size: 11, weight: .bold, design: .rounded))
                     .foregroundColor(Color(hex: "#AFAFAF"))
                     .tracking(0.5)
 

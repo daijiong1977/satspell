@@ -22,7 +22,7 @@ struct QuickRecallView: View {
             // Word display
             VStack(spacing: 6) {
                 Text("WHAT DOES THIS MEAN?")
-                    .font(.system(size: 9, weight: .semibold, design: .rounded))
+                    .font(.system(size: 11, weight: .semibold, design: .rounded))
                     .foregroundColor(Color(hex: "#AFAFAF"))
                     .tracking(0.5)
 

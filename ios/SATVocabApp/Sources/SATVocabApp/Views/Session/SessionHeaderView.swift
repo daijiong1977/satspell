@@ -23,7 +23,7 @@ struct SessionHeaderView: View {
 
                 VStack(spacing: 2) {
                     Text("STEP \(stepNumber) OF \(totalSteps)")
-                        .font(.system(size: 9, weight: .semibold, design: .rounded))
+                        .font(.system(size: 11, weight: .semibold, design: .rounded))
                         .foregroundColor(isScored ? progressColor : Color(hex: "#AFAFAF"))
                         .tracking(0.5)
 

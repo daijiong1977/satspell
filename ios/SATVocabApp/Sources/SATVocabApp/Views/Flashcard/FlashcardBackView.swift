@@ -16,7 +16,7 @@ struct FlashcardBackView: View {
             HStack {
                 Spacer()
                 Text("\(cardIndex + 1) / \(totalCards)")
-                    .font(.system(size: 9, weight: .bold, design: .rounded))
+                    .font(.system(size: 11, weight: .bold, design: .rounded))
                     .foregroundColor(Color(hex: "#AFAFAF"))
                 Spacer()
             }
@@ -127,7 +127,7 @@ struct FlashcardBackView: View {
             // Bottom buttons
             VStack(spacing: 6) {
                 Text("tap to flip back \u{00B7} swipe \u{2192}")
-                    .font(.system(size: 7, weight: .medium))
+                    .font(.system(size: 11, weight: .medium))
                     .foregroundColor(Color(hex: "#AFAFAF"))
 
                 HStack(spacing: 10) {
@@ -160,7 +160,8 @@ struct FlashcardBackView: View {
     }
 
     private func highlightedExample(_ text: String, word: String) -> AttributedString {
-        var attr = AttributedString(text)
+        let cleanText = text.replacingOccurrences(of: "**", with: "")
+        var attr = AttributedString(cleanText)
         if let range = attr.range(of: word, options: .caseInsensitive) {
             attr[range].font = .system(size: 20, weight: .bold)
             attr[range].foregroundColor = Color(hex: "#FFC800")

@@ -50,12 +50,12 @@ struct SATQuestionView: View {
                 VStack(alignment: .leading, spacing: 8) {
                     HStack {
                         Text("PASSAGE")
-                            .font(.system(size: 7, weight: .bold, design: .rounded))
+                            .font(.system(size: 11, weight: .bold, design: .rounded))
                             .foregroundColor(Color(hex: "#AFAFAF"))
                             .tracking(0.5)
                         Spacer()
                         Text("scroll \u{2195}")
-                            .font(.system(size: 7, weight: .medium))
+                            .font(.system(size: 11, weight: .medium))
                             .foregroundColor(Color(hex: "#AFAFAF"))
                     }
 
@@ -81,7 +81,7 @@ struct SATQuestionView: View {
             HStack {
                 Rectangle().fill(Color(hex: "#E5E5E5")).frame(height: 1)
                 Text("QUESTION")
-                    .font(.system(size: 7, weight: .bold, design: .rounded))
+                    .font(.system(size: 11, weight: .bold, design: .rounded))
                     .foregroundColor(Color(hex: "#AFAFAF"))
                     .tracking(0.5)
                 Rectangle().fill(Color(hex: "#E5E5E5")).frame(height: 1)
@@ -227,7 +227,7 @@ struct SATFeedbackSheet: View {
             if !targetWord.isEmpty {
                 VStack(alignment: .leading, spacing: 2) {
                     Text("WORD")
-                        .font(.system(size: 7, weight: .bold))
+                        .font(.system(size: 11, weight: .bold))
                         .foregroundColor(Color(hex: "#AFAFAF"))
                     Text(targetWord)
                         .font(.system(size: 14, weight: .semibold))
@@ -238,7 +238,7 @@ struct SATFeedbackSheet: View {
             if !correctAnswer.isEmpty {
                 VStack(alignment: .leading, spacing: 2) {
                     Text("MEANING")
-                        .font(.system(size: 7, weight: .bold))
+                        .font(.system(size: 11, weight: .bold))
                         .foregroundColor(Color(hex: "#AFAFAF"))
                     Text(correctAnswer)
                         .font(.system(size: 12, weight: .medium))
@@ -249,7 +249,7 @@ struct SATFeedbackSheet: View {
             if !explanation.isEmpty {
                 VStack(alignment: .leading, spacing: 2) {
                     Text("WHY")
-                        .font(.system(size: 7, weight: .bold))
+                        .font(.system(size: 11, weight: .bold))
                         .foregroundColor(Color(hex: "#AFAFAF"))
                     Text(explanation)
                         .font(.system(size: 11, weight: .regular))

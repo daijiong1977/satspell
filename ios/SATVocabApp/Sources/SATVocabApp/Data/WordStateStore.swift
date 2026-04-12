@@ -173,18 +173,21 @@ actor WordStateStore {
         let oldBox = ws.boxLevel
 
         // Update box level
+        // Box 0 words are NOT promoted here — they wait for Day 1 promotion (runDay1Promotion)
         if correct {
-            ws.boxLevel = min(ws.boxLevel + 1, 5)
+            if ws.boxLevel > 0 {
+                ws.boxLevel = min(ws.boxLevel + 1, 5)
+            }
+            // Box 0 stays at 0 — only Day 1 promotion moves 0→1 or 0→2
             ws.consecutiveWrong = 0
             ws.totalCorrect += 1
         } else {
-            if ws.boxLevel > 0 {
+            if ws.boxLevel > 1 {
                 ws.boxLevel = 1
-            }
-            ws.consecutiveWrong += 1
-            if oldBox > ws.boxLevel {
                 ws.lapseCount += 1
             }
+            // Box 0 and Box 1 stay where they are on wrong answer
+            ws.consecutiveWrong += 1
         }
 
         ws.totalSeen += 1
@@ -277,7 +280,7 @@ actor WordStateStore {
                 SUM(CASE WHEN outcome = 'correct' THEN 1 ELSE 0 END) AS correct_count,
                 COUNT(*) AS total_count
             FROM review_log
-            WHERE user_id = ? AND word_id = ?
+            WHERE user_id = ? AND word_id = ? AND study_day = ?
               AND activity_type IN ('image_game', 'quick_recall')
               AND superseded = 0;
             """
@@ -285,6 +288,7 @@ actor WordStateStore {
             defer { countStmt?.finalize() }
             try SQLiteDB.bind(countStmt, 1, userId)
             try SQLiteDB.bind(countStmt, 2, wordId)
+            try SQLiteDB.bind(countStmt, 3, studyDay)
 
             var correctCount = 0
             var totalCount = 0
@@ -293,10 +297,10 @@ actor WordStateStore {
                 totalCount = SQLiteDB.columnInt(countStmt, 1)
             }
 
-            // Check if last recall was correct
+            // Check if last recall was correct (same study day)
             let lastSQL = """
             SELECT outcome FROM review_log
-            WHERE user_id = ? AND word_id = ?
+            WHERE user_id = ? AND word_id = ? AND study_day = ?
               AND activity_type IN ('image_game', 'quick_recall')
               AND superseded = 0
             ORDER BY reviewed_at DESC, id DESC
@@ -306,6 +310,7 @@ actor WordStateStore {
             defer { lastStmt?.finalize() }
             try SQLiteDB.bind(lastStmt, 1, userId)
             try SQLiteDB.bind(lastStmt, 2, wordId)
+            try SQLiteDB.bind(lastStmt, 3, studyDay)
 
             var lastCorrect = false
             if sqlite3_step(lastStmt) == SQLITE_ROW {

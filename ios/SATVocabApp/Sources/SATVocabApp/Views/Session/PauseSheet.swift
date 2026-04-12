@@ -25,7 +25,7 @@ struct PauseSheet: View {
             // Focus tip
             VStack(spacing: 6) {
                 Text("FOCUS TIP")
-                    .font(.system(size: 8, weight: .bold, design: .rounded))
+                    .font(.system(size: 11, weight: .bold, design: .rounded))
                     .foregroundColor(Color(hex: "#CE82FF"))
                     .tracking(0.5)
                 Text("Short, focused sessions work better than long ones. Even 5 minutes counts!")

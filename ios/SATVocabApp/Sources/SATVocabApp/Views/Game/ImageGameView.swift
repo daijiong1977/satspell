@@ -50,7 +50,7 @@ struct ImageGameView: View {
                     .frame(height: geo.size.height * 0.4)
 
                     Text("CHOOSE THE BEST WORD")
-                        .font(.system(size: 7, weight: .bold, design: .rounded))
+                        .font(.system(size: 11, weight: .bold, design: .rounded))
                         .foregroundColor(.white)
                         .tracking(0.5)
                         .padding(.bottom, 8)

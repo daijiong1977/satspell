@@ -86,7 +86,7 @@ struct SessionCompleteView: View {
                 .font(.system(size: 22, weight: .heavy, design: .rounded))
                 .foregroundColor(Color(hex: color))
             Text(label.uppercased())
-                .font(.system(size: 8, weight: .bold, design: .rounded))
+                .font(.system(size: 11, weight: .bold, design: .rounded))
                 .foregroundColor(Color(hex: "#AFAFAF"))
                 .tracking(0.5)
         }

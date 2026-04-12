@@ -204,6 +204,19 @@ final class WordStateStoreTests: XCTestCase {
         XCTAssertEqual(queue[0].wordId, 2, "Stubborn word should come first within same box")
     }
 
+    func testCorrectAnswerOnDay1WordDoesNotPromoteBoxBeforeEndOfEvening() async throws {
+        try await store.introduceWord(userId: userId, wordId: 1)
+
+        let change = try await store.recordScoredAnswer(userId: userId, wordId: 1, correct: true)
+
+        let ws = try await store.getWordState(userId: userId, wordId: 1)
+        XCTAssertEqual(ws?.boxLevel, 0, "Day 1 scored answers should not move a new word out of box 0 before promotion is decided")
+        XCTAssertNil(ws?.dueAt, "Day 1 scored answers should not set a review date before promotion is decided")
+        if case .none = change {} else {
+            XCTFail("Expected no box change for a Day 1 scored answer, got \(change)")
+        }
+    }
+
     // MARK: - Day 1 Promotion
 
     func testDay1PromotionWithTwoOfThreeCorrectAndCorrectFinal() async throws {
@@ -263,6 +276,27 @@ final class WordStateStoreTests: XCTestCase {
         let result = try await store.runDay1Promotion(userId: userId, studyDay: 0)
 
         XCTAssertEqual(result.promoted, 0, "1/3 correct should not promote")
+    }
+
+    func testDay1PromotionIgnoresPreviousStudyDays() async throws {
+        try await store.introduceWord(userId: userId, wordId: 1)
+
+        try db.exec("""
+        INSERT INTO review_log(user_id, word_id, outcome, duration_ms, reviewed_at, activity_type, session_type, study_day, superseded)
+        VALUES
+            ('\(userId!)', 1, 'correct', 1500, '2026-01-01T08:00:00Z', 'image_game', 'morning', 0, 0),
+            ('\(userId!)', 1, 'incorrect', 1500, '2026-01-01T09:00:00Z', 'quick_recall', 'evening', 0, 0),
+            ('\(userId!)', 1, 'correct', 1500, '2026-01-01T10:00:00Z', 'image_game', 'evening', 0, 0),
+            ('\(userId!)', 1, 'correct', 1500, '2026-01-02T08:00:00Z', 'quick_recall', 'evening', 1, 0);
+        """)
+
+        let result = try await store.runDay1Promotion(userId: userId, studyDay: 1)
+
+        XCTAssertEqual(result.promoted, 0, "Only the current study day should count toward Day 1 promotion")
+        XCTAssertEqual(result.notPromoted, 1)
+
+        let ws = try await store.getWordState(userId: userId, wordId: 1)
+        XCTAssertEqual(ws?.boxLevel, 1, "Historical days should not promote today's word")
     }
 
     // MARK: - Box Distribution

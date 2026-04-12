@@ -97,6 +97,7 @@ struct SessionFlowView: View {
             }
         }
         .toolbar(.hidden, for: .tabBar)
+        .navigationBarBackButtonHidden(true)
         .task {
             do {
                 try await vm.loadWords()
