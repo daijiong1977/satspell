@@ -45,6 +45,7 @@
 		669337EB095422FF430F84CF /* ReportCardGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD505D549521338CD187B1A9 /* ReportCardGenerator.swift */; };
 		673C0D594631E269E5E95C54 /* DayCompleteSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B371A8086D22A61D873599F8 /* DayCompleteSummary.swift */; };
 		694367EBABF3B4994409CE1A /* PracticeHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC405EF85D8303A15D3A653 /* PracticeHeader.swift */; };
+		696A0554A7481462F37EA760 /* SATVocabWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A05E70466D1AA3FF00B11D83 /* SATVocabWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		6FD5E8545ADD54349A588421 /* MorningCompleteCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3740CB52A8F191C9AFC9A6E2 /* MorningCompleteCard.swift */; };
 		71404DFFC552C2CDD5D35C89 /* SessionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FDBA31B005DF72ECF21137 /* SessionHeaderView.swift */; };
 		774727A18B536035BD304AFF /* QuickRecallStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565506DD01B71420A2BD1931 /* QuickRecallStepView.swift */; };
@@ -52,6 +53,7 @@
 		7DA47A0399D87F34D14E2D9F /* DatabasePaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A5E3D20F58164FB12BF894 /* DatabasePaths.swift */; };
 		7E115BE1ABD7FDFF3B56B6F5 /* ZoneStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF657EC43B384E689999535 /* ZoneStore.swift */; };
 		7FC3DB032196D48EC0AA39A6 /* word_list.json in Resources */ = {isa = PBXBuildFile; fileRef = D5BB234149F242AD53B81DB3 /* word_list.json */; };
+		84E5A7282727CE204F922E1E /* SATVocabLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5083A2E006AA975E703846 /* SATVocabLiveActivity.swift */; };
 		85AE410CDB108ECDECA8F6D4 /* StatsStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A01ECECCCFE1D50941F1BE /* StatsStoreTests.swift */; };
 		87BE2291BD1BEE0BF0E49D29 /* FlashcardSessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B59A13EF860BE739C4A3F9 /* FlashcardSessionViewModel.swift */; };
 		87FA5E752DEFE8446F84D8E0 /* QuickRecallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428092AFF5428976ABF15D66 /* QuickRecallView.swift */; };
@@ -62,10 +64,12 @@
 		9AB42A112C66C66DF182E3EF /* SatMCQRoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAC0EFF49F558C88FC19402 /* SatMCQRoundView.swift */; };
 		9EA359488E3151A407EC0934 /* SessionFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1B401CA8A6E05F48D3413E /* SessionFlowView.swift */; };
 		A4908D73F4E64471D26BCF37 /* SATQuestionStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D48E25E72952A27B1B190 /* SATQuestionStepView.swift */; };
+		A63A29181CDBACDC135A6B55 /* LiveActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEC84D00E8321B24FD1D37B /* LiveActivityManager.swift */; };
 		B08C1126157D05B72459F036 /* ZoneReviewSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD22A91CE53E822DBFC52CC /* ZoneReviewSessionView.swift */; };
 		B3E67DF904FDB3A67279F326 /* RecordAnswerIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A7F3193994BE8F945D91CB /* RecordAnswerIntegrationTests.swift */; };
 		BB22020C435B12B08B647148 /* SATVocabAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDC41FD51BC0D3C591F4382 /* SATVocabAppApp.swift */; };
 		BB34A92229F8E404BD47C428 /* MapDayNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6CFFA23B941219705F886A /* MapDayNode.swift */; };
+		BCE39FF6234C6FCB12E8DF08 /* LiveActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEC84D00E8321B24FD1D37B /* LiveActivityManager.swift */; };
 		BECE14EB6C92D0781667475E /* AdventureProgressStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC602756D33CAEFA1D96AEFC /* AdventureProgressStore.swift */; };
 		BF7BDDF5234113657ADFF544 /* SQLite.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8BA9019EFCDDF2787FBC /* SQLite.swift */; };
 		C147C6EA429F469B57B877A2 /* ReviewLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E396C34D21ABBA6C233621A /* ReviewLoggerTests.swift */; };
@@ -92,6 +96,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		B9BE37DFEAB96D2483CB683B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8603F6CCF628357F67373F4F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE2C42A6EBEBC65EF7696901;
+			remoteInfo = SATVocabWidgets;
+		};
 		E7F19D861FFDD3385E1ECE86 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8603F6CCF628357F67373F4F /* Project object */;
@@ -101,12 +112,27 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4C24D0D0B91E636F41CD0B18 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				696A0554A7481462F37EA760 /* SATVocabWidgets.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		00C202744437968B2A99F60D /* SATQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATQuestionView.swift; sourceTree = "<group>"; };
 		01FDBA31B005DF72ECF21137 /* SessionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionHeaderView.swift; sourceTree = "<group>"; };
 		0570CB6916D26C7B9F3364F4 /* TestDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDatabase.swift; sourceTree = "<group>"; };
 		08C5C1818CC0BB300FA6EAC7 /* PracticeTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeTabViewModel.swift; sourceTree = "<group>"; };
 		0E7CA23D872ADC5B092FA289 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		0EEC84D00E8321B24FD1D37B /* LiveActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityManager.swift; sourceTree = "<group>"; };
 		11DBB6C1E9EF7BB4FA57B085 /* EveningCompleteCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EveningCompleteCard.swift; sourceTree = "<group>"; };
 		13A7F3193994BE8F945D91CB /* RecordAnswerIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordAnswerIntegrationTests.swift; sourceTree = "<group>"; };
 		18A01ECECCCFE1D50941F1BE /* StatsStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsStoreTests.swift; sourceTree = "<group>"; };
@@ -122,6 +148,7 @@
 		32A37B8D548FD02F1F0D5F66 /* AdventureSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureSchedule.swift; sourceTree = "<group>"; };
 		3740CB52A8F191C9AFC9A6E2 /* MorningCompleteCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorningCompleteCard.swift; sourceTree = "<group>"; };
 		3A5D48E25E72952A27B1B190 /* SATQuestionStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATQuestionStepView.swift; sourceTree = "<group>"; };
+		3C5083A2E006AA975E703846 /* SATVocabLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATVocabLiveActivity.swift; sourceTree = "<group>"; };
 		3FA3F0AEF6288789A2FFEE9E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		428092AFF5428976ABF15D66 /* QuickRecallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickRecallView.swift; sourceTree = "<group>"; };
 		42A5E3D20F58164FB12BF894 /* DatabasePaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabasePaths.swift; sourceTree = "<group>"; };
@@ -153,6 +180,7 @@
 		9E396C34D21ABBA6C233621A /* ReviewLoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewLoggerTests.swift; sourceTree = "<group>"; };
 		9ECA98678B2248920B4807D4 /* SessionCompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionCompleteView.swift; sourceTree = "<group>"; };
 		9F04AB1EE8B16379FB4F930E /* WordStateStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordStateStoreTests.swift; sourceTree = "<group>"; };
+		A05E70466D1AA3FF00B11D83 /* SATVocabWidgets.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = SATVocabWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		A239D5ECD21D2FF67D46D001 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		A35A7540DB3CB97378C07ACC /* AdventureMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureMapView.swift; sourceTree = "<group>"; };
 		A4B59A13EF860BE739C4A3F9 /* FlashcardSessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardSessionViewModel.swift; sourceTree = "<group>"; };
@@ -181,6 +209,7 @@
 		D6EE8BA9019EFCDDF2787FBC /* SQLite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLite.swift; sourceTree = "<group>"; };
 		DC602756D33CAEFA1D96AEFC /* AdventureProgressStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureProgressStore.swift; sourceTree = "<group>"; };
 		EE0C2418206F2E283DF0411E /* ImageResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResolver.swift; sourceTree = "<group>"; };
+		F05E7BF534D4E9DCE65F1C09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F34EE56FEEEDCD728E524C7E /* StepTransitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepTransitionView.swift; sourceTree = "<group>"; };
 		FB3DF8656F4A3E45730CA74C /* ReviewLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewLogger.swift; sourceTree = "<group>"; };
 		FD505D549521338CD187B1A9 /* ReportCardGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportCardGenerator.swift; sourceTree = "<group>"; };
@@ -235,6 +264,7 @@
 			children = (
 				D326F0DA386B465C45432350 /* SATVocabApp.app */,
 				FFE7993CBB4BCBD770A9FA45 /* SATVocabAppTests.xctest */,
+				A05E70466D1AA3FF00B11D83 /* SATVocabWidgets.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -288,6 +318,7 @@
 				5667B3516E4ACD035922081E /* ContentImporter.swift */,
 				42A5E3D20F58164FB12BF894 /* DatabasePaths.swift */,
 				0E7CA23D872ADC5B092FA289 /* DataManager.swift */,
+				0EEC84D00E8321B24FD1D37B /* LiveActivityManager.swift */,
 				747F88F0B1CAAC638D4FF341 /* LocalIdentity.swift */,
 				FB3DF8656F4A3E45730CA74C /* ReviewLogger.swift */,
 				4ACDC80AC1690E45F52C3C03 /* SchemaV2.swift */,
@@ -318,6 +349,7 @@
 				FC4966604C4EFD8CC4B8FA96 /* satspell */,
 				3BE992575DDC30387F33934A /* SATVocabApp */,
 				22CE850FB1F2F21365C564C0 /* SATVocabAppTests */,
+				BB1681ECBF85E13D44BBF3E9 /* SATVocabWidgets */,
 				ACA1892B4A9D8CFBA0915992 /* Frameworks */,
 				277A81C74B06FCDB963CF772 /* Products */,
 			);
@@ -329,6 +361,15 @@
 				57B5F156A757C0DF74AD683A /* libsqlite3.tbd */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BB1681ECBF85E13D44BBF3E9 /* SATVocabWidgets */ = {
+			isa = PBXGroup;
+			children = (
+				F05E7BF534D4E9DCE65F1C09 /* Info.plist */,
+				3C5083A2E006AA975E703846 /* SATVocabLiveActivity.swift */,
+			);
+			path = SATVocabWidgets;
 			sourceTree = "<group>";
 		};
 		BBC4A97697BD74AD5753833D /* Session */ = {
@@ -488,10 +529,12 @@
 				EF2EA72C69205BE522DBEFEB /* Sources */,
 				7D82C69E8228C6AA3F084DED /* Resources */,
 				EF55C8D2B59A83B3ACB6A0CD /* Frameworks */,
+				4C24D0D0B91E636F41CD0B18 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				27E5F40E3A8D3249BE104E64 /* PBXTargetDependency */,
 			);
 			name = SATVocabApp;
 			packageProductDependencies = (
@@ -499,6 +542,23 @@
 			productName = SATVocabApp;
 			productReference = D326F0DA386B465C45432350 /* SATVocabApp.app */;
 			productType = "com.apple.product-type.application";
+		};
+		FE2C42A6EBEBC65EF7696901 /* SATVocabWidgets */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46950C8637EAA6E9B90401AE /* Build configuration list for PBXNativeTarget "SATVocabWidgets" */;
+			buildPhases = (
+				855B9F7DE891CD4BC550E13F /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SATVocabWidgets;
+			packageProductDependencies = (
+			);
+			productName = SATVocabWidgets;
+			productReference = A05E70466D1AA3FF00B11D83 /* SATVocabWidgets.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -513,6 +573,9 @@
 						DevelopmentTeam = "";
 					};
 					A0F1F193170440B013205173 = {
+						DevelopmentTeam = "";
+					};
+					FE2C42A6EBEBC65EF7696901 = {
 						DevelopmentTeam = "";
 					};
 				};
@@ -533,6 +596,7 @@
 			targets = (
 				A0F1F193170440B013205173 /* SATVocabApp */,
 				47899EBF5A45B7D83A934098 /* SATVocabAppTests */,
+				FE2C42A6EBEBC65EF7696901 /* SATVocabWidgets */,
 			);
 		};
 /* End PBXProject section */
@@ -562,6 +626,15 @@
 				85AE410CDB108ECDECA8F6D4 /* StatsStoreTests.swift in Sources */,
 				483F87F7B1C92549FFA4EBDF /* TestDatabase.swift in Sources */,
 				358F324132BED7FBA39C23CC /* WordStateStoreTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		855B9F7DE891CD4BC550E13F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCE39FF6234C6FCB12E8DF08 /* LiveActivityManager.swift in Sources */,
+				84E5A7282727CE204F922E1E /* SATVocabLiveActivity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -597,6 +670,7 @@
 				15945D1E3B54A47CBFF6C099 /* ImageGameStepView.swift in Sources */,
 				2A4EBBD701610575B47216AC /* ImageGameView.swift in Sources */,
 				1480A8A68BC1DA282E026E24 /* ImageResolver.swift in Sources */,
+				A63A29181CDBACDC135A6B55 /* LiveActivityManager.swift in Sources */,
 				492241AA9AB9BF1A3BC6CB03 /* LocalIdentity.swift in Sources */,
 				BB34A92229F8E404BD47C428 /* MapDayNode.swift in Sources */,
 				59600B18470EEE0AC229BC43 /* Models.swift in Sources */,
@@ -645,6 +719,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		27E5F40E3A8D3249BE104E64 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE2C42A6EBEBC65EF7696901 /* SATVocabWidgets */;
+			targetProxy = B9BE37DFEAB96D2483CB683B /* PBXContainerItemProxy */;
+		};
 		925FED8B06D036AA2431B9C8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A0F1F193170440B013205173 /* SATVocabApp */;
@@ -749,6 +828,21 @@
 			};
 			name = Release;
 		};
+		9FD1C2541FF3DFBB33E8E0CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
+				INFOPLIST_FILE = SATVocabWidgets/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.satspell.SATVocabApp.Widgets;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 		AB0552491F88BF03A0CE436E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -815,6 +909,21 @@
 			};
 			name = Debug;
 		};
+		DBDFBA0F41291F6CBFC9D8D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
+				INFOPLIST_FILE = SATVocabWidgets/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.satspell.SATVocabApp.Widgets;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
 		E6A58BCA4A6E94CA1CED68B9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -869,6 +978,15 @@
 			buildConfigurations = (
 				4AC1F9C5BDD8DAD12A204569 /* Debug */,
 				E6A58BCA4A6E94CA1CED68B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		46950C8637EAA6E9B90401AE /* Build configuration list for PBXNativeTarget "SATVocabWidgets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBDFBA0F41291F6CBFC9D8D5 /* Debug */,
+				9FD1C2541FF3DFBB33E8E0CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

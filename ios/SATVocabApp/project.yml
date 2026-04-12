@@ -25,6 +25,7 @@ targets:
         buildPhase: resources
     dependencies:
       - sdk: libsqlite3.tbd
+      - target: SATVocabWidgets
     settings:
       base:
         SWIFT_VERSION: "5.0"
@@ -33,6 +34,23 @@ targets:
         CODE_SIGN_IDENTITY: ""
         CODE_SIGNING_REQUIRED: "NO"
         CODE_SIGNING_ALLOWED: "NO"
+
+  SATVocabWidgets:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: SATVocabWidgets
+      - path: Sources/SATVocabApp/Data/LiveActivityManager.swift
+    settings:
+      base:
+        SWIFT_VERSION: "5.0"
+        TARGETED_DEVICE_FAMILY: "1"
+        PRODUCT_BUNDLE_IDENTIFIER: com.satspell.SATVocabApp.Widgets
+        CODE_SIGN_IDENTITY: ""
+        CODE_SIGNING_REQUIRED: "NO"
+        CODE_SIGNING_ALLOWED: "NO"
+        INFOPLIST_FILE: SATVocabWidgets/Info.plist
+        LD_RUNPATH_SEARCH_PATHS: "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks"
 
   SATVocabAppTests:
     type: bundle.unit-test
