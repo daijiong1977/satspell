@@ -14,9 +14,13 @@ extension DateFormatter {
 actor StatsStore {
     static let shared = StatsStore()
 
-    private var db: SQLiteDB { DataManager.shared.db }
+    private let _db: SQLiteDB?
+    private var db: SQLiteDB { _db ?? DataManager.shared.db }
 
-    private init() {}
+    private init() { _db = nil }
+
+    /// Testable initializer accepting an explicit database
+    init(db: SQLiteDB) { _db = db }
 
     // MARK: - Daily Stats
 

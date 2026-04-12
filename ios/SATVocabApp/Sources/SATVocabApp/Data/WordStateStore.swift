@@ -299,7 +299,7 @@ actor WordStateStore {
             WHERE user_id = ? AND word_id = ?
               AND activity_type IN ('image_game', 'quick_recall')
               AND superseded = 0
-            ORDER BY reviewed_at DESC
+            ORDER BY reviewed_at DESC, id DESC
             LIMIT 1;
             """
             let lastStmt = try db.prepare(lastSQL)

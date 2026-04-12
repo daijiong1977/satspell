@@ -21,15 +21,18 @@
 		180671F33452EB985E9DC646 /* FlashcardFrontView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB095188B2013FC75FB40DAB /* FlashcardFrontView.swift */; };
 		1AC38B13AEEDA609720A87C8 /* FlashcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267ED7C8296996D9DD850A66 /* FlashcardView.swift */; };
 		1ADA766506A97D35B25C7199 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4C094D506C7B42A17869B7 /* Enums.swift */; };
+		1D43D6227AD05235F6979C8E /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 57B5F156A757C0DF74AD683A /* libsqlite3.tbd */; };
 		2377E061DEE4F2CF1566CDC8 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA3F0AEF6288789A2FFEE9E /* ProfileView.swift */; };
 		2A4EBBD701610575B47216AC /* ImageGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69438FC551EE401B8C79C3D /* ImageGameView.swift */; };
 		30B202032461F46C9BF9B1F4 /* ClozeRoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E312D9DD6070AD652FC4AFD /* ClozeRoundView.swift */; };
 		331A7F28C2602A516E6269FD /* SessionFlowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA40E15AD5A6613DEA43382 /* SessionFlowViewModel.swift */; };
+		358F324132BED7FBA39C23CC /* WordStateStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F04AB1EE8B16379FB4F930E /* WordStateStoreTests.swift */; };
 		3C7D57550ECC28107378F5DE /* sat_reading_questions_deduplicated.json in Resources */ = {isa = PBXBuildFile; fileRef = B4206A91F6462DC3F2C78367 /* sat_reading_questions_deduplicated.json */; };
 		3F5267A9E99DF3EC7D36EFF5 /* FlashcardStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89ED1905A5B413AF717FC5FE /* FlashcardStepView.swift */; };
 		3FD3A5F16FD2393C35D1FAF9 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = A239D5ECD21D2FF67D46D001 /* AppConfig.swift */; };
 		4146E32C9B3D3BA17B797300 /* ResumeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245C476ED7A1BC2C073D659A /* ResumeCard.swift */; };
 		4224F27860BA545C5BFFBD4C /* TextHighlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8299B8E0D9F20713FE42839 /* TextHighlight.swift */; };
+		483F87F7B1C92549FFA4EBDF /* TestDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0570CB6916D26C7B9F3364F4 /* TestDatabase.swift */; };
 		492241AA9AB9BF1A3BC6CB03 /* LocalIdentity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747F88F0B1CAAC638D4FF341 /* LocalIdentity.swift */; };
 		4A1B284AEB8DD28B44F4794D /* AnswerFeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9D4A036D49FDF3A7047C3E /* AnswerFeedbackView.swift */; };
 		4C78DBDE97E7BA3C12413310 /* StatsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4297263ABE5525485203661 /* StatsStore.swift */; };
@@ -49,6 +52,7 @@
 		7DA47A0399D87F34D14E2D9F /* DatabasePaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A5E3D20F58164FB12BF894 /* DatabasePaths.swift */; };
 		7E115BE1ABD7FDFF3B56B6F5 /* ZoneStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF657EC43B384E689999535 /* ZoneStore.swift */; };
 		7FC3DB032196D48EC0AA39A6 /* word_list.json in Resources */ = {isa = PBXBuildFile; fileRef = D5BB234149F242AD53B81DB3 /* word_list.json */; };
+		85AE410CDB108ECDECA8F6D4 /* StatsStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A01ECECCCFE1D50941F1BE /* StatsStoreTests.swift */; };
 		87BE2291BD1BEE0BF0E49D29 /* FlashcardSessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B59A13EF860BE739C4A3F9 /* FlashcardSessionViewModel.swift */; };
 		87FA5E752DEFE8446F84D8E0 /* QuickRecallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428092AFF5428976ABF15D66 /* QuickRecallView.swift */; };
 		920342050CF1A753D083BB7A /* SATQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C202744437968B2A99F60D /* SATQuestionView.swift */; };
@@ -63,6 +67,7 @@
 		BB34A92229F8E404BD47C428 /* MapDayNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6CFFA23B941219705F886A /* MapDayNode.swift */; };
 		BECE14EB6C92D0781667475E /* AdventureProgressStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC602756D33CAEFA1D96AEFC /* AdventureProgressStore.swift */; };
 		BF7BDDF5234113657ADFF544 /* SQLite.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8BA9019EFCDDF2787FBC /* SQLite.swift */; };
+		C147C6EA429F469B57B877A2 /* ReviewLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E396C34D21ABBA6C233621A /* ReviewLoggerTests.swift */; };
 		C4E46F17E3182374CB362530 /* AppBootstrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95A4B9A46D0EFCC429839BA /* AppBootstrap.swift */; };
 		C656D8F34C2489B8648DC1F0 /* ZoneReviewSessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20642B9BBC6CFC099B1C83 /* ZoneReviewSessionViewModel.swift */; };
 		C6863BFA490E4491EDC28188 /* WordStrengthMeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2D5D043110814B84C40D90 /* WordStrengthMeter.swift */; };
@@ -78,18 +83,31 @@
 		DC5FBFC6B2120673204D5CA1 /* SessionCompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECA98678B2248920B4807D4 /* SessionCompleteView.swift */; };
 		DD5FC81B08E2DEBF9E933F02 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7CA23D872ADC5B092FA289 /* DataManager.swift */; };
 		E0CFD67DB87ED42B2381E329 /* PauseSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F3B97371A55BF2A4E2AB50 /* PauseSheet.swift */; };
+		E57FAD1D57960854B2B255D8 /* SchemaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C784CAF7D1B19C9591E285 /* SchemaTests.swift */; };
 		EA3BF0D1444D3E700BD46AB6 /* data.db in Resources */ = {isa = PBXBuildFile; fileRef = 2A0A1C2A52AAE3C1ED6C2C14 /* data.db */; };
 		EE7A63A2201746B053CF8D74 /* FlashcardCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B9D0EB3F1A1F8254A745D7 /* FlashcardCardView.swift */; };
 		F9F4152A23E7280622D8C9DE /* ComboCalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3C9DD53DEA5009CEACAAA0 /* ComboCalloutView.swift */; };
 		FA763CEFD8A6D8B6E8FE074D /* GameSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C92982161A42ACD13486F34 /* GameSessionView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		E7F19D861FFDD3385E1ECE86 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8603F6CCF628357F67373F4F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A0F1F193170440B013205173;
+			remoteInfo = SATVocabApp;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		00C202744437968B2A99F60D /* SATQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATQuestionView.swift; sourceTree = "<group>"; };
 		01FDBA31B005DF72ECF21137 /* SessionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionHeaderView.swift; sourceTree = "<group>"; };
+		0570CB6916D26C7B9F3364F4 /* TestDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDatabase.swift; sourceTree = "<group>"; };
 		08C5C1818CC0BB300FA6EAC7 /* PracticeTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeTabViewModel.swift; sourceTree = "<group>"; };
 		0E7CA23D872ADC5B092FA289 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		11DBB6C1E9EF7BB4FA57B085 /* EveningCompleteCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EveningCompleteCard.swift; sourceTree = "<group>"; };
+		18A01ECECCCFE1D50941F1BE /* StatsStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsStoreTests.swift; sourceTree = "<group>"; };
 		231D17F9069875831403361B /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Images; path = Resources/Images; sourceTree = SOURCE_ROOT; };
 		23298250CDDDDCFF00465CC9 /* TaskProgressStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskProgressStore.swift; sourceTree = "<group>"; };
 		245C476ED7A1BC2C073D659A /* ResumeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeCard.swift; sourceTree = "<group>"; };
@@ -129,7 +147,10 @@
 		8E3C9DD53DEA5009CEACAAA0 /* ComboCalloutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComboCalloutView.swift; sourceTree = "<group>"; };
 		8F6CFFA23B941219705F886A /* MapDayNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDayNode.swift; sourceTree = "<group>"; };
 		9091B1327DFB7D7DD3F0FEC0 /* Button3D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button3D.swift; sourceTree = "<group>"; };
+		90C784CAF7D1B19C9591E285 /* SchemaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemaTests.swift; sourceTree = "<group>"; };
+		9E396C34D21ABBA6C233621A /* ReviewLoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewLoggerTests.swift; sourceTree = "<group>"; };
 		9ECA98678B2248920B4807D4 /* SessionCompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionCompleteView.swift; sourceTree = "<group>"; };
+		9F04AB1EE8B16379FB4F930E /* WordStateStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordStateStoreTests.swift; sourceTree = "<group>"; };
 		A239D5ECD21D2FF67D46D001 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		A35A7540DB3CB97378C07ACC /* AdventureMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureMapView.swift; sourceTree = "<group>"; };
 		A4B59A13EF860BE739C4A3F9 /* FlashcardSessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardSessionViewModel.swift; sourceTree = "<group>"; };
@@ -161,9 +182,18 @@
 		F34EE56FEEEDCD728E524C7E /* StepTransitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepTransitionView.swift; sourceTree = "<group>"; };
 		FB3DF8656F4A3E45730CA74C /* ReviewLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewLogger.swift; sourceTree = "<group>"; };
 		FD505D549521338CD187B1A9 /* ReportCardGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportCardGenerator.swift; sourceTree = "<group>"; };
+		FFE7993CBB4BCBD770A9FA45 /* SATVocabAppTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = SATVocabAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3F3CF5DB4C6A6C35227C7C59 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D43D6227AD05235F6979C8E /* libsqlite3.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EF55C8D2B59A83B3ACB6A0CD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -188,10 +218,21 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		22CE850FB1F2F21365C564C0 /* SATVocabAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				C99F18901ADA26FAFB5356CE /* Data */,
+				FE595298C2DA7B40B9E06821 /* Helpers */,
+			);
+			name = SATVocabAppTests;
+			path = Tests/SATVocabAppTests;
+			sourceTree = "<group>";
+		};
 		277A81C74B06FCDB963CF772 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				D326F0DA386B465C45432350 /* SATVocabApp.app */,
+				FFE7993CBB4BCBD770A9FA45 /* SATVocabAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -274,6 +315,7 @@
 				DA28069FA9688290CC227641 /* Resources */,
 				FC4966604C4EFD8CC4B8FA96 /* satspell */,
 				3BE992575DDC30387F33934A /* SATVocabApp */,
+				22CE850FB1F2F21365C564C0 /* SATVocabAppTests */,
 				ACA1892B4A9D8CFBA0915992 /* Frameworks */,
 				277A81C74B06FCDB963CF772 /* Products */,
 			);
@@ -322,6 +364,17 @@
 				89ED1905A5B413AF717FC5FE /* FlashcardStepView.swift */,
 			);
 			path = Flashcard;
+			sourceTree = "<group>";
+		};
+		C99F18901ADA26FAFB5356CE /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9E396C34D21ABBA6C233621A /* ReviewLoggerTests.swift */,
+				90C784CAF7D1B19C9591E285 /* SchemaTests.swift */,
+				18A01ECECCCFE1D50941F1BE /* StatsStoreTests.swift */,
+				9F04AB1EE8B16379FB4F930E /* WordStateStoreTests.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		CB7DB5BB189E48DE22557D6C /* Map */ = {
@@ -395,9 +448,36 @@
 			path = ../..;
 			sourceTree = "<group>";
 		};
+		FE595298C2DA7B40B9E06821 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0570CB6916D26C7B9F3364F4 /* TestDatabase.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		47899EBF5A45B7D83A934098 /* SATVocabAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29A6887FD46148C438547597 /* Build configuration list for PBXNativeTarget "SATVocabAppTests" */;
+			buildPhases = (
+				0BD82EC8D1573D6F3B88C8B7 /* Sources */,
+				3F3CF5DB4C6A6C35227C7C59 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				925FED8B06D036AA2431B9C8 /* PBXTargetDependency */,
+			);
+			name = SATVocabAppTests;
+			packageProductDependencies = (
+			);
+			productName = SATVocabAppTests;
+			productReference = FFE7993CBB4BCBD770A9FA45 /* SATVocabAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		A0F1F193170440B013205173 /* SATVocabApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14C951A96BAAC2E89344F1A4 /* Build configuration list for PBXNativeTarget "SATVocabApp" */;
@@ -426,6 +506,9 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					47899EBF5A45B7D83A934098 = {
+						DevelopmentTeam = "";
+					};
 					A0F1F193170440B013205173 = {
 						DevelopmentTeam = "";
 					};
@@ -446,6 +529,7 @@
 			projectRoot = "";
 			targets = (
 				A0F1F193170440B013205173 /* SATVocabApp */,
+				47899EBF5A45B7D83A934098 /* SATVocabAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -465,6 +549,18 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0BD82EC8D1573D6F3B88C8B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C147C6EA429F469B57B877A2 /* ReviewLoggerTests.swift in Sources */,
+				E57FAD1D57960854B2B255D8 /* SchemaTests.swift in Sources */,
+				85AE410CDB108ECDECA8F6D4 /* StatsStoreTests.swift in Sources */,
+				483F87F7B1C92549FFA4EBDF /* TestDatabase.swift in Sources */,
+				358F324132BED7FBA39C23CC /* WordStateStoreTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EF2EA72C69205BE522DBEFEB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -544,7 +640,34 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		925FED8B06D036AA2431B9C8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A0F1F193170440B013205173 /* SATVocabApp */;
+			targetProxy = E7F19D861FFDD3385E1ECE86 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		4AC1F9C5BDD8DAD12A204569 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SATVocabApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SATVocabApp";
+			};
+			name = Debug;
+		};
 		715058E2D61101472D1CFBF8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -688,6 +811,25 @@
 			};
 			name = Debug;
 		};
+		E6A58BCA4A6E94CA1CED68B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SATVocabApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SATVocabApp";
+			};
+			name = Release;
+		};
 		FA5B82E73A82FE7E01757A1A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -714,6 +856,15 @@
 			buildConfigurations = (
 				FA5B82E73A82FE7E01757A1A /* Debug */,
 				715058E2D61101472D1CFBF8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		29A6887FD46148C438547597 /* Build configuration list for PBXNativeTarget "SATVocabAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4AC1F9C5BDD8DAD12A204569 /* Debug */,
+				E6A58BCA4A6E94CA1CED68B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
