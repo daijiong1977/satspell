@@ -1,4 +1,5 @@
 import Foundation
+import ActivityKit
 
 @MainActor
 final class SessionFlowViewModel: ObservableObject {
@@ -85,6 +86,9 @@ final class SessionFlowViewModel: ObservableObject {
         }
     }
 
+    // Restored item index within current step (0 = start from beginning)
+    var resumeItemIndex: Int = 0
+
     func loadWords() async throws {
         let dm = DataManager.shared
         try await dm.initializeIfNeeded()
@@ -101,27 +105,41 @@ final class SessionFlowViewModel: ObservableObject {
            existingSession.studyDay == studyDay {
             // Resume: restore saved step/item index instead of resetting
             currentStepIndex = existingSession.stepIndex
+            resumeItemIndex = existingSession.itemIndex
             showAgainWordIds = existingSession.showAgainIds
             try await sessionStore.resumeSession(userId: userId, studyDay: studyDay, sessionType: sessionType)
+
+            // Restore in-flight scoring totals from daily_stats
+            let dailyStats = try await statsStore.getOrCreateDailyStats(userId: userId, studyDay: studyDay)
+            totalCorrect = dailyStats.correctCount
+            totalAttempts = dailyStats.totalCount
+            xpEarned = dailyStats.xpEarned + dailyStats.sessionBonus
+            wordsPromoted = dailyStats.wordsPromoted
+            wordsDemoted = dailyStats.wordsDemoted
         } else {
             _ = try await sessionStore.createSession(userId: userId, sessionType: sessionType, studyDay: studyDay)
+            _ = try await statsStore.getOrCreateDailyStats(userId: userId, studyDay: studyDay)
         }
 
-        _ = try await statsStore.getOrCreateDailyStats(userId: userId, studyDay: studyDay)
-
         let list = try await dm.getDefaultList()
-        let startIndex = studyDay * (AppConfig.morningNewWords + AppConfig.eveningNewWords)
+        let totalDailyWords = AppConfig.morningNewWords + AppConfig.eveningNewWords
+        let dayStart = studyDay * totalDailyWords
 
         switch sessionType {
         case .morning:
-            newWords = try await dm.fetchSessionQueue(listId: list.id, limit: AppConfig.morningNewWords, startIndex: startIndex)
+            newWords = try await dm.fetchSessionQueue(listId: list.id, limit: AppConfig.morningNewWords, startIndex: dayStart)
         case .evening:
-            let morningStart = studyDay * (AppConfig.morningNewWords + AppConfig.eveningNewWords)
-            morningWords = try await dm.fetchSessionQueue(listId: list.id, limit: AppConfig.morningNewWords, startIndex: morningStart)
-            let eveningStart = morningStart + AppConfig.morningNewWords
+            // Load morning words for the quick recall step
+            morningWords = try await dm.fetchSessionQueue(listId: list.id, limit: AppConfig.morningNewWords, startIndex: dayStart)
+            let eveningStart = dayStart + AppConfig.morningNewWords
             newWords = try await dm.fetchSessionQueue(listId: list.id, limit: AppConfig.eveningNewWords, startIndex: eveningStart)
         default:
             break
+        }
+
+        // Safety: if evening session has a quick recall step, ensure morningWords is populated
+        if sessionType == .evening && morningWords.isEmpty {
+            morningWords = try await dm.fetchSessionQueue(listId: list.id, limit: AppConfig.morningNewWords, startIndex: dayStart)
         }
 
         // Preload SAT context + collocations for each word
@@ -144,6 +162,14 @@ final class SessionFlowViewModel: ObservableObject {
         // Convert WordState to VocabCard — would need a lookup
         // (simplified — full implementation maps wordId -> VocabCard)
         _ = reviews // suppress unused warning
+
+        // Start Live Activity for Dynamic Island
+        let firstStepLabel = steps.first?.label ?? "Study"
+        LiveActivityManager.shared.start(
+            sessionType: sessionType.rawValue,
+            stepLabel: firstStepLabel,
+            totalSteps: totalSteps
+        )
     }
 
     func advanceToNextStep() {
@@ -204,6 +230,16 @@ final class SessionFlowViewModel: ObservableObject {
         } catch {
             print("❌ recordAnswer ERROR: \(error)")
         }
+
+        // Update Live Activity
+        let stepLabel = currentStep?.label ?? ""
+        LiveActivityManager.shared.update(
+            stepLabel: stepLabel,
+            progress: "\(totalCorrect)/\(totalAttempts)",
+            stepNumber: currentStepIndex + 1,
+            totalSteps: totalSteps,
+            xpEarned: xpEarned
+        )
     }
 
     func receiveShowAgainIds(_ ids: [Int]) {
@@ -212,6 +248,7 @@ final class SessionFlowViewModel: ObservableObject {
 
     private func completeSession() {
         isComplete = true
+        LiveActivityManager.shared.end(xpEarned: xpEarned)
 
         Task {
             do {
@@ -255,6 +292,7 @@ final class SessionFlowViewModel: ObservableObject {
 
     func pause(stepIndex: Int, itemIndex: Int, showAgainIds: [Int], requeuedIds: [Int]) async {
         isPaused = true
+        LiveActivityManager.shared.end(xpEarned: xpEarned)
         do {
             let store = SessionStateStore.shared
             try await store.pauseSession(userId: userId, studyDay: studyDay, sessionType: sessionType,
