@@ -61,7 +61,7 @@ struct SATQuestionView: View {
 
                     if let passage = question.passage, !passage.isEmpty {
                         Text(passage)
-                            .font(.system(size: 11, weight: .regular, design: .serif))
+                            .font(.system(size: 15, weight: .regular, design: .serif))
                             .foregroundColor(Color(hex: "#4B4B4B"))
                             .lineSpacing(3)
                     }
@@ -92,7 +92,7 @@ struct SATQuestionView: View {
             // Question text
             if let questionText = question.question {
                 Text(questionText)
-                    .font(.system(size: 11, weight: .semibold))
+                    .font(.system(size: 15, weight: .semibold))
                     .foregroundColor(Color(hex: "#4B4B4B"))
                     .padding(.horizontal, 16)
                     .padding(.bottom, 8)
@@ -116,7 +116,7 @@ struct SATQuestionView: View {
                 showFeedback = true
             } label: {
                 Text("CHECK")
-                    .font(.system(size: 15, weight: .heavy, design: .rounded))
+                    .font(.system(size: 18, weight: .heavy, design: .rounded))
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 14)
@@ -161,12 +161,12 @@ struct SATQuestionView: View {
                         .frame(width: 18, height: 18)
 
                     Text(letter)
-                        .font(.system(size: 10, weight: .bold))
+                        .font(.system(size: 14, weight: .bold))
                         .foregroundColor(isSelected ? .white : Color(hex: "#AFAFAF"))
                 }
 
                 Text(optionText(for: letter))
-                    .font(.system(size: 10, weight: .medium))
+                    .font(.system(size: 14, weight: .medium))
                     .foregroundColor(Color(hex: "#4B4B4B"))
                     .multilineTextAlignment(.leading)
 
@@ -230,7 +230,7 @@ struct SATFeedbackSheet: View {
                         .font(.system(size: 11, weight: .bold))
                         .foregroundColor(Color(hex: "#AFAFAF"))
                     Text(targetWord)
-                        .font(.system(size: 14, weight: .semibold))
+                        .font(.system(size: 16, weight: .semibold))
                         .foregroundColor(Color(hex: "#4B4B4B"))
                 }
             }
@@ -241,7 +241,7 @@ struct SATFeedbackSheet: View {
                         .font(.system(size: 11, weight: .bold))
                         .foregroundColor(Color(hex: "#AFAFAF"))
                     Text(correctAnswer)
-                        .font(.system(size: 12, weight: .medium))
+                        .font(.system(size: 15, weight: .medium))
                         .foregroundColor(Color(hex: "#4B4B4B"))
                 }
             }

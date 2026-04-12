@@ -45,7 +45,7 @@ struct FlashcardBackView: View {
 
                         VStack(alignment: .leading, spacing: 4) {
                             Text(card.lemma.uppercased())
-                                .font(.system(size: 22, weight: .black, design: .rounded))
+                                .font(.system(size: 26, weight: .black, design: .rounded))
                                 .foregroundColor(Color(hex: "#FFC800"))
                                 .tracking(0.5)
 
@@ -66,7 +66,7 @@ struct FlashcardBackView: View {
                     // Definition
                     sectionView(label: "DEFINITION") {
                         Text(card.definition ?? "")
-                            .font(.system(size: 20, weight: .semibold))
+                            .font(.system(size: 24, weight: .semibold))
                             .foregroundColor(Color(hex: "#1A1A2E"))
                             .lineSpacing(4)
                             .fixedSize(horizontal: false, vertical: true)
@@ -80,7 +80,7 @@ struct FlashcardBackView: View {
                                     .fill(Color(hex: "#FFC800"))
                                     .frame(width: 4)
                                 Text(highlightedExample(example, word: card.lemma))
-                                    .font(.system(size: 18, weight: .regular))
+                                    .font(.system(size: 21, weight: .regular))
                                     .foregroundColor(Color(hex: "#4B4B4B"))
                                     .lineSpacing(4)
                                     .padding(12)
@@ -96,7 +96,7 @@ struct FlashcardBackView: View {
                             FlowLayout(spacing: 8) {
                                 ForEach(collocations, id: \.self) { phrase in
                                     Text(phrase)
-                                        .font(.system(size: 16, weight: .medium))
+                                        .font(.system(size: 19, weight: .medium))
                                         .foregroundColor(Color(hex: "#4B4B4B"))
                                         .padding(.horizontal, 12)
                                         .padding(.vertical, 8)
@@ -111,7 +111,7 @@ struct FlashcardBackView: View {
                     if let satContext = card.satContext, !satContext.isEmpty {
                         sectionView(label: "SAT CONTEXT") {
                             Text(satContext)
-                                .font(.system(size: 16, weight: .regular))
+                                .font(.system(size: 19, weight: .regular))
                                 .foregroundColor(Color(hex: "#666666"))
                                 .lineSpacing(3)
                                 .fixedSize(horizontal: false, vertical: true)
@@ -163,7 +163,7 @@ struct FlashcardBackView: View {
         let cleanText = text.replacingOccurrences(of: "**", with: "")
         var attr = AttributedString(cleanText)
         if let range = attr.range(of: word, options: .caseInsensitive) {
-            attr[range].font = .system(size: 20, weight: .bold)
+            attr[range].font = .system(size: 24, weight: .bold)
             attr[range].foregroundColor = Color(hex: "#FFC800")
         }
         return attr

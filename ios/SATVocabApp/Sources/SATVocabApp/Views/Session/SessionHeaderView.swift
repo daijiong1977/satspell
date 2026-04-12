@@ -4,6 +4,7 @@ struct SessionHeaderView: View {
     let stepNumber: Int
     let totalSteps: Int
     let stepLabel: String
+    var currentWord: String = ""  // current word being studied
     let currentItem: Int
     let totalItems: Int
     let progressColor: Color
@@ -22,14 +23,19 @@ struct SessionHeaderView: View {
                 Spacer()
 
                 VStack(spacing: 2) {
-                    Text("STEP \(stepNumber) OF \(totalSteps)")
-                        .font(.system(size: 11, weight: .semibold, design: .rounded))
+                    Text("Step \(stepNumber) of \(totalSteps)")
+                        .font(.system(size: 13, weight: .semibold, design: .rounded))
                         .foregroundColor(isScored ? progressColor : Color(hex: "#AFAFAF"))
-                        .tracking(0.5)
 
-                    Text("\(stepLabel) \u{00B7} \(currentItem)/\(totalItems)")
-                        .font(.system(size: 13, weight: .bold, design: .rounded))
-                        .foregroundColor(Color(hex: "#4B4B4B"))
+                    if !currentWord.isEmpty {
+                        Text("\(currentWord.uppercased()) \u{00B7} \(currentItem)/\(totalItems)")
+                            .font(.system(size: 16, weight: .bold, design: .rounded))
+                            .foregroundColor(Color(hex: "#FFC800"))
+                    } else {
+                        Text("\(stepLabel) \u{00B7} \(currentItem)/\(totalItems)")
+                            .font(.system(size: 15, weight: .bold, design: .rounded))
+                            .foregroundColor(Color(hex: "#4B4B4B"))
+                    }
                 }
 
                 Spacer()

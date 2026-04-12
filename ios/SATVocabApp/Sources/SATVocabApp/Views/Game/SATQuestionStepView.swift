@@ -23,6 +23,7 @@ struct SATQuestionStepView: View {
                 stepNumber: stepNumber,
                 totalSteps: totalSteps,
                 stepLabel: "SAT Questions",
+                currentWord: "",
                 currentItem: min(currentRound + 1, max(totalRounds, 1)),
                 totalItems: max(totalRounds, 1),
                 progressColor: Color(hex: "#FF9600"),

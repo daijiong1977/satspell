@@ -159,6 +159,7 @@ final class SessionFlowViewModel: ObservableObject {
     }
 
     func recordAnswer(correct: Bool, wordId: Int, activityType: ActivityType, durationMs: Int) async {
+        print("📝 recordAnswer called: wordId=\(wordId) correct=\(correct) activityType=\(activityType)")
         totalAttempts += 1
         if correct {
             totalCorrect += 1
@@ -177,13 +178,17 @@ final class SessionFlowViewModel: ObservableObject {
 
             // 1. Write review_log entry
             let outcome: ReviewOutcome = correct ? .correct : .incorrect
+            print("📝 about to call logReview for wordId=\(wordId)")
             try await reviewLogger.logReview(
                 userId: userId, wordId: wordId, outcome: outcome,
                 activityType: activityType, sessionType: sessionType,
                 studyDay: studyDay, durationMs: durationMs)
+            print("📝 logReview succeeded for wordId=\(wordId)")
 
             // 2. Update word_state (box progression)
+            print("📝 about to call recordScoredAnswer for wordId=\(wordId)")
             let boxChange = try await wsStore.recordScoredAnswer(userId: userId, wordId: wordId, correct: correct)
+            print("📝 recordScoredAnswer succeeded for wordId=\(wordId) boxChange=\(boxChange)")
 
             switch boxChange {
             case .promoted(_, _): wordsPromoted += 1

@@ -63,7 +63,7 @@ struct FlashcardFrontView: View {
                     Spacer()
                     if let example = card.example, !example.isEmpty {
                         Text(highlightedSentence(example, word: card.lemma))
-                            .font(.system(size: 19, weight: .medium))
+                            .font(.system(size: 22, weight: .medium))
                             .foregroundColor(.white.opacity(0.9))
                             .lineSpacing(5)
                             .padding(.horizontal, 14)
@@ -105,7 +105,7 @@ struct FlashcardFrontView: View {
         let cleanText = text.replacingOccurrences(of: "**", with: "")
         var attr = AttributedString(cleanText)
         if let range = attr.range(of: word, options: .caseInsensitive) {
-            attr[range].font = .system(size: 24, weight: .black)
+            attr[range].font = .system(size: 28, weight: .black)
             attr[range].foregroundColor = Color(hex: "#FFC800")
             attr[range].underlineStyle = .single
             attr[range].underlineColor = .init(Color(hex: "#FFC800").opacity(0.4))

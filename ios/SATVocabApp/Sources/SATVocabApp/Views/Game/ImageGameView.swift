@@ -63,7 +63,7 @@ struct ImageGameView: View {
 
             // Cloze sentence
             Text(clozeSentence)
-                .font(.system(size: 12, weight: .medium))
+                .font(.system(size: 16, weight: .medium))
                 .foregroundColor(Color(hex: "#4B4B4B"))
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 16)
@@ -125,7 +125,7 @@ struct ImageGameView: View {
             }
         } label: {
             Text(choice.lemma)
-                .font(.system(size: 13, weight: .bold, design: .rounded))
+                .font(.system(size: 17, weight: .bold, design: .rounded))
                 .foregroundColor(Color(hex: "#4B4B4B"))
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 12)

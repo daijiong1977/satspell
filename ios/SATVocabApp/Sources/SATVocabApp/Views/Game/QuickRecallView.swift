@@ -27,11 +27,11 @@ struct QuickRecallView: View {
                     .tracking(0.5)
 
                 Text(card.lemma.uppercased())
-                    .font(.system(size: 24, weight: .heavy, design: .rounded))
+                    .font(.system(size: 28, weight: .heavy, design: .rounded))
                     .foregroundColor(Color(hex: "#4B4B4B"))
 
                 Text("from this morning")
-                    .font(.system(size: 10, weight: .medium))
+                    .font(.system(size: 13, weight: .medium))
                     .foregroundColor(Color(hex: "#CE82FF"))
             }
 
@@ -80,7 +80,7 @@ struct QuickRecallView: View {
             }
         } label: {
             Text(choice.definition)
-                .font(.system(size: 12, weight: .medium))
+                .font(.system(size: 16, weight: .medium))
                 .foregroundColor(Color(hex: "#4B4B4B"))
                 .multilineTextAlignment(.leading)
                 .frame(maxWidth: .infinity, alignment: .leading)

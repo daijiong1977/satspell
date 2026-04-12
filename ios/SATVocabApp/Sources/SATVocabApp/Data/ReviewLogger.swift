@@ -17,6 +17,7 @@ actor ReviewLogger {
         studyDay: Int,
         durationMs: Int
     ) throws {
+        print("📝 logReview called: wordId=\(wordId) outcome=\(outcome)")
         let sql = """
         INSERT INTO review_log(user_id, word_id, outcome, duration_ms, reviewed_at, device_id, activity_type, session_type, study_day, superseded)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 0);

@@ -142,6 +142,7 @@ actor WordStateStore {
     // MARK: - Write Methods
 
     func introduceWord(userId: String, wordId: Int) throws {
+        print("📝 introduceWord called: wordId=\(wordId)")
         let nowStr = iso.string(from: Date())
         let sql = """
         INSERT INTO word_state(user_id, word_id, box_level, intro_stage, total_seen, memory_status, created_at, updated_at)
@@ -163,6 +164,7 @@ actor WordStateStore {
     }
 
     func recordScoredAnswer(userId: String, wordId: Int, correct: Bool) throws -> BoxChange {
+        print("📝 recordScoredAnswer called: wordId=\(wordId) correct=\(correct)")
         // Fetch current state
         guard var ws = try getWordState(userId: userId, wordId: wordId) else {
             // Word not yet introduced; introduce it first

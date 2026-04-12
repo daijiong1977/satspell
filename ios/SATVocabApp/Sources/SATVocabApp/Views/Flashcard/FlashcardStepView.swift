@@ -38,6 +38,7 @@ struct FlashcardStepView: View {
                 stepNumber: stepNumber,
                 totalSteps: totalSteps,
                 stepLabel: "Explore New Words",
+                currentWord: currentCard?.lemma ?? "",
                 currentItem: min(currentIndex + 1, totalCards),
                 totalItems: totalCards,
                 progressColor: Color(hex: "#58CC02"),
