@@ -1,0 +1,30 @@
+{
+  "/Users/jiong/myprojects/satspell/ios/SATVocabApp/Sources/SATVocabApp/Data/AdventureProgressStore.swift" : {
+    "const-values" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/x86_64/AdventureProgressStore.swiftconstvalues",
+    "dependencies" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/x86_64/AdventureProgressStore.d",
+    "diagnostics" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/x86_64/AdventureProgressStore.dia",
+    "object" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/x86_64/AdventureProgressStore.o",
+    "swift-dependencies" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/x86_64/AdventureProgressStore.swiftdeps"
+  },
+  "/Users/jiong/myprojects/satspell/ios/SATVocabApp/Sources/SATVocabApp/Models/AdventureSchedule.swift" : {
+    "const-values" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/x86_64/AdventureSchedule.swiftconstvalues",
+    "dependencies" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/x86_64/AdventureSchedule.d",
+    "diagnostics" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/x86_64/AdventureSchedule.dia",
+    "object" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/x86_64/AdventureSchedule.o",
+    "swift-dependencies" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/x86_64/AdventureSchedule.swiftdeps"
+  },
+  "/Users/jiong/myprojects/satspell/ios/SATVocabApp/Sources/SATVocabApp/ViewModels/AppBootstrap.swift" : {
+    "const-values" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/x86_64/AppBootstrap.swiftconstvalues",
+    "dependencies" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/x86_64/AppBootstrap.d",
+    "diagnostics" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/x86_64/AppBootstrap.dia",
+    "object" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/x86_64/AppBootstrap.o",
+    "swift-dependencies" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/x86_64/AppBootstrap.swiftdeps"
+  },
+  "/Users/jiong/myprojects/satspell/ios/SATVocabApp/Sources/SATVocabApp/Views/AdventureMapView.swift" : {
+    "const-values" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/x86_64/AdventureMapView.swiftconstvalues",
+    "dependencies" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/x86_64/AdventureMapView.d",
+    "diagnostics" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/x86_64/AdventureMapView.dia",
+    "object" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/x86_64/AdventureMapView.o",
+    "swift-dependencies" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/x86_64/AdventureMapView.swiftdeps"
+  }
+}

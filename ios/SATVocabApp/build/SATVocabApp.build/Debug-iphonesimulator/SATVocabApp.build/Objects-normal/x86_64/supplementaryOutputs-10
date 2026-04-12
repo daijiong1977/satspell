@@ -1,0 +1,23 @@
+{
+  "/Users/jiong/myprojects/satspell/ios/SATVocabApp/Sources/SATVocabApp/ViewModels/ZoneReviewSessionViewModel.swift" : {
+    "const-values" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/x86_64/ZoneReviewSessionViewModel.swiftconstvalues",
+    "dependencies" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/x86_64/ZoneReviewSessionViewModel.d",
+    "diagnostics" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/x86_64/ZoneReviewSessionViewModel.dia",
+    "object" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/x86_64/ZoneReviewSessionViewModel.o",
+    "swift-dependencies" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/x86_64/ZoneReviewSessionViewModel.swiftdeps"
+  },
+  "/Users/jiong/myprojects/satspell/ios/SATVocabApp/Sources/SATVocabApp/Views/ZoneReviewSessionView.swift" : {
+    "const-values" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/x86_64/ZoneReviewSessionView.swiftconstvalues",
+    "dependencies" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/x86_64/ZoneReviewSessionView.d",
+    "diagnostics" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/x86_64/ZoneReviewSessionView.dia",
+    "object" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/x86_64/ZoneReviewSessionView.o",
+    "swift-dependencies" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/x86_64/ZoneReviewSessionView.swiftdeps"
+  },
+  "/Users/jiong/myprojects/satspell/ios/SATVocabApp/Sources/SATVocabApp/Views/ZoneUnlockReviewView.swift" : {
+    "const-values" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/x86_64/ZoneUnlockReviewView.swiftconstvalues",
+    "dependencies" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/x86_64/ZoneUnlockReviewView.d",
+    "diagnostics" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/x86_64/ZoneUnlockReviewView.dia",
+    "object" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/x86_64/ZoneUnlockReviewView.o",
+    "swift-dependencies" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/x86_64/ZoneUnlockReviewView.swiftdeps"
+  }
+}

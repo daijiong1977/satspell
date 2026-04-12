@@ -1,0 +1,30 @@
+{
+  "/Users/jiong/myprojects/satspell/ios/SATVocabApp/Sources/SATVocabApp/Data/LocalIdentity.swift" : {
+    "const-values" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/arm64/LocalIdentity.swiftconstvalues",
+    "dependencies" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/arm64/LocalIdentity.d",
+    "diagnostics" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/arm64/LocalIdentity.dia",
+    "object" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/arm64/LocalIdentity.o",
+    "swift-dependencies" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/arm64/LocalIdentity.swiftdeps"
+  },
+  "/Users/jiong/myprojects/satspell/ios/SATVocabApp/Sources/SATVocabApp/Data/ReviewLogger.swift" : {
+    "const-values" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/arm64/ReviewLogger.swiftconstvalues",
+    "dependencies" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/arm64/ReviewLogger.d",
+    "diagnostics" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/arm64/ReviewLogger.dia",
+    "object" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/arm64/ReviewLogger.o",
+    "swift-dependencies" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/arm64/ReviewLogger.swiftdeps"
+  },
+  "/Users/jiong/myprojects/satspell/ios/SATVocabApp/Sources/SATVocabApp/Models/Models.swift" : {
+    "const-values" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/arm64/Models.swiftconstvalues",
+    "dependencies" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/arm64/Models.d",
+    "diagnostics" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/arm64/Models.dia",
+    "object" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/arm64/Models.o",
+    "swift-dependencies" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/arm64/Models.swiftdeps"
+  },
+  "/Users/jiong/myprojects/satspell/ios/SATVocabApp/Sources/SATVocabApp/Views/ProfileView.swift" : {
+    "const-values" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/arm64/ProfileView.swiftconstvalues",
+    "dependencies" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/arm64/ProfileView.d",
+    "diagnostics" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/arm64/ProfileView.dia",
+    "object" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/arm64/ProfileView.o",
+    "swift-dependencies" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/arm64/ProfileView.swiftdeps"
+  }
+}

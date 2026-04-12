@@ -1,0 +1,30 @@
+{
+  "/Users/jiong/myprojects/satspell/ios/SATVocabApp/Sources/SATVocabApp/Data/DataManager.swift" : {
+    "const-values" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/arm64/DataManager.swiftconstvalues",
+    "dependencies" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/arm64/DataManager.d",
+    "diagnostics" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/arm64/DataManager.dia",
+    "object" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/arm64/DataManager.o",
+    "swift-dependencies" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/arm64/DataManager.swiftdeps"
+  },
+  "/Users/jiong/myprojects/satspell/ios/SATVocabApp/Sources/SATVocabApp/Data/DatabasePaths.swift" : {
+    "const-values" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/arm64/DatabasePaths.swiftconstvalues",
+    "dependencies" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/arm64/DatabasePaths.d",
+    "diagnostics" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/arm64/DatabasePaths.dia",
+    "object" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/arm64/DatabasePaths.o",
+    "swift-dependencies" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/arm64/DatabasePaths.swiftdeps"
+  },
+  "/Users/jiong/myprojects/satspell/ios/SATVocabApp/Sources/SATVocabApp/ViewModels/DashboardViewModel.swift" : {
+    "const-values" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/arm64/DashboardViewModel.swiftconstvalues",
+    "dependencies" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/arm64/DashboardViewModel.d",
+    "diagnostics" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/arm64/DashboardViewModel.dia",
+    "object" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/arm64/DashboardViewModel.o",
+    "swift-dependencies" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/arm64/DashboardViewModel.swiftdeps"
+  },
+  "/Users/jiong/myprojects/satspell/ios/SATVocabApp/Sources/SATVocabApp/Views/DayTasksView.swift" : {
+    "const-values" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/arm64/DayTasksView.swiftconstvalues",
+    "dependencies" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/arm64/DayTasksView.d",
+    "diagnostics" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/arm64/DayTasksView.dia",
+    "object" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/arm64/DayTasksView.o",
+    "swift-dependencies" : "/Users/jiong/myprojects/satspell/ios/SATVocabApp/build/SATVocabApp.build/Debug-iphonesimulator/SATVocabApp.build/Objects-normal/arm64/DayTasksView.swiftdeps"
+  }
+}

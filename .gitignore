@@ -31,3 +31,4 @@ data.db
 
 # Copilot review session logs (keep only clean reviews in docs/reviews/)
 docs/reviews/*.log
+.claude/worktrees/

@@ -3,19 +3,17 @@ import SwiftUI
 struct RootTabView: View {
     enum Tab: Hashable {
         case map
-        case tasks
-        case games
+        case practice
         case stats
         case profile
     }
 
-    @State private var selected: Tab = .map
-    @State private var selectedDayIndex: Int = AdventureSchedule.dayIndexForToday()
+    @State private var selected: Tab = .practice
 
     var body: some View {
         TabView(selection: $selected) {
             NavigationStack {
-                AdventureMapView(selectedDayIndex: $selectedDayIndex)
+                AdventureMapView()
             }
             .tabItem {
                 Label("Map", systemImage: "map")
@@ -23,20 +21,12 @@ struct RootTabView: View {
             .tag(Tab.map)
 
             NavigationStack {
-                DayTasksView(dayIndex: selectedDayIndex)
+                PracticeTabView()
             }
             .tabItem {
-                Label("Tasks", systemImage: "checklist")
+                Label("Practice", systemImage: "pencil.and.list.clipboard")
             }
-            .tag(Tab.tasks)
-
-            NavigationStack {
-                GamesHubView(dayIndex: selectedDayIndex)
-            }
-            .tabItem {
-                Label("Games", systemImage: "gamecontroller")
-            }
-            .tag(Tab.games)
+            .tag(Tab.practice)
 
             NavigationStack {
                 StatsView()
@@ -54,8 +44,11 @@ struct RootTabView: View {
             }
             .tag(Tab.profile)
         }
+        .tint(Color(hex: "#58CC02"))
     }
 }
+
+// Color(hex:) extension is in Views/Components/Button3D.swift
 
 #Preview {
     RootTabView()

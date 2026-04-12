@@ -1,0 +1,2 @@
+Target dependency graph (1 target)
+Target 'SATVocabApp' in project 'SATVocabApp' (no dependencies)
