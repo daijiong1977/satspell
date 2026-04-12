@@ -8,6 +8,8 @@ struct SessionCompleteView: View {
     let wordsDemoted: Int
     let onDone: () -> Void
 
+    @State private var appeared = false
+
     private var accuracy: Int {
         totalAttempts > 0 ? Int(Double(totalCorrect) / Double(totalAttempts) * 100) : 0
     }
@@ -75,6 +77,13 @@ struct SessionCompleteView: View {
             Button3D("Done", action: onDone)
                 .padding(.horizontal, 40)
                 .padding(.bottom, 30)
+        }
+        .scaleEffect(appeared ? 1.0 : 0.8)
+        .opacity(appeared ? 1.0 : 0.0)
+        .onAppear {
+            withAnimation(.spring(response: 0.5, dampingFraction: 0.7)) {
+                appeared = true
+            }
         }
         .background(Color.white)
     }
