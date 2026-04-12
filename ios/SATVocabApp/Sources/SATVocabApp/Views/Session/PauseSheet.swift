@@ -3,6 +3,7 @@ import SwiftUI
 struct PauseSheet: View {
     let onKeepGoing: () -> Void
     let onPauseExit: () -> Void
+    @Environment(\.dismiss) private var dismiss
 
     var body: some View {
         VStack(spacing: 20) {
@@ -48,7 +49,12 @@ struct PauseSheet: View {
                          color: .white,
                          pressedColor: Color(hex: "#E5E5E5"),
                          textColor: Color(hex: "#AFAFAF"),
-                         action: onPauseExit)
+                         action: {
+                             dismiss()
+                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
+                                 onPauseExit()
+                             }
+                         })
             }
             .padding(.horizontal, 24)
             .padding(.bottom, 30)

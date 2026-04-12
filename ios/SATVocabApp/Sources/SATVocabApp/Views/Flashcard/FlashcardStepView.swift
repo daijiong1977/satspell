@@ -109,7 +109,6 @@ struct FlashcardStepView: View {
             PauseSheet(
                 onKeepGoing: { showPause = false },
                 onPauseExit: {
-                    showPause = false
                     onPause(stepNumber - 1, currentIndex, Array(showAgainIds), requeuedCards.map { $0.id })
                 }
             )

@@ -65,7 +65,6 @@ struct ImageGameStepView: View {
             PauseSheet(
                 onKeepGoing: { showPause = false },
                 onPauseExit: {
-                    showPause = false
                     onPause(stepNumber - 1, currentRound, [], [])
                 }
             )
