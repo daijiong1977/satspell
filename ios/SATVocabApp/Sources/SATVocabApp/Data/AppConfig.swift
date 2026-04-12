@@ -22,7 +22,7 @@ enum AppConfig {
     static let task4McqFetchPerWord = 2
 
     // Verified-only SAT MCQ questions in v1
-    static let satQuestionsVerifiedOnly = true
+    static let satQuestionsVerifiedOnly = false  // V1: no verified questions in data, use all
 
     // Bundle resource names
     static let bundledDatabaseName = "data"

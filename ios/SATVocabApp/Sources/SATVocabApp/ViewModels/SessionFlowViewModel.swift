@@ -124,6 +124,20 @@ final class SessionFlowViewModel: ObservableObject {
             break
         }
 
+        // Preload SAT context + collocations for each word
+        for idx in newWords.indices {
+            let context = try await dm.randomSatContext(wordId: newWords[idx].id)
+            newWords[idx].satContext = context
+            let collocations = try await dm.fetchCollocations(wordId: newWords[idx].id)
+            newWords[idx].collocations = collocations.isEmpty ? nil : collocations
+        }
+        for idx in morningWords.indices {
+            let context = try await dm.randomSatContext(wordId: morningWords[idx].id)
+            morningWords[idx].satContext = context
+            let collocations = try await dm.fetchCollocations(wordId: morningWords[idx].id)
+            morningWords[idx].collocations = collocations.isEmpty ? nil : collocations
+        }
+
         // Load review words from word_state
         let wsStore = WordStateStore(db: dm.db)
         let reviews = try await wsStore.getReviewQueue(userId: userId, limit: 6)
