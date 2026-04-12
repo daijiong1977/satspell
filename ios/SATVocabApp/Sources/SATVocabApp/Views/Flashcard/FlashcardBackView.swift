@@ -23,7 +23,7 @@ struct FlashcardBackView: View {
             .padding(.vertical, 8)
 
             ScrollView {
-                VStack(alignment: .leading, spacing: 14) {
+                VStack(alignment: .leading, spacing: 16) {
                     // Thumbnail + Word + POS + Strength
                     HStack(alignment: .top, spacing: 12) {
                         if let ui = ImageResolver.uiImage(for: card.imageFilename) {
@@ -43,7 +43,7 @@ struct FlashcardBackView: View {
                                 )
                         }
 
-                        VStack(alignment: .leading, spacing: 2) {
+                        VStack(alignment: .leading, spacing: 4) {
                             Text(card.lemma.uppercased())
                                 .font(.system(size: 22, weight: .black, design: .rounded))
                                 .foregroundColor(Color(hex: "#FFC800"))
@@ -51,7 +51,7 @@ struct FlashcardBackView: View {
 
                             if let pos = card.pos, !pos.isEmpty {
                                 Text(pos)
-                                    .font(.system(size: 9, weight: .medium))
+                                    .font(.system(size: 12, weight: .medium))
                                     .foregroundColor(Color(hex: "#AFAFAF"))
                             }
 
@@ -66,8 +66,9 @@ struct FlashcardBackView: View {
                     // Definition
                     sectionView(label: "DEFINITION") {
                         Text(card.definition ?? "")
-                            .font(.system(size: 14, weight: .semibold))
+                            .font(.system(size: 17, weight: .semibold))
                             .foregroundColor(Color(hex: "#4B4B4B"))
+                            .fixedSize(horizontal: false, vertical: true)
                     }
 
                     // Example
@@ -78,9 +79,9 @@ struct FlashcardBackView: View {
                                     .fill(Color(hex: "#FFC800"))
                                     .frame(width: 3)
                                 Text(highlightedExample(example, word: card.lemma))
-                                    .font(.system(size: 12, weight: .regular))
+                                    .font(.system(size: 15, weight: .regular))
                                     .foregroundColor(Color(hex: "#4B4B4B"))
-                                    .padding(8)
+                                    .padding(10)
                             }
                             .background(Color(hex: "#FFFDE7"))
                             .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
@@ -93,10 +94,10 @@ struct FlashcardBackView: View {
                             FlowLayout(spacing: 6) {
                                 ForEach(collocations, id: \.self) { phrase in
                                     Text(phrase)
-                                        .font(.system(size: 10, weight: .medium))
+                                        .font(.system(size: 14, weight: .medium))
                                         .foregroundColor(Color(hex: "#4B4B4B"))
-                                        .padding(.horizontal, 8)
-                                        .padding(.vertical, 4)
+                                        .padding(.horizontal, 10)
+                                        .padding(.vertical, 6)
                                         .background(Color(hex: "#FFF8E1"))
                                         .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
                                 }
@@ -108,13 +109,15 @@ struct FlashcardBackView: View {
                     if let satContext = card.satContext, !satContext.isEmpty {
                         sectionView(label: "SAT CONTEXT") {
                             Text(satContext)
-                                .font(.system(size: 10, weight: .regular))
+                                .font(.system(size: 14, weight: .regular))
                                 .foregroundColor(Color(hex: "#666666"))
+                                .fixedSize(horizontal: false, vertical: true)
                         }
                     }
                 }
                 .padding(.bottom, 16)
             }
+            .frame(minHeight: UIScreen.main.bounds.height * 0.7 - 80)
 
             Spacer(minLength: 0)
 
@@ -143,9 +146,9 @@ struct FlashcardBackView: View {
 
     @ViewBuilder
     private func sectionView(label: String, @ViewBuilder content: () -> some View) -> some View {
-        VStack(alignment: .leading, spacing: 4) {
+        VStack(alignment: .leading, spacing: 6) {
             Text(label)
-                .font(.system(size: 7, weight: .semibold, design: .rounded))
+                .font(.system(size: 10, weight: .semibold, design: .rounded))
                 .foregroundColor(Color(hex: "#AFAFAF"))
                 .tracking(0.5)
             content()
@@ -156,7 +159,7 @@ struct FlashcardBackView: View {
     private func highlightedExample(_ text: String, word: String) -> AttributedString {
         var attr = AttributedString(text)
         if let range = attr.range(of: word, options: .caseInsensitive) {
-            attr[range].font = .system(size: 12, weight: .bold)
+            attr[range].font = .system(size: 15, weight: .bold)
             attr[range].foregroundColor = Color(hex: "#FFC800")
         }
         return attr
