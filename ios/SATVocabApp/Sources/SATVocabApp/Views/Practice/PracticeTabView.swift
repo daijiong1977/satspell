@@ -24,7 +24,14 @@ struct PracticeTabView: View {
             .padding(.horizontal, 16)
         }
         .navigationBarTitleDisplayMode(.inline)
-        .onAppear { Task { await vm.load() } }
+        .onAppear {
+            // Clear any dangling navigation state from a killed session
+            // to prevent blank sheets on cold launch
+            if navigateToSession != nil {
+                navigateToSession = nil
+            }
+            Task { await vm.load() }
+        }
         .navigationDestination(item: $navigateToSession) { type in
             SessionFlowView(vm: SessionFlowViewModel(sessionType: type, studyDay: vm.studyDay))
         }
