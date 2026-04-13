@@ -16,33 +16,28 @@ struct FlashcardBackView: View {
 
             ScrollView {
                 VStack(alignment: .leading, spacing: 16) {
-                    // Thumbnail + Word + POS + Strength
-                    HStack(alignment: .top, spacing: 12) {
-                        if let ui = ImageResolver.uiImage(for: card.imageFilename) {
-                            Image(uiImage: ui)
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 60, height: 60)
-                                .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
-                        } else {
-                            RoundedRectangle(cornerRadius: 12, style: .continuous)
-                                .fill(Color(hex: "#E8ECF0"))
-                                .frame(width: 60, height: 60)
-                                .overlay(
-                                    Text(String(card.lemma.prefix(1)).uppercased())
-                                        .font(.system(size: 24, weight: .bold))
-                                        .foregroundColor(Color(hex: "#AFAFAF"))
-                                )
-                        }
+                    // Word title — full width, no clipping
+                    VStack(alignment: .leading, spacing: 8) {
+                        HStack(alignment: .center, spacing: 10) {
+                            if let ui = ImageResolver.uiImage(for: card.imageFilename) {
+                                Image(uiImage: ui)
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 48, height: 48)
+                                    .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                            }
 
-                        VStack(alignment: .leading, spacing: 4) {
                             Text(card.lemma.uppercased())
-                                .font(.system(size: 26, weight: .black, design: .rounded))
+                                .font(.system(size: 24, weight: .black, design: .rounded))
                                 .foregroundColor(Color(hex: "#FFC800"))
-                                .tracking(0.5)
-                                .minimumScaleFactor(0.7)
+                                .tracking(0.3)
+                                .minimumScaleFactor(0.6)
                                 .lineLimit(1)
 
+                            Spacer()
+                        }
+
+                        HStack(spacing: 12) {
                             if let pos = card.pos, !pos.isEmpty {
                                 Text(pos)
                                     .font(.system(size: 12, weight: .medium))
@@ -51,7 +46,7 @@ struct FlashcardBackView: View {
 
                             if boxLevel > 0 {
                                 WordStrengthMeter(boxLevel: boxLevel, memoryStatus: memoryStatus)
-                                    .frame(width: 140)
+                                    .frame(width: 120)
                             }
                         }
                     }

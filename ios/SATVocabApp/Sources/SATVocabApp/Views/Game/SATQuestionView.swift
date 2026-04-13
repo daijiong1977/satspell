@@ -16,7 +16,9 @@ struct SATQuestionView: View {
     /// Replace the target word with "________" so it doesn't give away the answer
     private func blankOutWord(_ text: String) -> String {
         guard let word = question.targetWord, !word.isEmpty else { return text }
-        let pattern = "\\b\(NSRegularExpression.escapedPattern(for: word))\\b"
+        // Match the word + common suffixes (s, es, ed, ing, ly, ness, ment, tion, etc.)
+        let escaped = NSRegularExpression.escapedPattern(for: word)
+        let pattern = "\\b\(escaped)(s|es|ed|ing|ly|ness|ment|tion|ity|ous|ive|al|er|est|ance|ence|ances|ences)?\\b"
         if let regex = try? NSRegularExpression(pattern: pattern, options: .caseInsensitive) {
             let range = NSRange(text.startIndex..., in: text)
             return regex.stringByReplacingMatches(in: text, range: range, withTemplate: "________")
