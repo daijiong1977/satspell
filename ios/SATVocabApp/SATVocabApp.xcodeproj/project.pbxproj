@@ -76,6 +76,7 @@
 		BCE39FF6234C6FCB12E8DF08 /* LiveActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EEC84D00E8321B24FD1D37B /* LiveActivityManager.swift */; };
 		BECE14EB6C92D0781667475E /* AdventureProgressStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC602756D33CAEFA1D96AEFC /* AdventureProgressStore.swift */; };
 		BF7BDDF5234113657ADFF544 /* SQLite.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EE8BA9019EFCDDF2787FBC /* SQLite.swift */; };
+		C1147167138B6F8EB721DB95 /* ParentReportSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE618774084F0C8F4529E8FD /* ParentReportSender.swift */; };
 		C147C6EA429F469B57B877A2 /* ReviewLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E396C34D21ABBA6C233621A /* ReviewLoggerTests.swift */; };
 		C4E46F17E3182374CB362530 /* AppBootstrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95A4B9A46D0EFCC429839BA /* AppBootstrap.swift */; };
 		C656D8F34C2489B8648DC1F0 /* ZoneReviewSessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C20642B9BBC6CFC099B1C83 /* ZoneReviewSessionViewModel.swift */; };
@@ -126,14 +127,14 @@
 		0EEC84D00E8321B24FD1D37B /* LiveActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityManager.swift; sourceTree = "<group>"; };
 		11DBB6C1E9EF7BB4FA57B085 /* EveningCompleteCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EveningCompleteCard.swift; sourceTree = "<group>"; };
 		13A7F3193994BE8F945D91CB /* RecordAnswerIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordAnswerIntegrationTests.swift; sourceTree = "<group>"; };
-		13AA5E5319A265E5FD577BDC /* SATVocabAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SATVocabAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		13AA5E5319A265E5FD577BDC /* SATVocabAppUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = SATVocabAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18A01ECECCCFE1D50941F1BE /* StatsStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsStoreTests.swift; sourceTree = "<group>"; };
 		231D17F9069875831403361B /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Images; path = Resources/Images; sourceTree = SOURCE_ROOT; };
 		23298250CDDDDCFF00465CC9 /* TaskProgressStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskProgressStore.swift; sourceTree = "<group>"; };
 		245C476ED7A1BC2C073D659A /* ResumeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeCard.swift; sourceTree = "<group>"; };
 		25A90970CFCD16DD19B420DA /* ReviewsDueRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsDueRow.swift; sourceTree = "<group>"; };
 		267ED7C8296996D9DD850A66 /* FlashcardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardView.swift; sourceTree = "<group>"; };
-		2A0A1C2A52AAE3C1ED6C2C14 /* data.db */ = {isa = PBXFileReference; lastKnownFileType = text; path = data.db; sourceTree = "<group>"; };
+		2A0A1C2A52AAE3C1ED6C2C14 /* data.db */ = {isa = PBXFileReference; path = data.db; sourceTree = "<group>"; };
 		2AAC0EFF49F558C88FC19402 /* SatMCQRoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SatMCQRoundView.swift; sourceTree = "<group>"; };
 		2C20642B9BBC6CFC099B1C83 /* ZoneReviewSessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneReviewSessionViewModel.swift; sourceTree = "<group>"; };
 		2D4C094D506C7B42A17869B7 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
@@ -175,7 +176,7 @@
 		9E396C34D21ABBA6C233621A /* ReviewLoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewLoggerTests.swift; sourceTree = "<group>"; };
 		9ECA98678B2248920B4807D4 /* SessionCompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionCompleteView.swift; sourceTree = "<group>"; };
 		9F04AB1EE8B16379FB4F930E /* WordStateStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordStateStoreTests.swift; sourceTree = "<group>"; };
-		A05E70466D1AA3FF00B11D83 /* SATVocabWidgets.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SATVocabWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A05E70466D1AA3FF00B11D83 /* SATVocabWidgets.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = SATVocabWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		A239D5ECD21D2FF67D46D001 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		A35A7540DB3CB97378C07ACC /* AdventureMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureMapView.swift; sourceTree = "<group>"; };
 		A4B59A13EF860BE739C4A3F9 /* FlashcardSessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardSessionViewModel.swift; sourceTree = "<group>"; };
@@ -200,18 +201,19 @@
 		C216D3CF9E425A5C936F9C7A /* ZoneProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneProgressBar.swift; sourceTree = "<group>"; };
 		C4297263ABE5525485203661 /* StatsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsStore.swift; sourceTree = "<group>"; };
 		CCA40E15AD5A6613DEA43382 /* SessionFlowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionFlowViewModel.swift; sourceTree = "<group>"; };
-		D326F0DA386B465C45432350 /* SATVocabApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SATVocabApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D326F0DA386B465C45432350 /* SATVocabApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = SATVocabApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5BB234149F242AD53B81DB3 /* word_list.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = word_list.json; sourceTree = "<group>"; };
 		D6EE8BA9019EFCDDF2787FBC /* SQLite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLite.swift; sourceTree = "<group>"; };
 		DC602756D33CAEFA1D96AEFC /* AdventureProgressStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureProgressStore.swift; sourceTree = "<group>"; };
 		DE776C1A6EE5CDBFDB11973C /* PracticeStateResolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeStateResolverTests.swift; sourceTree = "<group>"; };
 		EE0C2418206F2E283DF0411E /* ImageResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResolver.swift; sourceTree = "<group>"; };
+		EE618774084F0C8F4529E8FD /* ParentReportSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentReportSender.swift; sourceTree = "<group>"; };
 		F05E7BF534D4E9DCE65F1C09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F34EE56FEEEDCD728E524C7E /* StepTransitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepTransitionView.swift; sourceTree = "<group>"; };
 		FB3DF8656F4A3E45730CA74C /* ReviewLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewLogger.swift; sourceTree = "<group>"; };
 		FD505D549521338CD187B1A9 /* ReportCardGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportCardGenerator.swift; sourceTree = "<group>"; };
 		FDA662BC2804A43C21800282 /* NotificationScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationScheduler.swift; sourceTree = "<group>"; };
-		FFE7993CBB4BCBD770A9FA45 /* SATVocabAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SATVocabAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFE7993CBB4BCBD770A9FA45 /* SATVocabAppTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = SATVocabAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -331,6 +333,7 @@
 				0EEC84D00E8321B24FD1D37B /* LiveActivityManager.swift */,
 				747F88F0B1CAAC638D4FF341 /* LocalIdentity.swift */,
 				FDA662BC2804A43C21800282 /* NotificationScheduler.swift */,
+				EE618774084F0C8F4529E8FD /* ParentReportSender.swift */,
 				FB3DF8656F4A3E45730CA74C /* ReviewLogger.swift */,
 				4ACDC80AC1690E45F52C3C03 /* SchemaV2.swift */,
 				494726E0AB23A89268890132 /* SessionStateStore.swift */,
@@ -605,7 +608,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 2640;
+				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					47899EBF5A45B7D83A934098 = {
 						DevelopmentTeam = W6BCH2M54V;
@@ -734,6 +737,7 @@
 				6FD5E8545ADD54349A588421 /* MorningCompleteCard.swift in Sources */,
 				D4CE6ECCD08544417BDF313E /* MorningSessionCard.swift in Sources */,
 				357B4DB9428B8FC0D2895EA5 /* NotificationScheduler.swift in Sources */,
+				C1147167138B6F8EB721DB95 /* ParentReportSender.swift in Sources */,
 				E0CFD67DB87ED42B2381E329 /* PauseSheet.swift in Sources */,
 				694367EBABF3B4994409CE1A /* PracticeHeader.swift in Sources */,
 				D0C3A8590880A46A4BDCB8BC /* PracticeStateResolver.swift in Sources */,
@@ -883,7 +887,6 @@
 				DEVELOPMENT_TEAM = W6BCH2M54V;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -898,7 +901,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.satspell.SATVocabApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -911,11 +913,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SATVocabWidgets/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.satspell.SATVocabApp.Widgets;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
@@ -961,7 +959,6 @@
 				DEVELOPMENT_TEAM = W6BCH2M54V;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -983,7 +980,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.satspell.SATVocabApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1015,11 +1011,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SATVocabWidgets/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.satspell.SATVocabApp.Widgets;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;

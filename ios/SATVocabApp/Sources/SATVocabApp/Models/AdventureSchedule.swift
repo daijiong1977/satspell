@@ -2,22 +2,31 @@ import Foundation
 
 enum AdventureSchedule {
     static let totalDays = 20
-    static let daysPerZone = 4
+    static let daysPerZone = 5
+    static let totalZones = 4  // 3 full zones (5 days) + 1 zone (5 days) = 20 days
 
-    static let totalZones = totalDays / daysPerZone
-    
-    static let zoneNames: [String] = [
-        "Foundation",
-        "Cloud Realm",
-        "Island",
-        "Space",
-        "Future City"
+    // Zone themes: name, emoji, description
+    static let zones: [(name: String, emoji: String, desc: String)] = [
+        ("Enchanted Forest", "🌲", "Begin your journey through ancient woods"),
+        ("Cloud Kingdom", "☁️", "Rise above the clouds to master new words"),
+        ("Crystal Caverns", "💎", "Discover hidden gems of vocabulary"),
+        ("Starlight Summit", "⭐", "Reach the peak of word mastery"),
     ]
-    
+
     static func zoneTitle(zoneIndex: Int) -> String {
         let idx = min(max(0, zoneIndex), totalZones - 1)
-        let name = zoneNames.indices.contains(idx) ? zoneNames[idx] : "Zone \(idx + 1)"
-        return "Zone \(idx + 1): \(name)"
+        let zone = zones.indices.contains(idx) ? zones[idx] : (name: "Zone \(idx + 1)", emoji: "📚", desc: "")
+        return "\(zone.emoji) \(zone.name)"
+    }
+
+    static func zoneEmoji(zoneIndex: Int) -> String {
+        let idx = min(max(0, zoneIndex), totalZones - 1)
+        return zones.indices.contains(idx) ? zones[idx].emoji : "📚"
+    }
+
+    static func zoneDescription(zoneIndex: Int) -> String {
+        let idx = min(max(0, zoneIndex), totalZones - 1)
+        return zones.indices.contains(idx) ? zones[idx].desc : ""
     }
 
     static func clampDayIndex(_ dayIndex: Int) -> Int {
@@ -34,7 +43,7 @@ enum AdventureSchedule {
 
     static func zoneIndex(forDayIndex dayIndex: Int) -> Int {
         let d = clampDayIndex(dayIndex)
-        return d / daysPerZone
+        return min(d / daysPerZone, totalZones - 1)
     }
 
     static func dayNumberInZone(forDayIndex dayIndex: Int) -> Int {

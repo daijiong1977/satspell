@@ -16,6 +16,9 @@ struct ProfileView: View {
     @State private var isEditingName = false
     @State private var showAvatarPicker = false
     @State private var showResetConfirm = false
+    @State private var parentEmail: String = LocalIdentity.parentEmail() ?? ""
+    @State private var isSendingReport = false
+    @State private var reportStatus: String? = nil
 
     private let userId = LocalIdentity.userId()
 
@@ -129,6 +132,63 @@ struct ProfileView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
                 }
                 .buttonStyle(.plain)
+
+                // Parent Report
+                VStack(spacing: 0) {
+                    settingsHeader("Parent Report")
+
+                    HStack(spacing: 10) {
+                        Image(systemName: "envelope.fill")
+                            .foregroundStyle(Color(hex: "#1CB0F6"))
+                        TextField("Parent email", text: $parentEmail)
+                            .font(.system(.body, design: .rounded))
+                            .keyboardType(.emailAddress)
+                            .textContentType(.emailAddress)
+                            .autocapitalization(.none)
+                            .onChange(of: parentEmail) { _, newVal in
+                                LocalIdentity.setParentEmail(newVal.isEmpty ? nil : newVal)
+                            }
+                    }
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 12)
+
+                    Divider().padding(.horizontal, 16)
+
+                    Button {
+                        sendParentReport()
+                    } label: {
+                        HStack(spacing: 8) {
+                            if isSendingReport {
+                                ProgressView()
+                                    .scaleEffect(0.8)
+                            } else {
+                                Image(systemName: "paperplane.fill")
+                                    .font(.system(size: 14, weight: .semibold))
+                            }
+                            Text(isSendingReport ? "Sending..." : "Send Report Now")
+                                .font(.system(.body, design: .rounded).weight(.semibold))
+                        }
+                        .frame(maxWidth: .infinity)
+                        .foregroundStyle(parentEmail.contains("@") ? Color(hex: "#1CB0F6") : .gray)
+                    }
+                    .disabled(isSendingReport || !parentEmail.contains("@"))
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 12)
+
+                    if let status = reportStatus {
+                        Text(status)
+                            .font(.system(size: 12, weight: .medium, design: .rounded))
+                            .foregroundStyle(status.contains("Sent") ? Color(hex: "#58CC02") : .red)
+                            .padding(.horizontal, 16)
+                            .padding(.bottom, 8)
+                    }
+                }
+                .background(.white)
+                .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 16, style: .continuous)
+                        .strokeBorder(Color.black.opacity(0.06), lineWidth: 1)
+                )
 
                 // Notification toggles
                 VStack(spacing: 0) {
@@ -293,6 +353,29 @@ struct ProfileView: View {
         displayName = trimmed.isEmpty ? "SAT Learner" : trimmed
         LocalIdentity.setDisplayName(displayName)
         isEditingName = false
+    }
+
+    private func sendParentReport() {
+        guard parentEmail.contains("@") else { return }
+        isSendingReport = true
+        reportStatus = nil
+        Task {
+            do {
+                let statsStore = StatsStore.shared
+                let currentStreak = try await statsStore.getStreak(userId: userId)
+                let vm = PracticeTabViewModel()
+                _ = try await ParentReportSender.sendReport(
+                    toEmail: parentEmail,
+                    studentName: displayName,
+                    streak: currentStreak,
+                    studyDay: 0
+                )
+                reportStatus = "Sent! Check \(parentEmail)"
+            } catch {
+                reportStatus = "Failed: \(error.localizedDescription)"
+            }
+            isSendingReport = false
+        }
     }
 
     private func generateAndShare() {

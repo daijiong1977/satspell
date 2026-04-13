@@ -6,6 +6,7 @@ enum LocalIdentity {
     private static let learningStartDateKey = "local.learning_start_date"
     private static let displayNameKey = "local.display_name"
     private static let avatarEmojiKey = "local.avatar_emoji"
+    private static let parentEmailKey = "local.parent_email"
 
     static func displayName() -> String {
         UserDefaults.standard.string(forKey: displayNameKey) ?? "SAT Learner"
@@ -21,6 +22,14 @@ enum LocalIdentity {
 
     static func setAvatarEmoji(_ emoji: String) {
         UserDefaults.standard.set(emoji, forKey: avatarEmojiKey)
+    }
+
+    static func parentEmail() -> String? {
+        UserDefaults.standard.string(forKey: parentEmailKey)
+    }
+
+    static func setParentEmail(_ email: String?) {
+        UserDefaults.standard.set(email, forKey: parentEmailKey)
     }
 
     static func userId() -> String {
