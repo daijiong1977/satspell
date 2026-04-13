@@ -1,0 +1,3360 @@
+{
+  "definition_example_mismatch": [
+    {
+      "word": "criterion",
+      "issue": "word not in example sentence",
+      "definition": "A principle or standard by which something may be judged or decided.",
+      "example": "The scientific community established rigorous criteria for accepting experimental results, including replicability and statistical significance."
+    },
+    {
+      "word": "pollinate",
+      "issue": "word not in example sentence",
+      "definition": "to put pollen into a flower",
+      "example": "To prevent insects from pollinating them."
+    },
+    {
+      "word": "repository",
+      "issue": "word not in example sentence",
+      "definition": "a place where sth is stored",
+      "example": "Repositories of ecological information."
+    },
+    {
+      "word": "simulated",
+      "issue": "word not in example sentence",
+      "definition": "not real, but made to look, feel, etc. like the real thing",
+      "example": "In soil designed to simulate Martian conditions."
+    },
+    {
+      "word": "subtlety",
+      "issue": "word not in example sentence",
+      "definition": "the quality of being subtle",
+      "example": "Distract from the subtleties in a painted scene."
+    },
+    {
+      "word": "sweep",
+      "issue": "word not in example sentence",
+      "definition": "to move quickly and/or with force",
+      "example": "The craze swept the country."
+    },
+    {
+      "word": "utilize",
+      "issue": "word not in example sentence",
+      "definition": "to use sth, especially for a practical purpose",
+      "example": "Utilizing vivid pastel colors."
+    }
+  ],
+  "word_missing_from_context": [
+    {
+      "word": "accentuate",
+      "context": "The following text is Emily Dickinson\u2019s circa 1859 poem \u201cSetting Sail..."
+    },
+    {
+      "word": "accentuate",
+      "context": "The Gleaners, painted in the realist style by Jean-Fran\u00e7ois Millet, depicts peasants picking stray w..."
+    },
+    {
+      "word": "accustomed to",
+      "context": "\u201cJohn of God, the Water-Carrier\u201d is a 1913 short story by Mar\u00eda Cristina Mena..."
+    },
+    {
+      "word": "accustomed to",
+      "context": "Neurobiologists Laura Cuaya, Ra\u00fal Hern\u00e1ndez-P\u00e9rez, and colleagues investigated the language detectio..."
+    },
+    {
+      "word": "affinity",
+      "context": "A rising author of children's books spoke at a recent publishing conference about what motivated her..."
+    },
+    {
+      "word": "affinity",
+      "context": "A rising author of children's books spoke at a recent publishing conference about what motivated her..."
+    },
+    {
+      "word": "affinity",
+      "context": "A rising author of children's books spoke at a recent publishing conference about what motivated her..."
+    },
+    {
+      "word": "alignment",
+      "context": "While researching a topic, a student has taken the following notes: Grain was used as commodity mone..."
+    },
+    {
+      "word": "alignment",
+      "context": "While researching a topic, a student has taken the following notes: Tea bricks were used as commodit..."
+    },
+    {
+      "word": "alignment",
+      "context": "While researching a topic, a student has taken the following notes: Peppercorns were used as commodi..."
+    },
+    {
+      "word": "ameliorate",
+      "context": "Despite stated claims of global relevance, much major research on income inequality performed in the..."
+    },
+    {
+      "word": "amorphous",
+      "context": "Writer Lydia Davis observed that while traditional literary forms, such as the novel, are recognizab..."
+    },
+    {
+      "word": "assertion",
+      "context": "The student wants to support Browner\u2019s claim about Louis Ballard\u2019s compositions..."
+    },
+    {
+      "word": "assertion",
+      "context": "The student wants to support Browner\u2019s claim about Louis Ballard\u2019s compositions..."
+    },
+    {
+      "word": "assertion",
+      "context": "The student wants to support Browner\u2019s claim about Louis Ballard\u2019s compositions..."
+    },
+    {
+      "word": "attrition",
+      "context": "Run by researchers in multiple countries, the Study on Global Ageing and Adult Health (SAGE) is an e..."
+    },
+    {
+      "word": "attrition",
+      "context": "Run by researchers in Australia, the Longitudinal Study of Indigenous Children (LSIC) is an examinat..."
+    },
+    {
+      "word": "commended",
+      "context": "In a 2018 article celebrating films depicting the Black experience, critics for the New York Times _..."
+    },
+    {
+      "word": "complementary",
+      "context": "In the search for new impact craters on Mars, the roles of seismic monitoring and orbital imaging as..."
+    },
+    {
+      "word": "complementary",
+      "context": "Which choice completes the text with the most logical and precise word or\nphrase..."
+    },
+    {
+      "word": "complementary",
+      "context": "Which choice completes the text with the most logical and precise word or\nphrase..."
+    },
+    {
+      "word": "consequently",
+      "context": "For several centuries after the birth of opera in sixteenth-century Florence, Italian remained the d..."
+    },
+    {
+      "word": "conspicuous",
+      "context": "The following text is from Thomas Hardy\u2019s 1874 novel Far from the Madding Crowd..."
+    },
+    {
+      "word": "conspicuous",
+      "context": "The following text is from Thomas Hardy\u2019s 1874 novel Far from the Madding Crowd..."
+    },
+    {
+      "word": "conspicuous",
+      "context": "The following text is from Thomas Hardy\u2019s 1874 novel Far from the Madding Crowd..."
+    },
+    {
+      "word": "contend",
+      "context": "While researching a topic, a student has taken the following notes: Grain was used as commodity mone..."
+    },
+    {
+      "word": "contend",
+      "context": "While researching a topic, a student has taken the following notes: Tea bricks were used as commodit..."
+    },
+    {
+      "word": "contend",
+      "context": "While researching a topic, a student has taken the following notes: Peppercorns were used as commodi..."
+    },
+    {
+      "word": "corroborate",
+      "context": "Though the thermoregulation mechanisms of fungi, such as Amanita brunescens, have received little fo..."
+    },
+    {
+      "word": "denotes",
+      "context": "Chengdu, China, was named a City of Gastronomy by UNESCO in 2010, a title that ______ blank that Che..."
+    },
+    {
+      "word": "denotes",
+      "context": "Buenaventura, Colombia, was named a City of Gastronomy by UNESCO in 2017, a title that ______ blank ..."
+    },
+    {
+      "word": "denotes",
+      "context": "Cochabamba, Bolivia, was named a City of Gastronomy by UNESCO in 2017, a title that ______ blank tha..."
+    },
+    {
+      "word": "diffusion",
+      "context": "The metal displayed in the structure of House in Kamiaraya by Kazuto Nishi Architects and the metal ..."
+    },
+    {
+      "word": "diffusion",
+      "context": "The metal displayed in the structure of ARK by APOLLO Architects Associates and the metal hardware i..."
+    },
+    {
+      "word": "efficacy",
+      "context": "Master and Commander, first published in 1969, is a novel in Patrick O'Brian's Aubrey Maturin series..."
+    },
+    {
+      "word": "eliciting",
+      "context": "In the mid-1980s, the price of vintage and even new baseball cards rose dramatically, which had the ..."
+    },
+    {
+      "word": "eliciting",
+      "context": "In the 2010s, the price of vintage G..."
+    },
+    {
+      "word": "engender",
+      "context": "Some robots such as Surena (developed in 2008) and COMAN (developed in 2012) feature humanoid charac..."
+    },
+    {
+      "word": "engender",
+      "context": "Some robots such as Justin (developed in 2008) and TALOS (developed in 2017) feature humanoid charac..."
+    },
+    {
+      "word": "engendering",
+      "context": "In the 2010s, the price of vintage Teenage Mutant Ninja Turtles action figures rose dramatically, wh..."
+    },
+    {
+      "word": "enumerate",
+      "context": "One way to evaluate the importance of a scholar's research is to ______ other scholars' references t..."
+    },
+    {
+      "word": "evade",
+      "context": "Bats that hunt nocturnally emit pulses of sound that can help them locate airborne moths in the dark..."
+    },
+    {
+      "word": "exaggerate",
+      "context": "The Last of England, painted in the realist style by Ford Madox Brown, depicts a working-class famil..."
+    },
+    {
+      "word": "expense",
+      "context": "The subscription economy has rapidly expanded to include a wide range of products\u2014from books to clou..."
+    },
+    {
+      "word": "expense",
+      "context": "The subscription economy has rapidly expanded to include a wide range of products\u2014from children\u2019s to..."
+    },
+    {
+      "word": "expense",
+      "context": "The subscription economy has rapidly expanded to include a wide range of products\u2014from books to vide..."
+    },
+    {
+      "word": "extemporaneous",
+      "context": "Described in treatises mainly published between 1768 and 1950 (such as William Holdsworth and Willia..."
+    },
+    {
+      "word": "extemporaneous",
+      "context": "Described in treatises mainly published between 1768 and 1950 (such as John Austin\u2019s A System of Ste..."
+    },
+    {
+      "word": "extemporaneous",
+      "context": "Described in treatises mainly published between 1768 and 1950 (such as May Florence Smith\u2019s Original..."
+    },
+    {
+      "word": "fusion",
+      "context": "Some features, such as the mihrab (or niche), are present in nearly every mosque..."
+    },
+    {
+      "word": "hallmark",
+      "context": "Certain features are almost always included in the designs of mosques, like the ablution (ritual cle..."
+    },
+    {
+      "word": "hallmark",
+      "context": "Certain features are almost always included in the designs of mosques, like the minaret (or tower), ..."
+    },
+    {
+      "word": "hallmark",
+      "context": "Certain features are almost always included in the designs of mosques, like the ablution (ritual cle..."
+    },
+    {
+      "word": "halting",
+      "context": "In a garden, _______ the spread of unwelcome weeds such as nutgrass can be difficult because weeds u..."
+    },
+    {
+      "word": "impart",
+      "context": "Eastern Ohio's Monroe County is among the most rural counties in the United States: the US Census Bu..."
+    },
+    {
+      "word": "impart",
+      "context": "Northeastern Kansas's Jefferson County is among the most rural counties in the United States: the US..."
+    },
+    {
+      "word": "impart",
+      "context": "Eastern Ohio's Monroe County is among the most rural counties in the United States: the US Census Bu..."
+    },
+    {
+      "word": "inconsequential",
+      "context": "Whether the reign of a French monarch such as Francis ll or Louis XI was considered historically sig..."
+    },
+    {
+      "word": "inconsistencies",
+      "context": "Microplastics are a common pollutant in large masses of water like glaciers..."
+    },
+    {
+      "word": "inconsistencies",
+      "context": "Which choice completes the text with the most logical and precise word or\nphrase..."
+    },
+    {
+      "word": "inconsistencies",
+      "context": "Which choice completes the text with the most logical and precise word or\nphrase..."
+    },
+    {
+      "word": "inestimable",
+      "context": "The invertebrates Haywardozoon pacificum and Trophomera manganI have recently been discovered inhabi..."
+    },
+    {
+      "word": "innovative",
+      "context": "Though most studies of the effect of altitude on blood chemistry usually concentrated on people who ..."
+    },
+    {
+      "word": "insuperable",
+      "context": "______ though it seemed to many mathematicians, the Marden tameness conjecture, posed in 1974, event..."
+    },
+    {
+      "word": "insuperable",
+      "context": "_______ though it seemed to many mathematicians, the honeycomb conjecture, posited in the first cent..."
+    },
+    {
+      "word": "insurmountable",
+      "context": "The discoverers of the minor planet 1227 Geranium named it after the plant genus that includes crane..."
+    },
+    {
+      "word": "integral",
+      "context": "Early in the Great Migration of 1910\u20131970, which involved the mass migration of Black people from th..."
+    },
+    {
+      "word": "integral",
+      "context": "Although Grant Tavinor concludes that computer games are art by virtue of their forming a subcategor..."
+    },
+    {
+      "word": "interconnected",
+      "context": "The unique subak water management system used to irrigate the rice paddy fields of the Indonesian is..."
+    },
+    {
+      "word": "interconnected",
+      "context": "The unique subak water management system used to irrigate the rice paddy fields of the Indonesian is..."
+    },
+    {
+      "word": "interplay",
+      "context": "Exposed to harsh environmental conditions for centuries, lighthouses such as La Jument lighthouse of..."
+    },
+    {
+      "word": "interplay",
+      "context": "Which choice completes the text with the most logical and precise word or\nphrase..."
+    },
+    {
+      "word": "invoked",
+      "context": "Until 1917, there was no formal measure in the United States Senate that could be ________ to end a ..."
+    },
+    {
+      "word": "invoked",
+      "context": "Until 1917, there was no formal measure in the United States Senate that could be ______ to end a de..."
+    },
+    {
+      "word": "irrefutable",
+      "context": "When discussing literary movements in Spain, scholars regularly characterize the works of Miguel de ..."
+    },
+    {
+      "word": "lean",
+      "context": "\u201cJohn of God, the Water-Carrier\u201d is a 1913 short story by Mar\u00eda Cristina Mena..."
+    },
+    {
+      "word": "lean",
+      "context": "Cane is a 1923 novel by Jean Toomer..."
+    },
+    {
+      "word": "lean",
+      "context": "Cane is a 1923 novel by Jean Toomer..."
+    },
+    {
+      "word": "likewise",
+      "context": "In an ekphrastic poem, a poet explores a work of visual art, such as a drawing, sculpture, or painti..."
+    },
+    {
+      "word": "magnify",
+      "context": "Farmhouse Interior, painted in the realist style by Jan Hendrik Weissenbruch, depicts a peasant woma..."
+    },
+    {
+      "word": "magnify",
+      "context": "The Gleaners, painted in the realist style by Jean-Fran\u00e7ois Millet, depicts peasants picking stray w..."
+    },
+    {
+      "word": "magnify",
+      "context": "Farmhouse Interior, painted in the realist style by Jan Hendrik Weissenbruch, depicts a peasant woma..."
+    },
+    {
+      "word": "multifariousness",
+      "context": "The ______ blank of leaf-vein architectures\u2014the branching venation of Ginkgo biloba, the hierarchica..."
+    },
+    {
+      "word": "multifariousness",
+      "context": "The ______ blank of leaf-vein architectures\u2014the branching venation of Pteris cretica, the hierarchic..."
+    },
+    {
+      "word": "mutable",
+      "context": "The Fly River delta is a remarkably _______ landscape: it is a constantly evolving network of channe..."
+    },
+    {
+      "word": "nebulous",
+      "context": "Although our knowledge of the Pliocene epoch and the lives of the hominids during this time was once..."
+    },
+    {
+      "word": "nebulous",
+      "context": "Although our knowledge of the Pliocene epoch and the lives of hominids during this time was once ___..."
+    },
+    {
+      "word": "obstinacy",
+      "context": "The ______ blank of leaf-vein architectures\u2014the branching venation of Pteris cretica, the hierarchic..."
+    },
+    {
+      "word": "orthodox",
+      "context": "Writer Lydia Davis observed that while _______ literary forms, such as the short story, are recogniz..."
+    },
+    {
+      "word": "palpable",
+      "context": "The sloping tile roofs and picturesque fa\u00e7ade of Mission San Jos\u00e9 in Fremont, California, exemplify ..."
+    },
+    {
+      "word": "paucity",
+      "context": "Given that healthy genetic diversity supports honey bee population robustness\u2014a matter of public int..."
+    },
+    {
+      "word": "perturbation",
+      "context": "Andrei Tarkovsky's Solaris has the measured pace typical of slow-cinema films..."
+    },
+    {
+      "word": "pervades",
+      "context": "Disproportionate emphasis on instances of invention, such as the emergence of potter's wheels circa ..."
+    },
+    {
+      "word": "pervasive",
+      "context": "Text corpora such as the International Corpus of English are enormous collections of electronically ..."
+    },
+    {
+      "word": "pervasive",
+      "context": "Text corpora such as the British National Corpus are enormous collections of electronically stored t..."
+    },
+    {
+      "word": "plentiful",
+      "context": "The discoveries of natural satellites by Scott S..."
+    },
+    {
+      "word": "plentiful",
+      "context": "The discoveries of natural satellites by Scott S..."
+    },
+    {
+      "word": "pollinate",
+      "context": "Past research suggests that pollination by honeybees is responsible for up to 10 percent of total on..."
+    },
+    {
+      "word": "pollinate",
+      "context": "Past research suggests that pollination by honeybees is responsible for up to 10 percent of total Ch..."
+    },
+    {
+      "word": "populated",
+      "context": "Lady Grant and colleagues ______ blank pots of sterilized soil with slurries of live microbes collec..."
+    },
+    {
+      "word": "populated",
+      "context": "Corrine Walsh and colleagues ______ blank pots of sterilized soil with slurries of live microbes col..."
+    },
+    {
+      "word": "populated",
+      "context": "Ella Katz and colleagues ______ blank pots of sterilized soil with slurries of live microbes collect..."
+    },
+    {
+      "word": "postulate",
+      "context": "Before the 1858 publication of On the Origin of Species, Charles Darwin developed his theory of natu..."
+    },
+    {
+      "word": "postulate",
+      "context": "Before the 1858 publication of On the Origin of Species, Charles Darwin developed his theory of natu..."
+    },
+    {
+      "word": "prescient",
+      "context": "If some specific predictions in Alvin Toffler\u2019s 1970 book Future Shock seem ludicrous now\u2014people do ..."
+    },
+    {
+      "word": "prescient",
+      "context": "Which choice completes the text with the most logical and precise word or\nphrase..."
+    },
+    {
+      "word": "prevail over",
+      "context": "Jessica Watson, who was the youngest person to sail nonstop and unassisted around the world, undoubt..."
+    },
+    {
+      "word": "prevail over",
+      "context": "Nancy Bird-Walton, who was an aviation pioneer, undoubtedly accomplished much, but to gain a lasting..."
+    },
+    {
+      "word": "prevail over",
+      "context": "Louise Arner Boyd, who led several scientific expeditions off the coast of Greenland in the 1930s, u..."
+    },
+    {
+      "word": "reciprocal",
+      "context": "The Egyptian plover\u2014a bird native to Africa\u2014has a symbiotic relationship with the Nile crocodile..."
+    },
+    {
+      "word": "reciprocal",
+      "context": "The Egyptian plover\u2014a bird native to Africa\u2014has a symbiotic relationship with the Nile crocodile..."
+    },
+    {
+      "word": "reliably",
+      "context": "Maryam Hosseini and her team used aerial images of well-mapped areas of Boston to train a computer p..."
+    },
+    {
+      "word": "revolt",
+      "context": "The student wants to place the 1821 Declaration of Independence in the context of Valle\u2019s changing p..."
+    },
+    {
+      "word": "satiate",
+      "context": "From sculptures like Mir\u00f3's Chicago by Joan Mir\u00f3, found at Brunswick Plaza, to street art like Justu..."
+    },
+    {
+      "word": "soothed",
+      "context": "Some robots such as Surena (developed in 2008) and COMAN (developed in 2012) are designed to resembl..."
+    },
+    {
+      "word": "spurious",
+      "context": "Though most hoaxes perpetrated as jokes by mischievous users of Wikipedia, an online encyclopedia th..."
+    },
+    {
+      "word": "subtlety",
+      "context": "The following text is adapted from Mark Twain\u2019s 1876 novel The Adventures of Tom Sawyer..."
+    },
+    {
+      "word": "subtlety",
+      "context": "The following text is adapted from Mark Twain\u2019s 1876 novel The\nAdventures of Tom Sawyer..."
+    },
+    {
+      "word": "supplement",
+      "context": "The Art Institute of Chicago houses nearly 300,000 works from around the world..."
+    },
+    {
+      "word": "supplement",
+      "context": "The Art Institute of Chicago houses nearly 300,000 works from around the world..."
+    },
+    {
+      "word": "supplement",
+      "context": "The Art Institute of Chicago houses nearly 300,000 works from around the world..."
+    },
+    {
+      "word": "supposition",
+      "context": "Text corpora such as the British National Corpus are enormous collections of electronically stored t..."
+    },
+    {
+      "word": "suppress",
+      "context": "The advent of online streaming has led many music listeners to drift away from ownership of music (t..."
+    },
+    {
+      "word": "suppress",
+      "context": "The advent of online streaming has led many music listeners to drift away from ownership of music (t..."
+    },
+    {
+      "word": "suppress",
+      "context": "The advent of online streaming has led many music listeners to drift away from ownership of music (t..."
+    },
+    {
+      "word": "surmounted",
+      "context": "Emerging bioacoustics technologies have ______ blank long-standing challenges to wildlife research b..."
+    },
+    {
+      "word": "synthesis",
+      "context": "The metal displayed in the structure of House in Kamiaraya by Kazuto Nishi Architects and the metal ..."
+    },
+    {
+      "word": "synthesis",
+      "context": "The metal displayed in the structure of House in Kamiaraya by Kazuto Nishi Architects and the metal ..."
+    },
+    {
+      "word": "synthesis",
+      "context": "The metal displayed in the structure of House in Kamiaraya by Kazuto Nishi Architects and the metal ..."
+    },
+    {
+      "word": "tranquil",
+      "context": "Kelp forests grow underwater along the eastern Pacific Coast..."
+    },
+    {
+      "word": "tranquil",
+      "context": "Kelp forests grow underwater along the eastern Pacific Coast..."
+    },
+    {
+      "word": "tranquility",
+      "context": "The following text is from Anne Spencer's 1922 poem \"Translation..."
+    },
+    {
+      "word": "tranquility",
+      "context": "The following text is adapted from D..."
+    },
+    {
+      "word": "tranquility",
+      "context": "The following text is adapted from D..."
+    },
+    {
+      "word": "ubiquitous",
+      "context": "The people inhabiting the Ice Age sites now known as Shuidonggou 2 and Poto\u010dka Cave likely began wea..."
+    },
+    {
+      "word": "ubiquitous",
+      "context": "The people inhabiting the Ice Age sites now known as Shuidonggou 2 and Poto\u010dka Cave likely began wea..."
+    },
+    {
+      "word": "ubiquitous",
+      "context": "The people inhabiting the Ice Age sites now known as Shuidonggou 2 and Poto\u010dka Cave likely began wea..."
+    },
+    {
+      "word": "undermine",
+      "context": "Jean Batten, who was the first person to fly between England and New Zealand solo, and Ynes Mexia, w..."
+    },
+    {
+      "word": "unequivocal",
+      "context": "The plaice is ectothermic, or cold-blooded, and the southern bluefin tuna is a regional endotherm, m..."
+    },
+    {
+      "word": "unequivocal",
+      "context": "The striped marlin is ectothermic, or cold-blooded, and the Albacore tuna is a regional endotherm, m..."
+    }
+  ],
+  "blank_in_questions": [
+    {
+      "word": "abstract",
+      "field": "passage",
+      "question_id": "sim-9-q1765245853773",
+      "text_snippet": "Belonging to neither the minimalist nor the abstract art movements but heavily influencing both, Constantin Br\u00e2ncu\u015fi spent his sculpting career return..."
+    },
+    {
+      "word": "abstract",
+      "field": "passage",
+      "question_id": "sim-7-q1765244505623",
+      "text_snippet": "Lily Everett and Mary Foote were among the 300 artists who exhibited at the 1913 Armory Show, a groundbreaking New York City art exhibition that intro..."
+    },
+    {
+      "word": "abstract",
+      "field": "passage",
+      "question_id": "sim-7-q1765244505477",
+      "text_snippet": "It was the kind of challenge that would set any art curator's mind into _______ that elusive thread that could link artists as disparate as American a..."
+    },
+    {
+      "word": "accentuate",
+      "field": "passage",
+      "question_id": "sim-7-q1765244504762",
+      "text_snippet": "The Gleaners, painted in the realist style by Jean-Fran\u00e7ois Millet, depicts peasants picking stray wheat from a field after the harvest. The realists'..."
+    },
+    {
+      "word": "accommodate",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ed-s1-m2-q16",
+      "text_snippet": "Now seen as a mechanical precursor to the e-reader, Spanish educator and inventor \u00c1ngela Ruiz Robles\u2019s Enciclopedia Mec\u00e1nica eschewed pages in favor o..."
+    },
+    {
+      "word": "accustomed to",
+      "field": "passage",
+      "question_id": "unknown-s0-m0-q0",
+      "text_snippet": "\u201cJohn of God, the Water-Carrier\u201d is a 1913 short story by Mar\u00eda Cristina Mena. In the story, the narrator presents John as\nbeing a hard worker who is ..."
+    },
+    {
+      "word": "adhere",
+      "field": "passage",
+      "question_id": "nov-sat-us-s1-m1-q16",
+      "text_snippet": "While some biologists cite the general lineage species concept (Queiroz 1998), others adhere to the biological species concept (Coyne and Orr 2004), w..."
+    },
+    {
+      "word": "adhere",
+      "field": "passage",
+      "question_id": "nov-sat-ap2-s1-m1-q11",
+      "text_snippet": "Which choice most effectively uses data from the graph to complete the\nstatement?\nWenhao Xu and colleagues demonstrated that applying a low direct\ncur..."
+    },
+    {
+      "word": "adhere",
+      "field": "passage",
+      "question_id": "sim-5-q1765243619637",
+      "text_snippet": "Long thought to be sessile (immobile), adult Chelonibia testudinaria, barnacles that adhere to sea turtle shells, have been observed to shift slightly..."
+    },
+    {
+      "word": "aesthetic",
+      "field": "passage",
+      "question_id": "nov-sat--ap1-s1-m1-q20",
+      "text_snippet": "Which choice completes the text so that it conforms to the conventions\nof Standard English?\nThough largely eclipsed by her success as a novelist, Jess..."
+    },
+    {
+      "word": "aesthetic",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ea-s1-m2-q2",
+      "text_snippet": "The metal displayed in the structure of House in Kamiaraya by Kazuto Nishi Architects and the metal hardware in UE House by GENETO are representative ..."
+    },
+    {
+      "word": "aesthetic",
+      "field": "passage",
+      "question_id": "sim-9-q1765246240870",
+      "text_snippet": "The metal displayed in the structure of House in Kamiaraya by Kazuto Nishi Architects and the metal hardware in UE House by GENETO are representative ..."
+    },
+    {
+      "word": "affecting",
+      "field": "passage",
+      "question_id": "nov-sat-ap2-s1-m1-q16",
+      "text_snippet": "Which choice completes the text so that it conforms to the conventions of\nStandard English?\nMia Heavener\u2019s 2019 novel Under Nushagak Bluff, which take..."
+    },
+    {
+      "word": "affecting",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ea-s1-m1-q21",
+      "text_snippet": "Their Last Ride was first released in 2022. This short ______ blank is about the environmental issues affecting wild and domestic horses, was directed..."
+    },
+    {
+      "word": "affinity",
+      "field": "passage",
+      "question_id": "sim-1-q1765237576399",
+      "text_snippet": "A rising author of children's books spoke at a recent publishing conference about what motivated her to pursue a career in children's literature. The ..."
+    },
+    {
+      "word": "affinity",
+      "field": "passage",
+      "question_id": "sim-9-q1765246240485",
+      "text_snippet": "A rising author of children's books spoke at a recent publishing conference about what motivated her to pursue a career in children's literature. The ..."
+    },
+    {
+      "word": "affinity",
+      "field": "passage",
+      "question_id": "sim-9-q1765245999181",
+      "text_snippet": "A rising author of children's books spoke at a recent publishing conference about what motivated her to pursue a career in children's literature. The ..."
+    },
+    {
+      "word": "agglomeration",
+      "field": "passage",
+      "question_id": "sim-1-q1765237576412",
+      "text_snippet": "In an analysis of medieval urbanization in Pisa, Greifswald, and other European settlements, researchers drew on modern urban scaling theory, which po..."
+    },
+    {
+      "word": "agglomeration",
+      "field": "passage",
+      "question_id": "sim-4-q1765239357780",
+      "text_snippet": "Rudolf Cesaretti et al. conducted an analysis of historical urban scaling trends circa 1300 CE in Western Europe, focusing on agglomeration patterns w..."
+    },
+    {
+      "word": "agglomeration",
+      "field": "passage",
+      "question_id": "sim-9-q1765245998677",
+      "text_snippet": "In an analysis of medieval urbanization in Pisa, Greifswald, and other European settlements, researchers drew on modern urban scaling theory, which po..."
+    },
+    {
+      "word": "air",
+      "field": "passage",
+      "question_id": "sim-1-q1765237576387",
+      "text_snippet": "On February 1, 2018, a Florida-based research team\u2014Martha A. Scholl, Maoya Bassiouni, and Angel J. Torres-S\u00e1nchez\u2014compiled climate data from several s..."
+    },
+    {
+      "word": "akin",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ea-s1-m1-q15",
+      "text_snippet": "Blue holes\u2014large marine sinkholes, like Watling\u2019s Blue Hole near San Salvador Island\u2014can be hundreds of meters deep and are sometimes part of widespre..."
+    },
+    {
+      "word": "akin",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ec-s1-m1-q15",
+      "text_snippet": "Blue holes\u2014large marine sinkholes, like the Dahab Blue Hole in Egypt\u2014can be hundreds of meters deep and are sometimes part of widespread subterranean ..."
+    },
+    {
+      "word": "alleviate",
+      "field": "passage",
+      "question_id": "sim-7-q1765244388963",
+      "text_snippet": "Many experts, like lawyer and cycling advocate Ernesto Hernandez-Lopez, have proposed bike travel as one possible way to alleviate congestion on the b..."
+    },
+    {
+      "word": "ambient",
+      "field": "passage",
+      "question_id": "sim-9-q1765246240545",
+      "text_snippet": "Subsequent to simulating an attack to elicit defense responses in three caterpillar species, ecologists placed a treatment group of those individuals ..."
+    },
+    {
+      "word": "ambient",
+      "field": "passage",
+      "question_id": "sim-9-q1765245854479",
+      "text_snippet": "Subsequent to simulating an attack to elicit defense responses in three caterpillar species, ecologists placed a treatment group of those individuals ..."
+    },
+    {
+      "word": "ambivalence",
+      "field": "passage",
+      "question_id": "sim-7-q1765244255128",
+      "text_snippet": "\"Poetry\" is a 1919 poem by Marianne Moore. The poem highlights an ambivalence toward poetry as the speaker acknowledges its merits while also expressi..."
+    },
+    {
+      "word": "ameliorate",
+      "field": "passage",
+      "question_id": "sim-5-q1765243452687",
+      "text_snippet": "Despite stated claims of global relevance, much major research on income inequality performed in the 2010s suffered from a myopic focus on a few count..."
+    },
+    {
+      "word": "amorphous",
+      "field": "passage",
+      "question_id": "sim-8-q1765245464797",
+      "text_snippet": "Writer Lydia Davis observed that while traditional literary forms, such as the novel, are recognizable as such even as they evolve, there are more ___..."
+    },
+    {
+      "word": "ample",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ea-s1-m2-q21",
+      "text_snippet": "Architect Victor Gruen, the designer of Indiana\u2019s Woodmar Plaza shopping mall, conceived of the mall as an indoor version of the European town square,..."
+    },
+    {
+      "word": "ample",
+      "field": "passage",
+      "question_id": "\u5317\u7f8eb-s1-m2-q23",
+      "text_snippet": "Architect Victor Gruen, the designer of Indiana\u2019s Woodmar Plaza shopping mall, conceived of the mall as an indoor version of the European town square,..."
+    },
+    {
+      "word": "ample",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ef-s1-m2-q23",
+      "text_snippet": "Architect Victor Gruen, the designer of New Jersey\u2019s Cherry Hill shopping mall, conceived of the mall as an indoor version of the European town square..."
+    },
+    {
+      "word": "appreciate",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ee-s1-m2-q15",
+      "text_snippet": "The subscription economy has rapidly expanded to include a wide range of products\u2014from books to video gaming services\u2014in part because consumers apprec..."
+    },
+    {
+      "word": "appreciate",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ec-s1-m2-q13",
+      "text_snippet": "The subscription economy has rapidly expanded to include a wide range of products\u2014from books to cloud storage\u2014in part because consumers appreciate the..."
+    },
+    {
+      "word": "approach",
+      "field": "passage",
+      "question_id": "nov-sat-us-s1-m1-q16",
+      "text_snippet": "While some biologists cite the general lineage species concept (Queiroz 1998), others adhere to the biological species concept (Coyne and Orr 2004), w..."
+    },
+    {
+      "word": "approach",
+      "field": "passage",
+      "question_id": "sim-9-q1765246240728",
+      "text_snippet": "Although Grant Tavinor concludes that computer games are art by virtue of their forming a subcategory of fiction, and Berys Gaut similarly places them..."
+    },
+    {
+      "word": "arbitrary",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ec-s1-m2-q24",
+      "text_snippet": "William Duer employed the pseudonym \u201cPhilo-Publius\u201d\u2014a reference to an ancient Roman statesman\u2014in political essays he wrote in 1787, a choice that acco..."
+    },
+    {
+      "word": "arbitrary",
+      "field": "passage",
+      "question_id": "sim-9-q1765246240266",
+      "text_snippet": "John Thomson employed the pseudonym 'Gracchus'\u2014the name of an ancient Roman politician\u2014in political essays he wrote in 1795, a choice that accomplishe..."
+    },
+    {
+      "word": "arbitrary",
+      "field": "passage",
+      "question_id": "sim-5-q1765243452424",
+      "text_snippet": "John Thomson employed the pseudonym \"Gracchus\"\u2014the name of an ancient Roman politician\u2014in political essays he wrote in 1795, a choice that accomplishe..."
+    },
+    {
+      "word": "assert",
+      "field": "passage",
+      "question_id": "sim-4-q1765239159178",
+      "text_snippet": "The Komi Autonomous Soviet Socialist Republic, whose residents mainly spoke Komi, was one of many nominally autonomous Soviet ______ by giving these r..."
+    },
+    {
+      "word": "attributable",
+      "field": "passage",
+      "question_id": "unknown-s0-m0-q0",
+      "text_snippet": "Marta Coll and colleagues\u2019 2010 Mediterranean Sea biodiversity census reported approximately 17,000 species, nearly\ndouble the number reported in Carl..."
+    },
+    {
+      "word": "attrition",
+      "field": "passage",
+      "question_id": "sim-4-q1765239158852",
+      "text_snippet": "Run by researchers in multiple countries, the Study on Global Ageing and Adult Health (SAGE) is an examination of aging that has attempted to track ap..."
+    },
+    {
+      "word": "attrition",
+      "field": "passage",
+      "question_id": "sim-9-q1765246240444",
+      "text_snippet": "Run by researchers in Australia, the Longitudinal Study of Indigenous Children (LSIC) is an examination of childhood development that has attempted to..."
+    },
+    {
+      "word": "base",
+      "field": "passage",
+      "question_id": "nov-sat-us-s1-m2-q10",
+      "text_snippet": "On December 2, 1992, the space shuttle Discovery blasted off into space, commencing Mission ______ seven days and seven hours, the mission ended when ..."
+    },
+    {
+      "word": "base",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ef-s1-m2-q15",
+      "text_snippet": "There is a growing belief that teaching medical students about art alongside standard science and clinical coursework helps them become more observant..."
+    },
+    {
+      "word": "bolster",
+      "field": "passage",
+      "question_id": "nov-sat-us-s1-m2-q25",
+      "text_snippet": "Duckweed is a small freshwater plant that is often exposed to zinc pollution. Sofia V\u00e1mos and colleagues collected samples of four duckweed ecotypes (..."
+    },
+    {
+      "word": "bolster",
+      "field": "passage",
+      "question_id": "nov-sat--ap1-s1-m2-q12",
+      "text_snippet": "Duckweed is a small freshwater plant that is often exposed to zinc\npollution. Sofia V\u00e1mos and colleagues collected samples of four duckweed\necotypes (..."
+    },
+    {
+      "word": "bolster",
+      "field": "passage",
+      "question_id": "nov-sat--ap3-s1-m2-q14",
+      "text_snippet": "Duckweed is a small freshwater plant that is often exposed to zinc pollution.\nSofia V\u00e1mos and colleagues collected samples of four duckweed ecotypes\n(..."
+    },
+    {
+      "word": "captive",
+      "field": "passage",
+      "question_id": "nov-sat-ap2-s1-m2-q15",
+      "text_snippet": "Whereas Joan Lockard\u2019s 1984 study of captive gorillas reported more\nright-handedness than left-handedness, Jane Goodall\u2019s 1963 study of wild\nchimpanze..."
+    },
+    {
+      "word": "captive",
+      "field": "passage",
+      "question_id": "sim-1-q1765237576384",
+      "text_snippet": "Right-handedness is overwhelmingly prevalent in humans. Among studies of laterality in nonhuman primates, Dulce D. Shafer's 1988 study of captive gori..."
+    },
+    {
+      "word": "captive",
+      "field": "passage",
+      "question_id": "sim-9-q1765245998742",
+      "text_snippet": "Right-handedness is overwhelmingly prevalent in humans. Among studies of laterality in nonhuman primates, Dulce D. Shafer's 1988 study of captive gori..."
+    },
+    {
+      "word": "capture",
+      "field": "passage",
+      "question_id": "sim-7-q1765244667280",
+      "text_snippet": "Architects looking for inspiration may examine photographs of iconic buildings such as the Forbidden City in Beijing. A two-dimensional photograph, ho..."
+    },
+    {
+      "word": "capture",
+      "field": "passage",
+      "question_id": "nov-sat--ap3-s1-m1-q19",
+      "text_snippet": "Which choice completes the text so that it conforms to the conventions of\nStandard English?\nGrowing as large as three meters in diameter, the leaves o..."
+    },
+    {
+      "word": "capture",
+      "field": "passage",
+      "question_id": "nov-sat--ap1-s1-m1-q18",
+      "text_snippet": "Which choice completes the text so that it conforms to the conventions\nof Standard English?\nGrowing as large as three meters in diameter, the leaves o..."
+    },
+    {
+      "word": "census",
+      "field": "passage",
+      "question_id": "sim-2-q1765238797040",
+      "text_snippet": "Eastern Ohio's Monroe County is among the most rural counties in the United States: the US Census Bureau classified it as 97.7% rural in 2010. Researc..."
+    },
+    {
+      "word": "census",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ea-s1-m2-q11",
+      "text_snippet": "Northeastern Missouri\u2019s Ralls County is among the most rural counties in the United States: the US Census Bureau classified it as 96.1% rural in 2010...."
+    },
+    {
+      "word": "census",
+      "field": "passage",
+      "question_id": "sim-9-q1765245854521",
+      "text_snippet": "Eastern Ohio's Monroe County is among the most rural counties in the United States: the US Census Bureau classified it as 97.7% rural in 2010. Researc..."
+    },
+    {
+      "word": "commended",
+      "field": "passage",
+      "question_id": "sim-8-q1765245465636",
+      "text_snippet": "In a 2018 article celebrating films depicting the Black experience, critics for the New York Times _____ William Greaves's 1968 film Symbiopsychotaxip..."
+    },
+    {
+      "word": "compelling",
+      "field": "passage",
+      "question_id": "sim-5-q1765243452777",
+      "text_snippet": "Although the epic poem The Poem of the Cid dates back to the 12th century, _______ compelling narrative still captivates readers today...."
+    },
+    {
+      "word": "compelling",
+      "field": "passage",
+      "question_id": "sim-5-q1765243619031",
+      "text_snippet": "Although the epic poem The Aeneid dates back to the 1st century BCE, _______ compelling narrative still captivates readers today...."
+    },
+    {
+      "word": "complementary",
+      "field": "passage",
+      "question_id": "nov-sat-us-s1-m1-q1",
+      "text_snippet": "In the search for new impact craters on Mars, the roles of seismic monitoring and orbital imaging as data sources are ______; when vibrations detected..."
+    },
+    {
+      "word": "complementary",
+      "field": "passage",
+      "question_id": "nov-sat-ap2-s1-m2-q1",
+      "text_snippet": "Which choice completes the text with the most logical and precise word or\nphrase?\nIn the search for new impact craters on Mars, the roles of seismic\nm..."
+    },
+    {
+      "word": "complementary",
+      "field": "passage",
+      "question_id": "nov-sat--ap3-s1-m1-q4",
+      "text_snippet": "Which choice completes the text with the most logical and precise word or\nphrase?\nIn the search for new impact craters on Mars, the roles of seismic m..."
+    },
+    {
+      "word": "compound",
+      "field": "passage",
+      "question_id": "sim-9-q1765245998725",
+      "text_snippet": "An emulsifier is a type of compound that serves to stabilize an emulsion\u2014a mixture of two or more liquids that otherwise would not easily blend togeth..."
+    },
+    {
+      "word": "compound",
+      "field": "passage",
+      "question_id": "sim-1-q1765237576413",
+      "text_snippet": "In a chemical equation, converting between the mass of the reactants and the mass of the product requires knowing each component's molar mass, a quant..."
+    },
+    {
+      "word": "compound",
+      "field": "passage",
+      "question_id": "sim-9-q1765245998413",
+      "text_snippet": "In a chemical equation, converting between the mass of the reactants and the mass of the product requires knowing each component's molar mass, a quant..."
+    },
+    {
+      "word": "concrete",
+      "field": "passage",
+      "question_id": "nov-sat--ap1-s1-m1-q2",
+      "text_snippet": "Which choice completes the text with the most logical and precise word\nor phrase?\nResearchers have long debated the origins of silver used in European..."
+    },
+    {
+      "word": "concrete",
+      "field": "passage",
+      "question_id": "nov-sat--ap3-s1-m1-q2",
+      "text_snippet": "Which choice completes the text with the most logical and precise word or\nphrase?\nResearchers have long debated the origins of silver used in European..."
+    },
+    {
+      "word": "concrete",
+      "field": "passage",
+      "question_id": "sim-3-q1765238990849",
+      "text_snippet": "Maryam Hosseini and her team used aerial images of well-mapped areas of Boston to train a computer program to identify sidewalks. When it was tested o..."
+    },
+    {
+      "word": "conduct",
+      "field": "passage",
+      "question_id": "sim-7-q1765244667842",
+      "text_snippet": "Some studies can be done well with relatively little money. For example, a marketing study simply trying to identify the average amount customers spen..."
+    },
+    {
+      "word": "consequently",
+      "field": "passage",
+      "question_id": "sim-7-q1765244389853",
+      "text_snippet": "For several centuries after the birth of opera in sixteenth-century Florence, Italian remained the default language in which most opera scores were wr..."
+    },
+    {
+      "word": "constitution",
+      "field": "passage",
+      "question_id": "sim-7-q1765244255384",
+      "text_snippet": "Legal scholars James Melton and Tom Ginsburg's analysis of de jure judicial independence and its growth over decades ______ six constitutional feature..."
+    },
+    {
+      "word": "constitution",
+      "field": "passage",
+      "question_id": "sim-7-q1765244388971",
+      "text_snippet": "Ann Greely of Maine _______ a fierce advocate of women's voting rights in the late 1800s. The dedication of Greely and her fellow activists was reward..."
+    },
+    {
+      "word": "constitution",
+      "field": "passage",
+      "question_id": "nov-sat--ap3-s1-m2-q15",
+      "text_snippet": "Which choice completes the text so that it conforms to the conventions of\nStandard English?\nEnacted in 1991, Latvia\u2019s 4,917-word constitution, in cont..."
+    },
+    {
+      "word": "content",
+      "field": "passage",
+      "question_id": "sim-5-q1765243452771",
+      "text_snippet": "In 1900, in collaboration with Cherokee cultural historian Will West Long, white ethnographer James Mooney assembled a collection of traditional oral ..."
+    },
+    {
+      "word": "context",
+      "field": "passage",
+      "question_id": "sim-8-q1765245288249",
+      "text_snippet": "Manchester United Football Club won more than half its home matches between 1947 and 2003, helping to distinguish the team as a top British profession..."
+    },
+    {
+      "word": "conventional",
+      "field": "passage",
+      "question_id": "nov-sat-us-s1-m2-q4",
+      "text_snippet": "Pablo Picasso famously subverted the norms of traditional painting: in his cubist paintings he refused to let his expression be constrained, fragmenti..."
+    },
+    {
+      "word": "conventional",
+      "field": "passage",
+      "question_id": "unknown-s0-m0-q0",
+      "text_snippet": "Conventional theories of rhetoric hold that presenting information as coming from credentialed experts increases that\ninformation\u2019s credibility. When ..."
+    },
+    {
+      "word": "conventional",
+      "field": "passage",
+      "question_id": "sim-4-q1765239158999",
+      "text_snippet": "Researchers who study olfaction\u2014the sense of smell\u2014define valence as a person's perception of how pleasant an odor is. Conventional wisdom holds that ..."
+    },
+    {
+      "word": "conversely",
+      "field": "passage",
+      "question_id": "sim-7-q1765244255549",
+      "text_snippet": "Whether the reign of a French monarch such as Francis ll or Louis XI was considered historically significant or, conversely, relatively ______ its tra..."
+    },
+    {
+      "word": "corpus",
+      "field": "passage",
+      "question_id": "sim-7-q1765244751659",
+      "text_snippet": "Text corpora such as the International Corpus of English are enormous collections of electronically stored texts that can be used for empirical testin..."
+    },
+    {
+      "word": "corpus",
+      "field": "passage",
+      "question_id": "sim-7-q1765244254858",
+      "text_snippet": "Text corpora such as the British National Corpus are enormous collections of electronically stored texts that can be used for empirical testing of hyp..."
+    },
+    {
+      "word": "corpus",
+      "field": "passage",
+      "question_id": "sim-7-q1765244505606",
+      "text_snippet": "Text corpora such as the British National Corpus are enormous collections of electronically stored texts that can be used for empirical testing of hyp..."
+    },
+    {
+      "word": "corroborate",
+      "field": "passage",
+      "question_id": "sim-4-q1765239357794",
+      "text_snippet": "Though the thermoregulation mechanisms of fungi, such as Amanita brunescens, have received little formal study, anecdotal evidence has suggested that ..."
+    },
+    {
+      "word": "counteract",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ec-s1-m2-q11",
+      "text_snippet": "Canada, which, according to international indices, has relatively strong democratic institutions and low intranational income inequality, experienced ..."
+    },
+    {
+      "word": "counteract",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ed-s1-m2-q11",
+      "text_snippet": "Estonia, which, according to international indices, has relatively strong democratic institutions and low intranational income inequality, experienced..."
+    },
+    {
+      "word": "counteract",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ee-s1-m2-q13",
+      "text_snippet": "The Czech Republic, which, according to international indices, has relatively strong democratic institutions and low intranational income inequality, ..."
+    },
+    {
+      "word": "counterintuitive",
+      "field": "passage",
+      "question_id": "sim-5-q1765243619466",
+      "text_snippet": "In the mid-1980s, the price of vintage and even new baseball cards rose dramatically, which had the counterintuitive effect of _______ demand: buyers ..."
+    },
+    {
+      "word": "counterintuitive",
+      "field": "passage",
+      "question_id": "sim-7-q1765244255119",
+      "text_snippet": "In the 2010s, the price of vintage Teenage Mutant Ninja Turtles action figures rose dramatically, which had the counterintuitive effect of ______ dema..."
+    },
+    {
+      "word": "criterion",
+      "field": "passage",
+      "question_id": "nov-sat--ap1-s1-m2-q18",
+      "text_snippet": "Which choice completes the text so that it conforms to the conventions\nof Standard English?\nThe statement \u201call tarantulas are venomous\u201d is scientific ..."
+    },
+    {
+      "word": "criterion",
+      "field": "passage",
+      "question_id": "nov-sat--ap3-s1-m2-q18",
+      "text_snippet": "Which choice completes the text so that it conforms to the conventions of\nStandard English?\nThe statement \u201call tarantulas are venomous\u201d is scientific ..."
+    },
+    {
+      "word": "critical",
+      "field": "passage",
+      "question_id": "sim-4-q1765239358183",
+      "text_snippet": "The album Irreversible...2012 by La Arrolladora Banda El Lim\u00f3n De Ren\u00e9 Camacho received much critical attention and praise for its contribution to the..."
+    },
+    {
+      "word": "critical",
+      "field": "passage",
+      "question_id": "sim-9-q1765246240614",
+      "text_snippet": "Writer Silvia Moreno-Garcia's love of short fiction began when she read a collection of Edgar Allan Poe stories as a child, and she later would become..."
+    },
+    {
+      "word": "critical",
+      "field": "passage",
+      "question_id": "\u5317\u7f8eb-s1-m2-q19",
+      "text_snippet": "F Admin F Admin Admin Admin Admin Admin Admin Admin Admin Admin Admin Admin Admin Admin F Admin Admin Admin F Admin F Admin Admin F Admin F Admin Admi..."
+    },
+    {
+      "word": "crude",
+      "field": "passage",
+      "question_id": "\u5317\u7f8eb-s1-m1-q23",
+      "text_snippet": "In economics, sugar is considered a soft commodity, while copper and crude oil are considered hard commodities. The categorical distinction between so..."
+    },
+    {
+      "word": "crude",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ee-s1-m1-q24",
+      "text_snippet": "In economics, wool is considered a soft commodity, while copper and crude oil are considered hard commodities. The categorical distinction between sof..."
+    },
+    {
+      "word": "crude",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ef-s1-m1-q23",
+      "text_snippet": "In economics, milk is considered a soft commodity, while copper and crude oil are considered hard commodities. The categorical distinction between sof..."
+    },
+    {
+      "word": "debris",
+      "field": "passage",
+      "question_id": "sim-2-q1765238796394",
+      "text_snippet": "Occurring in the constellation Coma Berenices, 38 million light-years from Earth, SN 1940B was a ________ explosion of a massive star, which blasts la..."
+    },
+    {
+      "word": "debris",
+      "field": "passage",
+      "question_id": "\u5317\u7f8eb-s1-m2-q17",
+      "text_snippet": "Occurring in the constellation Perseus, 240 million light-years from Earth, SN 2006gy was a ______ blank explosion of a massive star, which blasts lar..."
+    },
+    {
+      "word": "debris",
+      "field": "passage",
+      "question_id": "sim-9-q1765246240747",
+      "text_snippet": "Occurring in the constellation Coma Berenices, 38 million light-years from Earth, SN 1940B was a ______ explosion of a massive star, which blasts larg..."
+    },
+    {
+      "word": "default",
+      "field": "passage",
+      "question_id": "sim-1-q1765237576419",
+      "text_snippet": "For several centuries after the birth of opera in sixteenth-century Florence, Italian remained the default language in which most opera scores were wr..."
+    },
+    {
+      "word": "default",
+      "field": "passage",
+      "question_id": "sim-7-q1765244389853",
+      "text_snippet": "For several centuries after the birth of opera in sixteenth-century Florence, Italian remained the default language in which most opera scores were wr..."
+    },
+    {
+      "word": "default",
+      "field": "passage",
+      "question_id": "sim-9-q1765245998453",
+      "text_snippet": "For several centuries after the birth of opera in sixteenth-century Florence, Italian remained the default language in which most opera scores were wr..."
+    },
+    {
+      "word": "defunct",
+      "field": "passage",
+      "question_id": "sim-9-q1765245853701",
+      "text_snippet": "Studying advertisements for defunct amusement parks, menus from nineteenth-century restaurants, and handbills promoting long-forgotten political candi..."
+    },
+    {
+      "word": "defunct",
+      "field": "passage",
+      "question_id": "sim-2-q1765238796344",
+      "text_snippet": "Studying advertisements for defunct amusement parks, menus from nineteenth-century restaurants, and handbills promoting long-forgotten political candi..."
+    },
+    {
+      "word": "defunct",
+      "field": "passage",
+      "question_id": "sim-9-q1765246240038",
+      "text_snippet": "Studying advertisements for defunct amusement parks, menus from nineteenth-century restaurants, and handbills promoting long-forgotten political candi..."
+    },
+    {
+      "word": "demonstrate",
+      "field": "passage",
+      "question_id": "sim-7-q1765244255303",
+      "text_snippet": "Scientists studying asteroid deflection have focused on secondary objects such as S/2020 (2013 PY6), a moonlet orbiting the near-Earth asteroid 2013 P..."
+    },
+    {
+      "word": "demonstrate",
+      "field": "passage",
+      "question_id": "sim-7-q1765244255153",
+      "text_snippet": "Scientists studying asteroid deflection have focused on secondary objects such as S/2020 (2013 PY6), a moonlet orbiting the near-Earth asteroid 2013 P..."
+    },
+    {
+      "word": "denotes",
+      "field": "passage",
+      "question_id": "\u5317\u7f8eb-s1-m1-q4",
+      "text_snippet": "Chengdu, China, was named a City of Gastronomy by UNESCO in 2010, a title that ______ blank that Chengdu has a unique and vibrant food culture worthy ..."
+    },
+    {
+      "word": "denotes",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ed-s1-m1-q4",
+      "text_snippet": "Buenaventura, Colombia, was named a City of Gastronomy by UNESCO in 2017, a title that ______ blank that Buenaventura has a unique and vibrant food cu..."
+    },
+    {
+      "word": "denotes",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ee-s1-m1-q4",
+      "text_snippet": "Cochabamba, Bolivia, was named a City of Gastronomy by UNESCO in 2017, a title that ______ blank that Cochabamba has a unique and vibrant food culture..."
+    },
+    {
+      "word": "designation",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ee-s1-m2-q22",
+      "text_snippet": "Every US state has an associated state soil, which is typically selected by a group of experts, then passed through the state legislature to receive i..."
+    },
+    {
+      "word": "designation",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ec-s1-m2-q22",
+      "text_snippet": "Every US state has an associated state soil, which is typically selected by a group of experts, then passed through the state legislature to receive i..."
+    },
+    {
+      "word": "designation",
+      "field": "passage",
+      "question_id": "sim-9-q1765245854412",
+      "text_snippet": "Every US state has an associated state soil, which is typically selected by a group of experts, then passed through the state legislature to receive i..."
+    },
+    {
+      "word": "determine",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ef-s1-m2-q22",
+      "text_snippet": "To determine the approximate age of rock carvings excavated from an archaeological site in Northern Arabia, archaeologist Maria Guagnin and colleagues..."
+    },
+    {
+      "word": "diffusion",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ea-s1-m2-q2",
+      "text_snippet": "The metal displayed in the structure of House in Kamiaraya by Kazuto Nishi Architects and the metal hardware in UE House by GENETO are representative ..."
+    },
+    {
+      "word": "diffusion",
+      "field": "passage",
+      "question_id": "\u5317\u7f8eb-s1-m2-q2",
+      "text_snippet": "The metal displayed in the structure of ARK by APOLLO Architects Associates and the metal hardware in One-Room Residence of 5 Layers by Matsuyama Arch..."
+    },
+    {
+      "word": "disparate",
+      "field": "passage",
+      "question_id": "sim-7-q1765244255237",
+      "text_snippet": "For Spain, a member of the North Atlantic Treaty Organization (NATO) since 1982, NATO's principle of collective defense confers both benefits and ____..."
+    },
+    {
+      "word": "disparate",
+      "field": "passage",
+      "question_id": "sim-7-q1765244505477",
+      "text_snippet": "It was the kind of challenge that would set any art curator's mind into _______ that elusive thread that could link artists as disparate as American a..."
+    },
+    {
+      "word": "disparity",
+      "field": "passage",
+      "question_id": "sim-2-q1765238796215",
+      "text_snippet": "Belonging to neither the minimalist nor the abstract art movements but heavily influencing both, Constantin Br\u00e2ncu\u015fi spent his sculpting career return..."
+    },
+    {
+      "word": "disparity",
+      "field": "passage",
+      "question_id": "sim-9-q1765246240553",
+      "text_snippet": "Belonging to neither the minimalist nor the abstract art movements but heavily influencing both, Constantin Br\u00e2ncu\u015fi spent his sculpting career return..."
+    },
+    {
+      "word": "disparity",
+      "field": "passage",
+      "question_id": "sim-9-q1765245853773",
+      "text_snippet": "Belonging to neither the minimalist nor the abstract art movements but heavily influencing both, Constantin Br\u00e2ncu\u015fi spent his sculpting career return..."
+    },
+    {
+      "word": "disperse",
+      "field": "passage",
+      "question_id": "sim-7-q1765244667806",
+      "text_snippet": "Like many other fruit-eating birds on the Hawaiian island of Oahu, the red-whiskered bulbul helps forest plants spread by dropping seeds from the plan..."
+    },
+    {
+      "word": "distinct",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ea-s1-m2-q13",
+      "text_snippet": "A soil\u2019s microbial community (the microbial taxa present in their relative abundances) is known to affect plants\u2019 cyclical processes. Corrine Walsh an..."
+    },
+    {
+      "word": "distinct",
+      "field": "passage",
+      "question_id": "sim-4-q1765239357780",
+      "text_snippet": "Rudolf Cesaretti et al. conducted an analysis of historical urban scaling trends circa 1300 CE in Western Europe, focusing on agglomeration patterns w..."
+    },
+    {
+      "word": "distinction",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ef-s1-m1-q23",
+      "text_snippet": "In economics, milk is considered a soft commodity, while copper and crude oil are considered hard commodities. The categorical distinction between sof..."
+    },
+    {
+      "word": "distinguished",
+      "field": "passage",
+      "question_id": "sim-3-q1765238990753",
+      "text_snippet": "Drummer Dennis Chambers's distinguished career includes many memorable achievements, such as working on the Brecker Brothers' album Return of the Brec..."
+    },
+    {
+      "word": "diversity",
+      "field": "passage",
+      "question_id": "sim-3-q1765238991110",
+      "text_snippet": "Given that healthy genetic diversity supports honey bee population robustness\u2014a matter of public interest given the bees' crucial role as pollinators ..."
+    },
+    {
+      "word": "dominant",
+      "field": "passage",
+      "question_id": "sim-7-q1765244389812",
+      "text_snippet": "Over 600 languages are spoken in New York City in addition to English\u2014one can find Acehnese spoken in the neighborhood of Astoria, or Ilocano in Woods..."
+    },
+    {
+      "word": "dominant",
+      "field": "passage",
+      "question_id": "sim-9-q1765246240317",
+      "text_snippet": "Disproportionate emphasis on instances of invention, such as the emergence of potter's wheels circa 4500 BCE, contributes to a pro-innovation bias tha..."
+    },
+    {
+      "word": "draw",
+      "field": "passage",
+      "question_id": "nov-sat-ap2-s1-m1-q18",
+      "text_snippet": "Which choice completes the text so that it conforms to the conventions of\nStandard English?\nEnacted in 1944, Iceland\u2019s 4,089-word constitution, in con..."
+    },
+    {
+      "word": "eclipse",
+      "field": "passage",
+      "question_id": "sim-5-q1765243619224",
+      "text_snippet": "The total solar eclipse of June 5, 762 BCE, was the second-longest total eclipse before the Dark Ages\u20147 minutes, 25 seconds long. Another memorable so..."
+    },
+    {
+      "word": "eclipse",
+      "field": "passage",
+      "question_id": "sim-5-q1765243452295",
+      "text_snippet": "The total solar eclipse of April 16, 1178 BCE, was famously described in Homer's epic poem The Odyssey. Another memorable solar eclipse occurred on Ap..."
+    },
+    {
+      "word": "eclipse",
+      "field": "passage",
+      "question_id": "sim-7-q1765244389864",
+      "text_snippet": "Those who looked up at the right time on July 9, 1926, would have witnessed an annular solar eclipse, during which the Moon blocks most of the Sun and..."
+    },
+    {
+      "word": "eclipsed",
+      "field": "passage",
+      "question_id": "nov-sat--ap1-s1-m1-q20",
+      "text_snippet": "Which choice completes the text so that it conforms to the conventions\nof Standard English?\nThough largely eclipsed by her success as a novelist, Jess..."
+    },
+    {
+      "word": "elicit",
+      "field": "passage",
+      "question_id": "sim-9-q1765246240545",
+      "text_snippet": "Subsequent to simulating an attack to elicit defense responses in three caterpillar species, ecologists placed a treatment group of those individuals ..."
+    },
+    {
+      "word": "elicit",
+      "field": "passage",
+      "question_id": "sim-2-q1765238796852",
+      "text_snippet": "Subsequent to simulating an attack to elicit defense responses in three caterpillar species, ecologists placed a treatment group of those individuals ..."
+    },
+    {
+      "word": "elicit",
+      "field": "passage",
+      "question_id": "sim-9-q1765245854479",
+      "text_snippet": "Subsequent to simulating an attack to elicit defense responses in three caterpillar species, ecologists placed a treatment group of those individuals ..."
+    },
+    {
+      "word": "eliciting",
+      "field": "passage",
+      "question_id": "sim-5-q1765243619466",
+      "text_snippet": "In the mid-1980s, the price of vintage and even new baseball cards rose dramatically, which had the counterintuitive effect of _______ demand: buyers ..."
+    },
+    {
+      "word": "eliciting",
+      "field": "passage",
+      "question_id": "sim-5-q1765243452835",
+      "text_snippet": "In the 2010s, the price of vintage G.I. Joe action figures rose dramatically, which had the counterintuitive effect of _______ demand: buyers who hadn..."
+    },
+    {
+      "word": "empirical",
+      "field": "passage",
+      "question_id": "sim-7-q1765244751659",
+      "text_snippet": "Text corpora such as the International Corpus of English are enormous collections of electronically stored texts that can be used for empirical testin..."
+    },
+    {
+      "word": "empirical",
+      "field": "passage",
+      "question_id": "sim-9-q1765245998769",
+      "text_snippet": "_____ traditional descriptions of pollination syndromes (suites of floral traits, such as nectar composition and scent bouquet, hypothesized to have i..."
+    },
+    {
+      "word": "empirical",
+      "field": "passage",
+      "question_id": "sim-7-q1765244254858",
+      "text_snippet": "Text corpora such as the British National Corpus are enormous collections of electronically stored texts that can be used for empirical testing of hyp..."
+    },
+    {
+      "word": "engender",
+      "field": "passage",
+      "question_id": "sim-7-q1765244750917",
+      "text_snippet": "Some robots such as Surena (developed in 2008) and COMAN (developed in 2012) feature humanoid characteristics like bipedal locomotion so that people w..."
+    },
+    {
+      "word": "engender",
+      "field": "passage",
+      "question_id": "sim-8-q1765245465146",
+      "text_snippet": "Some robots such as Justin (developed in 2008) and TALOS (developed in 2017) feature humanoid characteristics like the ability to respond to voice com..."
+    },
+    {
+      "word": "engendering",
+      "field": "passage",
+      "question_id": "sim-7-q1765244255119",
+      "text_snippet": "In the 2010s, the price of vintage Teenage Mutant Ninja Turtles action figures rose dramatically, which had the counterintuitive effect of ______ dema..."
+    },
+    {
+      "word": "enhance",
+      "field": "passage",
+      "question_id": "nov-sat-ap2-s1-m2-q22",
+      "text_snippet": "Giant dust plumes from the Sahara Desert that blow across the Atlantic\nOcean can have complex and opposing effects on tropical cyclones. On one\nhand, ..."
+    },
+    {
+      "word": "enhance",
+      "field": "passage",
+      "question_id": "sim-7-q1765244255384",
+      "text_snippet": "Legal scholars James Melton and Tom Ginsburg's analysis of de jure judicial independence and its growth over decades ______ six constitutional feature..."
+    },
+    {
+      "word": "enhance",
+      "field": "passage",
+      "question_id": "sim-3-q1765238990523",
+      "text_snippet": "Enacted in 1944, Iceland's constitution, according to legal _____ contains one of the six constitutional features that enhance judicial independence. ..."
+    },
+    {
+      "word": "enumerate",
+      "field": "passage",
+      "question_id": "sim-4-q1765239159545",
+      "text_snippet": "One way to evaluate the importance of a scholar's research is to ______ other scholars' references to that research. For example, a count of other sch..."
+    },
+    {
+      "word": "ephemeral",
+      "field": "passage",
+      "question_id": "sim-9-q1765246240038",
+      "text_snippet": "Studying advertisements for defunct amusement parks, menus from nineteenth-century restaurants, and handbills promoting long-forgotten political candi..."
+    },
+    {
+      "word": "ephemeral",
+      "field": "passage",
+      "question_id": "sim-9-q1765246240122",
+      "text_snippet": "Studying menus from nineteenth-century restaurants, advertisements for defunct amusement parks, and posters promoting long-forgotten plays may seem li..."
+    },
+    {
+      "word": "ephemeral",
+      "field": "passage",
+      "question_id": "sim-9-q1765245853701",
+      "text_snippet": "Studying advertisements for defunct amusement parks, menus from nineteenth-century restaurants, and handbills promoting long-forgotten political candi..."
+    },
+    {
+      "word": "establish",
+      "field": "passage",
+      "question_id": "sim-7-q1765244505311",
+      "text_snippet": "The state of North Dakota has designated the spiny water flea as an invasive species that could outcompete some of the state's native species. Many ot..."
+    },
+    {
+      "word": "evade",
+      "field": "passage",
+      "question_id": "\u5317\u7f8eb-s1-m2-q3",
+      "text_snippet": "Bats that hunt nocturnally emit pulses of sound that can help them locate airborne moths in the dark. This predation method placed evolutionary pressu..."
+    },
+    {
+      "word": "evoke",
+      "field": "passage",
+      "question_id": "sim-7-q1765244504772",
+      "text_snippet": "In 2020, internationally renowned Slovak photographer M\u00e1ria \u0160varbov\u00e1 exhibited her work at the Contessa Gallery and the Art Angle Gallery in the Unite..."
+    },
+    {
+      "word": "exaggerate",
+      "field": "passage",
+      "question_id": "sim-8-q1765245465632",
+      "text_snippet": "The Last of England, painted in the realist style by Ford Madox Brown, depicts a working-class family immigrating to Australia to start a new life. Th..."
+    },
+    {
+      "word": "examine",
+      "field": "passage",
+      "question_id": "sim-7-q1765244571555",
+      "text_snippet": "In their research, behavioral ______ integrate methods from psychology and economics to analyze how and why people make particular choices and to exam..."
+    },
+    {
+      "word": "examine",
+      "field": "passage",
+      "question_id": "sim-7-q1765244667280",
+      "text_snippet": "Architects looking for inspiration may examine photographs of iconic buildings such as the Forbidden City in Beijing. A two-dimensional photograph, ho..."
+    },
+    {
+      "word": "exhibit",
+      "field": "passage",
+      "question_id": "sim-5-q1765243452702",
+      "text_snippet": "Certain features are almost always included in the designs of mosques, like the minaret (or tower), which is considered to be a _______ of mosque arch..."
+    },
+    {
+      "word": "expedition",
+      "field": "passage",
+      "question_id": "sim-8-q1765245464749",
+      "text_snippet": "Louise Arner Boyd, who led several scientific expeditions off the coast of Greenland in the 1930s, undoubtedly accomplished much, but to gain a lastin..."
+    },
+    {
+      "word": "expense",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ec-s1-m2-q13",
+      "text_snippet": "The subscription economy has rapidly expanded to include a wide range of products\u2014from books to cloud storage\u2014in part because consumers appreciate the..."
+    },
+    {
+      "word": "expense",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ed-s1-m2-q13",
+      "text_snippet": "The subscription economy has rapidly expanded to include a wide range of products\u2014from children\u2019s toys to video gaming services\u2014in part because consum..."
+    },
+    {
+      "word": "expense",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ee-s1-m2-q15",
+      "text_snippet": "The subscription economy has rapidly expanded to include a wide range of products\u2014from books to video gaming services\u2014in part because consumers apprec..."
+    },
+    {
+      "word": "extant",
+      "field": "passage",
+      "question_id": "nov-sat-us-s1-m2-q18",
+      "text_snippet": "Many works of the Greek poet Nicander (2nd century BCE) are ______ his Theriaca, a poem about venomous animals, is an extant work: it can still be rea..."
+    },
+    {
+      "word": "extant",
+      "field": "passage",
+      "question_id": "sim-5-q1765243619040",
+      "text_snippet": "The Greek dramatist Euripides's Cyclops, a satyr play, is an extant work: it can still be read. By contrast, lost works like Euripides's play about th..."
+    },
+    {
+      "word": "extemporaneous",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ea-s1-m2-q3",
+      "text_snippet": "Described in treatises mainly published between 1768 and 1950 (such as William Holdsworth and William Aldridge\u2019s Natural Short-Hand), musical stenogra..."
+    },
+    {
+      "word": "extemporaneous",
+      "field": "passage",
+      "question_id": "\u5317\u7f8eb-s1-m2-q4",
+      "text_snippet": "Described in treatises mainly published between 1768 and 1950 (such as John Austin\u2019s A System of Stenographic Music), musical stenography used quickly..."
+    },
+    {
+      "word": "extemporaneous",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ef-s1-m2-q3",
+      "text_snippet": "Described in treatises mainly published between 1768 and 1950 (such as May Florence Smith\u2019s Original Manual Course for Reading Vocal Music at Sight), ..."
+    },
+    {
+      "word": "extensive",
+      "field": "passage",
+      "question_id": "nov-sat--ap3-s1-m2-q19",
+      "text_snippet": "Which choice completes the text so that it conforms to the conventions of\nStandard English?\nNovelist and playwright Mary Russell Mitford joined with 5..."
+    },
+    {
+      "word": "facilitate",
+      "field": "passage",
+      "question_id": "nov-sat--ap1-s1-m2-q15",
+      "text_snippet": "Which choice completes the text so that it conforms to the conventions of Standard English? Working on an unimaginably small scale of billionths of a ..."
+    },
+    {
+      "word": "fair",
+      "field": "passage",
+      "question_id": "sim-4-q1765239357780",
+      "text_snippet": "Rudolf Cesaretti et al. conducted an analysis of historical urban scaling trends circa 1300 CE in Western Europe, focusing on agglomeration patterns w..."
+    },
+    {
+      "word": "fair",
+      "field": "passage",
+      "question_id": "sim-7-q1765244389365",
+      "text_snippet": "Though Middle English was widely spoken in fourteenth-century England, the English language was rarely employed in literature until poet Geoffrey Chau..."
+    },
+    {
+      "word": "fidelity",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ea-s1-m2-q3",
+      "text_snippet": "Described in treatises mainly published between 1768 and 1950 (such as William Holdsworth and William Aldridge\u2019s Natural Short-Hand), musical stenogra..."
+    },
+    {
+      "word": "fidelity",
+      "field": "passage",
+      "question_id": "\u5317\u7f8eb-s1-m2-q4",
+      "text_snippet": "Described in treatises mainly published between 1768 and 1950 (such as John Austin\u2019s A System of Stenographic Music), musical stenography used quickly..."
+    },
+    {
+      "word": "fidelity",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ef-s1-m2-q3",
+      "text_snippet": "Described in treatises mainly published between 1768 and 1950 (such as May Florence Smith\u2019s Original Manual Course for Reading Vocal Music at Sight), ..."
+    },
+    {
+      "word": "foster",
+      "field": "passage",
+      "question_id": "sim-8-q1765245288186",
+      "text_snippet": "Average Survival of Fruit flies following Infection\nSurvival rate (% alive)\n110\n100\n90\n80\n70\n60\n50\n40\n30\n20\n10\n0\n0 2 6 10 14\nDays after infection\ntype..."
+    },
+    {
+      "word": "frivolous",
+      "field": "passage",
+      "question_id": "sim-9-q1765245853701",
+      "text_snippet": "Studying advertisements for defunct amusement parks, menus from nineteenth-century restaurants, and handbills promoting long-forgotten political candi..."
+    },
+    {
+      "word": "frivolous",
+      "field": "passage",
+      "question_id": "sim-7-q1765244255050",
+      "text_snippet": "Studying wrappers from discontinued candies, menus from nineteenth-century restaurants, and flyers promoting long-forgotten sporting events may seem l..."
+    },
+    {
+      "word": "frivolous",
+      "field": "passage",
+      "question_id": "sim-2-q1765238796344",
+      "text_snippet": "Studying advertisements for defunct amusement parks, menus from nineteenth-century restaurants, and handbills promoting long-forgotten political candi..."
+    },
+    {
+      "word": "fundamental",
+      "field": "passage",
+      "question_id": "nov-sat-us-s1-m2-q21",
+      "text_snippet": "If some specific predictions in Alvin Toffler\u2019s 1970 book Future Shock seem ludicrous now\u2014people do not wear paper clothing while living in underwater..."
+    },
+    {
+      "word": "fundamental",
+      "field": "passage",
+      "question_id": "nov-sat-ap2-s1-m2-q3",
+      "text_snippet": "Which choice completes the text with the most logical and precise word or\nphrase?\nIf some specific predictions in Alvin Toffler\u2019s 1970 book Future Sho..."
+    },
+    {
+      "word": "fungi",
+      "field": "passage",
+      "question_id": "nov-sat-ap2-s1-m1-q22",
+      "text_snippet": "Resins play several important roles in maintaining the health of conifers and many other kinds of trees. ______ resins quickly seal wounds, which help..."
+    },
+    {
+      "word": "fusion",
+      "field": "passage",
+      "question_id": "sim-7-q1765244751709",
+      "text_snippet": "Some features, such as the mihrab (or niche), are present in nearly every mosque. But mosques often reflect multiple architectural styles, resulting i..."
+    },
+    {
+      "word": "gleaming",
+      "field": "passage",
+      "question_id": "sim-8-q1765245288146",
+      "text_snippet": "In the late nineteenth and early twentieth centuries, automobiles were commonly referred to as horseless carriages after the older technology they sti..."
+    },
+    {
+      "word": "hallmark",
+      "field": "passage",
+      "question_id": "sim-1-q1765237576374",
+      "text_snippet": "Certain features are almost always included in the designs of mosques, like the ablution (ritual cleansing) area, which is considered to be a _____ of..."
+    },
+    {
+      "word": "hallmark",
+      "field": "passage",
+      "question_id": "sim-5-q1765243452702",
+      "text_snippet": "Certain features are almost always included in the designs of mosques, like the minaret (or tower), which is considered to be a _______ of mosque arch..."
+    },
+    {
+      "word": "hallmark",
+      "field": "passage",
+      "question_id": "sim-9-q1765245998456",
+      "text_snippet": "Certain features are almost always included in the designs of mosques, like the ablution (ritual cleansing) area, which is considered to be a _____ of..."
+    },
+    {
+      "word": "halting",
+      "field": "passage",
+      "question_id": "sim-5-q1765243452136",
+      "text_snippet": "In a garden, _______ the spread of unwelcome weeds such as nutgrass can be difficult because weeds usually spread easily and quickly become unmanageab..."
+    },
+    {
+      "word": "hence",
+      "field": "passage",
+      "question_id": "unknown-s0-m0-q0",
+      "text_snippet": "In her 2021 article \u201cThrowaway History: Towards a Historiography of Ephemera,\u201d scholar Anne Garner discusses John\nJohnson (1882\u20131956), a devoted colle..."
+    },
+    {
+      "word": "hinder",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ee-s1-m2-q14",
+      "text_snippet": "Natural monuments and other types of protected areas (PAs) are established to promote conservation, but because they restrict certain economic activit..."
+    },
+    {
+      "word": "hinder",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ed-s1-m2-q12",
+      "text_snippet": "Habitat management areas and other types of protected areas (PAs) are established to promote conservation, but because they restrict certain economic ..."
+    },
+    {
+      "word": "homogeneous",
+      "field": "passage",
+      "question_id": "sim-7-q1765244572086",
+      "text_snippet": "An emulsifier is a type of compound that ______ to stabilize an emulsion\u2014a mixture of two or more liquids that otherwise would not easily blend togeth..."
+    },
+    {
+      "word": "homogeneous",
+      "field": "passage",
+      "question_id": "sim-7-q1765244571489",
+      "text_snippet": "Previous research has shown that plant species with a narrow geographical range tend to be more genetically homogeneous than plant species with extens..."
+    },
+    {
+      "word": "homogeneous",
+      "field": "passage",
+      "question_id": "sim-7-q1765244751058",
+      "text_snippet": "Previous research has shown that plant species with a narrow geographical range tend to be more genetically homogeneous than plant species with extens..."
+    },
+    {
+      "word": "hypothetical",
+      "field": "passage",
+      "question_id": "sim-8-q1765245465273",
+      "text_snippet": "The Organisation for Economic Co-operation and Development (OECD) tracks comparative price list data for its thirty-eight member countries. For instan..."
+    },
+    {
+      "word": "hypothetical",
+      "field": "passage",
+      "question_id": "sim-8-q1765245465351",
+      "text_snippet": "The Quadrantid meteor shower has a zenithal hourly rate (ZHR) of 110, meaning that at the shower's peak, 110 meteors per hour could potentially be see..."
+    },
+    {
+      "word": "illustrate",
+      "field": "passage",
+      "question_id": "sim-9-q1765246240847",
+      "text_snippet": "The terms included in Barry Lopez and Debra Gwartney's Home Ground: A Guide to the American ______ such as 'hueco,' which refers to a water-retaining ..."
+    },
+    {
+      "word": "impart",
+      "field": "passage",
+      "question_id": "sim-2-q1765238797040",
+      "text_snippet": "Eastern Ohio's Monroe County is among the most rural counties in the United States: the US Census Bureau classified it as 97.7% rural in 2010. Researc..."
+    },
+    {
+      "word": "impart",
+      "field": "passage",
+      "question_id": "sim-5-q1765243451839",
+      "text_snippet": "Northeastern Kansas's Jefferson County is among the most rural counties in the United States: the US Census Bureau classified it as 98.8% rural in 201..."
+    },
+    {
+      "word": "impart",
+      "field": "passage",
+      "question_id": "sim-9-q1765245854521",
+      "text_snippet": "Eastern Ohio's Monroe County is among the most rural counties in the United States: the US Census Bureau classified it as 97.7% rural in 2010. Researc..."
+    },
+    {
+      "word": "imply",
+      "field": "passage",
+      "question_id": "nov-sat-us-s1-m2-q1",
+      "text_snippet": "On Guard is a 1997 photograph by Iranian artist Shirin Neshat. Like many of Neshat\u2019s photos, the work features a pair of hands. Clasping a microphone,..."
+    },
+    {
+      "word": "imply",
+      "field": "passage",
+      "question_id": "nov-sat-us-s1-m2-q19",
+      "text_snippet": "The Yupno people of the remote Finisterre Range of Papua New Guinea do not measure age and have no artificial means (e.g., clocks) of tracking time, b..."
+    },
+    {
+      "word": "imply",
+      "field": "passage",
+      "question_id": "nov-sat-ap2-s1-m2-q19",
+      "text_snippet": "Which choice completes the text so that it conforms to the conventions of\nStandard English?\nOn Guard is a 1997 photograph by Iranian artist Shirin Nes..."
+    },
+    {
+      "word": "inconsequential",
+      "field": "passage",
+      "question_id": "sim-7-q1765244255549",
+      "text_snippet": "Whether the reign of a French monarch such as Francis ll or Louis XI was considered historically significant or, conversely, relatively ______ its tra..."
+    },
+    {
+      "word": "inconsistencies",
+      "field": "passage",
+      "question_id": "nov-sat-us-s1-m1-q14",
+      "text_snippet": "Microplastics are a common pollutant in large masses of water like glaciers. High concentrations and ______ among particles\u2014variations in size, shape,..."
+    },
+    {
+      "word": "inconsistencies",
+      "field": "passage",
+      "question_id": "nov-sat-ap2-s1-m1-q4",
+      "text_snippet": "Which choice completes the text with the most logical and precise word or\nphrase?\nMicroplastics are a common pollutant in large masses of water like g..."
+    },
+    {
+      "word": "inconsistencies",
+      "field": "passage",
+      "question_id": "nov-sat--ap3-s1-m1-q1",
+      "text_snippet": "Which choice completes the text with the most logical and precise word or\nphrase?\nMicroplastics are a common pollutant in large masses of water like r..."
+    },
+    {
+      "word": "incubation",
+      "field": "passage",
+      "question_id": "unknown-s0-m0-q0",
+      "text_snippet": "During their larval phase, numerous species of coral reef fish are drawn toward areas where light is present. To better\nunderstand how artificial ligh..."
+    },
+    {
+      "word": "induce",
+      "field": "passage",
+      "question_id": "sim-8-q1765245145361",
+      "text_snippet": "Firefly luciferase (Fluc) is a distinctly evolved enzyme that can oxidize a substrate called D-luciferin to induce bioluminescence and can act as a fa..."
+    },
+    {
+      "word": "induce",
+      "field": "passage",
+      "question_id": "sim-9-q1765246240769",
+      "text_snippet": "Some ethicists challenge the concept of personal character, claiming that if it were meaningful, situational factors could not, as they clearly can, i..."
+    },
+    {
+      "word": "inestimable",
+      "field": "passage",
+      "question_id": "sim-3-q1765238990853",
+      "text_snippet": "The invertebrates Haywardozoon pacificum and Trophomera manganI have recently been discovered inhabiting the Clarion-Clipperton Zone (CCZ), an area of..."
+    },
+    {
+      "word": "inflation",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ec-s1-m2-q11",
+      "text_snippet": "Canada, which, according to international indices, has relatively strong democratic institutions and low intranational income inequality, experienced ..."
+    },
+    {
+      "word": "inflation",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ed-s1-m2-q11",
+      "text_snippet": "Estonia, which, according to international indices, has relatively strong democratic institutions and low intranational income inequality, experienced..."
+    },
+    {
+      "word": "inflation",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ee-s1-m2-q13",
+      "text_snippet": "The Czech Republic, which, according to international indices, has relatively strong democratic institutions and low intranational income inequality, ..."
+    },
+    {
+      "word": "inherent",
+      "field": "passage",
+      "question_id": "\u5317\u7f8eb-s1-m2-q19",
+      "text_snippet": "F Admin F Admin Admin Admin Admin Admin Admin Admin Admin Admin Admin Admin Admin Admin F Admin Admin Admin F Admin F Admin Admin F Admin F Admin Admi..."
+    },
+    {
+      "word": "inherent",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ea-s1-m2-q18",
+      "text_snippet": "Taking a structuralist approach to analyzing Tomas Rivera\u2019s novel And the Earth Did Not Devour Him would lead a critic to focus on the linguistic conv..."
+    },
+    {
+      "word": "inherent",
+      "field": "passage",
+      "question_id": "sim-2-q1765238796934",
+      "text_snippet": "Taking a deconstructionist approach to analyzing Ji-li Jiang's novel Red Scarf Girl would lead a critic to focus on the linguistic structures inherent..."
+    },
+    {
+      "word": "inhibit",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ec-s1-m2-q11",
+      "text_snippet": "Canada, which, according to international indices, has relatively strong democratic institutions and low intranational income inequality, experienced ..."
+    },
+    {
+      "word": "inhibit",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ed-s1-m2-q11",
+      "text_snippet": "Estonia, which, according to international indices, has relatively strong democratic institutions and low intranational income inequality, experienced..."
+    },
+    {
+      "word": "inhibit",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ee-s1-m2-q13",
+      "text_snippet": "The Czech Republic, which, according to international indices, has relatively strong democratic institutions and low intranational income inequality, ..."
+    },
+    {
+      "word": "inhibited",
+      "field": "passage",
+      "question_id": "unknown-s0-m0-q0",
+      "text_snippet": "During their larval phase, numerous species of coral reef fish are drawn toward areas where light is present. To better\nunderstand how artificial ligh..."
+    },
+    {
+      "word": "innovative",
+      "field": "passage",
+      "question_id": "sim-7-q1765244504973",
+      "text_snippet": "Though most studies of the effect of altitude on blood chemistry usually concentrated on people who live about sea level, researchers Suleiman A. Al-S..."
+    },
+    {
+      "word": "inquiry",
+      "field": "passage",
+      "question_id": "sim-2-q1765238796344",
+      "text_snippet": "Studying advertisements for defunct amusement parks, menus from nineteenth-century restaurants, and handbills promoting long-forgotten political candi..."
+    },
+    {
+      "word": "inquiry",
+      "field": "passage",
+      "question_id": "sim-9-q1765246240038",
+      "text_snippet": "Studying advertisements for defunct amusement parks, menus from nineteenth-century restaurants, and handbills promoting long-forgotten political candi..."
+    },
+    {
+      "word": "inquiry",
+      "field": "passage",
+      "question_id": "sim-8-q1765245288043",
+      "text_snippet": "There are three basic steps you should follow when planning a scientific inquiry. First, thoroughly research the question you wish to answer. _______ ..."
+    },
+    {
+      "word": "insight",
+      "field": "passage",
+      "question_id": "sim-4-q1765239357433",
+      "text_snippet": "After much debate, _____ finally made a decision: the judges for the 1947 Nobel Prize in Literature would award Andr\u00e9 Paul Guillaume Gide of France wi..."
+    },
+    {
+      "word": "insight",
+      "field": "passage",
+      "question_id": "sim-7-q1765244505506",
+      "text_snippet": "Each year, the Nobel Prize in Literature is given to an author who has, in the words of its founder Alfre Nobel, \"produced the most outstanding work i..."
+    },
+    {
+      "word": "insuperable",
+      "field": "passage",
+      "question_id": "sim-7-q1765244254982",
+      "text_snippet": "______ though it seemed to many mathematicians, the Marden tameness conjecture, posed in 1974, eventually yielded to the efforts of Ian Agol, who pres..."
+    },
+    {
+      "word": "insuperable",
+      "field": "passage",
+      "question_id": "sim-7-q1765244505315",
+      "text_snippet": "_______ though it seemed to many mathematicians, the honeycomb conjecture, posited in the first century BCE, eventually yielded to the efforts of Thom..."
+    },
+    {
+      "word": "insurmountable",
+      "field": "passage",
+      "question_id": "sim-8-q1765245144748",
+      "text_snippet": "The discoverers of the minor planet 1227 Geranium named it after the plant genus that includes cranesbills. Most of the recently discovered minor plan..."
+    },
+    {
+      "word": "integral",
+      "field": "passage",
+      "question_id": "sim-9-q1765246240728",
+      "text_snippet": "Although Grant Tavinor concludes that computer games are art by virtue of their forming a subcategory of fiction, and Berys Gaut similarly places them..."
+    },
+    {
+      "word": "integrate",
+      "field": "passage",
+      "question_id": "sim-7-q1765244571555",
+      "text_snippet": "In their research, behavioral ______ integrate methods from psychology and economics to analyze how and why people make particular choices and to exam..."
+    },
+    {
+      "word": "interconnected",
+      "field": "passage",
+      "question_id": "sim-2-q1765238796606",
+      "text_snippet": "The unique subak water management system used to irrigate the rice paddy fields of the Indonesian island of Bali has a rich cultural, philosophical, a..."
+    },
+    {
+      "word": "interconnected",
+      "field": "passage",
+      "question_id": "sim-9-q1765245853657",
+      "text_snippet": "The unique subak water management system used to irrigate the rice paddy fields of the Indonesian island of Bali has a rich cultural, philosophical, a..."
+    },
+    {
+      "word": "interplay",
+      "field": "passage",
+      "question_id": "nov-sat-us-s1-m2-q11",
+      "text_snippet": "Exposed to harsh environmental conditions for centuries, lighthouses such as La Jument lighthouse off the coast of Brittany, France, exemplify the ___..."
+    },
+    {
+      "word": "interplay",
+      "field": "passage",
+      "question_id": "nov-sat--ap3-s1-m2-q1",
+      "text_snippet": "Which choice completes the text with the most logical and precise word or\nphrase?\nExposed to harsh environmental conditions for centuries, lighthouses..."
+    },
+    {
+      "word": "intricate",
+      "field": "passage",
+      "question_id": "sim-4-q1765239357788",
+      "text_snippet": "Archaeologists assume that when a major demographic shift interrupts the intergenerational transmission of expertise, this manifests in the archaeolog..."
+    },
+    {
+      "word": "intricate",
+      "field": "passage",
+      "question_id": "sim-9-q1765246240036",
+      "text_snippet": "While the ancient Celts\u2014Iron Age peoples who inhabited parts of western and central Europe\u2014weren't a single unified group, their art often featured co..."
+    },
+    {
+      "word": "intricate",
+      "field": "passage",
+      "question_id": "sim-9-q1765245854631",
+      "text_snippet": "While the ancient Celts\u2014Iron Age peoples who inhabited parts of western and central Europe\u2014weren't a single unified group, their art often featured co..."
+    },
+    {
+      "word": "invoked",
+      "field": "passage",
+      "question_id": "sim-2-q1765238796782",
+      "text_snippet": "Until 1917, there was no formal measure in the United States Senate that could be ________ to end a debate that had been excessively prolonged as a ta..."
+    },
+    {
+      "word": "invoked",
+      "field": "passage",
+      "question_id": "sim-9-q1765245853890",
+      "text_snippet": "Until 1917, there was no formal measure in the United States Senate that could be ______ to end a debate that had been excessively prolonged as a tact..."
+    },
+    {
+      "word": "isolate",
+      "field": "passage",
+      "question_id": "sim-8-q1765245287775",
+      "text_snippet": "With some elements, like phosphorus, scientists were able to isolate a relatively pure sample of the substance shortly after discovering its existence..."
+    },
+    {
+      "word": "isolate",
+      "field": "passage",
+      "question_id": "sim-8-q1765245465519",
+      "text_snippet": "Scientists were able to isolate a relatively pure sample of cadmium in 1817, the same year they first discovered the element's existence. _____ the is..."
+    },
+    {
+      "word": "justify",
+      "field": "passage",
+      "question_id": "sim-4-q1765239158947",
+      "text_snippet": "Some pieces of music might have many meanings\u2014the compositions of Marion Bauer can ______ as many different interpretations as there are people to lis..."
+    },
+    {
+      "word": "justify",
+      "field": "passage",
+      "question_id": "sim-4-q1765239357330",
+      "text_snippet": "Some pieces of music might have many meanings\u2014the compositions of Charlotte Moorman can _____ as many different interpretations as there are people to..."
+    },
+    {
+      "word": "juxtaposition",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ea-s1-m2-q2",
+      "text_snippet": "The metal displayed in the structure of House in Kamiaraya by Kazuto Nishi Architects and the metal hardware in UE House by GENETO are representative ..."
+    },
+    {
+      "word": "juxtaposition",
+      "field": "passage",
+      "question_id": "sim-9-q1765246240870",
+      "text_snippet": "The metal displayed in the structure of House in Kamiaraya by Kazuto Nishi Architects and the metal hardware in UE House by GENETO are representative ..."
+    },
+    {
+      "word": "keen",
+      "field": "passage",
+      "question_id": "sim-4-q1765239357433",
+      "text_snippet": "After much debate, _____ finally made a decision: the judges for the 1947 Nobel Prize in Literature would award Andr\u00e9 Paul Guillaume Gide of France wi..."
+    },
+    {
+      "word": "keen",
+      "field": "passage",
+      "question_id": "sim-5-q1765243619629",
+      "text_snippet": "The poem \"The Ballad of Rudolph Reed,\" which was published in 1960, contains three signature elements of Gwendolyn Brooks's poetic _______ compressed ..."
+    },
+    {
+      "word": "keen",
+      "field": "passage",
+      "question_id": "sim-5-q1765243452107",
+      "text_snippet": "The poem \"Naomi,\" which was published in 1960, contains three signature elements of Gwendolyn Brooks's poetic _______ compressed lines infused with bu..."
+    },
+    {
+      "word": "latitude",
+      "field": "passage",
+      "question_id": "sim-8-q1765245288305",
+      "text_snippet": "Exclusively inhabiting tropical countries such as Liberia, wild chimpanzees lack adaptations to seasonal variations in ultraviolet B (UVB) irradiance ..."
+    },
+    {
+      "word": "latitude",
+      "field": "passage",
+      "question_id": "sim-1-q1765237576415",
+      "text_snippet": "In economics, soybeans are considered a commodity because they are essentially interchangeable, \"essentially\" being a word that admits a degree of lat..."
+    },
+    {
+      "word": "latitude",
+      "field": "passage",
+      "question_id": "sim-9-q1765246240651",
+      "text_snippet": "In 2008, the US state of Hawaii enacted rate stability regulations (RSRs), constraining insurance companies' latitude to raise premiums (the periodic ..."
+    },
+    {
+      "word": "lay",
+      "field": "passage",
+      "question_id": "sim-9-q1765246240769",
+      "text_snippet": "Some ethicists challenge the concept of personal character, claiming that if it were meaningful, situational factors could not, as they clearly can, i..."
+    },
+    {
+      "word": "lean",
+      "field": "passage",
+      "question_id": "unknown-s0-m0-q0",
+      "text_snippet": "\u201cJohn of God, the Water-Carrier\u201d is a 1913 short story by Mar\u00eda Cristina Mena. In the story, the narrator presents John as\nbeing a hard worker who is ..."
+    },
+    {
+      "word": "lean",
+      "field": "passage",
+      "question_id": "sim-7-q1765244667659",
+      "text_snippet": "Cane is a 1923 novel by Jean Toomer. In one portion of the novel, Toomer uses figurative language to connect the narrator's urban environment of Washi..."
+    },
+    {
+      "word": "lean",
+      "field": "passage",
+      "question_id": "sim-7-q1765244389579",
+      "text_snippet": "Cane is a 1923 novel by Jean Toomer. In one portion of the novel, Toomer uses figurative language to connect the narrator's urban environment of Washi..."
+    },
+    {
+      "word": "likewise",
+      "field": "passage",
+      "question_id": "sim-4-q1765239358324",
+      "text_snippet": "In an ekphrastic poem, a poet explores a work of visual art, such as a drawing, sculpture, or painting. Elizabeth Alexander's 2011 poem \"Walking,\" for..."
+    },
+    {
+      "word": "linger",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ea-s1-m2-q21",
+      "text_snippet": "Architect Victor Gruen, the designer of Indiana\u2019s Woodmar Plaza shopping mall, conceived of the mall as an indoor version of the European town square,..."
+    },
+    {
+      "word": "linger",
+      "field": "passage",
+      "question_id": "\u5317\u7f8eb-s1-m2-q23",
+      "text_snippet": "Architect Victor Gruen, the designer of Indiana\u2019s Woodmar Plaza shopping mall, conceived of the mall as an indoor version of the European town square,..."
+    },
+    {
+      "word": "linger",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ef-s1-m2-q23",
+      "text_snippet": "Architect Victor Gruen, the designer of New Jersey\u2019s Cherry Hill shopping mall, conceived of the mall as an indoor version of the European town square..."
+    },
+    {
+      "word": "lofty",
+      "field": "passage",
+      "question_id": "sim-7-q1765244571772",
+      "text_snippet": "Theater industry veteran Robert Tang admits that his ambitions weren't very lofty when he created the Asian American Theater Revue, a website that doc..."
+    },
+    {
+      "word": "longitudinal",
+      "field": "passage",
+      "question_id": "sim-7-q1765244751063",
+      "text_snippet": "The Study on Global Ageing and Adult Health (SAGE) seeks to discover long-term trends related to aging by compiling and analyzing evidence from approx..."
+    },
+    {
+      "word": "longitudinal",
+      "field": "passage",
+      "question_id": "sim-7-q1765244667842",
+      "text_snippet": "Some studies can be done well with relatively little money. For example, a marketing study simply trying to identify the average amount customers spen..."
+    },
+    {
+      "word": "longitudinal",
+      "field": "passage",
+      "question_id": "sim-9-q1765246240444",
+      "text_snippet": "Run by researchers in Australia, the Longitudinal Study of Indigenous Children (LSIC) is an examination of childhood development that has attempted to..."
+    },
+    {
+      "word": "lot",
+      "field": "passage",
+      "question_id": "sim-8-q1765245288104",
+      "text_snippet": "Often anthologized alongside the _______ associated with the Black Arts movement-such as Henry Dumas and Ntozake Shange-Haki Madhubuti's poem \"Quality..."
+    },
+    {
+      "word": "lot",
+      "field": "passage",
+      "question_id": "sim-9-q1765246240444",
+      "text_snippet": "Run by researchers in Australia, the Longitudinal Study of Indigenous Children (LSIC) is an examination of childhood development that has attempted to..."
+    },
+    {
+      "word": "lot",
+      "field": "passage",
+      "question_id": "sim-4-q1765239158852",
+      "text_snippet": "Run by researchers in multiple countries, the Study on Global Ageing and Adult Health (SAGE) is an examination of aging that has attempted to track ap..."
+    },
+    {
+      "word": "magnify",
+      "field": "passage",
+      "question_id": "\u5317\u7f8eb-s1-m1-q1",
+      "text_snippet": "Farmhouse Interior, painted in the realist style by Jan Hendrik Weissenbruch, depicts a peasant woman knitting at a table while a cat sits underneath...."
+    },
+    {
+      "word": "magnify",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ed-s1-m1-q1",
+      "text_snippet": "The Gleaners, painted in the realist style by Jean-Fran\u00e7ois Millet, depicts peasants picking stray wheat from a field after the harvest. The realists\u2019..."
+    },
+    {
+      "word": "magnify",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ee-s1-m1-q1",
+      "text_snippet": "Farmhouse Interior, painted in the realist style by Jan Hendrik Weissenbruch, depicts a peasant woman knitting at a table while a cat sits underneath...."
+    },
+    {
+      "word": "material",
+      "field": "passage",
+      "question_id": "nov-sat--ap1-s1-m2-q9",
+      "text_snippet": "Which choice most effectively uses data from the table to complete the\ntext?\nEffect of Various Soil Treatments on Mean Pineapple Fruit Weight and Size..."
+    },
+    {
+      "word": "means",
+      "field": "passage",
+      "question_id": "sim-8-q1765245287520",
+      "text_snippet": "Eirene, one of the eighty known moons of Jupiter, is designated as Jupiter LVII (\"LVII\" means \"57\"). Roman numerals typically indicate the order in wh..."
+    },
+    {
+      "word": "means",
+      "field": "passage",
+      "question_id": "nov-sat-us-s1-m2-q19",
+      "text_snippet": "The Yupno people of the remote Finisterre Range of Papua New Guinea do not measure age and have no artificial means (e.g., clocks) of tracking time, b..."
+    },
+    {
+      "word": "meticulous",
+      "field": "passage",
+      "question_id": "sim-9-q1765246240934",
+      "text_snippet": "As part of his I GOT UP series, Japanese conceptual artist On Kawara spent over a decade with near daily consistency\u2014mailing postcards to friends decl..."
+    },
+    {
+      "word": "minimal",
+      "field": "passage",
+      "question_id": "sim-4-q1765239158850",
+      "text_snippet": "Urban green spaces can improve air quality, as vegetation absorbs pollutants and also dilutes pollutant concentrations through ventilation. However, d..."
+    },
+    {
+      "word": "minimal",
+      "field": "passage",
+      "question_id": "nov-sat--ap1-s1-m1-q18",
+      "text_snippet": "Which choice completes the text so that it conforms to the conventions\nof Standard English?\nGrowing as large as three meters in diameter, the leaves o..."
+    },
+    {
+      "word": "minimal",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ef-s1-m2-q12",
+      "text_snippet": "Southern Indiana\u2019s Crawford County is among the most rural counties in the United States: the US Census Bureau classified it as 100% rural in 2010. Re..."
+    },
+    {
+      "word": "mischievous",
+      "field": "passage",
+      "question_id": "sim-8-q1765245465271",
+      "text_snippet": "Though most hoaxes perpetrated as jokes by mischievous users of Wikipedia, an online encyclopedia that almost anyone can freely edit, have quickly bee..."
+    },
+    {
+      "word": "multifariousness",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ec-s1-m2-q4",
+      "text_snippet": "The ______ blank of leaf-vein architectures\u2014the branching venation of Ginkgo biloba, the hierarchical netlike venation of Clematis reticulata, and oth..."
+    },
+    {
+      "word": "multifariousness",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ed-s1-m2-q4",
+      "text_snippet": "The ______ blank of leaf-vein architectures\u2014the branching venation of Pteris cretica, the hierarchical netlike venation of Diospyros mespiliformis, an..."
+    },
+    {
+      "word": "mutable",
+      "field": "passage",
+      "question_id": "sim-5-q1765243619401",
+      "text_snippet": "The Fly River delta is a remarkably _______ landscape: it is a constantly evolving network of channels and strips of land that change in size and shap..."
+    },
+    {
+      "word": "nebulous",
+      "field": "passage",
+      "question_id": "sim-7-q1765244505045",
+      "text_snippet": "Although our knowledge of the Pliocene epoch and the lives of the hominids during this time was once ______, recent analyses of fossils like that of t..."
+    },
+    {
+      "word": "nebulous",
+      "field": "passage",
+      "question_id": "sim-8-q1765245288047",
+      "text_snippet": "Although our knowledge of the Pliocene epoch and the lives of hominids during this time was once _______, recent analyses of fossils like that of the ..."
+    },
+    {
+      "word": "negligible",
+      "field": "passage",
+      "question_id": "nov-sat-ap2-s1-m1-q14",
+      "text_snippet": "Outi Tervo and team studied the effect of human-caused noise on narwhals\n(Monodon monoceros), arctic marine mammals that are sensitive to\nacoustic cha..."
+    },
+    {
+      "word": "negligible",
+      "field": "passage",
+      "question_id": "nov-sat--ap1-s1-m1-q15",
+      "text_snippet": "Outi Tervo and team studied the effect of human-caused noise on narwhals\n(Monodon monoceros), arctic marine mammals that are sensitive to\nacoustic cha..."
+    },
+    {
+      "word": "nocturnal",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ee-s1-m2-q5",
+      "text_snippet": "Emerging bioacoustics technologies have ______ blank long-standing challenges to wildlife research by enabling scientific observation without a human ..."
+    },
+    {
+      "word": "nocturnal",
+      "field": "passage",
+      "question_id": "sim-4-q1765239358138",
+      "text_snippet": "Difficulties of documenting nocturnal pollinator visits and a general focus on diurnal invertebrate pollinators, such as Volucella bombylans, have res..."
+    },
+    {
+      "word": "norms",
+      "field": "passage",
+      "question_id": "sim-9-q1765246240038",
+      "text_snippet": "Studying advertisements for defunct amusement parks, menus from nineteenth-century restaurants, and handbills promoting long-forgotten political candi..."
+    },
+    {
+      "word": "norms",
+      "field": "passage",
+      "question_id": "sim-9-q1765245853701",
+      "text_snippet": "Studying advertisements for defunct amusement parks, menus from nineteenth-century restaurants, and handbills promoting long-forgotten political candi..."
+    },
+    {
+      "word": "norms",
+      "field": "passage",
+      "question_id": "nov-sat-us-s1-m2-q4",
+      "text_snippet": "Pablo Picasso famously subverted the norms of traditional painting: in his cubist paintings he refused to let his expression be constrained, fragmenti..."
+    },
+    {
+      "word": "novel",
+      "field": "passage",
+      "question_id": "sim-7-q1765244388970",
+      "text_snippet": "To study the ultrafast movements of atoms, chemist Ahmed Zewail had to devise a novel spectroscopy technique capable of measuring chemical reactions _..."
+    },
+    {
+      "word": "novel",
+      "field": "passage",
+      "question_id": "sim-7-q1765244750923",
+      "text_snippet": "The Underdogs is a 1915 novel by Mariano Azuela, originally written in Spanish. In the novel, the town of Juchipila is depicted as a striking sight fo..."
+    },
+    {
+      "word": "obstinacy",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ee-s1-m2-q4",
+      "text_snippet": "The ______ blank of leaf-vein architectures\u2014the branching venation of Pteris cretica, the hierarchical netlike venation of Salix pedicellaris, and oth..."
+    },
+    {
+      "word": "ongoing",
+      "field": "passage",
+      "question_id": "unknown-s0-m0-q0",
+      "text_snippet": "\u201cGhosts of the Old Year\u201d is an early 1900s poem by James Weldon Johnson. In the poem, the speaker describes\nexperiencing an ongoing cycle of anticipat..."
+    },
+    {
+      "word": "orthodox",
+      "field": "passage",
+      "question_id": "sim-8-q1765245287318",
+      "text_snippet": "Writer Lydia Davis observed that while _______ literary forms, such as the short story, are recognizable as such even as they evolve, there are rarer ..."
+    },
+    {
+      "word": "patent",
+      "field": "passage",
+      "question_id": "nov-sat--ap1-s1-m2-q4",
+      "text_snippet": "Which choice completes the text with the most logical and precise word\nor phrase?\nYuen Yuen Ang et al. argue that merely tallying the number of patent..."
+    },
+    {
+      "word": "patent",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ed-s1-m2-q16",
+      "text_snippet": "Now seen as a mechanical precursor to the e-reader, Spanish educator and inventor \u00c1ngela Ruiz Robles\u2019s Enciclopedia Mec\u00e1nica eschewed pages in favor o..."
+    },
+    {
+      "word": "paucity",
+      "field": "passage",
+      "question_id": "sim-3-q1765238991110",
+      "text_snippet": "Given that healthy genetic diversity supports honey bee population robustness\u2014a matter of public interest given the bees' crucial role as pollinators ..."
+    },
+    {
+      "word": "perceive",
+      "field": "passage",
+      "question_id": "sim-8-q1765245464886",
+      "text_snippet": "Studies have shown that when we listen to high-tempo music (songs with a high number of beats per minute, or bpm) during endurance exercise, we percei..."
+    },
+    {
+      "word": "persist",
+      "field": "passage",
+      "question_id": "unknown-s0-m0-q0",
+      "text_snippet": "Overgrazing by purple sea urchins has caused many kelp forests along North America\u2019s west coast to be replaced by\nurchin barrens\u2014areas stripped of veg..."
+    },
+    {
+      "word": "perturbation",
+      "field": "passage",
+      "question_id": "sim-4-q1765239357659",
+      "text_snippet": "Andrei Tarkovsky's Solaris has the measured pace typical of slow-cinema films. Thai slow-cinema director Apichatpong Weerasethakul (Uncle Boonmee Who ..."
+    },
+    {
+      "word": "pervades",
+      "field": "passage",
+      "question_id": "sim-9-q1765246240317",
+      "text_snippet": "Disproportionate emphasis on instances of invention, such as the emergence of potter's wheels circa 4500 BCE, contributes to a pro-innovation bias tha..."
+    },
+    {
+      "word": "pervasive",
+      "field": "passage",
+      "question_id": "sim-7-q1765244751659",
+      "text_snippet": "Text corpora such as the International Corpus of English are enormous collections of electronically stored texts that can be used for empirical testin..."
+    },
+    {
+      "word": "pervasive",
+      "field": "passage",
+      "question_id": "sim-7-q1765244505606",
+      "text_snippet": "Text corpora such as the British National Corpus are enormous collections of electronically stored texts that can be used for empirical testing of hyp..."
+    },
+    {
+      "word": "petition",
+      "field": "passage",
+      "question_id": "nov-sat--ap1-s1-m2-q19",
+      "text_snippet": "Which choice completes the text so that it conforms to the conventions\nof Standard English?\nGeologist and scholar John Bostock joined with 55 other pr..."
+    },
+    {
+      "word": "petition",
+      "field": "passage",
+      "question_id": "nov-sat--ap3-s1-m2-q19",
+      "text_snippet": "Which choice completes the text so that it conforms to the conventions of\nStandard English?\nNovelist and playwright Mary Russell Mitford joined with 5..."
+    },
+    {
+      "word": "plentiful",
+      "field": "passage",
+      "question_id": "sim-1-q1765237576373",
+      "text_snippet": "The discoveries of natural satellites by Scott S. Sheppard's team of astronomers have been _____: Carpo, which the group of researchers found orbiting..."
+    },
+    {
+      "word": "plentiful",
+      "field": "passage",
+      "question_id": "sim-9-q1765245999108",
+      "text_snippet": "The discoveries of natural satellites by Scott S. Sheppard's team of astronomers have been _____: Carpo, which the group of researchers found orbiting..."
+    },
+    {
+      "word": "populated",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ec-s1-m2-q1",
+      "text_snippet": "Lady Grant and colleagues ______ blank pots of sterilized soil with slurries of live microbes collected from soil in five sites across Colorado, inclu..."
+    },
+    {
+      "word": "populated",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ed-s1-m2-q1",
+      "text_snippet": "Corrine Walsh and colleagues ______ blank pots of sterilized soil with slurries of live microbes collected from soil in five sites across Colorado, in..."
+    },
+    {
+      "word": "populated",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ee-s1-m2-q1",
+      "text_snippet": "Ella Katz and colleagues ______ blank pots of sterilized soil with slurries of live microbes collected from soil in five sites across Colorado, includ..."
+    },
+    {
+      "word": "posit",
+      "field": "passage",
+      "question_id": "unknown-s0-m0-q0",
+      "text_snippet": "Some ethicists hold that the moral goodness of an individual\u2019s actions depends solely on whether the actions\nthemselves are good, irrespective of the ..."
+    },
+    {
+      "word": "postulate",
+      "field": "passage",
+      "question_id": "sim-1-q1765237576385",
+      "text_snippet": "Before the 1858 publication of On the Origin of Species, Charles Darwin developed his theory of natural selection in five notebooks. In them he first ..."
+    },
+    {
+      "word": "postulate",
+      "field": "passage",
+      "question_id": "sim-9-q1765245998858",
+      "text_snippet": "Before the 1858 publication of On the Origin of Species, Charles Darwin developed his theory of natural selection in five notebooks. In them he first ..."
+    },
+    {
+      "word": "precipitation",
+      "field": "passage",
+      "question_id": "nov-sat-ap2-s1-m2-q22",
+      "text_snippet": "Giant dust plumes from the Sahara Desert that blow across the Atlantic\nOcean can have complex and opposing effects on tropical cyclones. On one\nhand, ..."
+    },
+    {
+      "word": "precipitation",
+      "field": "passage",
+      "question_id": "nov-sat--ap1-s1-m1-q22",
+      "text_snippet": "Giant dust plumes from the Sahara Desert that blow across the Atlantic\nOcean can have complex and opposing effects on tropical cyclones. On one\nhand, ..."
+    },
+    {
+      "word": "precursor",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ee-s1-m2-q20",
+      "text_snippet": "Located on the Ijssel River in the Netherlands, the city of Zutphen was a member of a powerful mercantile alliance that dominated northern European tr..."
+    },
+    {
+      "word": "precursor",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ec-s1-m2-q20",
+      "text_snippet": "Located on the Emscher River in Germany, the city of Dortmund was a member of a powerful mercantile alliance that dominated northern European trade be..."
+    },
+    {
+      "word": "precursor",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ed-s1-m2-q20",
+      "text_snippet": "Located on the southwest coast of Finland, the city of Turku was a member of a powerful mercantile alliance that dominated northern European trade bet..."
+    },
+    {
+      "word": "premium",
+      "field": "passage",
+      "question_id": "sim-1-q1765237576410",
+      "text_snippet": "The advent of online streaming has led many music listeners to drift away from ownership of music (through downloads or through physical media such as..."
+    },
+    {
+      "word": "prescient",
+      "field": "passage",
+      "question_id": "nov-sat-us-s1-m2-q21",
+      "text_snippet": "If some specific predictions in Alvin Toffler\u2019s 1970 book Future Shock seem ludicrous now\u2014people do not wear paper clothing while living in underwater..."
+    },
+    {
+      "word": "prescient",
+      "field": "passage",
+      "question_id": "nov-sat-ap2-s1-m2-q3",
+      "text_snippet": "Which choice completes the text with the most logical and precise word or\nphrase?\nIf some specific predictions in Alvin Toffler\u2019s 1970 book Future Sho..."
+    },
+    {
+      "word": "prevail over",
+      "field": "passage",
+      "question_id": "sim-5-q1765243619566",
+      "text_snippet": "Jessica Watson, who was the youngest person to sail nonstop and unassisted around the world, undoubtedly accomplished much, but to gain a lasting plac..."
+    },
+    {
+      "word": "prevail over",
+      "field": "passage",
+      "question_id": "sim-5-q1765243452260",
+      "text_snippet": "Nancy Bird-Walton, who was an aviation pioneer, undoubtedly accomplished much, but to gain a lasting place in our historical memory, there is little t..."
+    },
+    {
+      "word": "prevail over",
+      "field": "passage",
+      "question_id": "sim-8-q1765245464749",
+      "text_snippet": "Louise Arner Boyd, who led several scientific expeditions off the coast of Greenland in the 1930s, undoubtedly accomplished much, but to gain a lastin..."
+    },
+    {
+      "word": "prevalent",
+      "field": "passage",
+      "question_id": "sim-4-q1765239357780",
+      "text_snippet": "Rudolf Cesaretti et al. conducted an analysis of historical urban scaling trends circa 1300 CE in Western Europe, focusing on agglomeration patterns w..."
+    },
+    {
+      "word": "prevalent",
+      "field": "passage",
+      "question_id": "sim-9-q1765245998742",
+      "text_snippet": "Right-handedness is overwhelmingly prevalent in humans. Among studies of laterality in nonhuman primates, Dulce D. Shafer's 1988 study of captive gori..."
+    },
+    {
+      "word": "primary",
+      "field": "passage",
+      "question_id": "sim-7-q1765244255153",
+      "text_snippet": "Scientists studying asteroid deflection have focused on secondary objects such as S/2020 (2013 PY6), a moonlet orbiting the near-Earth asteroid 2013 P..."
+    },
+    {
+      "word": "primary",
+      "field": "passage",
+      "question_id": "sim-9-q1765245998550",
+      "text_snippet": "In economics, soybeans are considered a commodity because they are essentially interchangeable, \"essentially\" being a word that admits a degree of lat..."
+    },
+    {
+      "word": "pristine",
+      "field": "passage",
+      "question_id": "sim-2-q1765238796215",
+      "text_snippet": "Belonging to neither the minimalist nor the abstract art movements but heavily influencing both, Constantin Br\u00e2ncu\u015fi spent his sculpting career return..."
+    },
+    {
+      "word": "pristine",
+      "field": "passage",
+      "question_id": "sim-9-q1765246240553",
+      "text_snippet": "Belonging to neither the minimalist nor the abstract art movements but heavily influencing both, Constantin Br\u00e2ncu\u015fi spent his sculpting career return..."
+    },
+    {
+      "word": "pristine",
+      "field": "passage",
+      "question_id": "sim-9-q1765245853773",
+      "text_snippet": "Belonging to neither the minimalist nor the abstract art movements but heavily influencing both, Constantin Br\u00e2ncu\u015fi spent his sculpting career return..."
+    },
+    {
+      "word": "prolific",
+      "field": "passage",
+      "question_id": "sim-7-q1765244667651",
+      "text_snippet": "Writer Silvia Moreno-Garcia's love of short fiction began when she read a collection of Edgar Allan Poe stories as a child, and she later would become..."
+    },
+    {
+      "word": "prolific",
+      "field": "passage",
+      "question_id": "sim-8-q1765245465250",
+      "text_snippet": "Writer Silvia Moreno-Garcia's love of short fiction began when she read a collection of Edgar Allan Poe stories as a child, and she would develop into..."
+    },
+    {
+      "word": "prominence",
+      "field": "passage",
+      "question_id": "nov-sat-ap2-s1-m2-q14",
+      "text_snippet": "Which choice most effectively uses data from the table to complete the\nexample?\nHighest Major Summits in India\nSummit \u00b7 Elevation (meters) \u00b7 Mountain ..."
+    },
+    {
+      "word": "prominence",
+      "field": "passage",
+      "question_id": "sim-2-q1765238796808",
+      "text_snippet": "Topographical prominence is a measure of a mountain's independence from other mountains. Having 9,721 feet of prominence, ________...."
+    },
+    {
+      "word": "prominence",
+      "field": "passage",
+      "question_id": "sim-9-q1765245854630",
+      "text_snippet": "Topographical prominence is a measure of a mountain's independence from other mountains. Having 9,721 feet of prominence, ______..."
+    },
+    {
+      "word": "promote",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ec-s1-m2-q12",
+      "text_snippet": "Nature reserves and other types of protected areas (PAs) are established to promote conservation, but because they restrict certain economic activitie..."
+    },
+    {
+      "word": "promote",
+      "field": "passage",
+      "question_id": "\u5317\u7f8eb-s1-m1-q22",
+      "text_snippet": "Portuguese researcher Isabel C.F.R. Ferreira reports that the caffeic acid in cauliflower mushrooms benefits the mushroom by combating harmful molecul..."
+    },
+    {
+      "word": "promote",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ef-s1-m1-q22",
+      "text_snippet": "Portuguese researcher Isabel C.F.R. Ferreira reports that the homogentisic acid in oyster mushrooms benefits the mushroom by combating harmful molecul..."
+    },
+    {
+      "word": "prose",
+      "field": "passage",
+      "question_id": "sim-9-q1765246240684",
+      "text_snippet": "At a time when many women writers used male pseudonyms to gain greater freedom of self-expression by evading gender conventions, Katherine Bradley and..."
+    },
+    {
+      "word": "protagonist",
+      "field": "passage",
+      "question_id": "sim-8-q1765245574004",
+      "text_snippet": "F. Scott Fitzgerald's 1920 novel This Side of Paradise contains elements drawn from Fitzgerald's own life\u2014there are many parallels between the experie..."
+    },
+    {
+      "word": "prototype",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ed-s1-m2-q16",
+      "text_snippet": "Now seen as a mechanical precursor to the e-reader, Spanish educator and inventor \u00c1ngela Ruiz Robles\u2019s Enciclopedia Mec\u00e1nica eschewed pages in favor o..."
+    },
+    {
+      "word": "proximity",
+      "field": "passage",
+      "question_id": "sim-8-q1765245287520",
+      "text_snippet": "Eirene, one of the eighty known moons of Jupiter, is designated as Jupiter LVII (\"LVII\" means \"57\"). Roman numerals typically indicate the order in wh..."
+    },
+    {
+      "word": "proxy",
+      "field": "passage",
+      "question_id": "sim-9-q1765246240484",
+      "text_snippet": "As observed in a 1990 study by Kristina Sundb\u00e4ck and colleagues, macroalgal proliferation may have a suppressive effect on the abundance of cyanobacte..."
+    },
+    {
+      "word": "radical",
+      "field": "passage",
+      "question_id": "sim-2-q1765238796375",
+      "text_snippet": "Portuguese researcher Isabel C.F.R. Ferreira reports that the cinnamic acid in termite mushrooms benefits the mushroom by combating harmful molecules ..."
+    },
+    {
+      "word": "radical",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ef-s1-m1-q22",
+      "text_snippet": "Portuguese researcher Isabel C.F.R. Ferreira reports that the homogentisic acid in oyster mushrooms benefits the mushroom by combating harmful molecul..."
+    },
+    {
+      "word": "radical",
+      "field": "passage",
+      "question_id": "sim-1-q1765237576393",
+      "text_snippet": "Decentralized space, in which no points in the performance space are privileged over others, was one of the central principles of Merce Cunningham's c..."
+    },
+    {
+      "word": "realized",
+      "field": "passage",
+      "question_id": "sim-8-q1765245465271",
+      "text_snippet": "Though most hoaxes perpetrated as jokes by mischievous users of Wikipedia, an online encyclopedia that almost anyone can freely edit, have quickly bee..."
+    },
+    {
+      "word": "reception",
+      "field": "passage",
+      "question_id": "sim-8-q1765245287889",
+      "text_snippet": "The reception of Many Ly's book Roots and Wings has been very good. Many reviewers, booksellers, and librarians have _______ the book, and it won the ..."
+    },
+    {
+      "word": "reception",
+      "field": "passage",
+      "question_id": "sim-8-q1765245574076",
+      "text_snippet": "The reception of Hena Khan's book Amina's Song has been very good. Many reviewers, booksellers, and librarians have _______ the book, and it won the A..."
+    },
+    {
+      "word": "reciprocal",
+      "field": "passage",
+      "question_id": "sim-2-q1765238796668",
+      "text_snippet": "The Egyptian plover\u2014a bird native to Africa\u2014has a symbiotic relationship with the Nile crocodile. While a crocodile rests on land with its mouth open ..."
+    },
+    {
+      "word": "reciprocal",
+      "field": "passage",
+      "question_id": "sim-9-q1765245854337",
+      "text_snippet": "The Egyptian plover\u2014a bird native to Africa\u2014has a symbiotic relationship with the Nile crocodile. While a crocodile rests on land with its mouth open ..."
+    },
+    {
+      "word": "reconcile",
+      "field": "passage",
+      "question_id": "sim-5-q1765243452653",
+      "text_snippet": "In Annie Dillard's Pilgrim at Tinker Creek\u2014where, early on, the author marvels at a single goldfish's delicate fins but later winces when imagining a ..."
+    },
+    {
+      "word": "reconcile",
+      "field": "passage",
+      "question_id": "sim-9-q1765246240769",
+      "text_snippet": "Some ethicists challenge the concept of personal character, claiming that if it were meaningful, situational factors could not, as they clearly can, i..."
+    },
+    {
+      "word": "register",
+      "field": "passage",
+      "question_id": "sim-7-q1765244572297",
+      "text_snippet": "Over the years, dozens of architectural and archaeological sites important to Hawaiian history and culture\u2014such as Grove Farm, Kilauea School, and the..."
+    },
+    {
+      "word": "reliably",
+      "field": "passage",
+      "question_id": "sim-3-q1765238990849",
+      "text_snippet": "Maryam Hosseini and her team used aerial images of well-mapped areas of Boston to train a computer program to identify sidewalks. When it was tested o..."
+    },
+    {
+      "word": "repository",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ec-s1-m2-q17",
+      "text_snippet": "Admin Admin Admin Admin Admin Admin Admin Admin Admin Admin Admin Admin Admin Admin Admin Admin Admin Admin Admin Admin Admin Admin Admin Admin Admin ..."
+    },
+    {
+      "word": "repository",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ed-s1-m2-q19",
+      "text_snippet": "A single specimen of T. parkerae, collected at a depth of 1,856 fathoms (3,394 meters) in the South Pacific, and a single specimen of G. truncatulinoi..."
+    },
+    {
+      "word": "repository",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ee-s1-m2-q19",
+      "text_snippet": "A single specimen of N. vivans, collected at a depth of 129 fathoms (236 meters) in the Indian Ocean, and a single specimen of P. obliquiloculata, col..."
+    },
+    {
+      "word": "retention",
+      "field": "passage",
+      "question_id": "sim-2-q1765238797040",
+      "text_snippet": "Eastern Ohio's Monroe County is among the most rural counties in the United States: the US Census Bureau classified it as 97.7% rural in 2010. Researc..."
+    },
+    {
+      "word": "retention",
+      "field": "passage",
+      "question_id": "sim-5-q1765243451839",
+      "text_snippet": "Northeastern Kansas's Jefferson County is among the most rural counties in the United States: the US Census Bureau classified it as 98.8% rural in 201..."
+    },
+    {
+      "word": "retention",
+      "field": "passage",
+      "question_id": "sim-9-q1765245854521",
+      "text_snippet": "Eastern Ohio's Monroe County is among the most rural counties in the United States: the US Census Bureau classified it as 97.7% rural in 2010. Researc..."
+    },
+    {
+      "word": "satiate",
+      "field": "passage",
+      "question_id": "sim-7-q1765244389596",
+      "text_snippet": "From sculptures like Mir\u00f3's Chicago by Joan Mir\u00f3, found at Brunswick Plaza, to street art like Justus Roe's mural South Shore on South Exchange Avenue..."
+    },
+    {
+      "word": "seismic",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ec-s1-m1-q16",
+      "text_snippet": "When attempting to determine a fault\u2019s seismic history, geophysicists like Dr. Estella Atekwana at the University of Delaware rely in part on data abo..."
+    },
+    {
+      "word": "seismic",
+      "field": "passage",
+      "question_id": "sim-4-q1765239358292",
+      "text_snippet": "The Apollo Moon landings (1969-1972) brought atmospheric sensors and seismic sensors to the Moon and produced large amounts of data. Researcher Renee ..."
+    },
+    {
+      "word": "seismic",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ea-s1-m1-q16",
+      "text_snippet": "When attempting to determine a fault\u2019s seismic history, geophysicists like Dr. Estella Atekwana at the University of Delaware rely in part on data abo..."
+    },
+    {
+      "word": "shed",
+      "field": "passage",
+      "question_id": "sim-7-q1765244389543",
+      "text_snippet": "The size of bird eggs varies widely across species, and the researchers, _______ computer imaging to compare the lengths of eggs from species like But..."
+    },
+    {
+      "word": "simulated",
+      "field": "passage",
+      "question_id": "sim-9-q1765245854479",
+      "text_snippet": "Subsequent to simulating an attack to elicit defense responses in three caterpillar species, ecologists placed a treatment group of those individuals ..."
+    },
+    {
+      "word": "skeptical",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ef-s1-m2-q15",
+      "text_snippet": "There is a growing belief that teaching medical students about art alongside standard science and clinical coursework helps them become more observant..."
+    },
+    {
+      "word": "slight",
+      "field": "passage",
+      "question_id": "sim-2-q1765238796852",
+      "text_snippet": "Subsequent to simulating an attack to elicit defense responses in three caterpillar species, ecologists placed a treatment group of those individuals ..."
+    },
+    {
+      "word": "solitary",
+      "field": "passage",
+      "question_id": "sim-7-q1765244255518",
+      "text_snippet": "Long attributed to Jacques-Louis David, the preeminent Neoclassical painter of his day, the 1801 painting Marie Josephine Charlotte du Val d'Ognes gai..."
+    },
+    {
+      "word": "soothed",
+      "field": "passage",
+      "question_id": "sim-7-q1765244751460",
+      "text_snippet": "Some robots such as Surena (developed in 2008) and COMAN (developed in 2012) are designed to resemble humans so that people will find it easier to int..."
+    },
+    {
+      "word": "sophisticated",
+      "field": "passage",
+      "question_id": "nov-sat-ap2-s1-m1-q1",
+      "text_snippet": "Which choice completes the text with the most logical and precise word or\nphrase?\nScientists have used machine learning tools to study elephant sounds..."
+    },
+    {
+      "word": "spatial",
+      "field": "passage",
+      "question_id": "sim-4-q1765239357780",
+      "text_snippet": "Rudolf Cesaretti et al. conducted an analysis of historical urban scaling trends circa 1300 CE in Western Europe, focusing on agglomeration patterns w..."
+    },
+    {
+      "word": "sporadically",
+      "field": "passage",
+      "question_id": "sim-2-q1765238796409",
+      "text_snippet": "Scientists have long known that cyclones can contribute to the formation of polynyas, large patches of unfrozen water that sporadically form amid vast..."
+    },
+    {
+      "word": "sporadically",
+      "field": "passage",
+      "question_id": "sim-9-q1765246240322",
+      "text_snippet": "Scientists have long known that cyclones can contribute to the formation of polynyas, large patches of unfrozen water that sporadically form amid vast..."
+    },
+    {
+      "word": "sporadically",
+      "field": "passage",
+      "question_id": "sim-9-q1765245854173",
+      "text_snippet": "Scientists have long known that cyclones can contribute to the formation of polynyas, large patches of unfrozen water that sporadically form amid vast..."
+    },
+    {
+      "word": "spurious",
+      "field": "passage",
+      "question_id": "sim-8-q1765245465271",
+      "text_snippet": "Though most hoaxes perpetrated as jokes by mischievous users of Wikipedia, an online encyclopedia that almost anyone can freely edit, have quickly bee..."
+    },
+    {
+      "word": "stabilize",
+      "field": "passage",
+      "question_id": "sim-1-q1765237576388",
+      "text_snippet": "An emulsifier is a type of compound that serves to stabilize an emulsion\u2014a mixture of two or more liquids that otherwise would not easily blend togeth..."
+    },
+    {
+      "word": "stabilize",
+      "field": "passage",
+      "question_id": "sim-7-q1765244572086",
+      "text_snippet": "An emulsifier is a type of compound that ______ to stabilize an emulsion\u2014a mixture of two or more liquids that otherwise would not easily blend togeth..."
+    },
+    {
+      "word": "stabilize",
+      "field": "passage",
+      "question_id": "sim-9-q1765245998725",
+      "text_snippet": "An emulsifier is a type of compound that serves to stabilize an emulsion\u2014a mixture of two or more liquids that otherwise would not easily blend togeth..."
+    },
+    {
+      "word": "static",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ee-s1-m1-q22",
+      "text_snippet": "Unlike standard Western maps, which privileged static features like coastlines, the Marshallese stick charts used by Pacific Islands navigators for ce..."
+    },
+    {
+      "word": "striking",
+      "field": "passage",
+      "question_id": "sim-7-q1765244750923",
+      "text_snippet": "The Underdogs is a 1915 novel by Mariano Azuela, originally written in Spanish. In the novel, the town of Juchipila is depicted as a striking sight fo..."
+    },
+    {
+      "word": "stunt",
+      "field": "passage",
+      "question_id": "sim-7-q1765244667073",
+      "text_snippet": "Sarah Marquis, who walked 16,000 kilometers across Asia, Siberia, and Australia, undoubtedly accomplished much, but to ______ a lasting historical leg..."
+    },
+    {
+      "word": "substantial",
+      "field": "passage",
+      "question_id": "sim-4-q1765239158852",
+      "text_snippet": "Run by researchers in multiple countries, the Study on Global Ageing and Adult Health (SAGE) is an examination of aging that has attempted to track ap..."
+    },
+    {
+      "word": "supplement",
+      "field": "passage",
+      "question_id": "sim-1-q1765237576400",
+      "text_snippet": "The Art Institute of Chicago houses nearly 300,000 works from around the world. Museum visitors looking to _____ their art-viewing experience should t..."
+    },
+    {
+      "word": "supplement",
+      "field": "passage",
+      "question_id": "sim-9-q1765245999314",
+      "text_snippet": "The Art Institute of Chicago houses nearly 300,000 works from around the world. Museum visitors looking to _____ their art-viewing experience should t..."
+    },
+    {
+      "word": "supplement",
+      "field": "passage",
+      "question_id": "sim-9-q1765246240155",
+      "text_snippet": "The Art Institute of Chicago houses nearly 300,000 works from around the world. Museum visitors looking to ______ their art-viewing experience should ..."
+    },
+    {
+      "word": "supposition",
+      "field": "passage",
+      "question_id": "sim-7-q1765244254858",
+      "text_snippet": "Text corpora such as the British National Corpus are enormous collections of electronically stored texts that can be used for empirical testing of hyp..."
+    },
+    {
+      "word": "suppress",
+      "field": "passage",
+      "question_id": "sim-1-q1765237576410",
+      "text_snippet": "The advent of online streaming has led many music listeners to drift away from ownership of music (through downloads or through physical media such as..."
+    },
+    {
+      "word": "suppress",
+      "field": "passage",
+      "question_id": "sim-9-q1765245998986",
+      "text_snippet": "The advent of online streaming has led many music listeners to drift away from ownership of music (through downloads or through physical media such as..."
+    },
+    {
+      "word": "suppress",
+      "field": "passage",
+      "question_id": "sim-9-q1765246240164",
+      "text_snippet": "The advent of online streaming has led many music listeners to drift away from ownership of music (through downloads or through physical media such as..."
+    },
+    {
+      "word": "surmounted",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ee-s1-m2-q5",
+      "text_snippet": "Emerging bioacoustics technologies have ______ blank long-standing challenges to wildlife research by enabling scientific observation without a human ..."
+    },
+    {
+      "word": "sustain",
+      "field": "passage",
+      "question_id": "sim-9-q1765245998858",
+      "text_snippet": "Before the 1858 publication of On the Origin of Species, Charles Darwin developed his theory of natural selection in five notebooks. In them he first ..."
+    },
+    {
+      "word": "synthesis",
+      "field": "passage",
+      "question_id": "sim-2-q1765238796533",
+      "text_snippet": "The metal displayed in the structure of House in Kamiaraya by Kazuto Nishi Architects and the metal hardware in UE House by GENETO are representative ..."
+    },
+    {
+      "word": "synthesis",
+      "field": "passage",
+      "question_id": "sim-9-q1765245854161",
+      "text_snippet": "The metal displayed in the structure of House in Kamiaraya by Kazuto Nishi Architects and the metal hardware in UE House by GENETO are representative ..."
+    },
+    {
+      "word": "synthesis",
+      "field": "passage",
+      "question_id": "sim-9-q1765246240870",
+      "text_snippet": "The metal displayed in the structure of House in Kamiaraya by Kazuto Nishi Architects and the metal hardware in UE House by GENETO are representative ..."
+    },
+    {
+      "word": "synthesize",
+      "field": "passage",
+      "question_id": "sim-9-q1765245998680",
+      "text_snippet": "Exclusively inhabiting tropical countries such as Senegal, wild chimpanzees lack adaptations to seasonal variations in ultraviolet B (UVB) irradiance ..."
+    },
+    {
+      "word": "synthesize",
+      "field": "passage",
+      "question_id": "sim-8-q1765245288305",
+      "text_snippet": "Exclusively inhabiting tropical countries such as Liberia, wild chimpanzees lack adaptations to seasonal variations in ultraviolet B (UVB) irradiance ..."
+    },
+    {
+      "word": "temperate",
+      "field": "passage",
+      "question_id": "sim-7-q1765244505032",
+      "text_snippet": "In Los Angeles County, California, bicycle paths such as the San Gabriel River bicycle path\u2014which is 28 miles long\u2014have become an increasingly popular..."
+    },
+    {
+      "word": "tenuous",
+      "field": "passage",
+      "question_id": "sim-1-q1765237576421",
+      "text_snippet": "Known as an \"empire on which the sun never sets,\" the Spanish Empire once controlled portions of five continents. Its legacy can still be seen, and he..."
+    },
+    {
+      "word": "tenuous",
+      "field": "passage",
+      "question_id": "sim-9-q1765245998659",
+      "text_snippet": "Known as an \"empire on which the sun never sets,\" the Spanish Empire once controlled portions of five continents. Its legacy can still be seen, and he..."
+    },
+    {
+      "word": "tenuous",
+      "field": "passage",
+      "question_id": "sim-9-q1765246240407",
+      "text_snippet": "Known as an 'empire on which the sun never sets,' the Spanish Empire once controlled portions of five continents. Its legacy can still be seen, and he..."
+    },
+    {
+      "word": "terrestrial",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ee-s1-m2-q14",
+      "text_snippet": "Natural monuments and other types of protected areas (PAs) are established to promote conservation, but because they restrict certain economic activit..."
+    },
+    {
+      "word": "terrestrial",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ed-s1-m2-q12",
+      "text_snippet": "Habitat management areas and other types of protected areas (PAs) are established to promote conservation, but because they restrict certain economic ..."
+    },
+    {
+      "word": "terrestrial",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ec-s1-m2-q12",
+      "text_snippet": "Nature reserves and other types of protected areas (PAs) are established to promote conservation, but because they restrict certain economic activitie..."
+    },
+    {
+      "word": "thrive",
+      "field": "passage",
+      "question_id": "sim-7-q1765244571742",
+      "text_snippet": "Although fewer companies trade their stocks on the Cambodia Securities Exchange in Phnom Penh, Cambodia, than on the stock exchanges in London, Mumbai..."
+    },
+    {
+      "word": "thrive",
+      "field": "passage",
+      "question_id": "sim-8-q1765245574243",
+      "text_snippet": "Roughly once an hour, a torrent of boiling water shoots up 100 feet or more from Yellowstone's Old Faithful geyser before plunging back to the surface..."
+    },
+    {
+      "word": "tilt",
+      "field": "passage",
+      "question_id": "sim-2-q1765238796802",
+      "text_snippet": "The vertical position of the Sun in the sky at a particular time of day varies throughout the year: due to Earth's axial tilt, it appears higher in th..."
+    },
+    {
+      "word": "tilt",
+      "field": "passage",
+      "question_id": "sim-9-q1765245853832",
+      "text_snippet": "The vertical position of the Sun in the sky at a particular time of day varies throughout the year: due to Earth's axial tilt, it appears higher in th..."
+    },
+    {
+      "word": "tilt",
+      "field": "passage",
+      "question_id": "sim-9-q1765246240217",
+      "text_snippet": "The vertical position of the Sun in the sky at a particular time of day varies throughout the year: due to Earth's axial tilt, it appears higher in th..."
+    },
+    {
+      "word": "trajectory",
+      "field": "passage",
+      "question_id": "sim-7-q1765244255549",
+      "text_snippet": "Whether the reign of a French monarch such as Francis ll or Louis XI was considered historically significant or, conversely, relatively ______ its tra..."
+    },
+    {
+      "word": "tranquil",
+      "field": "passage",
+      "question_id": "sim-8-q1765245573723",
+      "text_snippet": "Kelp forests grow underwater along the eastern Pacific Coast. These underwater forests are important to fish and other marine animals. Ocean currents ..."
+    },
+    {
+      "word": "tranquil",
+      "field": "passage",
+      "question_id": "sim-8-q1765245287331",
+      "text_snippet": "Kelp forests grow underwater along the eastern Pacific Coast. These underwater forests are important to fish and other marine animals. Ocean currents ..."
+    },
+    {
+      "word": "transfer",
+      "field": "passage",
+      "question_id": "sim-7-q1765244388937",
+      "text_snippet": "The equipment from the Apollo Moon landings (1969-1972), such as solar wind sensors and seismic sensors, remains there to this day, but the data from ..."
+    },
+    {
+      "word": "transmission",
+      "field": "passage",
+      "question_id": "sim-5-q1765243619079",
+      "text_snippet": "Chelsea Wood et al. tracked temperature-driven changes in the abundance of Anisakis sp. (a complex life cycle parasite, or CLP, that requires three ho..."
+    },
+    {
+      "word": "transport",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ee-s1-m2-q4",
+      "text_snippet": "The ______ blank of leaf-vein architectures\u2014the branching venation of Pteris cretica, the hierarchical netlike venation of Salix pedicellaris, and oth..."
+    },
+    {
+      "word": "ubiquitous",
+      "field": "passage",
+      "question_id": "sim-1-q1765237576401",
+      "text_snippet": "The people inhabiting the Ice Age sites now known as Shuidonggou 2 and Poto\u010dka Cave likely began wearing clothing as a defense against the cold, but I..."
+    },
+    {
+      "word": "ubiquitous",
+      "field": "passage",
+      "question_id": "sim-9-q1765245998475",
+      "text_snippet": "The people inhabiting the Ice Age sites now known as Shuidonggou 2 and Poto\u010dka Cave likely began wearing clothing as a defense against the cold, but I..."
+    },
+    {
+      "word": "ubiquitous",
+      "field": "passage",
+      "question_id": "sim-9-q1765246240419",
+      "text_snippet": "The people inhabiting the Ice Age sites now known as Shuidonggou 2 and Poto\u010dka Cave likely began wearing clothing as a defense against the cold, but I..."
+    },
+    {
+      "word": "ultimately",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ed-s1-m2-q15",
+      "text_snippet": "Should the Czech Republic cut taxes? As of 2017, the Czech Republic\u2019s top tax rate (46%) was lower than the highest point on the country\u2019s Laffer curv..."
+    },
+    {
+      "word": "ultimately",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ee-s1-m2-q16",
+      "text_snippet": "Should the US cut taxes? As of 2017, the US\u2019s top tax rate (48%) was lower than the highest point on the country\u2019s Laffer curve. A theoretical relatio..."
+    },
+    {
+      "word": "unclassifiable",
+      "field": "passage",
+      "question_id": "sim-8-q1765245287318",
+      "text_snippet": "Writer Lydia Davis observed that while _______ literary forms, such as the short story, are recognizable as such even as they evolve, there are rarer ..."
+    },
+    {
+      "word": "undermine",
+      "field": "passage",
+      "question_id": "sim-8-q1765245573911",
+      "text_snippet": "Jean Batten, who was the first person to fly between England and New Zealand solo, and Ynes Mexia, who was the first to discover the botanical genus M..."
+    },
+    {
+      "word": "underscores",
+      "field": "passage",
+      "question_id": "unknown-s0-m0-q0",
+      "text_snippet": "Barchester Towers is an 1857 novel by Anthony Trollope. In the novel, Trollope\u2019s portrayal of Dr. Proudie underscores the\ncharacter\u2019s exaggerated sens..."
+    },
+    {
+      "word": "unequivocal",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ea-s1-m2-q4",
+      "text_snippet": "The plaice is ectothermic, or cold-blooded, and the southern bluefin tuna is a regional endotherm, meaning that parts of its body are typically warmer..."
+    },
+    {
+      "word": "unequivocal",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ef-s1-m2-q4",
+      "text_snippet": "The striped marlin is ectothermic, or cold-blooded, and the Albacore tuna is a regional endotherm, meaning that parts of its body are typically warmer..."
+    },
+    {
+      "word": "unique",
+      "field": "passage",
+      "question_id": "sim-2-q1765238796444",
+      "text_snippet": "Some bands choose a name that's as unique as possible to distinguish themselves from other bands. The experimental rock band Boris, ________ took a di..."
+    },
+    {
+      "word": "unique",
+      "field": "passage",
+      "question_id": "sim-8-q1765245144748",
+      "text_snippet": "The discoverers of the minor planet 1227 Geranium named it after the plant genus that includes cranesbills. Most of the recently discovered minor plan..."
+    },
+    {
+      "word": "utility",
+      "field": "passage",
+      "question_id": "sim-1-q1765237576375",
+      "text_snippet": "_____ traditional descriptions of pollination syndromes (suites of floral traits, such as nectar composition and scent bouquet, hypothesized to have i..."
+    },
+    {
+      "word": "variability",
+      "field": "passage",
+      "question_id": "unknown-s0-m0-q0",
+      "text_snippet": "Marta Coll and colleagues\u2019 2010 Mediterranean Sea biodiversity census reported approximately 17,000 species, nearly\ndouble the number reported in Carl..."
+    },
+    {
+      "word": "variation",
+      "field": "passage",
+      "question_id": "sim-7-q1765244571489",
+      "text_snippet": "Previous research has shown that plant species with a narrow geographical range tend to be more genetically homogeneous than plant species with extens..."
+    },
+    {
+      "word": "variety",
+      "field": "passage",
+      "question_id": "sim-5-q1765243452494",
+      "text_snippet": "The human foot contains a variety of skeletal muscles, each playing an important role in the foot's healthy movement. The extensor digitorum brevis, w..."
+    },
+    {
+      "word": "vast",
+      "field": "passage",
+      "question_id": "sim-9-q1765245853752",
+      "text_snippet": "The radial velocity method, a means of indirect planetary discovery, has detected previously unknown exoplanets at vast distances from ______ the Nept..."
+    },
+    {
+      "word": "vast",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ef-s1-m1-q20",
+      "text_snippet": "The radial velocity method, a means of indirect planetary discovery, has detected previously unknown exoplanets at vast distances from ______ blank th..."
+    },
+    {
+      "word": "vast",
+      "field": "passage",
+      "question_id": "sim-3-q1765238990849",
+      "text_snippet": "Maryam Hosseini and her team used aerial images of well-mapped areas of Boston to train a computer program to identify sidewalks. When it was tested o..."
+    },
+    {
+      "word": "velocity",
+      "field": "passage",
+      "question_id": "nov-sat-ap2-s1-m2-q20",
+      "text_snippet": "Which choice completes the text so that it conforms to the conventions of\nStandard English?\nThe exoplanet Pi Mensae d was discovered using an indirect..."
+    },
+    {
+      "word": "velocity",
+      "field": "passage",
+      "question_id": "nov-sat-us-s1-m2-q14",
+      "text_snippet": "The exoplanet Kapteyn c was discovered using an indirect approach to planetary detection, the radial velocity method. Compared to that of the direct i..."
+    },
+    {
+      "word": "vibrant",
+      "field": "passage",
+      "question_id": "sim-7-q1765244389838",
+      "text_snippet": "When using hairy coneflower for dyeing cloth, textile artists first soak it in water to release its color. Next, they add the cloth to the dye bath an..."
+    },
+    {
+      "word": "vibrant",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ee-s1-m1-q4",
+      "text_snippet": "Cochabamba, Bolivia, was named a City of Gastronomy by UNESCO in 2017, a title that ______ blank that Cochabamba has a unique and vibrant food culture..."
+    },
+    {
+      "word": "vibrant",
+      "field": "passage",
+      "question_id": "sim-9-q1765246240145",
+      "text_snippet": "Among the small magazines animating New York's vibrant literary scene in the early twentieth century was ______ by Harold Loeb and featuring artwork b..."
+    },
+    {
+      "word": "vital",
+      "field": "passage",
+      "question_id": "sim-8-q1765245465636",
+      "text_snippet": "In a 2018 article celebrating films depicting the Black experience, critics for the New York Times _____ William Greaves's 1968 film Symbiopsychotaxip..."
+    },
+    {
+      "word": "vital",
+      "field": "passage",
+      "question_id": "sim-8-q1765245145405",
+      "text_snippet": "Trade with other societies was vital to the Byzantine Empire, which reigned in the Mediterranean from around 330 CE to 1453 CE. Its people profited by..."
+    },
+    {
+      "word": "vivid",
+      "field": "passage",
+      "question_id": "sim-5-q1765243452107",
+      "text_snippet": "The poem \"Naomi,\" which was published in 1960, contains three signature elements of Gwendolyn Brooks's poetic _______ compressed lines infused with bu..."
+    },
+    {
+      "word": "vivid",
+      "field": "passage",
+      "question_id": "sim-7-q1765244504772",
+      "text_snippet": "In 2020, internationally renowned Slovak photographer M\u00e1ria \u0160varbov\u00e1 exhibited her work at the Contessa Gallery and the Art Angle Gallery in the Unite..."
+    },
+    {
+      "word": "volume",
+      "field": "passage",
+      "question_id": "unknown-s0-m0-q0",
+      "text_snippet": "Aerogels are highly porous foams consisting mainly of tiny air pockets within a solidified gel. These lightweight materials\nare often applied to space..."
+    },
+    {
+      "word": "vulnerable",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ee-s1-m1-q15",
+      "text_snippet": "The red-vented bulbul and other fruit-eating bird species introduced to the Hawaiian island of Oahu in the last 150 years have recently been found to ..."
+    },
+    {
+      "word": "want",
+      "field": "passage",
+      "question_id": "sim-9-q1765245998624",
+      "text_snippet": "In 19th-century Bengal, cowry shells were used as a commodity currency. By using specific goods like cowry shells as common units of exchange, commodi..."
+    },
+    {
+      "word": "widespread",
+      "field": "passage",
+      "question_id": "sim-1-q1765237576401",
+      "text_snippet": "The people inhabiting the Ice Age sites now known as Shuidonggou 2 and Poto\u010dka Cave likely began wearing clothing as a defense against the cold, but I..."
+    },
+    {
+      "word": "widespread",
+      "field": "passage",
+      "question_id": "sim-9-q1765246240419",
+      "text_snippet": "The people inhabiting the Ice Age sites now known as Shuidonggou 2 and Poto\u010dka Cave likely began wearing clothing as a defense against the cold, but I..."
+    },
+    {
+      "word": "widespread",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ea-s1-m1-q15",
+      "text_snippet": "Blue holes\u2014large marine sinkholes, like Watling\u2019s Blue Hole near San Salvador Island\u2014can be hundreds of meters deep and are sometimes part of widespre..."
+    },
+    {
+      "word": "wonder",
+      "field": "passage",
+      "question_id": "sim-5-q1765243452771",
+      "text_snippet": "In 1900, in collaboration with Cherokee cultural historian Will West Long, white ethnographer James Mooney assembled a collection of traditional oral ..."
+    },
+    {
+      "word": "yield",
+      "field": "passage",
+      "question_id": "sim-7-q1765244751063",
+      "text_snippet": "The Study on Global Ageing and Adult Health (SAGE) seeks to discover long-term trends related to aging by compiling and analyzing evidence from approx..."
+    },
+    {
+      "word": "yield",
+      "field": "passage",
+      "question_id": "sim-9-q1765246240240",
+      "text_snippet": "Voxel modeling and kitbashing approaches to three-dimensional digital modeling for video games yield graphics that accurately represent the relative s..."
+    },
+    {
+      "word": "yield",
+      "field": "passage",
+      "question_id": "\u5317\u7f8ef-s1-m2-q19",
+      "text_snippet": "Taking a structuralist approach to analyzing Willa Cather\u2019s novel My \u00c1ntonia would lead a critic to focus on the linguistic conventions inherent in th..."
+    }
+  ],
+  "missing_fields": [],
+  "context_quality": []
+}
