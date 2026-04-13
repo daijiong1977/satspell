@@ -120,7 +120,7 @@ final class GameSessionViewModel: ObservableObject {
                 }
 
                 if allRounds.isEmpty {
-                    self.errorMessage = (mode == .task4Sat) ? "No SAT questions available for today's words." : "No rounds available."
+                    self.errorMessage = (mode == .task4Sat) ? "No example questions available for today's words." : "No rounds available."
                     self.isLoading = false
                     return
                 }

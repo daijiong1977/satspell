@@ -25,7 +25,7 @@ struct SATQuestionStepView: View {
             SessionHeaderView(
                 stepNumber: stepNumber,
                 totalSteps: totalSteps,
-                stepLabel: "SAT Questions",
+                stepLabel: "Example Questions",
                 currentWord: "",
                 currentItem: min(currentRound + 1, max(totalRounds, 1)),
                 totalItems: max(totalRounds, 1),
@@ -36,7 +36,7 @@ struct SATQuestionStepView: View {
 
             if isLoading {
                 Spacer()
-                ProgressView("Loading SAT questions...")
+                ProgressView("Loading questions...")
                 Spacer()
             } else if currentRound < totalRounds {
                 let round = questions[currentRound]
@@ -60,7 +60,7 @@ struct SATQuestionStepView: View {
             } else {
                 VStack(spacing: 16) {
                     Spacer()
-                    Text("No SAT questions available")
+                    Text("No questions available")
                         .font(.system(size: 16, weight: .bold, design: .rounded))
                         .foregroundColor(Color(hex: "#AFAFAF"))
                     Button3D("Continue", action: onComplete)

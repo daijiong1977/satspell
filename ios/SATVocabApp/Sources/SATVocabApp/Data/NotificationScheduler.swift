@@ -16,7 +16,7 @@ enum NotificationScheduler {
         requestPermissionThen {
             let content = UNMutableNotificationContent()
             content.title = "Good morning! ☀️"
-            content.body = "Time for your SAT vocabulary session."
+            content.body = "Time for your vocabulary session."
             content.sound = .default
 
             var dateComponents = DateComponents()

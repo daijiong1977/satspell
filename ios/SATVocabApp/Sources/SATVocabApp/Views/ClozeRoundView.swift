@@ -195,7 +195,7 @@ struct ClozeRoundView: View {
         let lemma = target.lemma
         if lemma.isEmpty { return context }
 
-        // Some SAT contexts already contain "______ blank" placeholders.
+        // Some usage contexts already contain "______ blank" placeholders.
         // Fill those first so we can reliably turn the target word into "____".
         let filledContext = TextFill.fillBlankPlaceholders(context, with: lemma)
 

@@ -99,9 +99,9 @@ struct FlashcardBackView: View {
                         }
                     }
 
-                    // SAT Context
+                    // Usage Context
                     if let satContext = card.satContext, !satContext.isEmpty {
-                        sectionView(label: "SAT CONTEXT") {
+                        sectionView(label: "USAGE CONTEXT") {
                             Text(satContext)
                                 .font(.system(size: 20, weight: .regular))
                                 .foregroundColor(Color(hex: "#666666"))

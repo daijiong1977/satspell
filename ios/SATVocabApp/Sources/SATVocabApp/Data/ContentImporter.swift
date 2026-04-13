@@ -99,7 +99,7 @@ actor ContentImporter {
         do {
             // 1. Insert list
             try insertRow(db: db, sql: "INSERT INTO lists(name, description, version) VALUES (?, ?, 1)",
-                          bindings: [.text("sat_core_1"), .text("SAT Core Vocabulary List")])
+                          bindings: [.text("sat_core_1"), .text("Core Vocabulary List")])
             let listId = Int(db.lastInsertRowId())
 
             // 2. Insert words + word_list + sat_contexts + collocations + embedded questions

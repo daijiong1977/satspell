@@ -72,20 +72,20 @@ final class SessionFlowViewModel: ObservableObject {
             steps = [
                 StepDef(type: .flashcard, label: "Explore New Words", itemCount: AppConfig.morningNewWords),
                 StepDef(type: .imageGame, label: "Image Practice", itemCount: AppConfig.morningGameRounds),
-                StepDef(type: .satQuestion, label: "SAT Questions", itemCount: AppConfig.morningSATQuestions),
+                StepDef(type: .satQuestion, label: "Example Questions", itemCount: AppConfig.morningSATQuestions),
             ]
         case .evening:
             steps = [
                 StepDef(type: .flashcard, label: "Explore New Words", itemCount: AppConfig.eveningNewWords),
                 StepDef(type: .quickRecall, label: "Quick Recall", itemCount: AppConfig.morningNewWords),
                 StepDef(type: .imageGame, label: "Image Practice", itemCount: AppConfig.eveningGameRounds),
-                StepDef(type: .satQuestion, label: "SAT Questions", itemCount: AppConfig.eveningSATQuestions),
+                StepDef(type: .satQuestion, label: "Example Questions", itemCount: AppConfig.eveningSATQuestions),
             ]
         default:
             // Recovery/review/bonus sessions — simplified
             steps = [
                 StepDef(type: .imageGame, label: "Practice", itemCount: 12),
-                StepDef(type: .satQuestion, label: "SAT Questions", itemCount: 3),
+                StepDef(type: .satQuestion, label: "Example Questions", itemCount: 3),
             ]
         }
     }
@@ -148,7 +148,7 @@ final class SessionFlowViewModel: ObservableObject {
             morningWords = try await dm.fetchSessionQueue(listId: list.id, limit: AppConfig.morningNewWords, startIndex: dayStart)
         }
 
-        // Preload SAT context + collocations for each word
+        // Preload usage context + collocations for each word
         for idx in newWords.indices {
             let context = try await dm.randomSatContext(wordId: newWords[idx].id)
             newWords[idx].satContext = context

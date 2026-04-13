@@ -138,12 +138,12 @@ struct FlashcardView: View {
                         }
 
                         VStack(alignment: .leading, spacing: 6) {
-                            Text("SAT Context")
+                            Text("Usage Context")
                                 .font(.system(.caption, design: .rounded).weight(.bold))
                                 .foregroundStyle(.secondary)
 
                             if context.isEmpty {
-                                Text("(No SAT context yet)")
+                                Text("(No usage context yet)")
                                     .font(.system(.headline, design: .rounded))
                                     .foregroundStyle(.primary)
                             } else {

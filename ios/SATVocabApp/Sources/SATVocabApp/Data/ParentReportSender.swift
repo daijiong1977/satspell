@@ -82,7 +82,7 @@ enum ParentReportSender {
                 </div>
 
                 <p style="color: #999; font-size: 12px; text-align: center; margin-top: 20px;">
-                    Sent from WordScholar — SAT Vocabulary Learning App
+                    Sent from WordScholar — Vocabulary Learning App
                 </p>
             </div>
         </body>

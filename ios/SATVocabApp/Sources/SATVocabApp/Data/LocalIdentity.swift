@@ -9,7 +9,7 @@ enum LocalIdentity {
     private static let parentEmailKey = "local.parent_email"
 
     static func displayName() -> String {
-        UserDefaults.standard.string(forKey: displayNameKey) ?? "SAT Learner"
+        UserDefaults.standard.string(forKey: displayNameKey) ?? "Scholar"
     }
 
     static func setDisplayName(_ name: String) {

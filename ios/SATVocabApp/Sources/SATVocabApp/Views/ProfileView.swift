@@ -350,7 +350,7 @@ struct ProfileView: View {
 
     private func saveName() {
         let trimmed = displayName.trimmingCharacters(in: .whitespacesAndNewlines)
-        displayName = trimmed.isEmpty ? "SAT Learner" : trimmed
+        displayName = trimmed.isEmpty ? "Scholar" : trimmed
         LocalIdentity.setDisplayName(displayName)
         isEditingName = false
     }

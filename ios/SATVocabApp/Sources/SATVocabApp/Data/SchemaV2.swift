@@ -1,6 +1,6 @@
 import Foundation
 
-/// Complete SQLite schema DDL for SAT Vocab V2.
+/// Complete SQLite schema DDL for WordScholar V2.
 /// Covers all 17 tables: content (bundled), user/log (modified), and new learning-state tables.
 enum SchemaV2 {
 

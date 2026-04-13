@@ -18,7 +18,7 @@ private struct ReportCardView: View {
 
     var body: some View {
         VStack(spacing: 20) {
-            Text("SAT Vocab Progress")
+            Text("WordScholar Progress")
                 .font(.system(.title, design: .rounded).weight(.bold))
                 .foregroundStyle(.white)
 

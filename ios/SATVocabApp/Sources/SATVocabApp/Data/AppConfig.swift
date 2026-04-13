@@ -16,12 +16,12 @@ enum AppConfig {
     static let task2CardCount = 10
 
     // Task 3: 20 image-to-word rounds
-    // Task 4: 20 SAT MCQ rounds
+    // Task 4: 20 example MCQ rounds
     static let task3SetsCount = 20
     static let task4McqCount = 20
     static let task4McqFetchPerWord = 2
 
-    // Verified-only SAT MCQ questions in v1
+    // Verified-only MCQ questions in v1
     static let satQuestionsVerifiedOnly = false  // V1: no verified questions in data, use all
 
     // Bundle resource names
