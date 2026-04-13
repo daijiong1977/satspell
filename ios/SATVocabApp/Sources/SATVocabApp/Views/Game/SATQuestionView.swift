@@ -3,7 +3,7 @@ import SwiftUI
 struct SATQuestionView: View {
     let question: SatQuestion
     let onAnswer: (Bool) -> Void
-    var onWrongAttempt: (() -> Void)? = nil  // Called on each wrong attempt for stats
+    var onWrongAttempt: (() -> Void)? = nil
 
     @State private var selectedOption: String? = nil
     @State private var showFeedback = false
@@ -58,7 +58,7 @@ struct SATQuestionView: View {
     var body: some View {
         GeometryReader { geo in
             VStack(spacing: 0) {
-                // Passage area — 60% of available height, auto-fit text, no scroll
+                // Passage area
                 VStack(alignment: .leading, spacing: 6) {
                     Text("PASSAGE")
                         .font(.system(size: 11, weight: .bold, design: .rounded))
@@ -134,9 +134,8 @@ struct SATQuestionView: View {
                 if isCorrect == true {
                     // CORRECT — show explanation, auto-advance after 4s
                     SATFeedbackSheet(
-                        isCorrect: true,
-                        targetWord: question.targetWord ?? "",
-                        correctAnswer: optionText(for: correctLetter),
+                        mode: .correct,
+                        correctAnswerText: "\(correctLetter). \(optionText(for: correctLetter))",
                         explanation: question.deepseekReason ?? question.deepseekBackground ?? "",
                         buttonLabel: "NEXT →",
                         onNext: {
@@ -160,11 +159,10 @@ struct SATQuestionView: View {
                         autoAdvanceTask?.cancel()
                     }
                 } else if wrongAttempts < 2 {
-                    // FIRST WRONG — encourage retry, no answer reveal
+                    // FIRST WRONG — encourage retry
                     SATFeedbackSheet(
-                        isCorrect: false,
-                        targetWord: question.targetWord ?? "",
-                        correctAnswer: "",
+                        mode: .firstWrong,
+                        correctAnswerText: "",
                         explanation: "Read the passage carefully and try again!",
                         buttonLabel: "TRY AGAIN",
                         onNext: {
@@ -174,11 +172,10 @@ struct SATQuestionView: View {
                         }
                     )
                 } else {
-                    // SECOND WRONG — show correct answer + full explanation, wait for tap
+                    // SECOND WRONG — show correct answer + full explanation
                     SATFeedbackSheet(
-                        isCorrect: false,
-                        targetWord: question.targetWord ?? "",
-                        correctAnswer: optionText(for: correctLetter),
+                        mode: .secondWrong,
+                        correctAnswerText: "\(correctLetter). \(optionText(for: correctLetter))",
                         explanation: question.deepseekReason ?? question.deepseekBackground ?? "The correct answer is \(correctLetter).",
                         buttonLabel: "GOT IT →",
                         onNext: {
@@ -245,66 +242,77 @@ struct SATQuestionView: View {
     }
 }
 
-// MARK: - SAT Feedback Sheet
+// MARK: - Feedback Sheet
 
 struct SATFeedbackSheet: View {
-    let isCorrect: Bool
-    let targetWord: String
-    let correctAnswer: String
+    enum Mode {
+        case correct
+        case firstWrong
+        case secondWrong
+    }
+
+    let mode: Mode
+    let correctAnswerText: String  // e.g. "B. ameliorate"
     let explanation: String
     var buttonLabel: String = "NEXT →"
     let onNext: () -> Void
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
+        VStack(alignment: .leading, spacing: 14) {
+            // Header
             HStack {
-                if isCorrect {
+                switch mode {
+                case .correct:
                     Image(systemName: "checkmark.circle.fill")
+                        .font(.system(size: 28))
                         .foregroundColor(Color(hex: "#58CC02"))
                     Text("Correct!")
-                        .font(.system(size: 22, weight: .bold, design: .rounded))
+                        .font(.system(size: 24, weight: .bold, design: .rounded))
                         .foregroundColor(Color(hex: "#58CC02"))
-                } else {
+                case .firstWrong:
+                    Image(systemName: "arrow.counterclockwise.circle.fill")
+                        .font(.system(size: 28))
+                        .foregroundColor(Color(hex: "#FF9600"))
+                    Text("Try again!")
+                        .font(.system(size: 24, weight: .bold, design: .rounded))
+                        .foregroundColor(Color(hex: "#FF9600"))
+                case .secondWrong:
                     Image(systemName: "xmark.circle.fill")
+                        .font(.system(size: 28))
                         .foregroundColor(Color(hex: "#FF4B4B"))
-                    Text("Not quite.")
-                        .font(.system(size: 22, weight: .bold, design: .rounded))
+                    Text("Not quite")
+                        .font(.system(size: 24, weight: .bold, design: .rounded))
                         .foregroundColor(Color(hex: "#FF4B4B"))
                 }
                 Spacer()
             }
 
-            if !targetWord.isEmpty {
-                VStack(alignment: .leading, spacing: 2) {
-                    Text("WORD")
-                        .font(.system(size: 13, weight: .bold))
+            // Correct answer (shown for correct + 2nd wrong)
+            if !correctAnswerText.isEmpty {
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("CORRECT ANSWER")
+                        .font(.system(size: 12, weight: .bold))
                         .foregroundColor(Color(hex: "#AFAFAF"))
-                    Text(targetWord)
-                        .font(.system(size: 23, weight: .semibold))
-                        .foregroundColor(Color(hex: "#4B4B4B"))
+                        .tracking(0.5)
+                    Text(correctAnswerText)
+                        .font(.system(size: 22, weight: .semibold))
+                        .foregroundColor(Color(hex: "#58CC02"))
                 }
             }
 
-            if !correctAnswer.isEmpty {
-                VStack(alignment: .leading, spacing: 2) {
-                    Text("MEANING")
-                        .font(.system(size: 13, weight: .bold))
-                        .foregroundColor(Color(hex: "#AFAFAF"))
-                    Text(correctAnswer)
-                        .font(.system(size: 23, weight: .medium))
-                        .foregroundColor(Color(hex: "#4B4B4B"))
-                }
-            }
-
+            // Explanation
             if !explanation.isEmpty {
-                VStack(alignment: .leading, spacing: 2) {
-                    Text("WHY")
-                        .font(.system(size: 13, weight: .bold))
-                        .foregroundColor(Color(hex: "#AFAFAF"))
+                VStack(alignment: .leading, spacing: 4) {
+                    if mode != .firstWrong {
+                        Text("EXPLANATION")
+                            .font(.system(size: 12, weight: .bold))
+                            .foregroundColor(Color(hex: "#AFAFAF"))
+                            .tracking(0.5)
+                    }
                     Text(explanation)
                         .font(.system(size: 20, weight: .regular))
-                        .foregroundColor(Color(hex: "#666666"))
-                        .lineSpacing(2)
+                        .foregroundColor(Color(hex: "#555555"))
+                        .lineSpacing(3)
                 }
             }
 
@@ -314,6 +322,14 @@ struct SATFeedbackSheet: View {
                 .padding(.horizontal, 4)
         }
         .padding(20)
-        .background(isCorrect ? Color(hex: "#58CC02").opacity(0.05) : Color(hex: "#FF4B4B").opacity(0.05))
+        .background(backgroundColor)
+    }
+
+    private var backgroundColor: Color {
+        switch mode {
+        case .correct: return Color(hex: "#58CC02").opacity(0.05)
+        case .firstWrong: return Color(hex: "#FF9600").opacity(0.05)
+        case .secondWrong: return Color(hex: "#FF4B4B").opacity(0.05)
+        }
     }
 }

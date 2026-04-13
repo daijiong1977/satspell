@@ -33,6 +33,7 @@ struct SATQuestionStepView: View {
                 isScored: true,
                 onClose: { showPause = true }
             )
+            .zIndex(10)
 
             if isLoading {
                 Spacer()

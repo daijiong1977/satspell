@@ -74,6 +74,8 @@ struct SessionHeaderView: View {
         }
         .padding(.top, 4)
         .padding(.bottom, 2)
+        .contentShape(Rectangle())  // Entire header area is tappable
+        .background(Color.white.opacity(0.001))  // Ensure hit testing works
     }
 
     private func speakWord() {
