@@ -9,6 +9,7 @@ struct FlashcardCardView: View {
     let isReadOnly: Bool
     let onShowAgain: () -> Void
     let onGotIt: () -> Void
+    var onFlipped: (() -> Void)? = nil
 
     @State private var isFlipped = false
 
@@ -43,6 +44,7 @@ struct FlashcardCardView: View {
         .contentShape(Rectangle())
         .onTapGesture {
             isFlipped.toggle()
+            if isFlipped { onFlipped?() }
         }
         .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
     }

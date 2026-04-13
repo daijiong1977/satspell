@@ -11,14 +11,27 @@ struct SATQuestionView: View {
 
     private let options = ["A", "B", "C", "D"]
 
-    private func optionText(for letter: String) -> String {
-        switch letter {
-        case "A": return question.optionA ?? ""
-        case "B": return question.optionB ?? ""
-        case "C": return question.optionC ?? ""
-        case "D": return question.optionD ?? ""
-        default: return ""
+    /// Replace the target word with "________" so it doesn't give away the answer
+    private func blankOutWord(_ text: String) -> String {
+        guard let word = question.targetWord, !word.isEmpty else { return text }
+        let pattern = "\\b\(NSRegularExpression.escapedPattern(for: word))\\b"
+        if let regex = try? NSRegularExpression(pattern: pattern, options: .caseInsensitive) {
+            let range = NSRange(text.startIndex..., in: text)
+            return regex.stringByReplacingMatches(in: text, range: range, withTemplate: "________")
         }
+        return text
+    }
+
+    private func optionText(for letter: String) -> String {
+        let raw: String
+        switch letter {
+        case "A": raw = question.optionA ?? ""
+        case "B": raw = question.optionB ?? ""
+        case "C": raw = question.optionC ?? ""
+        case "D": raw = question.optionD ?? ""
+        default: raw = ""
+        }
+        return raw
     }
 
     private var correctLetter: String {
@@ -52,7 +65,7 @@ struct SATQuestionView: View {
 
                     if let passage = question.passage, !passage.isEmpty {
                         ScrollView {
-                            Text(passage)
+                            Text(blankOutWord(passage))
                                 .font(.system(size: 20, weight: .regular, design: .serif))
                                 .foregroundColor(Color(hex: "#4B4B4B"))
                                 .lineSpacing(2)
@@ -71,7 +84,7 @@ struct SATQuestionView: View {
 
                 // Question text
                 if let questionText = question.question {
-                    Text(questionText)
+                    Text(blankOutWord(questionText))
                         .font(.system(size: 20, weight: .semibold))
                         .foregroundColor(Color(hex: "#4B4B4B"))
                         .fixedSize(horizontal: false, vertical: true)

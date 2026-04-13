@@ -57,10 +57,14 @@ final class SessionFlowViewModel: ObservableObject {
         return step.label
     }
 
-    init(sessionType: SessionType, studyDay: Int) {
+    // Review mode: replays the session without affecting state/scores
+    var isReviewMode: Bool = false
+
+    init(sessionType: SessionType, studyDay: Int, isReview: Bool = false) {
         self.sessionType = sessionType
         self.studyDay = studyDay
         self.userId = LocalIdentity.userId()
+        self.isReviewMode = isReview
 
         // Define steps based on session type
         switch sessionType {
@@ -93,32 +97,34 @@ final class SessionFlowViewModel: ObservableObject {
         let dm = DataManager.shared
         try await dm.initializeIfNeeded()
 
-        // Create required rows BEFORE any updates
-        let sessionStore = SessionStateStore.shared
-        let statsStore = StatsStore.shared
-        let zoneIdx = studyDay / 4  // approximate zone
-        _ = try await sessionStore.getOrCreateDayState(userId: userId, studyDay: studyDay, zoneIndex: zoneIdx)
+        if !isReviewMode {
+            // Create required rows BEFORE any updates
+            let sessionStore = SessionStateStore.shared
+            let statsStore = StatsStore.shared
+            let zoneIdx = studyDay / 4  // approximate zone
+            _ = try await sessionStore.getOrCreateDayState(userId: userId, studyDay: studyDay, zoneIndex: zoneIdx)
 
-        // Check for an existing paused session before creating a new one
-        if let existingSession = try await sessionStore.getActiveSession(userId: userId),
-           existingSession.sessionType == sessionType,
-           existingSession.studyDay == studyDay {
-            // Resume: restore saved step/item index instead of resetting
-            currentStepIndex = existingSession.stepIndex
-            resumeItemIndex = existingSession.itemIndex
-            showAgainWordIds = existingSession.showAgainIds
-            try await sessionStore.resumeSession(userId: userId, studyDay: studyDay, sessionType: sessionType)
+            // Check for an existing paused session before creating a new one
+            if let existingSession = try await sessionStore.getActiveSession(userId: userId),
+               existingSession.sessionType == sessionType,
+               existingSession.studyDay == studyDay {
+                // Resume: restore saved step/item index instead of resetting
+                currentStepIndex = existingSession.stepIndex
+                resumeItemIndex = existingSession.itemIndex
+                showAgainWordIds = existingSession.showAgainIds
+                try await sessionStore.resumeSession(userId: userId, studyDay: studyDay, sessionType: sessionType)
 
-            // Restore in-flight scoring totals from daily_stats
-            let dailyStats = try await statsStore.getOrCreateDailyStats(userId: userId, studyDay: studyDay)
-            totalCorrect = dailyStats.correctCount
-            totalAttempts = dailyStats.totalCount
-            xpEarned = dailyStats.xpEarned + dailyStats.sessionBonus
-            wordsPromoted = dailyStats.wordsPromoted
-            wordsDemoted = dailyStats.wordsDemoted
-        } else {
-            _ = try await sessionStore.createSession(userId: userId, sessionType: sessionType, studyDay: studyDay)
-            _ = try await statsStore.getOrCreateDailyStats(userId: userId, studyDay: studyDay)
+                // Restore in-flight scoring totals from daily_stats
+                let dailyStats = try await statsStore.getOrCreateDailyStats(userId: userId, studyDay: studyDay)
+                totalCorrect = dailyStats.correctCount
+                totalAttempts = dailyStats.totalCount
+                xpEarned = dailyStats.xpEarned + dailyStats.sessionBonus
+                wordsPromoted = dailyStats.wordsPromoted
+                wordsDemoted = dailyStats.wordsDemoted
+            } else {
+                _ = try await sessionStore.createSession(userId: userId, sessionType: sessionType, studyDay: studyDay)
+                _ = try await statsStore.getOrCreateDailyStats(userId: userId, studyDay: studyDay)
+            }
         }
 
         let list = try await dm.getDefaultList()
@@ -200,7 +206,7 @@ final class SessionFlowViewModel: ObservableObject {
     @Published var currentItemIndex: Int = 0
 
     func recordAnswer(correct: Bool, wordId: Int, activityType: ActivityType, durationMs: Int) async {
-        print("📝 recordAnswer called: wordId=\(wordId) correct=\(correct) activityType=\(activityType)")
+        // In review mode, track UI counters but don't write to database
         totalAttempts += 1
         if correct {
             totalCorrect += 1
@@ -210,40 +216,36 @@ final class SessionFlowViewModel: ObservableObject {
             comboCount = 0
         }
 
-        // Record in data layer
-        do {
-            let dm = DataManager.shared
-            let reviewLogger = ReviewLogger(db: dm.db)
-            let wsStore = WordStateStore(db: dm.db)
-            let statsStore = StatsStore.shared
+        // Record in data layer (skip in review mode)
+        if !isReviewMode {
+            do {
+                let dm = DataManager.shared
+                let reviewLogger = ReviewLogger(db: dm.db)
+                let wsStore = WordStateStore(db: dm.db)
+                let statsStore = StatsStore.shared
 
-            // 1. Write review_log entry
-            let outcome: ReviewOutcome = correct ? .correct : .incorrect
-            print("📝 about to call logReview for wordId=\(wordId)")
-            try await reviewLogger.logReview(
-                userId: userId, wordId: wordId, outcome: outcome,
-                activityType: activityType, sessionType: sessionType,
-                studyDay: studyDay, durationMs: durationMs)
-            print("📝 logReview succeeded for wordId=\(wordId)")
+                let outcome: ReviewOutcome = correct ? .correct : .incorrect
+                try await reviewLogger.logReview(
+                    userId: userId, wordId: wordId, outcome: outcome,
+                    activityType: activityType, sessionType: sessionType,
+                    studyDay: studyDay, durationMs: durationMs)
 
-            // 2. Update word_state (box progression)
-            print("📝 about to call recordScoredAnswer for wordId=\(wordId)")
-            let boxChange = try await wsStore.recordScoredAnswer(userId: userId, wordId: wordId, correct: correct)
-            print("📝 recordScoredAnswer succeeded for wordId=\(wordId) boxChange=\(boxChange)")
+                let boxChange = try await wsStore.recordScoredAnswer(userId: userId, wordId: wordId, correct: correct)
 
-            switch boxChange {
-            case .promoted(_, _): wordsPromoted += 1
-            case .demoted(_, _): wordsDemoted += 1
-            case .none: break
+                switch boxChange {
+                case .promoted(_, _): wordsPromoted += 1
+                case .demoted(_, _): wordsDemoted += 1
+                case .none: break
+                }
+
+                if correct {
+                    try await statsStore.recordCorrectAnswer(userId: userId, studyDay: studyDay)
+                } else {
+                    try await statsStore.recordWrongAnswer(userId: userId, studyDay: studyDay)
+                }
+            } catch {
+                print("❌ recordAnswer ERROR: \(error)")
             }
-
-            if correct {
-                try await statsStore.recordCorrectAnswer(userId: userId, studyDay: studyDay)
-            } else {
-                try await statsStore.recordWrongAnswer(userId: userId, studyDay: studyDay)
-            }
-        } catch {
-            print("❌ recordAnswer ERROR: \(error)")
         }
 
         // Update Live Activity
@@ -262,8 +264,8 @@ final class SessionFlowViewModel: ObservableObject {
     }
 
     /// Auto-save current position to SQLite so a hard kill preserves progress.
-    /// Called by step views whenever the item index advances.
     func autoSaveProgress(stepIndex: Int, itemIndex: Int) {
+        guard !isReviewMode else { return }
         Task {
             do {
                 let store = SessionStateStore.shared
@@ -279,6 +281,8 @@ final class SessionFlowViewModel: ObservableObject {
     private func completeSession() {
         isComplete = true
         LiveActivityManager.shared.end(xpEarned: xpEarned)
+
+        guard !isReviewMode else { return }
 
         Task {
             do {

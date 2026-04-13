@@ -10,6 +10,7 @@ struct ImageGameView: View {
     @State private var selectedId: Int? = nil
     @State private var isCorrect: Bool? = nil
     @State private var showFeedback = false
+    @State private var wrongAttempts: Int = 0
 
     private var clozeSentence: String {
         guard let example = card.example else { return "________" }
@@ -31,6 +32,8 @@ struct ImageGameView: View {
                         Image(uiImage: ui)
                             .resizable()
                             .scaledToFill()
+                            .frame(width: geo.size.width - 24, height: geo.size.height * 0.55 + 40)
+                            .offset(y: -20)  // shift up to crop top 8% equally
                             .frame(width: geo.size.width - 24, height: geo.size.height * 0.55)
                             .clipped()
                     } else {
@@ -91,9 +94,9 @@ struct ImageGameView: View {
                 }
                 .padding(.horizontal, 12)
                 .padding(.bottom, 12)
+                .allowsHitTesting(!showFeedback)
             }
         }
-        .allowsHitTesting(!showFeedback)
     }
 
     @ViewBuilder
@@ -104,14 +107,16 @@ struct ImageGameView: View {
             guard showFeedback else { return .white }
             if isSelected && isCorrect == true { return Color(hex: "#58CC02").opacity(0.2) }
             if isSelected && isCorrect == false { return Color(hex: "#FF4B4B").opacity(0.2) }
-            if isCorrectAnswer && isCorrect == false { return Color(hex: "#58CC02").opacity(0.2) }
+            // Only reveal correct answer after 2nd wrong attempt
+            if isCorrectAnswer && isCorrect == false && wrongAttempts >= 2 { return Color(hex: "#58CC02").opacity(0.2) }
             return .white
         }()
         let borderColor: Color = {
             guard showFeedback else { return Color(hex: "#E5E5E5") }
             if isSelected && isCorrect == true { return Color(hex: "#58CC02") }
             if isSelected && isCorrect == false { return Color(hex: "#FF4B4B") }
-            if isCorrectAnswer && isCorrect == false { return Color(hex: "#58CC02") }
+            // Only reveal correct answer after 2nd wrong attempt
+            if isCorrectAnswer && isCorrect == false && wrongAttempts >= 2 { return Color(hex: "#58CC02") }
             return Color(hex: "#E5E5E5")
         }()
 
@@ -122,9 +127,25 @@ struct ImageGameView: View {
             isCorrect = correct
             showFeedback = true
 
-            let delay: Double = correct ? 1.5 : 2.5
-            DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
-                onAnswer(correct)
+            if correct {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                    onAnswer(true)
+                }
+            } else {
+                wrongAttempts += 1
+                if wrongAttempts >= 2 {
+                    // Second wrong — show correct answer, then advance
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                        onAnswer(false)
+                    }
+                } else {
+                    // First wrong — encourage retry
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                        selectedId = nil
+                        isCorrect = nil
+                        showFeedback = false
+                    }
+                }
             }
         } label: {
             Text(choice.lemma)

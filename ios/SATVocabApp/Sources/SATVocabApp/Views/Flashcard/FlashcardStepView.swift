@@ -16,6 +16,7 @@ struct FlashcardStepView: View {
     @State private var showPause: Bool = false
     @State private var dragOffset: CGFloat = 0
     @State private var didInit = false
+    @State private var flippedCardIds: Set<Int> = []
 
     private var allCards: [VocabCard] {
         words + requeuedCards
@@ -62,6 +63,9 @@ struct FlashcardStepView: View {
                     },
                     onGotIt: {
                         advanceCard(card)
+                    },
+                    onFlipped: {
+                        flippedCardIds.insert(card.id)
                     }
                 )
                 .id(currentIndex)
@@ -69,16 +73,21 @@ struct FlashcardStepView: View {
                 .gesture(
                     DragGesture(minimumDistance: 50)
                         .onChanged { value in
-                            dragOffset = value.translation.width
+                            // Only allow drag if card has been flipped
+                            if flippedCardIds.contains(card.id) || value.translation.width > 0 {
+                                dragOffset = value.translation.width
+                            }
                         }
                         .onEnded { value in
                             let threshold: CGFloat = 80
                             withAnimation(.spring(response: 0.3)) {
-                                if value.translation.width < -threshold {
+                                if value.translation.width < -threshold && flippedCardIds.contains(card.id) {
+                                    // Swipe left = advance (only if flipped)
                                     if let card = currentCard {
                                         advanceCard(card)
                                     }
                                 } else if value.translation.width > threshold {
+                                    // Swipe right = go back (always allowed)
                                     goBack()
                                 }
                                 dragOffset = 0

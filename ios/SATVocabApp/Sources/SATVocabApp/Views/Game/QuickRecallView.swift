@@ -45,8 +45,8 @@ struct QuickRecallView: View {
             }
             .padding(.horizontal, 16)
             .padding(.bottom, 20)
+            .allowsHitTesting(!showFeedback)
         }
-        .allowsHitTesting(!showFeedback)
     }
 
     @ViewBuilder

@@ -3,6 +3,7 @@ import SwiftUI
 struct PracticeTabView: View {
     @StateObject private var vm = PracticeTabViewModel()
     @State private var navigateToSession: SessionType? = nil
+    @State private var navigateToReview: SessionType? = nil
     @State private var showRestartConfirm = false
     @State private var pendingRestartSession: SessionState? = nil
 
@@ -44,6 +45,9 @@ struct PracticeTabView: View {
         }
         .navigationDestination(item: $navigateToSession) { type in
             SessionFlowView(vm: SessionFlowViewModel(sessionType: type, studyDay: vm.studyDay))
+        }
+        .navigationDestination(item: $navigateToReview) { type in
+            SessionFlowView(vm: SessionFlowViewModel(sessionType: type, studyDay: vm.studyDay, isReview: true))
         }
         .alert("Start Over?", isPresented: $showRestartConfirm) {
             Button("Cancel", role: .cancel) {
@@ -100,20 +104,20 @@ struct PracticeTabView: View {
             )
             if session.sessionType == .evening {
                 MorningCompleteCard(reviewable: true) {
-                    navigateToSession = .morning
+                    navigateToReview = .morning
                 }
             }
 
         case .morningDoneEveningLocked(let unlockAt):
             MorningCompleteCard(reviewable: true) {
-                navigateToSession = .morning
+                navigateToReview = .morning
             }
             EveningSessionCard(locked: true, unlockAt: unlockAt)
             ReviewsDueRow(count: vm.reviewsDueCount)
 
         case .eveningAvailable:
             MorningCompleteCard(reviewable: true) {
-                navigateToSession = .morning
+                navigateToReview = .morning
             }
             EveningSessionCard(locked: false, unlockAt: nil) {
                 navigateToSession = .evening
@@ -122,10 +126,10 @@ struct PracticeTabView: View {
 
         case .bothComplete:
             MorningCompleteCard(reviewable: true) {
-                navigateToSession = .morning
+                navigateToReview = .morning
             }
             EveningCompleteCard(reviewable: true) {
-                navigateToSession = .evening
+                navigateToReview = .evening
             }
             DayCompleteSummary(studyDay: vm.studyDay, userId: vm.userId)
             ReviewsDueRow(count: vm.reviewsDueCount)
