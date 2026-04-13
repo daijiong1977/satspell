@@ -41,6 +41,9 @@ struct PracticeTabView: View {
             if navigateToSession != nil {
                 navigateToSession = nil
             }
+            if navigateToReview != nil {
+                navigateToReview = nil
+            }
             Task { await vm.load() }
         }
         .navigationDestination(item: $navigateToSession) { type in

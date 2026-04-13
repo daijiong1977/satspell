@@ -327,6 +327,7 @@ final class SessionFlowViewModel: ObservableObject {
     func pause(stepIndex: Int, itemIndex: Int, showAgainIds: [Int], requeuedIds: [Int]) async {
         isPaused = true
         LiveActivityManager.shared.end(xpEarned: xpEarned)
+        guard !isReviewMode else { return }
         do {
             let store = SessionStateStore.shared
             try await store.pauseSession(userId: userId, studyDay: studyDay, sessionType: sessionType,
