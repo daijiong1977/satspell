@@ -30,7 +30,12 @@ struct PracticeStateResolver {
 
         // Morning done, check evening
         if day.morningComplete {
-            let unlockAt = calculateEveningUnlock(morningCompleteAt: day.morningCompleteAt, now: now)
+            let mode = LocalIdentity.eveningUnlockMode()
+            if mode == 0 {
+                // No wait — evening available immediately
+                return .eveningAvailable
+            }
+            let unlockAt = calculateEveningUnlock(morningCompleteAt: day.morningCompleteAt, now: now, mode: mode)
             if now >= unlockAt {
                 return .eveningAvailable
             } else {
@@ -42,28 +47,22 @@ struct PracticeStateResolver {
         return .morningAvailable
     }
 
-    static func calculateEveningUnlock(morningCompleteAt: Date?, now: Date = Date()) -> Date {
+    static func calculateEveningUnlock(morningCompleteAt: Date?, now: Date = Date(), mode: Int = 1) -> Date {
         let cal = Calendar.current
 
-        // Build the fallback hour — if today's fallback is already past, use tomorrow's
-        let fallback: Date = {
-            let todayFallback = cal.date(bySettingHour: AppConfig.eveningUnlockFallbackHour,
-                                         minute: 0, second: 0, of: now) ?? now
-            if todayFallback > now {
-                return todayFallback
+        if mode == 2 {
+            // Mode 2: after 5:00 PM — return today's 5PM or tomorrow's if past
+            let todayFive = cal.date(bySettingHour: 17, minute: 0, second: 0, of: now) ?? now
+            if todayFive > now {
+                return todayFive
             }
-            // Today's fallback already passed — use tomorrow
-            return cal.date(byAdding: .day, value: 1, to: todayFallback) ?? todayFallback
-        }()
-
-        guard let morningDone = morningCompleteAt else {
-            // morningCompleteAt is nil — fall back to now + unlock hours,
-            // capped by the fallback hour so it never unlocks immediately
-            let hoursFromNow = now.addingTimeInterval(TimeInterval(AppConfig.eveningUnlockHours * 3600))
-            return min(hoursFromNow, fallback)
+            return cal.date(byAdding: .day, value: 1, to: todayFive) ?? todayFive
         }
 
-        let hoursLater = morningDone.addingTimeInterval(TimeInterval(AppConfig.eveningUnlockHours * 3600))
-        return min(hoursLater, fallback)
+        // Mode 1: wait 3 hours after morning completion
+        guard let morningDone = morningCompleteAt else {
+            return now.addingTimeInterval(TimeInterval(3 * 3600))
+        }
+        return morningDone.addingTimeInterval(TimeInterval(3 * 3600))
     }
 }

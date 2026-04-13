@@ -32,6 +32,17 @@ enum LocalIdentity {
         UserDefaults.standard.set(email, forKey: parentEmailKey)
     }
 
+    // Evening unlock mode: 0 = no wait, 1 = wait 3 hours, 2 = after 5PM
+    private static let eveningUnlockModeKey = "local.evening_unlock_mode"
+
+    static func eveningUnlockMode() -> Int {
+        UserDefaults.standard.integer(forKey: eveningUnlockModeKey) // default 0 = no wait
+    }
+
+    static func setEveningUnlockMode(_ mode: Int) {
+        UserDefaults.standard.set(mode, forKey: eveningUnlockModeKey)
+    }
+
     static func userId() -> String {
         if let v = UserDefaults.standard.string(forKey: userIdKey) {
             return v

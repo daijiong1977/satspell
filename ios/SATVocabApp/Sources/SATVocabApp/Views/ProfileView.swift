@@ -16,6 +16,7 @@ struct ProfileView: View {
     @State private var isEditingName = false
     @State private var showAvatarPicker = false
     @State private var showResetConfirm = false
+    @State private var eveningUnlockMode: Int = LocalIdentity.eveningUnlockMode()
     @State private var parentEmail: String = LocalIdentity.parentEmail() ?? ""
     @State private var isSendingReport = false
     @State private var reportStatus: String? = nil
@@ -223,6 +224,29 @@ struct ProfileView: View {
                     }
                     .padding(.horizontal, 16)
                     .padding(.vertical, 12)
+                }
+                .background(.white)
+                .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 16, style: .continuous)
+                        .strokeBorder(Color.black.opacity(0.06), lineWidth: 1)
+                )
+
+                // Evening Session Unlock
+                VStack(spacing: 0) {
+                    settingsHeader("Evening Session")
+
+                    Picker("Evening unlock", selection: $eveningUnlockMode) {
+                        Text("No wait (testing)").tag(0)
+                        Text("Wait 3 hours").tag(1)
+                        Text("After 5:00 PM").tag(2)
+                    }
+                    .pickerStyle(.segmented)
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 12)
+                    .onChange(of: eveningUnlockMode) { _, newVal in
+                        LocalIdentity.setEveningUnlockMode(newVal)
+                    }
                 }
                 .background(.white)
                 .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
