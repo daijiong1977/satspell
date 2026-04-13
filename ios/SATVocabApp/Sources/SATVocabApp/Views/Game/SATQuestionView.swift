@@ -8,6 +8,8 @@ struct SATQuestionView: View {
     @State private var selectedOption: String? = nil
     @State private var showFeedback = false
     @State private var isCorrect: Bool? = nil
+    @State private var wrongAttempts: Int = 0
+    @State private var autoAdvanceTask: Task<Void, Never>? = nil
 
     private let options = ["A", "B", "C", "D"]
 
@@ -110,6 +112,7 @@ struct SATQuestionView: View {
                     isCorrect = correct
                     showFeedback = true
                     if !correct {
+                        wrongAttempts += 1
                         onWrongAttempt?()
                     }
                 } label: {
@@ -127,21 +130,64 @@ struct SATQuestionView: View {
             }
         }
         .sheet(isPresented: $showFeedback) {
-            SATFeedbackSheet(
-                isCorrect: isCorrect ?? false,
-                targetWord: question.targetWord ?? "",
-                correctAnswer: (isCorrect == true) ? optionText(for: correctLetter) : "",
-                explanation: (isCorrect == true) ? (question.deepseekReason ?? question.deepseekBackground ?? "") : "Read the passage carefully and try again!",
-                onNext: {
-                    showFeedback = false
-                    if isCorrect == true {
-                        onAnswer(true)
-                    } else {
-                        selectedOption = nil
-                        isCorrect = nil
+            Group {
+                if isCorrect == true {
+                    // CORRECT — show explanation, auto-advance after 4s
+                    SATFeedbackSheet(
+                        isCorrect: true,
+                        targetWord: question.targetWord ?? "",
+                        correctAnswer: optionText(for: correctLetter),
+                        explanation: question.deepseekReason ?? question.deepseekBackground ?? "",
+                        buttonLabel: "NEXT →",
+                        onNext: {
+                            autoAdvanceTask?.cancel()
+                            showFeedback = false
+                            onAnswer(true)
+                        }
+                    )
+                    .onAppear {
+                        autoAdvanceTask = Task {
+                            try? await Task.sleep(nanoseconds: 4_000_000_000)
+                            if !Task.isCancelled {
+                                await MainActor.run {
+                                    showFeedback = false
+                                    onAnswer(true)
+                                }
+                            }
+                        }
                     }
+                    .onDisappear {
+                        autoAdvanceTask?.cancel()
+                    }
+                } else if wrongAttempts < 2 {
+                    // FIRST WRONG — encourage retry, no answer reveal
+                    SATFeedbackSheet(
+                        isCorrect: false,
+                        targetWord: question.targetWord ?? "",
+                        correctAnswer: "",
+                        explanation: "Read the passage carefully and try again!",
+                        buttonLabel: "TRY AGAIN",
+                        onNext: {
+                            showFeedback = false
+                            selectedOption = nil
+                            isCorrect = nil
+                        }
+                    )
+                } else {
+                    // SECOND WRONG — show correct answer + full explanation, wait for tap
+                    SATFeedbackSheet(
+                        isCorrect: false,
+                        targetWord: question.targetWord ?? "",
+                        correctAnswer: optionText(for: correctLetter),
+                        explanation: question.deepseekReason ?? question.deepseekBackground ?? "The correct answer is \(correctLetter).",
+                        buttonLabel: "GOT IT →",
+                        onNext: {
+                            showFeedback = false
+                            onAnswer(false)
+                        }
+                    )
                 }
-            )
+            }
             .presentationDetents([.fraction(0.5)])
         }
     }
@@ -206,6 +252,7 @@ struct SATFeedbackSheet: View {
     let targetWord: String
     let correctAnswer: String
     let explanation: String
+    var buttonLabel: String = "NEXT →"
     let onNext: () -> Void
 
     var body: some View {
@@ -263,7 +310,7 @@ struct SATFeedbackSheet: View {
 
             Spacer()
 
-            Button3D(isCorrect ? "NEXT \u{2192}" : "TRY AGAIN", action: onNext)
+            Button3D(buttonLabel, action: onNext)
                 .padding(.horizontal, 4)
         }
         .padding(20)
