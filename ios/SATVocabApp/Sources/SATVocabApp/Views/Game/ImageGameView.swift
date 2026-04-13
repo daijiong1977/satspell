@@ -15,7 +15,9 @@ struct ImageGameView: View {
     private var clozeSentence: String {
         guard let example = card.example else { return "________" }
         let clean = example.replacingOccurrences(of: "**", with: "")
-        let pattern = "\\b\(NSRegularExpression.escapedPattern(for: card.lemma))\\b"
+        // Match word + common suffixes (manifested, manifesting, manifests, etc.)
+        let escaped = NSRegularExpression.escapedPattern(for: card.lemma)
+        let pattern = "\\b\(escaped)(s|es|ed|ing|ly|ness|ment|tion|ity|ous|ive|al|er|est|ance|ence|ances|ences)?\\b"
         if let regex = try? NSRegularExpression(pattern: pattern, options: .caseInsensitive) {
             let range = NSRange(clean.startIndex..., in: clean)
             return regex.stringByReplacingMatches(in: clean, range: range, withTemplate: "________")

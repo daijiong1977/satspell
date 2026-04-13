@@ -86,14 +86,23 @@ struct FlashcardFrontView: View {
     }
 
     private func highlightedSentence(_ text: String, word: String) -> AttributedString {
-        // Strip markdown bold markers ** from example sentences
         let cleanText = text.replacingOccurrences(of: "**", with: "")
         var attr = AttributedString(cleanText)
-        if let range = attr.range(of: word, options: .caseInsensitive) {
-            attr[range].font = .system(size: 28, weight: .black)
-            attr[range].foregroundColor = Color(hex: "#FFC800")
-            attr[range].underlineStyle = .single
-            attr[range].underlineColor = .init(Color(hex: "#FFC800").opacity(0.4))
+        // Match word + common suffixes
+        let escaped = NSRegularExpression.escapedPattern(for: word)
+        let pattern = "\\b\(escaped)(s|es|ed|ing|ly|ness|ment|tion|ity|ous|ive|al|er|est|ance|ence|ances|ences)?\\b"
+        if let regex = try? NSRegularExpression(pattern: pattern, options: .caseInsensitive) {
+            let nsRange = NSRange(cleanText.startIndex..., in: cleanText)
+            if let match = regex.firstMatch(in: cleanText, range: nsRange),
+               let swiftRange = Range(match.range, in: cleanText) {
+                let attrRange = attr.range(of: cleanText[swiftRange])
+                if let attrRange {
+                    attr[attrRange].font = .system(size: 28, weight: .black)
+                    attr[attrRange].foregroundColor = Color(hex: "#FFC800")
+                    attr[attrRange].underlineStyle = .single
+                    attr[attrRange].underlineColor = .init(Color(hex: "#FFC800").opacity(0.4))
+                }
+            }
         }
         return attr
     }
