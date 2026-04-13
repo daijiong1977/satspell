@@ -4,7 +4,7 @@ options:
     iOS: "17.0"
 settings:
   base:
-    PRODUCT_BUNDLE_IDENTIFIER: com.satspell.SATVocabApp
+    PRODUCT_BUNDLE_IDENTIFIER: com.WordScholar.WordScholarApp
     SUPPORTED_PLATFORMS: "iphoneos iphonesimulator"
     DEVELOPMENT_TEAM: W6BCH2M54V
 
@@ -14,9 +14,13 @@ targets:
     platform: iOS
     sources:
       - path: Sources/SATVocabApp
+      - path: Resources/Assets.xcassets
       - path: Resources/data.db
         buildPhase: resources
       - path: Resources/Images
+        type: folder
+        buildPhase: resources
+      - path: Resources/MapBackgrounds
         type: folder
         buildPhase: resources
       - path: ../../word_list.json
@@ -42,7 +46,7 @@ targets:
       base:
         SWIFT_VERSION: "5.0"
         TARGETED_DEVICE_FAMILY: "1"
-        PRODUCT_BUNDLE_IDENTIFIER: com.satspell.SATVocabApp.Widgets
+        PRODUCT_BUNDLE_IDENTIFIER: com.WordScholar.WordScholarApp.Widgets
         INFOPLIST_FILE: SATVocabWidgets/Info.plist
         LD_RUNPATH_SEARCH_PATHS: "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks"
         CODE_SIGN_STYLE: Automatic

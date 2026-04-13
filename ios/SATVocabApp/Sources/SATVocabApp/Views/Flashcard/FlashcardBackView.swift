@@ -88,7 +88,7 @@ struct FlashcardBackView: View {
                             FlowLayout(spacing: 8) {
                                 ForEach(collocations, id: \.self) { phrase in
                                     Text(phrase)
-                                        .font(.system(size: 19, weight: .medium))
+                                        .font(.system(size: 20, weight: .medium))
                                         .foregroundColor(Color(hex: "#4B4B4B"))
                                         .padding(.horizontal, 12)
                                         .padding(.vertical, 8)
@@ -103,7 +103,7 @@ struct FlashcardBackView: View {
                     if let satContext = card.satContext, !satContext.isEmpty {
                         sectionView(label: "SAT CONTEXT") {
                             Text(satContext)
-                                .font(.system(size: 19, weight: .regular))
+                                .font(.system(size: 20, weight: .regular))
                                 .foregroundColor(Color(hex: "#666666"))
                                 .lineSpacing(3)
                                 .fixedSize(horizontal: false, vertical: true)

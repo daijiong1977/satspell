@@ -27,7 +27,7 @@ struct ImageGameStepView: View {
                 stepNumber: stepNumber,
                 totalSteps: totalSteps,
                 stepLabel: "Image Practice",
-                currentWord: (currentRound < roundCards.count) ? roundCards[currentRound].card.lemma : "",
+                currentWord: "",  // Don't show word — it gives away the answer
                 currentItem: min(currentRound + 1, max(totalRounds, 1)),
                 totalItems: max(totalRounds, 1),
                 progressColor: Color(hex: "#58CC02"),

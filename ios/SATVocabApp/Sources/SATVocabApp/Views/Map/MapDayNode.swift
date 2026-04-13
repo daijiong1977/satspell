@@ -9,119 +9,73 @@ struct MapDayNode: View {
         case zoneTest(passed: Bool)
     }
 
-    let title: String
+    let label: String       // "I", "II", "III", "IV", "V", "TEST"
     let state: NodeState
     let onTap: () -> Void
 
     var body: some View {
         Button(action: onTap) {
-            VStack(spacing: 6) {
-                ZStack {
-                    RoundedRectangle(cornerRadius: 14, style: .continuous)
-                        .fill(fillColor)
-                        .frame(width: 68, height: 48)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 14, style: .continuous)
-                                .strokeBorder(borderColor, lineWidth: borderWidth)
-                        )
-
-                    nodeIcon
+            ZStack {
+                // Golden glow for current day
+                if case .current = state {
+                    Circle()
+                        .fill(Color(hex: "#FFD700").opacity(0.25))
+                        .frame(width: 72, height: 72)
+                        .blur(radius: 10)
+                    Circle()
+                        .stroke(Color(hex: "#FFD700").opacity(0.5), lineWidth: 2)
+                        .frame(width: 68, height: 68)
+                    Circle()
+                        .stroke(Color(hex: "#FFD700").opacity(0.35), lineWidth: 1.5)
+                        .frame(width: 76, height: 76)
                 }
 
-                Text(title)
-                    .font(.system(.footnote, design: .rounded).weight(.bold))
-                    .foregroundStyle(.white)
-                    .padding(.horizontal, 10)
-                    .padding(.vertical, 5)
-                    .background(Color.black.opacity(0.22))
-                    .clipShape(Capsule())
-
-                // Session dots for completed days
-                sessionDots
+                // Label text — no background circle, transparent over painted circles
+                Text(label)
+                    .font(.system(size: fontSize, weight: .bold, design: .serif))
+                    .foregroundStyle(textColor)
+                    .shadow(color: shadowColor, radius: 2, x: 0, y: 1)
+                    .shadow(color: shadowColor, radius: 1, x: 0, y: 0)
             }
         }
         .buttonStyle(.plain)
         .disabled(isDisabled)
+        .opacity(isDisabled ? 0.8 : 1.0)
     }
 
-    @ViewBuilder
-    private var nodeIcon: some View {
+    private var fontSize: CGFloat {
         switch state {
+        case .current: return 24
+        case .zoneTest: return 18
+        default: return 20
+        }
+    }
+
+    private var textColor: Color {
+        switch state {
+        case .current:
+            return Color(hex: "#FFD700")                    // golden
         case .completed:
-            Image(systemName: "checkmark")
-                .font(.system(size: 18, weight: .bold))
-                .foregroundStyle(.white)
-        case .current:
-            Circle()
-                .fill(.white.opacity(0.95))
-                .frame(width: 10, height: 10)
+            return Color(hex: "#C0C8D4").opacity(0.9)       // silver for completed
         case .available:
-            Circle()
-                .fill(.white.opacity(0.8))
-                .frame(width: 10, height: 10)
+            return Color(hex: "#64C8FF")                    // icy blue for uncompleted
         case .locked:
-            Image(systemName: "lock.fill")
-                .font(.system(size: 16, weight: .bold))
-                .foregroundStyle(.white.opacity(0.95))
+            return Color(hex: "#64C8FF").opacity(0.6)       // dimmer icy blue
         case .zoneTest(let passed):
-            if passed {
-                Text("\u{1F3C6}")
-                    .font(.system(size: 20))
-            } else {
-                Image(systemName: "flag.checkered")
-                    .font(.system(size: 16, weight: .bold))
-                    .foregroundStyle(.white)
-            }
+            return passed ? Color(hex: "#C0C8D4").opacity(0.9) : Color(hex: "#64C8FF").opacity(0.7)
         }
     }
 
-    @ViewBuilder
-    private var sessionDots: some View {
+    private var shadowColor: Color {
         switch state {
-        case .completed(let morningDone, let eveningDone):
-            HStack(spacing: 4) {
-                if morningDone {
-                    Text("\u{2600}\u{FE0F}")
-                        .font(.system(size: 12))
-                }
-                if eveningDone {
-                    Text("\u{1F319}")
-                        .font(.system(size: 12))
-                }
-            }
-        default:
-            EmptyView()
-        }
-    }
-
-    private var fillColor: Color {
-        switch state {
+        case .current:
+            return Color(hex: "#4A2D00").opacity(0.9)
         case .completed:
-            return Color(hex: "#58CC02")
-        case .current:
-            return Color.blue.opacity(0.92)
-        case .available:
-            return Color(hex: "#58CC02").opacity(0.75)
-        case .locked:
-            return Color.gray.opacity(0.55)
-        case .zoneTest(let passed):
-            return passed ? Color.purple.opacity(0.85) : Color.indigo.opacity(0.8)
-        }
-    }
-
-    private var borderColor: Color {
-        switch state {
-        case .current:
-            return Color.white.opacity(0.5)
+            return Color.black.opacity(0.7)
+        case .available, .locked:
+            return Color(hex: "#001E40").opacity(0.8)
         default:
-            return Color.black.opacity(0.10)
-        }
-    }
-
-    private var borderWidth: CGFloat {
-        switch state {
-        case .current: return 2
-        default: return 1
+            return Color.black.opacity(0.7)
         }
     }
 

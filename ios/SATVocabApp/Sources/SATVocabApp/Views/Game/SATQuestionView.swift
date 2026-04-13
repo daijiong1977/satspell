@@ -51,15 +51,16 @@ struct SATQuestionView: View {
                         .tracking(0.5)
 
                     if let passage = question.passage, !passage.isEmpty {
-                        Text(passage)
-                            .font(.system(size: 18, weight: .regular, design: .serif))
-                            .foregroundColor(Color(hex: "#4B4B4B"))
-                            .lineSpacing(2)
-                            .minimumScaleFactor(0.5)
+                        ScrollView {
+                            Text(passage)
+                                .font(.system(size: 20, weight: .regular, design: .serif))
+                                .foregroundColor(Color(hex: "#4B4B4B"))
+                                .lineSpacing(2)
+                        }
                     }
                 }
                 .padding(12)
-                .frame(maxWidth: .infinity, maxHeight: geo.size.height * 0.6, alignment: .topLeading)
+                .frame(maxWidth: .infinity, maxHeight: geo.size.height * 0.5, alignment: .topLeading)
                 .background(Color(hex: "#FFF8E1"))
                 .overlay(
                     RoundedRectangle(cornerRadius: 12, style: .continuous)
@@ -71,10 +72,10 @@ struct SATQuestionView: View {
                 // Question text
                 if let questionText = question.question {
                     Text(questionText)
-                        .font(.system(size: 18, weight: .semibold))
+                        .font(.system(size: 20, weight: .semibold))
                         .foregroundColor(Color(hex: "#4B4B4B"))
+                        .fixedSize(horizontal: false, vertical: true)
                         .minimumScaleFactor(0.7)
-                        .lineLimit(3)
                         .padding(.horizontal, 16)
                         .padding(.vertical, 6)
                 }
@@ -155,11 +156,10 @@ struct SATQuestionView: View {
                 }
 
                 Text(optionText(for: letter))
-                    .font(.system(size: 17, weight: .medium))
+                    .font(.system(size: 20, weight: .medium))
                     .foregroundColor(Color(hex: "#4B4B4B"))
                     .multilineTextAlignment(.leading)
                     .minimumScaleFactor(0.7)
-                    .lineLimit(2)
 
                 Spacer()
             }
@@ -242,7 +242,7 @@ struct SATFeedbackSheet: View {
                         .font(.system(size: 13, weight: .bold))
                         .foregroundColor(Color(hex: "#AFAFAF"))
                     Text(explanation)
-                        .font(.system(size: 16, weight: .regular))
+                        .font(.system(size: 20, weight: .regular))
                         .foregroundColor(Color(hex: "#666666"))
                         .lineSpacing(2)
                 }

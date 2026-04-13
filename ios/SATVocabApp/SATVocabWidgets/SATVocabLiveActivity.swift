@@ -110,6 +110,7 @@ struct SATVocabLiveActivity: Widget {
     }
 }
 
+@main
 struct SATVocabWidgetBundle: WidgetBundle {
     var body: some Widget {
         SATVocabLiveActivity()

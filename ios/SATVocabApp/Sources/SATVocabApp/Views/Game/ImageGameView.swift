@@ -59,13 +59,13 @@ struct ImageGameView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
                 .padding(.horizontal, 12)
 
-                // Cloze sentence
+                // Cloze sentence — no line limit, auto-shrinks for long text
                 Text(clozeSentence)
                     .font(.system(size: 24, weight: .medium))
                     .foregroundColor(Color(hex: "#4B4B4B"))
                     .multilineTextAlignment(.center)
-                    .lineLimit(3)
-                    .minimumScaleFactor(0.8)
+                    .minimumScaleFactor(0.6)
+                    .fixedSize(horizontal: false, vertical: true)
                     .padding(.horizontal, 16)
                     .padding(.vertical, 10)
                     .frame(maxWidth: .infinity)

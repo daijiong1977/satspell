@@ -80,7 +80,7 @@ struct QuickRecallView: View {
             }
         } label: {
             Text(choice.definition)
-                .font(.system(size: 16, weight: .medium))
+                .font(.system(size: 20, weight: .medium))
                 .foregroundColor(Color(hex: "#4B4B4B"))
                 .multilineTextAlignment(.leading)
                 .frame(maxWidth: .infinity, alignment: .leading)

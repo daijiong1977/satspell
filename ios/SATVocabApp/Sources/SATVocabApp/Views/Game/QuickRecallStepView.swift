@@ -26,7 +26,7 @@ struct QuickRecallStepView: View {
                 stepNumber: stepNumber,
                 totalSteps: totalSteps,
                 stepLabel: "Quick Recall",
-                currentWord: (currentRound < roundData.count) ? roundData[currentRound].card.lemma : "",
+                currentWord: "",  // Don't show word — it gives away the answer
                 currentItem: min(currentRound + 1, max(totalRounds, 1)),
                 totalItems: max(totalRounds, 1),
                 progressColor: Color(hex: "#CE82FF"),

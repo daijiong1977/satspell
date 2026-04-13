@@ -8,23 +8,32 @@ struct PracticeTabView: View {
 
     var body: some View {
         ScrollView {
-            VStack(spacing: 14) {
-                PracticeHeader(
-                    studyDay: vm.studyDay,
-                    zoneIndex: vm.zoneIndex,
-                    streak: vm.streak.currentStreak,
-                    totalXP: vm.streak.totalXP
-                )
+                VStack(spacing: 14) {
+                    PracticeHeader(
+                        studyDay: vm.studyDay,
+                        zoneIndex: vm.zoneIndex,
+                        streak: vm.streak.currentStreak,
+                        totalXP: vm.streak.totalXP
+                    )
 
-                if vm.isLoading {
-                    ProgressView()
-                        .accessibilityIdentifier("practiceLoading")
-                        .padding(.top, 40)
-                } else {
-                    stateContent
+                    if vm.isLoading {
+                        ProgressView()
+                            .accessibilityIdentifier("practiceLoading")
+                            .padding(.top, 40)
+                    } else {
+                        stateContent
+                    }
                 }
+                .padding(.horizontal, 16)
+        }
+        .background {
+            if let bgImg = ZoneBackgroundHelper.image(forZoneIndex: vm.zoneIndex) {
+                Image(uiImage: bgImg)
+                    .resizable()
+                    .scaledToFill()
+                    .opacity(0.35)
+                    .ignoresSafeArea()
             }
-            .padding(.horizontal, 16)
         }
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {

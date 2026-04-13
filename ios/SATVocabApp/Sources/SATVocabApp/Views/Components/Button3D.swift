@@ -21,7 +21,7 @@ struct Button3D: View {
 
     var body: some View {
         Text(title)
-            .font(.system(size: 15, weight: .heavy, design: .rounded))
+            .font(.system(size: 20, weight: .heavy, design: .rounded))
             .tracking(0.3)
             .foregroundColor(textColor)
             .frame(maxWidth: .infinity)

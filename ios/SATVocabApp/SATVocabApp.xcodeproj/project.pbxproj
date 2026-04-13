@@ -14,6 +14,7 @@
 		0D44B4E6A611903C0ABC4267 /* GameSessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DA63408E495AC6EDD9E81B /* GameSessionViewModel.swift */; };
 		0DC41AC1F02D40610A62D642 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 231D17F9069875831403361B /* Images */; };
 		10DBFD6CFCE4C448F4559466 /* ReviewLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3DF8656F4A3E45730CA74C /* ReviewLogger.swift */; };
+		122FE498FDC539E66364F139 /* ZoneBackgroundHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A555745CFC5685F8E24F052 /* ZoneBackgroundHelper.swift */; };
 		12B6F582834B37250CA167C7 /* FlashcardBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1CA0A2B7FD488EAEF54C34 /* FlashcardBackView.swift */; };
 		1480A8A68BC1DA282E026E24 /* ImageResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0C2418206F2E283DF0411E /* ImageResolver.swift */; };
 		15945D1E3B54A47CBFF6C099 /* ImageGameStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCC732953C7C71D03779FDC /* ImageGameStepView.swift */; };
@@ -22,6 +23,7 @@
 		1AC38B13AEEDA609720A87C8 /* FlashcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267ED7C8296996D9DD850A66 /* FlashcardView.swift */; };
 		1ADA766506A97D35B25C7199 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4C094D506C7B42A17869B7 /* Enums.swift */; };
 		1D43D6227AD05235F6979C8E /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 57B5F156A757C0DF74AD683A /* libsqlite3.tbd */; };
+		1D54FEA3F76B5B84E7209D15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D0946D31E48AF685BD7DF1B /* Assets.xcassets */; };
 		2377E061DEE4F2CF1566CDC8 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA3F0AEF6288789A2FFEE9E /* ProfileView.swift */; };
 		2A4EBBD701610575B47216AC /* ImageGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69438FC551EE401B8C79C3D /* ImageGameView.swift */; };
 		30B202032461F46C9BF9B1F4 /* ClozeRoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E312D9DD6070AD652FC4AFD /* ClozeRoundView.swift */; };
@@ -38,6 +40,7 @@
 		483F87F7B1C92549FFA4EBDF /* TestDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0570CB6916D26C7B9F3364F4 /* TestDatabase.swift */; };
 		492241AA9AB9BF1A3BC6CB03 /* LocalIdentity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747F88F0B1CAAC638D4FF341 /* LocalIdentity.swift */; };
 		4A1B284AEB8DD28B44F4794D /* AnswerFeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9D4A036D49FDF3A7047C3E /* AnswerFeedbackView.swift */; };
+		4BF26AF4929CD980F3E5495F /* MapBackgrounds in Resources */ = {isa = PBXBuildFile; fileRef = D616B59E581CFFA81BBD91AA /* MapBackgrounds */; };
 		4C78DBDE97E7BA3C12413310 /* StatsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4297263ABE5525485203661 /* StatsStore.swift */; };
 		4CCE473637CD51BFBEDEAD9B /* ZoneProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C216D3CF9E425A5C936F9C7A /* ZoneProgressBar.swift */; };
 		4F3E3567DDD3273E09F7F801 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 57B5F156A757C0DF74AD683A /* libsqlite3.tbd */; };
@@ -129,6 +132,7 @@
 		13A7F3193994BE8F945D91CB /* RecordAnswerIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordAnswerIntegrationTests.swift; sourceTree = "<group>"; };
 		13AA5E5319A265E5FD577BDC /* SATVocabAppUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = SATVocabAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18A01ECECCCFE1D50941F1BE /* StatsStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsStoreTests.swift; sourceTree = "<group>"; };
+		1D0946D31E48AF685BD7DF1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		231D17F9069875831403361B /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Images; path = Resources/Images; sourceTree = SOURCE_ROOT; };
 		23298250CDDDDCFF00465CC9 /* TaskProgressStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskProgressStore.swift; sourceTree = "<group>"; };
 		245C476ED7A1BC2C073D659A /* ResumeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeCard.swift; sourceTree = "<group>"; };
@@ -141,6 +145,7 @@
 		2D54A44BFD8D690D25E30F1A /* SessionPersistenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionPersistenceTests.swift; sourceTree = "<group>"; };
 		32A37B8D548FD02F1F0D5F66 /* AdventureSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureSchedule.swift; sourceTree = "<group>"; };
 		3740CB52A8F191C9AFC9A6E2 /* MorningCompleteCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorningCompleteCard.swift; sourceTree = "<group>"; };
+		3A555745CFC5685F8E24F052 /* ZoneBackgroundHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneBackgroundHelper.swift; sourceTree = "<group>"; };
 		3A5D48E25E72952A27B1B190 /* SATQuestionStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATQuestionStepView.swift; sourceTree = "<group>"; };
 		3C5083A2E006AA975E703846 /* SATVocabLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATVocabLiveActivity.swift; sourceTree = "<group>"; };
 		3FA3F0AEF6288789A2FFEE9E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -203,6 +208,7 @@
 		CCA40E15AD5A6613DEA43382 /* SessionFlowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionFlowViewModel.swift; sourceTree = "<group>"; };
 		D326F0DA386B465C45432350 /* SATVocabApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = SATVocabApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5BB234149F242AD53B81DB3 /* word_list.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = word_list.json; sourceTree = "<group>"; };
+		D616B59E581CFFA81BBD91AA /* MapBackgrounds */ = {isa = PBXFileReference; lastKnownFileType = folder; name = MapBackgrounds; path = Resources/MapBackgrounds; sourceTree = SOURCE_ROOT; };
 		D6EE8BA9019EFCDDF2787FBC /* SQLite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLite.swift; sourceTree = "<group>"; };
 		DC602756D33CAEFA1D96AEFC /* AdventureProgressStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureProgressStore.swift; sourceTree = "<group>"; };
 		DE776C1A6EE5CDBFDB11973C /* PracticeStateResolverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeStateResolverTests.swift; sourceTree = "<group>"; };
@@ -341,6 +347,7 @@
 				C4297263ABE5525485203661 /* StatsStore.swift */,
 				23298250CDDDDCFF00465CC9 /* TaskProgressStore.swift */,
 				B543464F6E42C69B140DB0D8 /* WordStateStore.swift */,
+				3A555745CFC5685F8E24F052 /* ZoneBackgroundHelper.swift */,
 				8DF657EC43B384E689999535 /* ZoneStore.swift */,
 			);
 			path = Data;
@@ -369,6 +376,7 @@
 			isa = PBXGroup;
 			children = (
 				231D17F9069875831403361B /* Images */,
+				D616B59E581CFFA81BBD91AA /* MapBackgrounds */,
 				DA28069FA9688290CC227641 /* Resources */,
 				FC4966604C4EFD8CC4B8FA96 /* satspell */,
 				3BE992575DDC30387F33934A /* SATVocabApp */,
@@ -469,6 +477,7 @@
 		DA28069FA9688290CC227641 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1D0946D31E48AF685BD7DF1B /* Assets.xcassets */,
 				2A0A1C2A52AAE3C1ED6C2C14 /* data.db */,
 			);
 			path = Resources;
@@ -654,7 +663,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D54FEA3F76B5B84E7209D15 /* Assets.xcassets in Resources */,
 				0DC41AC1F02D40610A62D642 /* Images in Resources */,
+				4BF26AF4929CD980F3E5495F /* MapBackgrounds in Resources */,
 				EA3BF0D1444D3E700BD46AB6 /* data.db in Resources */,
 				3C7D57550ECC28107378F5DE /* sat_reading_questions_deduplicated.json in Resources */,
 				7FC3DB032196D48EC0AA39A6 /* word_list.json in Resources */,
@@ -771,6 +782,7 @@
 				7B7CB053C329EF1894A2FA5C /* WordStateStore.swift in Sources */,
 				C6863BFA490E4491EDC28188 /* WordStrengthMeter.swift in Sources */,
 				0AE30B5B288B5941FED6BA9A /* XPChipView.swift in Sources */,
+				122FE498FDC539E66364F139 /* ZoneBackgroundHelper.swift in Sources */,
 				4CCE473637CD51BFBEDEAD9B /* ZoneProgressBar.swift in Sources */,
 				B08C1126157D05B72459F036 /* ZoneReviewSessionView.swift in Sources */,
 				C656D8F34C2489B8648DC1F0 /* ZoneReviewSessionViewModel.swift in Sources */,
@@ -898,7 +910,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.satspell.SATVocabApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.WordScholar.WordScholarApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -914,7 +926,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SATVocabWidgets/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.satspell.SATVocabApp.Widgets;
+				PRODUCT_BUNDLE_IDENTIFIER = com.WordScholar.WordScholarApp.Widgets;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -977,7 +989,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.satspell.SATVocabApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.WordScholar.WordScholarApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1012,7 +1024,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SATVocabWidgets/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.satspell.SATVocabApp.Widgets;
+				PRODUCT_BUNDLE_IDENTIFIER = com.WordScholar.WordScholarApp.Widgets;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
