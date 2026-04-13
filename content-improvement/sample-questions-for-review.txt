@@ -1,0 +1,119 @@
+Q1. WORD: variability
+PASSAGE: Which choice best describes data in the table that support the city planner’s
+conclusion?
+Ranking of Environmental and Sociocultural Benefits of Urban
+Agriculture (scale of 1 to 25; 1 = highest)
+Social or ecological service
+Project
+leaders
+Stakeholde
+QUESTION: 
+OPTIONS:
+  A: The conservation of genetic variability was ranked lower for project leaders than it was for the general public.
+  B: The enhancement of pollination was ranked higher for project leaders than it was for stakeholders.
+  C: The enhancement of pollination was ranked higher for project leaders than were the other four services.
+  D: The improvement of social cohesion was ranked higher for project leaders than was the enhancement of pollination.
+STORED ANSWER: The enhancement of pollination was ranked higher for project leaders than were the other four services.
+---
+Q2. WORD: variability
+PASSAGE: Marta Coll and colleagues’ 2010 Mediterranean Sea biodiversity census reported approximately 17,000 species, nearly
+double the number reported in Carlo Bianchi and Carla Morri’s 2000 census—a difference only partly attributable to the
+description of 
+QUESTION: Which choice most logically completes the text?
+OPTIONS:
+  A: Coll and colleagues reported a much higher number of species than Bianchi and Morri did largely due to the inclusion of invertebrate species that had not been described at the time of Bianchi and Morri’s census.
+  B: some differences observed in microorganisms may have been treated as variations within species by Bianchi and Morri but treated as indicative of distinct species by Coll and colleagues.
+  C: Bianchi and Morri may have been less sensitive to the degree of morphological variation displayed within a typical species of microorganism than Coll and colleagues were.
+  D: the absence of clarity regarding how to differentiate among species of microorganisms may have resulted in Coll and colleagues underestimating the number of microorganism species.
+STORED ANSWER: some differences observed in microorganisms may have been treated as variations within species by Bianchi and Morri but treated as indicative of distinct species by Coll and colleagues.
+---
+Q3. WORD: stunt
+PASSAGE: In addition to her technical skill and daring feats, American stunt pilot Bessie Coleman was also known for dazzling the
+crowds that came to watch her air shows in the 1920s with her exuberant personality. During her career, she was careful
+and purpo
+QUESTION: Which quotation from an article about Coleman would most directly support the aviation researcher’s claim?
+OPTIONS:
+  A: “For her air shows, Coleman frequently used the Curtiss JN-4, or ‘Jenny,’ which at that time was one of the most well- known types of planes.”
+  B: “While Coleman was beloved by spectators for her charisma, she had a more complicated relationship with her managers and staff, who at times found her behavior too impulsive and demanding.”
+  C: “Coleman once considered leaving her career as a stunt pilot to focus her efforts on giving speeches, which she felt would better support her public image.”
+  D: “Although female pilots were typically expected to wear traditional but impractical attire that included dresses or skirts, photographs of Coleman show her wearing pants and leather jackets.”
+STORED ANSWER: “Although female pilots were typically expected to wear traditional but impractical attire that included dresses or skirts, photographs of Coleman show her wearing pants and leather jackets.”
+---
+Q4. WORD: stunt
+PASSAGE: Sarah Marquis, who walked 16,000 kilometers across Asia, Siberia, and Australia, undoubtedly accomplished much, but to establish a lasting historical legacy for oneself, almost nothing is more effective than being the first to do something. For examp
+QUESTION: Which choice completes the text with the most logical and precise word or phrase?
+OPTIONS:
+  A: recognize
+  B: undermine
+  C: constrain
+  D: establish
+STORED ANSWER: establish
+---
+Q5. WORD: spontaneous
+PASSAGE: Psychologists Gregory Bryant, Dorsa Amir, and colleagues investigated cross-cultural perceptions of spontaneous (real) laughter and volitional (fake or forced) laughter. Study participants from 21 societies, including those in Austria and Samoa, list
+QUESTION: Which potential finding from the team's study, if true, would most directly support the team's conclusion?
+OPTIONS:
+  A: An assessment of the effect of demographic variables on judgments of laughter type in Austria, Samoa, and the other societies in the study revealed that participants' evaluations were correlated with the economic conditions of the societies in which participants live.
+  B: The overall rate of correct judgments by participants was 64%, substantially better than chance, and spontaneous and volitional laughs were recognized at similar rates in Austria, Samoa, and the other societies in the study.
+  C: Acoustic features of spontaneous laughter, such as pitch and intensity, have measurable variations both within and across societies.
+  D: A variety of people from Austria and Samoa evaluated the recordings in the study, and no significant differences in listeners' judgments of laughter types were found.
+STORED ANSWER: The overall rate of correct judgments by participants was 64%, substantially better than chance, and spontaneous and volitional laughs were recognized at similar rates in Austria, Samoa, and the other societies in the study.
+---
+Q6. WORD: spontaneous
+PASSAGE: External shopping cues are a type of marketing that uses obvious messaging—a display featuring a new product, for
+example, or a “buy one, get one free” offer—to entice consumers to make spontaneous purchases. In a study, data
+scientist Sam K. Hui and
+QUESTION: Which response from a survey given to shoppers who made a purchase at a retail store best supports the researchers’
+explanation?
+OPTIONS:
+  A: “I needed to buy some cleaning supplies, but they weren’t in their regular place. While I was looking for them, I saw this interesting notebook and decided to buy it, too.”
+  B: “I didn’t buy everything on my shopping list today. I couldn’t find a couple of the items in the store, even though I looked all over for them.”
+  C: “The store sent me a coupon for a new brand of soup, so I came here to find out what kinds of soup that brand offers. I decided to buy a few cans because I had the coupon.”
+  D: “This store is larger than one that’s closer to where I live, and it carries more products. I came here to buy some things that the other store doesn’t always have.”
+STORED ANSWER: “I needed to buy some cleaning supplies, but they weren’t in their regular place. While I was looking for them, I saw this interesting notebook and decided to buy it, too.”
+---
+Q7. WORD: spontaneous
+PASSAGE: Psychologists Gregory Bryant, Dorsa Amir, and colleagues investigated cross-cultural perceptions of spontaneous (real) laughter and volitional (fake or forced) laughter. Study participants from 21 societies, including those in Japan and Turkey, liste
+QUESTION: Which potential finding from another study, if true, would most directly strengthen the team’s conclusion?
+OPTIONS:
+  A: Listeners from both Japan and Turkey tend to be able to determine how well two people know each other based on recordings of their conversation.
+  B: Spontaneous laughter typically has a recognizably higher pitch than volitional laughter, regardless of what society the speakers in a conversation are from.
+  C: There is some evidence of correlation between the average size of communities in a society and judgments of spontaneous and volitional laughter by listeners in that society.
+  D: Acoustic features of spontaneous laughter, such as pitch and intensity, have measurable variations both within and across societies.
+STORED ANSWER: Spontaneous laughter typically has a recognizably higher pitch than volitional laughter, regardless of what society the speakers in a conversation are from.
+---
+Q8. WORD: precarious
+PASSAGE: While researching a topic, a student has taken the following notes:
+Cecilia Vicuña is a multidisciplinary artist.
+In 1971, her first solo art exhibition, Pinturas, poemas y explicaciones, was shown at the Museo Nacional de
+Bellas Artes in Santiago, C
+QUESTION: Which choice most effectively uses relevant
+information from the notes to accomplish this goal?
+OPTIONS:
+  A: Before she published the books Precario/Precarious (1983) and Instan (2002), Cecilia Vicuña exhibited visual art at the Museo Nacional de Bellas Artes in Santiago, Chile.
+  B: Cecilia Vicuña is a true multidisciplinary artist whose works include numerous poetry collections and visual art exhibitions.
+  C: Published in 1983 by Tanam Press, Precario/Precarious is a collection of poetry by the multidisciplinary artist Cecilia Vicuña.
+  D: In 1971, Cecilia Vicuña exhibited her first solo art exhibition, Pinturas, poemas y explicaciones, in Chile, her country of birth.
+STORED ANSWER: Published in 1983 by Tanam Press, Precario/Precarious is a collection of poetry by the multidisciplinary artist Cecilia Vicuña.
+---
+Q9. WORD: manifest
+PASSAGE: The following text is from a 1955 translation of Samuel Beckett's 1951 novel Molloy (translated by the author and Patrick Bowles). In the text, Molloy has arrived at the town ramparts, an elevated walkway atop the city walls. And having cleared the r
+QUESTION: As used in the text, what does the word "manifest" most nearly mean?
+OPTIONS:
+  A: Dwindling
+  B: Realized
+  C: Situated
+  D: Perceptible
+STORED ANSWER: Perceptible
+---
+Q10. WORD: manifest
+PASSAGE: The following text is from a 1955 translation of Samuel Beckett's 1951 novel Molloy (translated by the author and Patrick Bowles). In the text, Molloy has arrived at the town ramparts, an elevated walkway atop the city walls.
+And having cleared the r
+QUESTION: As used in the text, what does the word "manifest" most nearly mean?
+OPTIONS:
+  A: Dwindling
+  B: Realized
+  C: Situated
+  D: Perceptible
+STORED ANSWER: Perceptible
+---
