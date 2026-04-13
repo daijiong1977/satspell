@@ -60,11 +60,16 @@ final class SessionFlowViewModel: ObservableObject {
     // Review mode: replays the session without affecting state/scores
     var isReviewMode: Bool = false
 
-    init(sessionType: SessionType, studyDay: Int, isReview: Bool = false) {
+    // Start at a specific step (for review jump-to-step)
+    var startAtStep: Int = 0
+
+    init(sessionType: SessionType, studyDay: Int, isReview: Bool = false, startStep: Int = 0) {
         self.sessionType = sessionType
         self.studyDay = studyDay
         self.userId = LocalIdentity.userId()
         self.isReviewMode = isReview
+        self.startAtStep = startStep
+        self.currentStepIndex = startStep
 
         // Define steps based on session type
         switch sessionType {

@@ -1,9 +1,15 @@
 import SwiftUI
 
+struct ReviewTarget: Hashable, Identifiable {
+    let sessionType: SessionType
+    let startStep: Int
+    var id: String { "\(sessionType.rawValue)-\(startStep)" }
+}
+
 struct PracticeTabView: View {
     @StateObject private var vm = PracticeTabViewModel()
     @State private var navigateToSession: SessionType? = nil
-    @State private var navigateToReview: SessionType? = nil
+    @State private var reviewTarget: ReviewTarget? = nil
     @State private var showRestartConfirm = false
     @State private var pendingRestartSession: SessionState? = nil
 
@@ -41,16 +47,16 @@ struct PracticeTabView: View {
             if navigateToSession != nil {
                 navigateToSession = nil
             }
-            if navigateToReview != nil {
-                navigateToReview = nil
+            if reviewTarget != nil {
+                reviewTarget = nil
             }
             Task { await vm.load() }
         }
         .navigationDestination(item: $navigateToSession) { type in
             SessionFlowView(vm: SessionFlowViewModel(sessionType: type, studyDay: vm.studyDay))
         }
-        .navigationDestination(item: $navigateToReview) { type in
-            SessionFlowView(vm: SessionFlowViewModel(sessionType: type, studyDay: vm.studyDay, isReview: true))
+        .navigationDestination(item: $reviewTarget) { target in
+            SessionFlowView(vm: SessionFlowViewModel(sessionType: target.sessionType, studyDay: vm.studyDay, isReview: true, startStep: target.startStep))
         }
         .alert("Start Over?", isPresented: $showRestartConfirm) {
             Button("Cancel", role: .cancel) {
@@ -106,34 +112,34 @@ struct PracticeTabView: View {
                 }
             )
             if session.sessionType == .evening {
-                MorningCompleteCard(reviewable: true) {
-                    navigateToReview = .morning
-                }
+                MorningCompleteCard(reviewable: true, onReviewStep: { step in
+                    reviewTarget = ReviewTarget(sessionType: .morning, startStep: step)
+                })
             }
 
         case .morningDoneEveningLocked(let unlockAt):
-            MorningCompleteCard(reviewable: true) {
-                navigateToReview = .morning
-            }
+            MorningCompleteCard(reviewable: true, onReviewStep: { step in
+                reviewTarget = ReviewTarget(sessionType: .morning, startStep: step)
+            })
             EveningSessionCard(locked: true, unlockAt: unlockAt)
             ReviewsDueRow(count: vm.reviewsDueCount)
 
         case .eveningAvailable:
-            MorningCompleteCard(reviewable: true) {
-                navigateToReview = .morning
-            }
+            MorningCompleteCard(reviewable: true, onReviewStep: { step in
+                reviewTarget = ReviewTarget(sessionType: .morning, startStep: step)
+            })
             EveningSessionCard(locked: false, unlockAt: nil) {
                 navigateToSession = .evening
             }
             ReviewsDueRow(count: vm.reviewsDueCount)
 
         case .bothComplete:
-            MorningCompleteCard(reviewable: true) {
-                navigateToReview = .morning
-            }
-            EveningCompleteCard(reviewable: true) {
-                navigateToReview = .evening
-            }
+            MorningCompleteCard(reviewable: true, onReviewStep: { step in
+                reviewTarget = ReviewTarget(sessionType: .morning, startStep: step)
+            })
+            EveningCompleteCard(reviewable: true, onReviewStep: { step in
+                reviewTarget = ReviewTarget(sessionType: .evening, startStep: step)
+            })
             DayCompleteSummary(studyDay: vm.studyDay, userId: vm.userId)
             ReviewsDueRow(count: vm.reviewsDueCount)
         }
