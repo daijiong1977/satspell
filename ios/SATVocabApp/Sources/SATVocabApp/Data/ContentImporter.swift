@@ -40,6 +40,7 @@ private struct EmbeddedQuestion: Decodable {
     let answer: String?
     let source_pdf: String?
     let page: Int?
+    let explanation: String?
 }
 
 private enum QuestionOptions: Decodable {
@@ -141,15 +142,16 @@ actor ContentImporter {
                             let opts = q.options?.abcd ?? (nil, nil, nil, nil)
                             try insertRow(db: db,
                                 sql: """
-                                INSERT INTO sat_question_bank(id, word_id, target_word, section, module, q_type, passage, question, option_a, option_b, option_c, option_d, answer, source_pdf, page)
-                                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                                INSERT INTO sat_question_bank(id, word_id, target_word, section, module, q_type, passage, question, option_a, option_b, option_c, option_d, answer, source_pdf, page, explanation)
+                                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                                 """,
                                 bindings: [
                                     .text(q.id), .int(wordId), .text(entry.word),
                                     .textOpt(q.section), .intOpt(q.module), .textOpt(q.type),
                                     .textOpt(q.passage), .textOpt(q.question),
                                     .textOpt(opts.0), .textOpt(opts.1), .textOpt(opts.2), .textOpt(opts.3),
-                                    .textOpt(q.answer), .textOpt(q.source_pdf), .intOpt(q.page)
+                                    .textOpt(q.answer), .textOpt(q.source_pdf), .intOpt(q.page),
+                                    .textOpt(q.explanation)
                                 ])
                             insertedQuestionIds.insert(q.id)
                         }

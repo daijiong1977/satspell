@@ -44,6 +44,9 @@ struct SatQuestion: Identifiable, Hashable {
     let feedbackGenerated: Int
     let answerVerified: Int
 
+    // Explanation (from word_list.json)
+    let explanation: String?
+
     // DeepSeek feedback (optional, may be missing for some questions)
     let deepseekAnswer: String?
     let deepseekBackground: String?

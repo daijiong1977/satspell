@@ -577,6 +577,7 @@ actor DataManager {
              q.passage, q.question, q.option_a, q.option_b, q.option_c, q.option_d,
              q.answer, q.source_pdf, q.page,
              q.feedback_generated, q.answer_verified,
+             q.explanation,
              fb.deepseek_answer, fb.deepseek_background, fb.deepseek_reason
          FROM sat_question_bank q
          JOIN word_questions wq ON wq.question_id = q.id
@@ -618,9 +619,10 @@ actor DataManager {
                 page: sqlite3_column_type(stmt, 14) == SQLITE_NULL ? nil : SQLiteDB.columnInt(stmt, 14),
                 feedbackGenerated: SQLiteDB.columnInt(stmt, 15),
                 answerVerified: SQLiteDB.columnInt(stmt, 16),
-                deepseekAnswer: SQLiteDB.columnText(stmt, 17),
-                deepseekBackground: SQLiteDB.columnText(stmt, 18),
-                deepseekReason: SQLiteDB.columnText(stmt, 19)
+                explanation: SQLiteDB.columnText(stmt, 17),
+                deepseekAnswer: SQLiteDB.columnText(stmt, 18),
+                deepseekBackground: SQLiteDB.columnText(stmt, 19),
+                deepseekReason: SQLiteDB.columnText(stmt, 20)
             ))
         }
 

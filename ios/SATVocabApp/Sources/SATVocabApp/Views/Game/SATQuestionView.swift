@@ -136,7 +136,7 @@ struct SATQuestionView: View {
                     SATFeedbackSheet(
                         mode: .correct,
                         correctAnswerText: "\(correctLetter). \(optionText(for: correctLetter))",
-                        explanation: question.deepseekReason ?? question.deepseekBackground ?? "",
+                        explanation: question.explanation ?? question.deepseekReason ?? question.deepseekBackground ?? "",
                         buttonLabel: "NEXT →",
                         onNext: {
                             autoAdvanceTask?.cancel()
@@ -176,7 +176,7 @@ struct SATQuestionView: View {
                     SATFeedbackSheet(
                         mode: .secondWrong,
                         correctAnswerText: "\(correctLetter). \(optionText(for: correctLetter))",
-                        explanation: question.deepseekReason ?? question.deepseekBackground ?? "The correct answer is \(correctLetter).",
+                        explanation: question.explanation ?? question.deepseekReason ?? question.deepseekBackground ?? "The correct answer is \(correctLetter).",
                         buttonLabel: "GOT IT →",
                         onNext: {
                             showFeedback = false
@@ -212,10 +212,10 @@ struct SATQuestionView: View {
                 }
 
                 Text(optionText(for: letter))
-                    .font(.system(size: 20, weight: .medium))
+                    .font(.system(size: 18, weight: .medium))
                     .foregroundColor(Color(hex: "#4B4B4B"))
                     .multilineTextAlignment(.leading)
-                    .minimumScaleFactor(0.7)
+                    .fixedSize(horizontal: false, vertical: true)
 
                 Spacer()
             }

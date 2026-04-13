@@ -73,7 +73,8 @@ enum SchemaV2 {
             source_pdf         TEXT,
             page               INTEGER,
             feedback_generated INTEGER DEFAULT 0,
-            answer_verified    INTEGER DEFAULT 0
+            answer_verified    INTEGER DEFAULT 0,
+            explanation        TEXT
         )
         """,
 
