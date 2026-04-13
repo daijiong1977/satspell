@@ -1,0 +1,12 @@
+{
+  "blanks_filled_sat_questions": 845,
+  "blanks_filled_word_list_passages": 452,
+  "blanks_filled_word_list_contexts": 157,
+  "questions_removed_sat": 12,
+  "questions_removed_word_list": 8,
+  "fragment_examples_fixed": 7,
+  "definitions_updated": 2,
+  "contexts_replaced": 92,
+  "explanations_added": 891,
+  "needs_review_items": []
+}

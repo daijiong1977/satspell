@@ -99,7 +99,8 @@ CREATE TABLE sat_question_bank (
     source_pdf      TEXT,
     page            INTEGER,
     feedback_generated INTEGER DEFAULT 0,
-    answer_verified    INTEGER DEFAULT 0
+    answer_verified    INTEGER DEFAULT 0,
+    explanation     TEXT                 -- why the correct answer is correct (from word_list.json)
 );
 
 -- Word-to-question mapping
@@ -475,10 +476,16 @@ The student selects a word list to download (e.g., "SAT Core Vocabulary — 372 
       "sat_questions": [
         {
           "id": "sim-6-q1765243827866",
+          "section": "Reading and Writing",
+          "module": 1,
+          "type": "Words in Context",
           "passage": "...",
           "question": "...",
           "options": {"A": "...", "B": "...", "C": "...", "D": "..."},
-          "answer": "B"
+          "answer": "B",
+          "source_pdf": "...",
+          "page": 5,
+          "explanation": "The correct answer is B because..."
         }
       ]
     }
