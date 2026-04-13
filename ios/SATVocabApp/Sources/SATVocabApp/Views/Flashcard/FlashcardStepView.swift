@@ -4,7 +4,9 @@ struct FlashcardStepView: View {
     let words: [VocabCard]
     let stepNumber: Int
     let totalSteps: Int
+    var startItemIndex: Int = 0
     let onComplete: ([Int]) -> Void
+    var onItemAdvance: ((Int) -> Void)? = nil
     let onPause: (Int, Int, [Int], [Int]) -> Void
 
     @State private var currentIndex: Int = 0
@@ -13,6 +15,7 @@ struct FlashcardStepView: View {
     @State private var requeuedCards: [VocabCard] = []
     @State private var showPause: Bool = false
     @State private var dragOffset: CGFloat = 0
+    @State private var didInit = false
 
     private var allCards: [VocabCard] {
         words + requeuedCards
@@ -61,7 +64,7 @@ struct FlashcardStepView: View {
                         advanceCard(card)
                     }
                 )
-                .id(currentIndex) // Force recreation on index change
+                .id(currentIndex)
                 .offset(x: dragOffset)
                 .gesture(
                     DragGesture(minimumDistance: 50)
@@ -72,12 +75,10 @@ struct FlashcardStepView: View {
                             let threshold: CGFloat = 80
                             withAnimation(.spring(response: 0.3)) {
                                 if value.translation.width < -threshold {
-                                    // Swipe left = next
                                     if let card = currentCard {
                                         advanceCard(card)
                                     }
                                 } else if value.translation.width > threshold {
-                                    // Swipe right = previous
                                     goBack()
                                 }
                                 dragOffset = 0
@@ -87,7 +88,6 @@ struct FlashcardStepView: View {
                 .padding(.horizontal, 8)
                 .padding(.vertical, 4)
             } else {
-                // Empty state
                 VStack(spacing: 16) {
                     Spacer()
                     Text("All caught up!")
@@ -101,6 +101,10 @@ struct FlashcardStepView: View {
             }
         }
         .onAppear {
+            if !didInit {
+                didInit = true
+                currentIndex = min(startItemIndex, max(allCards.count - 1, 0))
+            }
             if words.isEmpty {
                 onComplete([])
             }
@@ -116,7 +120,6 @@ struct FlashcardStepView: View {
     }
 
     private func handleShowAgain(_ card: VocabCard) {
-        // Only requeue once per card
         if !showAgainIds.contains(card.id) {
             showAgainIds.insert(card.id)
             requeuedCards.append(card)
@@ -132,12 +135,12 @@ struct FlashcardStepView: View {
 
     private func advanceToNext() {
         if currentIndex + 1 >= totalCards {
-            // All cards done
             onComplete(Array(showAgainIds))
         } else {
             withAnimation(.easeInOut(duration: 0.25)) {
                 currentIndex += 1
             }
+            onItemAdvance?(currentIndex)
         }
     }
 

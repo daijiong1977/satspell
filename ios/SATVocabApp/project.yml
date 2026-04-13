@@ -5,8 +5,8 @@ options:
 settings:
   base:
     PRODUCT_BUNDLE_IDENTIFIER: com.satspell.SATVocabApp
-    DEVELOPMENT_TEAM: ""
     SUPPORTED_PLATFORMS: "iphoneos iphonesimulator"
+    DEVELOPMENT_TEAM: W6BCH2M54V
 
 targets:
   SATVocabApp:
@@ -25,15 +25,12 @@ targets:
         buildPhase: resources
     dependencies:
       - sdk: libsqlite3.tbd
-      - target: SATVocabWidgets
     settings:
       base:
         SWIFT_VERSION: "5.0"
         TARGETED_DEVICE_FAMILY: "1"
         INFOPLIST_FILE: Resources/Info.plist
-        CODE_SIGN_IDENTITY: ""
-        CODE_SIGNING_REQUIRED: "NO"
-        CODE_SIGNING_ALLOWED: "NO"
+        CODE_SIGN_STYLE: Automatic
 
   SATVocabWidgets:
     type: app-extension
@@ -46,11 +43,9 @@ targets:
         SWIFT_VERSION: "5.0"
         TARGETED_DEVICE_FAMILY: "1"
         PRODUCT_BUNDLE_IDENTIFIER: com.satspell.SATVocabApp.Widgets
-        CODE_SIGN_IDENTITY: ""
-        CODE_SIGNING_REQUIRED: "NO"
-        CODE_SIGNING_ALLOWED: "NO"
         INFOPLIST_FILE: SATVocabWidgets/Info.plist
         LD_RUNPATH_SEARCH_PATHS: "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks"
+        CODE_SIGN_STYLE: Automatic
 
   SATVocabAppTests:
     type: bundle.unit-test
@@ -69,3 +64,18 @@ targets:
         CODE_SIGNING_ALLOWED: "NO"
         TEST_HOST: "$(BUILT_PRODUCTS_DIR)/SATVocabApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SATVocabApp"
         BUNDLE_LOADER: "$(TEST_HOST)"
+
+  SATVocabAppUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: Tests/SATVocabAppUITests
+    dependencies:
+      - target: SATVocabApp
+    settings:
+      base:
+        SWIFT_VERSION: "5.0"
+        TARGETED_DEVICE_FAMILY: "1"
+        CODE_SIGN_IDENTITY: ""
+        CODE_SIGNING_REQUIRED: "NO"
+        CODE_SIGNING_ALLOWED: "NO"

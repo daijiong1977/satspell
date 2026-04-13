@@ -9,7 +9,7 @@ struct DayCompleteSummary: View {
 
     var body: some View {
         VStack(spacing: 14) {
-            Text("Day \(studyDay) Complete!")
+            Text("Day \(studyDay + 1) Complete!")
                 .font(.system(.title2, design: .rounded).weight(.bold))
                 .foregroundStyle(Color(hex: "#58CC02"))
 
@@ -38,6 +38,7 @@ struct DayCompleteSummary: View {
             RoundedRectangle(cornerRadius: 20, style: .continuous)
                 .strokeBorder(Color(hex: "#58CC02").opacity(0.2), lineWidth: 1)
         )
+        .accessibilityIdentifier("dayCompleteSummary")
         .task {
             do {
                 let statsStore = StatsStore.shared

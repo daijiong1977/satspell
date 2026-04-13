@@ -10,7 +10,7 @@ struct PracticeHeader: View {
         VStack(spacing: 10) {
             HStack {
                 VStack(alignment: .leading, spacing: 4) {
-                    Text("Day \(studyDay)")
+                    Text("Day \(studyDay + 1)")
                         .font(.system(.largeTitle, design: .rounded).weight(.bold))
                     Text(AdventureSchedule.zoneTitle(zoneIndex: zoneIndex))
                         .font(.system(.subheadline, design: .rounded))

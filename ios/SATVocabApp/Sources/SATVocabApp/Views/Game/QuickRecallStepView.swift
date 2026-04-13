@@ -4,14 +4,17 @@ struct QuickRecallStepView: View {
     let words: [VocabCard]
     let stepNumber: Int
     let totalSteps: Int
+    var startItemIndex: Int = 0
     let onAnswer: (Bool, Int) -> Void
     let onComplete: () -> Void
+    var onItemAdvance: ((Int) -> Void)? = nil
     let onPause: (Int, Int, [Int], [Int]) -> Void
 
     @State private var currentRound: Int = 0
     @State private var roundData: [(card: VocabCard, choices: [QuickRecallView.DefinitionChoice])] = []
     @State private var isLoading = true
     @State private var showPause = false
+    @State private var didInit = false
 
     private var totalRounds: Int {
         roundData.count
@@ -46,6 +49,7 @@ struct QuickRecallStepView: View {
                             onComplete()
                         } else {
                             currentRound += 1
+                            onItemAdvance?(currentRound)
                         }
                     }
                 )
@@ -57,7 +61,13 @@ struct QuickRecallStepView: View {
                 onComplete()
             }
         }
-        .task { await loadRounds() }
+        .task {
+            await loadRounds()
+            if !didInit {
+                didInit = true
+                currentRound = min(startItemIndex, max(roundData.count - 1, 0))
+            }
+        }
         .sheet(isPresented: $showPause) {
             PauseSheet(
                 onKeepGoing: { showPause = false },
@@ -84,7 +94,6 @@ struct QuickRecallStepView: View {
                 choices.shuffle()
                 rounds.append((card: card, choices: choices))
             } catch {
-                // Fallback
                 var choices: [QuickRecallView.DefinitionChoice] = words.filter { $0.id != card.id }.prefix(3).map { d in
                     QuickRecallView.DefinitionChoice(id: d.id, definition: d.definition ?? "Unknown", isCorrect: false)
                 }

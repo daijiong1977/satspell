@@ -41,5 +41,6 @@ struct MorningSessionCard: View {
             )
         }
         .buttonStyle(.plain)
+        .accessibilityIdentifier("morningSessionCard")
     }
 }

@@ -3,6 +3,7 @@ import SwiftUI
 struct SATQuestionView: View {
     let question: SatQuestion
     let onAnswer: (Bool) -> Void
+    var onWrongAttempt: (() -> Void)? = nil  // Called on each wrong attempt for stats
 
     @State private var selectedOption: String? = nil
     @State private var showFeedback = false
@@ -21,20 +22,16 @@ struct SATQuestionView: View {
     }
 
     private var correctLetter: String {
-        // The answer field contains the letter (A/B/C/D) or the full text
         let answer = (question.deepseekAnswer ?? question.answer ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
-        // Check if it's a single letter
         if answer.count == 1 && "ABCD".contains(answer.uppercased()) {
             return answer.uppercased()
         }
-        // Check if it starts with a letter and paren like "A)" or "A."
         if answer.count >= 2 {
             let first = String(answer.prefix(1)).uppercased()
             if "ABCD".contains(first) {
                 return first
             }
         }
-        // Fallback: match text against options
         for letter in options {
             if optionText(for: letter).lowercased().trimmingCharacters(in: .whitespacesAndNewlines) == answer.lowercased() {
                 return letter
@@ -44,98 +41,91 @@ struct SATQuestionView: View {
     }
 
     var body: some View {
-        VStack(spacing: 0) {
-            // Passage area (scrollable)
-            ScrollView {
-                VStack(alignment: .leading, spacing: 8) {
-                    HStack {
-                        Text("PASSAGE")
-                            .font(.system(size: 13, weight: .bold, design: .rounded))
-                            .foregroundColor(Color(hex: "#AFAFAF"))
-                            .tracking(0.5)
-                        Spacer()
-                        Text("scroll \u{2195}")
-                            .font(.system(size: 13, weight: .medium))
-                            .foregroundColor(Color(hex: "#AFAFAF"))
-                    }
+        GeometryReader { geo in
+            VStack(spacing: 0) {
+                // Passage area — 60% of available height, auto-fit text, no scroll
+                VStack(alignment: .leading, spacing: 6) {
+                    Text("PASSAGE")
+                        .font(.system(size: 11, weight: .bold, design: .rounded))
+                        .foregroundColor(Color(hex: "#AFAFAF"))
+                        .tracking(0.5)
 
                     if let passage = question.passage, !passage.isEmpty {
                         Text(passage)
-                            .font(.system(size: 20, weight: .regular, design: .serif))
+                            .font(.system(size: 18, weight: .regular, design: .serif))
                             .foregroundColor(Color(hex: "#4B4B4B"))
-                            .lineSpacing(3)
+                            .lineSpacing(2)
+                            .minimumScaleFactor(0.5)
                     }
                 }
                 .padding(12)
-            }
-            .frame(maxHeight: 320)
-            .background(Color(hex: "#FFF8E1"))
-            .overlay(
-                RoundedRectangle(cornerRadius: 12, style: .continuous)
-                    .stroke(Color(hex: "#FFE082"), lineWidth: 2)
-            )
-            .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
-            .padding(.horizontal, 12)
+                .frame(maxWidth: .infinity, maxHeight: geo.size.height * 0.6, alignment: .topLeading)
+                .background(Color(hex: "#FFF8E1"))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 12, style: .continuous)
+                        .stroke(Color(hex: "#FFE082"), lineWidth: 2)
+                )
+                .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                .padding(.horizontal, 12)
 
-            // Divider
-            HStack {
-                Rectangle().fill(Color(hex: "#E5E5E5")).frame(height: 1)
-                Text("QUESTION")
-                    .font(.system(size: 13, weight: .bold, design: .rounded))
-                    .foregroundColor(Color(hex: "#AFAFAF"))
-                    .tracking(0.5)
-                Rectangle().fill(Color(hex: "#E5E5E5")).frame(height: 1)
-            }
-            .padding(.horizontal, 12)
-            .padding(.vertical, 8)
-
-            // Question text
-            if let questionText = question.question {
-                Text(questionText)
-                    .font(.system(size: 20, weight: .semibold))
-                    .foregroundColor(Color(hex: "#4B4B4B"))
-                    .padding(.horizontal, 16)
-                    .padding(.bottom, 8)
-            }
-
-            // Answer options
-            VStack(spacing: 5) {
-                ForEach(options, id: \.self) { letter in
-                    answerRow(letter: letter)
+                // Question text
+                if let questionText = question.question {
+                    Text(questionText)
+                        .font(.system(size: 18, weight: .semibold))
+                        .foregroundColor(Color(hex: "#4B4B4B"))
+                        .minimumScaleFactor(0.7)
+                        .lineLimit(3)
+                        .padding(.horizontal, 16)
+                        .padding(.vertical, 6)
                 }
-            }
-            .padding(.horizontal, 12)
 
-            Spacer(minLength: 8)
+                // Answer options
+                VStack(spacing: 4) {
+                    ForEach(options, id: \.self) { letter in
+                        answerRow(letter: letter)
+                    }
+                }
+                .padding(.horizontal, 12)
 
-            // CHECK button
-            Button {
-                guard let selected = selectedOption, !showFeedback else { return }
-                let correct = selected == correctLetter
-                isCorrect = correct
-                showFeedback = true
-            } label: {
-                Text("CHECK")
-                    .font(.system(size: 22, weight: .heavy, design: .rounded))
-                    .foregroundColor(.white)
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 14)
-                    .background(selectedOption != nil && !showFeedback ? Color(hex: "#58CC02") : Color(hex: "#E5E5E5"))
-                    .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+                Spacer(minLength: 4)
+
+                // CHECK button
+                Button {
+                    guard let selected = selectedOption, !showFeedback else { return }
+                    let correct = selected == correctLetter
+                    isCorrect = correct
+                    showFeedback = true
+                    if !correct {
+                        onWrongAttempt?()
+                    }
+                } label: {
+                    Text("CHECK")
+                        .font(.system(size: 22, weight: .heavy, design: .rounded))
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 12)
+                        .background(selectedOption != nil && !showFeedback ? Color(hex: "#58CC02") : Color(hex: "#E5E5E5"))
+                        .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+                }
+                .disabled(selectedOption == nil || showFeedback)
+                .padding(.horizontal, 16)
+                .padding(.bottom, 10)
             }
-            .disabled(selectedOption == nil || showFeedback)
-            .padding(.horizontal, 16)
-            .padding(.bottom, 12)
         }
         .sheet(isPresented: $showFeedback) {
             SATFeedbackSheet(
                 isCorrect: isCorrect ?? false,
                 targetWord: question.targetWord ?? "",
-                correctAnswer: optionText(for: correctLetter),
-                explanation: question.deepseekReason ?? question.deepseekBackground ?? "",
+                correctAnswer: (isCorrect == true) ? optionText(for: correctLetter) : "",
+                explanation: (isCorrect == true) ? (question.deepseekReason ?? question.deepseekBackground ?? "") : "Read the passage carefully and try again!",
                 onNext: {
                     showFeedback = false
-                    onAnswer(isCorrect ?? false)
+                    if isCorrect == true {
+                        onAnswer(true)
+                    } else {
+                        selectedOption = nil
+                        isCorrect = nil
+                    }
                 }
             )
             .presentationDetents([.fraction(0.5)])
@@ -145,35 +135,36 @@ struct SATQuestionView: View {
     @ViewBuilder
     private func answerRow(letter: String) -> some View {
         let isSelected = selectedOption == letter
-        let isCorrectOption = showFeedback && letter == correctLetter
+        let isCorrectOption = showFeedback && (isCorrect == true) && letter == correctLetter
         let isWrongSelected = showFeedback && isSelected && letter != correctLetter
 
         Button {
             guard !showFeedback else { return }
             selectedOption = letter
         } label: {
-            HStack(spacing: 10) {
-                // Letter circle
+            HStack(spacing: 8) {
                 ZStack {
                     Circle()
                         .stroke(isSelected ? Color(hex: "#1CB0F6") : Color(hex: "#E5E5E5"), lineWidth: 2)
                         .fill(isSelected ? Color(hex: "#1CB0F6") : .clear)
-                        .frame(width: 18, height: 18)
+                        .frame(width: 22, height: 22)
 
                     Text(letter)
-                        .font(.system(size: 20, weight: .bold))
+                        .font(.system(size: 13, weight: .bold))
                         .foregroundColor(isSelected ? .white : Color(hex: "#AFAFAF"))
                 }
 
                 Text(optionText(for: letter))
-                    .font(.system(size: 20, weight: .medium))
+                    .font(.system(size: 17, weight: .medium))
                     .foregroundColor(Color(hex: "#4B4B4B"))
                     .multilineTextAlignment(.leading)
+                    .minimumScaleFactor(0.7)
+                    .lineLimit(2)
 
                 Spacer()
             }
             .padding(.horizontal, 10)
-            .padding(.vertical, 8)
+            .padding(.vertical, 7)
             .background(
                 isCorrectOption ? Color(hex: "#58CC02").opacity(0.1) :
                 isWrongSelected ? Color(hex: "#FF4B4B").opacity(0.1) :
@@ -206,7 +197,6 @@ struct SATFeedbackSheet: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            // Verdict
             HStack {
                 if isCorrect {
                     Image(systemName: "checkmark.circle.fill")
@@ -230,7 +220,7 @@ struct SATFeedbackSheet: View {
                         .font(.system(size: 13, weight: .bold))
                         .foregroundColor(Color(hex: "#AFAFAF"))
                     Text(targetWord)
-                        .font(.system(size: 20, weight: .semibold))
+                        .font(.system(size: 23, weight: .semibold))
                         .foregroundColor(Color(hex: "#4B4B4B"))
                 }
             }
@@ -241,7 +231,7 @@ struct SATFeedbackSheet: View {
                         .font(.system(size: 13, weight: .bold))
                         .foregroundColor(Color(hex: "#AFAFAF"))
                     Text(correctAnswer)
-                        .font(.system(size: 20, weight: .medium))
+                        .font(.system(size: 23, weight: .medium))
                         .foregroundColor(Color(hex: "#4B4B4B"))
                 }
             }
@@ -252,7 +242,7 @@ struct SATFeedbackSheet: View {
                         .font(.system(size: 13, weight: .bold))
                         .foregroundColor(Color(hex: "#AFAFAF"))
                     Text(explanation)
-                        .font(.system(size: 13, weight: .regular))
+                        .font(.system(size: 16, weight: .regular))
                         .foregroundColor(Color(hex: "#666666"))
                         .lineSpacing(2)
                 }
@@ -260,7 +250,7 @@ struct SATFeedbackSheet: View {
 
             Spacer()
 
-            Button3D("NEXT \u{2192}", action: onNext)
+            Button3D(isCorrect ? "NEXT \u{2192}" : "TRY AGAIN", action: onNext)
                 .padding(.horizontal, 4)
         }
         .padding(20)

@@ -50,9 +50,13 @@ struct SessionFlowView: View {
                         words: vm.newWords,
                         stepNumber: vm.currentStepIndex + 1,
                         totalSteps: vm.totalSteps,
+                        startItemIndex: vm.resumeItemIndex,
                         onComplete: { showAgainIds in
                             vm.receiveShowAgainIds(showAgainIds)
                             vm.advanceToNextStep()
+                        },
+                        onItemAdvance: { itemIdx in
+                            vm.didAdvanceItem(to: itemIdx)
                         },
                         onPause: { stepIdx, itemIdx, saIds, rqIds in
                             Task { await vm.pause(stepIndex: stepIdx, itemIndex: itemIdx, showAgainIds: saIds, requeuedIds: rqIds) }
@@ -65,10 +69,14 @@ struct SessionFlowView: View {
                         showAgainPriority: vm.showAgainWordIds,
                         stepNumber: vm.currentStepIndex + 1,
                         totalSteps: vm.totalSteps,
+                        startItemIndex: vm.resumeItemIndex,
                         onAnswer: { correct, wordId in
                             Task { await vm.recordAnswer(correct: correct, wordId: wordId, activityType: .imageGame, durationMs: 0) }
                         },
                         onComplete: { vm.advanceToNextStep() },
+                        onItemAdvance: { itemIdx in
+                            vm.didAdvanceItem(to: itemIdx)
+                        },
                         onPause: { stepIdx, itemIdx, saIds, rqIds in
                             Task { await vm.pause(stepIndex: stepIdx, itemIndex: itemIdx, showAgainIds: saIds, requeuedIds: rqIds) }
                             dismiss()
@@ -79,10 +87,14 @@ struct SessionFlowView: View {
                         words: vm.morningWords,
                         stepNumber: vm.currentStepIndex + 1,
                         totalSteps: vm.totalSteps,
+                        startItemIndex: vm.resumeItemIndex,
                         onAnswer: { correct, wordId in
                             Task { await vm.recordAnswer(correct: correct, wordId: wordId, activityType: .quickRecall, durationMs: 0) }
                         },
                         onComplete: { vm.advanceToNextStep() },
+                        onItemAdvance: { itemIdx in
+                            vm.didAdvanceItem(to: itemIdx)
+                        },
                         onPause: { stepIdx, itemIdx, saIds, rqIds in
                             Task { await vm.pause(stepIndex: stepIdx, itemIndex: itemIdx, showAgainIds: saIds, requeuedIds: rqIds) }
                             dismiss()
@@ -93,10 +105,14 @@ struct SessionFlowView: View {
                         words: vm.newWords,
                         stepNumber: vm.currentStepIndex + 1,
                         totalSteps: vm.totalSteps,
+                        startItemIndex: vm.resumeItemIndex,
                         onAnswer: { correct, wordId in
                             Task { await vm.recordAnswer(correct: correct, wordId: wordId, activityType: .satQuestion, durationMs: 0) }
                         },
                         onComplete: { vm.advanceToNextStep() },
+                        onItemAdvance: { itemIdx in
+                            vm.didAdvanceItem(to: itemIdx)
+                        },
                         onPause: { stepIdx, itemIdx, saIds, rqIds in
                             Task { await vm.pause(stepIndex: stepIdx, itemIndex: itemIdx, showAgainIds: saIds, requeuedIds: rqIds) }
                             dismiss()

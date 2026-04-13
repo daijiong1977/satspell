@@ -229,6 +229,49 @@ actor SessionStateStore {
         }
     }
 
+    /// Lightweight progress save — updates step/item position without marking as paused.
+    /// Used for auto-save on each item advance so a hard kill preserves position.
+    func saveProgress(userId: String, studyDay: Int, sessionType: SessionType,
+                      stepIndex: Int, itemIndex: Int, showAgainIds: [Int]) throws {
+        let db = self.db
+        let sql = """
+        UPDATE session_state
+        SET step_index = ?,
+            item_index = ?,
+            show_again_ids = ?,
+            is_paused = 1
+        WHERE user_id = ? AND study_day = ? AND session_type = ?;
+        """
+        let stmt = try db.prepare(sql)
+        defer { stmt?.finalize() }
+        let showJSON = try encodeIntArray(showAgainIds)
+        try SQLiteDB.bind(stmt, 1, stepIndex)
+        try SQLiteDB.bind(stmt, 2, itemIndex)
+        try SQLiteDB.bind(stmt, 3, showJSON)
+        try SQLiteDB.bind(stmt, 4, userId)
+        try SQLiteDB.bind(stmt, 5, studyDay)
+        try SQLiteDB.bind(stmt, 6, sessionType.rawValue)
+        if sqlite3_step(stmt) != SQLITE_DONE {
+            throw SQLiteError.stepFailed(message: db.errorMessage())
+        }
+    }
+
+    func discardSession(userId: String, studyDay: Int, sessionType: SessionType) throws {
+        let db = self.db
+        let sql = """
+        DELETE FROM session_state
+        WHERE user_id = ? AND study_day = ? AND session_type = ?;
+        """
+        let stmt = try db.prepare(sql)
+        defer { stmt?.finalize() }
+        try SQLiteDB.bind(stmt, 1, userId)
+        try SQLiteDB.bind(stmt, 2, studyDay)
+        try SQLiteDB.bind(stmt, 3, sessionType.rawValue)
+        if sqlite3_step(stmt) != SQLITE_DONE {
+            throw SQLiteError.stepFailed(message: db.errorMessage())
+        }
+    }
+
     func completeSession(userId: String, studyDay: Int, sessionType: SessionType) throws {
         let db = self.db
         let sql = """

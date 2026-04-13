@@ -1,4 +1,5 @@
 import SwiftUI
+import AVFoundation
 
 struct SessionHeaderView: View {
     let stepNumber: Int
@@ -11,9 +12,10 @@ struct SessionHeaderView: View {
     let isScored: Bool
     let onClose: () -> Void
 
+    private let synthesizer = AVSpeechSynthesizer()
+
     var body: some View {
         VStack(spacing: 4) {
-            // Single compact line: ✕ | Step 1/3 · ABRUPT 2/11 | 🔊
             HStack(spacing: 12) {
                 Button(action: onClose) {
                     Image(systemName: "xmark")
@@ -29,7 +31,7 @@ struct SessionHeaderView: View {
                         .foregroundColor(isScored ? progressColor : Color(hex: "#AFAFAF"))
 
                     if !currentWord.isEmpty {
-                        Text("·")
+                        Text("\u{00B7}")
                             .foregroundColor(Color(hex: "#AFAFAF"))
                         Text(currentWord.uppercased())
                             .font(.system(size: 15, weight: .black, design: .rounded))
@@ -43,12 +45,16 @@ struct SessionHeaderView: View {
                 }
                 .frame(maxWidth: .infinity)
 
-                Button(action: {}) {
+                // Sound button — pronounces the current word
+                Button {
+                    speakWord()
+                } label: {
                     Image(systemName: "speaker.wave.2.fill")
                         .font(.system(size: 14, weight: .semibold))
-                        .foregroundColor(Color(hex: "#AFAFAF"))
+                        .foregroundColor(currentWord.isEmpty ? Color(hex: "#AFAFAF") : Color(hex: "#1CB0F6"))
                         .frame(width: 36, height: 36)
                 }
+                .disabled(currentWord.isEmpty)
             }
             .padding(.horizontal, 8)
 
@@ -68,5 +74,16 @@ struct SessionHeaderView: View {
         }
         .padding(.top, 4)
         .padding(.bottom, 2)
+    }
+
+    private func speakWord() {
+        guard !currentWord.isEmpty else { return }
+        if synthesizer.isSpeaking {
+            synthesizer.stopSpeaking(at: .immediate)
+        }
+        let utterance = AVSpeechUtterance(string: currentWord)
+        utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+        utterance.rate = AVSpeechUtteranceDefaultSpeechRate * 0.85
+        synthesizer.speak(utterance)
     }
 }

@@ -5,14 +5,17 @@ struct ImageGameStepView: View {
     let showAgainPriority: [Int]
     let stepNumber: Int
     let totalSteps: Int
+    var startItemIndex: Int = 0
     let onAnswer: (Bool, Int) -> Void
     let onComplete: () -> Void
+    var onItemAdvance: ((Int) -> Void)? = nil
     let onPause: (Int, Int, [Int], [Int]) -> Void
 
     @State private var currentRound: Int = 0
     @State private var roundCards: [(card: VocabCard, choices: [VocabCard])] = []
     @State private var isLoading = true
     @State private var showPause = false
+    @State private var didInit = false
 
     private var totalRounds: Int {
         roundCards.count
@@ -49,6 +52,7 @@ struct ImageGameStepView: View {
                             onComplete()
                         } else {
                             currentRound += 1
+                            onItemAdvance?(currentRound)
                         }
                     }
                 )
@@ -60,7 +64,13 @@ struct ImageGameStepView: View {
                 onComplete()
             }
         }
-        .task { await loadRounds() }
+        .task {
+            await loadRounds()
+            if !didInit {
+                didInit = true
+                currentRound = min(startItemIndex, max(roundCards.count - 1, 0))
+            }
+        }
         .sheet(isPresented: $showPause) {
             PauseSheet(
                 onKeepGoing: { showPause = false },
@@ -72,14 +82,12 @@ struct ImageGameStepView: View {
     }
 
     private func loadRounds() async {
-        // Order: showAgain priority first, then remaining words
         var ordered: [VocabCard] = []
         let priorityIds = Set(showAgainPriority)
         let priorityCards = words.filter { priorityIds.contains($0.id) }
         let otherCards = words.filter { !priorityIds.contains($0.id) }
         ordered = priorityCards + otherCards
 
-        // Generate rounds with distractors
         var rounds: [(card: VocabCard, choices: [VocabCard])] = []
         for card in ordered {
             do {
@@ -90,7 +98,6 @@ struct ImageGameStepView: View {
                 choices.shuffle()
                 rounds.append((card: card, choices: choices))
             } catch {
-                // Fallback: use other words as distractors
                 var choices = Array(words.filter { $0.id != card.id }.prefix(3))
                 choices.append(card)
                 choices.shuffle()

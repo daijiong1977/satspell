@@ -13,25 +13,25 @@ struct ImageGameView: View {
 
     private var clozeSentence: String {
         guard let example = card.example else { return "________" }
-        // Replace the word with a blank
+        let clean = example.replacingOccurrences(of: "**", with: "")
         let pattern = "\\b\(NSRegularExpression.escapedPattern(for: card.lemma))\\b"
         if let regex = try? NSRegularExpression(pattern: pattern, options: .caseInsensitive) {
-            let range = NSRange(example.startIndex..., in: example)
-            return regex.stringByReplacingMatches(in: example, range: range, withTemplate: "________")
+            let range = NSRange(clean.startIndex..., in: clean)
+            return regex.stringByReplacingMatches(in: clean, range: range, withTemplate: "________")
         }
-        return example
+        return clean
     }
 
     var body: some View {
-        VStack(spacing: 0) {
-            // Image area
-            GeometryReader { geo in
+        GeometryReader { geo in
+            VStack(spacing: 0) {
+                // Image area — ~60% of available height
                 ZStack(alignment: .bottom) {
                     if let ui = ImageResolver.uiImage(for: card.imageFilename) {
                         Image(uiImage: ui)
                             .resizable()
                             .scaledToFill()
-                            .frame(width: geo.size.width, height: geo.size.height)
+                            .frame(width: geo.size.width - 24, height: geo.size.height * 0.55)
                             .clipped()
                     } else {
                         LinearGradient(
@@ -47,48 +47,51 @@ struct ImageGameView: View {
                         startPoint: .top,
                         endPoint: .bottom
                     )
-                    .frame(height: geo.size.height * 0.4)
+                    .frame(height: 80)
 
                     Text("CHOOSE THE BEST WORD")
-                        .font(.system(size: 11, weight: .bold, design: .rounded))
+                        .font(.system(size: 12, weight: .bold, design: .rounded))
                         .foregroundColor(.white)
                         .tracking(0.5)
                         .padding(.bottom, 8)
                 }
-            }
-            .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
-            .padding(.horizontal, 12)
-            .frame(maxHeight: .infinity, alignment: .top)
-            .layoutPriority(1)
-
-            // Cloze sentence
-            Text(clozeSentence)
-                .font(.system(size: 20, weight: .medium))
-                .foregroundColor(Color(hex: "#4B4B4B"))
-                .multilineTextAlignment(.center)
-                .padding(.horizontal, 16)
-                .padding(.vertical, 8)
-                .background(Color(hex: "#F7F7F7"))
-                .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
+                .frame(height: geo.size.height * 0.55)
+                .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
                 .padding(.horizontal, 12)
-                .padding(.top, 8)
 
-            // 2x2 answer grid
-            VStack(spacing: 6) {
-                ForEach(0..<2, id: \.self) { row in
-                    HStack(spacing: 6) {
-                        ForEach(0..<2, id: \.self) { col in
-                            let index = row * 2 + col
-                            if index < choices.count {
-                                answerButton(for: choices[index])
+                // Cloze sentence
+                Text(clozeSentence)
+                    .font(.system(size: 24, weight: .medium))
+                    .foregroundColor(Color(hex: "#4B4B4B"))
+                    .multilineTextAlignment(.center)
+                    .lineLimit(3)
+                    .minimumScaleFactor(0.8)
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 10)
+                    .frame(maxWidth: .infinity)
+                    .background(Color(hex: "#F7F7F7"))
+                    .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                    .padding(.horizontal, 12)
+                    .padding(.top, 8)
+
+                Spacer(minLength: 4)
+
+                // 2x2 answer grid
+                VStack(spacing: 8) {
+                    ForEach(0..<2, id: \.self) { row in
+                        HStack(spacing: 8) {
+                            ForEach(0..<2, id: \.self) { col in
+                                let index = row * 2 + col
+                                if index < choices.count {
+                                    answerButton(for: choices[index])
+                                }
                             }
                         }
                     }
                 }
+                .padding(.horizontal, 12)
+                .padding(.bottom, 12)
             }
-            .padding(.horizontal, 12)
-            .padding(.vertical, 10)
-            .padding(.bottom, 8)
         }
         .allowsHitTesting(!showFeedback)
     }
@@ -125,16 +128,16 @@ struct ImageGameView: View {
             }
         } label: {
             Text(choice.lemma)
-                .font(.system(size: 17, weight: .bold, design: .rounded))
+                .font(.system(size: 24, weight: .bold, design: .rounded))
                 .foregroundColor(Color(hex: "#4B4B4B"))
                 .frame(maxWidth: .infinity)
-                .padding(.vertical, 12)
+                .padding(.vertical, 14)
                 .background(bgColor)
                 .overlay(
-                    RoundedRectangle(cornerRadius: 10, style: .continuous)
-                        .stroke(borderColor, lineWidth: 1.5)
+                    RoundedRectangle(cornerRadius: 12, style: .continuous)
+                        .stroke(borderColor, lineWidth: 2)
                 )
-                .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
         }
         .buttonStyle(.plain)
     }

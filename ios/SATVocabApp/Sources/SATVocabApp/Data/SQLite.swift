@@ -21,7 +21,7 @@ enum SQLiteError: Error, CustomStringConvertible {
 
 final class SQLiteDB: @unchecked Sendable {
     private var db: OpaquePointer?
-    private let lock = NSLock()
+    private let lock = NSRecursiveLock()
 
     func open(path: String) throws {
         // Use FULLMUTEX (serialized mode) so multiple actors/threads can safely

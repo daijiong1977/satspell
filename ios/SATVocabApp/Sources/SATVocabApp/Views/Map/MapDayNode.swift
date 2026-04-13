@@ -127,7 +127,7 @@ struct MapDayNode: View {
 
     private var isDisabled: Bool {
         switch state {
-        case .locked: return true
+        case .locked, .available: return true
         default: return false
         }
     }

@@ -4,14 +4,17 @@ struct SATQuestionStepView: View {
     let words: [VocabCard]
     let stepNumber: Int
     let totalSteps: Int
+    var startItemIndex: Int = 0
     let onAnswer: (Bool, Int) -> Void
     let onComplete: () -> Void
+    var onItemAdvance: ((Int) -> Void)? = nil
     let onPause: (Int, Int, [Int], [Int]) -> Void
 
     @State private var currentRound: Int = 0
     @State private var questions: [(wordId: Int, question: SatQuestion)] = []
     @State private var isLoading = true
     @State private var showPause = false
+    @State private var didInit = false
 
     private var totalRounds: Int {
         questions.count
@@ -45,12 +48,16 @@ struct SATQuestionStepView: View {
                             onComplete()
                         } else {
                             currentRound += 1
+                            onItemAdvance?(currentRound)
                         }
+                    },
+                    onWrongAttempt: {
+                        // Record wrong attempt in stats without advancing
+                        onAnswer(false, round.wordId)
                     }
                 )
                 .id(currentRound)
             } else {
-                // No questions available
                 VStack(spacing: 16) {
                     Spacer()
                     Text("No SAT questions available")
@@ -62,7 +69,13 @@ struct SATQuestionStepView: View {
                 }
             }
         }
-        .task { await loadQuestions() }
+        .task {
+            await loadQuestions()
+            if !didInit {
+                didInit = true
+                currentRound = min(startItemIndex, max(questions.count - 1, 0))
+            }
+        }
         .sheet(isPresented: $showPause) {
             PauseSheet(
                 onKeepGoing: { showPause = false },
@@ -77,7 +90,6 @@ struct SATQuestionStepView: View {
         var loaded: [(wordId: Int, question: SatQuestion)] = []
         let dm = DataManager.shared
 
-        // Try to get one SAT question per word
         for card in words.shuffled() {
             do {
                 let qs = try await dm.fetchSatQuestionsForWord(
@@ -92,7 +104,6 @@ struct SATQuestionStepView: View {
                 // Skip this word
             }
 
-            // Stop once we have enough
             if loaded.count >= (stepNumber <= 3 ? AppConfig.morningSATQuestions : AppConfig.eveningSATQuestions) {
                 break
             }

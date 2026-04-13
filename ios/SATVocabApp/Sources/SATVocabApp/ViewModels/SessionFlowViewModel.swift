@@ -173,16 +173,31 @@ final class SessionFlowViewModel: ObservableObject {
     }
 
     func advanceToNextStep() {
+        currentItemIndex = 0
+        resumeItemIndex = 0  // Reset so next step starts from 0
         showStepTransition = true
     }
 
     func continueAfterTransition() {
         showStepTransition = false
         currentStepIndex += 1
+        currentItemIndex = 0
+        resumeItemIndex = 0
         if currentStepIndex >= steps.count {
             completeSession()
+        } else {
+            autoSaveProgress(stepIndex: currentStepIndex, itemIndex: 0)
         }
     }
+
+    /// Called by step views when item index changes (e.g., next flashcard, next question)
+    func didAdvanceItem(to itemIndex: Int) {
+        currentItemIndex = itemIndex
+        autoSaveProgress(stepIndex: currentStepIndex, itemIndex: itemIndex)
+    }
+
+    /// Track item index within current step for auto-save
+    @Published var currentItemIndex: Int = 0
 
     func recordAnswer(correct: Bool, wordId: Int, activityType: ActivityType, durationMs: Int) async {
         print("📝 recordAnswer called: wordId=\(wordId) correct=\(correct) activityType=\(activityType)")
@@ -244,6 +259,21 @@ final class SessionFlowViewModel: ObservableObject {
 
     func receiveShowAgainIds(_ ids: [Int]) {
         showAgainWordIds = ids
+    }
+
+    /// Auto-save current position to SQLite so a hard kill preserves progress.
+    /// Called by step views whenever the item index advances.
+    func autoSaveProgress(stepIndex: Int, itemIndex: Int) {
+        Task {
+            do {
+                let store = SessionStateStore.shared
+                try await store.saveProgress(userId: userId, studyDay: studyDay, sessionType: sessionType,
+                                             stepIndex: stepIndex, itemIndex: itemIndex,
+                                             showAgainIds: showAgainWordIds)
+            } catch {
+                print("⚠️ autoSaveProgress ERROR: \(error)")
+            }
+        }
     }
 
     private func completeSession() {

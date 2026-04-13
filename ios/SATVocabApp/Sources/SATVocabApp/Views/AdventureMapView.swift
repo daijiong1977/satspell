@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct AdventureMapView: View {
+    var switchToPractice: () -> Void = {}
+
     @State private var zoneIndex: Int = AdventureSchedule.zoneIndex(forDayIndex: AdventureSchedule.dayIndexForToday())
     @State private var route: AdventureMapRoute? = nil
     @State private var familiarCount: Int = 0
@@ -96,8 +98,11 @@ struct AdventureMapView: View {
                                         highlightedDay: highlightedDay
                                     ),
                                     onTap: {
-                                        guard zoneIsUnlocked else { return }
-                                        route = .day(dayIndex)
+                                        if dayCompleted {
+                                            route = .day(dayIndex)
+                                        } else if highlightedDay == dayIndex {
+                                            switchToPractice()
+                                        }
                                     }
                                 )
                                 .position(x: geo.size.width * pos.x, y: geo.size.height * pos.y)
@@ -108,11 +113,13 @@ struct AdventureMapView: View {
                         let testPos = nodePositions[min(nodePositions.count - 1, days.count)]
                         let zoneCompleted = AdventureProgressStore.shared.isZoneCompleted(zoneIndex: zoneIndex)
 
+                        let allDaysDone = days.allSatisfy { AdventureProgressStore.shared.isDayCompleted(dayIndex: $0) }
+
                         MapDayNode(
                             title: "Zone Test",
-                            state: .zoneTest(passed: zoneCompleted),
+                            state: allDaysDone ? .zoneTest(passed: zoneCompleted) : .locked,
                             onTap: {
-                                guard zoneIsUnlocked else { return }
+                                guard allDaysDone else { return }
                                 route = .zoneTest(zoneIndex)
                             }
                         )
@@ -128,9 +135,12 @@ struct AdventureMapView: View {
         .padding(.horizontal, 16)
         .navigationDestination(item: $route) { route in
             switch route {
-            case .day:
-                // Navigate to Practice tab
-                PracticeTabView()
+            case .day(let dayIdx):
+                DayCompleteSummary(
+                    studyDay: AdventureSchedule.globalDayNumber(forDayIndex: dayIdx),
+                    userId: LocalIdentity.userId()
+                )
+                .navigationTitle("Day \(AdventureSchedule.globalDayNumber(forDayIndex: dayIdx))")
             case .zoneTest(let zi):
                 ZoneReviewSessionView(zoneIndex: zi) {
                     AdventureProgressStore.shared.setZoneUnlocked(zoneIndex: zi + 1, unlocked: true)

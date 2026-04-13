@@ -9,6 +9,8 @@ struct SessionCompleteView: View {
     let onDone: () -> Void
 
     @State private var appeared = false
+    @State private var showShareSheet = false
+    @State private var shareImage: UIImage? = nil
 
     private var accuracy: Int {
         totalAttempts > 0 ? Int(Double(totalCorrect) / Double(totalAttempts) * 100) : 0
@@ -56,9 +58,16 @@ struct SessionCompleteView: View {
 
             Spacer()
 
-            // Share button placeholder
+            // Share button
             Button {
-                // Share functionality placeholder
+                let userId = LocalIdentity.userId()
+                Task {
+                    let statsStore = StatsStore.shared
+                    let streak = try? await statsStore.getStreak(userId: userId)
+                    let info = streak ?? StreakInfo(currentStreak: 0, bestStreak: 0, lastStudyDate: nil, totalXP: xpEarned, totalStudyDays: 0, streak3Claimed: false, streak7Claimed: false, streak14Claimed: false, streak30Claimed: false)
+                    shareImage = ReportCardGenerator.render(streak: info, userId: userId)
+                    showShareSheet = true
+                }
             } label: {
                 HStack(spacing: 6) {
                     Image(systemName: "square.and.arrow.up")
@@ -86,6 +95,12 @@ struct SessionCompleteView: View {
             }
         }
         .background(Color.white)
+        .accessibilityIdentifier("sessionCompleteView")
+        .sheet(isPresented: $showShareSheet) {
+            if let image = shareImage {
+                ShareSheet(items: [image])
+            }
+        }
     }
 
     @ViewBuilder

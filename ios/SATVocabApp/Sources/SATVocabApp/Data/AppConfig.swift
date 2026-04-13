@@ -9,7 +9,7 @@ enum AppConfig {
 
     // When enabled, all adventure zones/days/tasks are treated as unlocked.
     // This is intended for UI testing/polish; gating rules can be added later.
-    static let unlockAllAdventureForTesting = true
+    static let unlockAllAdventureForTesting = false
 
     // Dashboard tasks (v1)
     static let task1CardCount = 20

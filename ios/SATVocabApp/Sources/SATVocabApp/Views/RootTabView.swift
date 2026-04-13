@@ -13,7 +13,7 @@ struct RootTabView: View {
     var body: some View {
         TabView(selection: $selected) {
             NavigationStack {
-                AdventureMapView()
+                AdventureMapView(switchToPractice: { selected = .practice })
             }
             .tabItem {
                 Label("Map", systemImage: "map")

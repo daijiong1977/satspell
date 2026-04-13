@@ -4,6 +4,24 @@ enum LocalIdentity {
     private static let userIdKey = "local.user_id"
     private static let deviceIdKey = "local.device_id"
     private static let learningStartDateKey = "local.learning_start_date"
+    private static let displayNameKey = "local.display_name"
+    private static let avatarEmojiKey = "local.avatar_emoji"
+
+    static func displayName() -> String {
+        UserDefaults.standard.string(forKey: displayNameKey) ?? "SAT Learner"
+    }
+
+    static func setDisplayName(_ name: String) {
+        UserDefaults.standard.set(name, forKey: displayNameKey)
+    }
+
+    static func avatarEmoji() -> String {
+        UserDefaults.standard.string(forKey: avatarEmojiKey) ?? "🧑‍🎓"
+    }
+
+    static func setAvatarEmoji(_ emoji: String) {
+        UserDefaults.standard.set(emoji, forKey: avatarEmojiKey)
+    }
 
     static func userId() -> String {
         if let v = UserDefaults.standard.string(forKey: userIdKey) {

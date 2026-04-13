@@ -30,7 +30,7 @@ struct PracticeStateResolver {
 
         // Morning done, check evening
         if day.morningComplete {
-            let unlockAt = calculateEveningUnlock(morningCompleteAt: day.morningCompleteAt)
+            let unlockAt = calculateEveningUnlock(morningCompleteAt: day.morningCompleteAt, now: now)
             if now >= unlockAt {
                 return .eveningAvailable
             } else {
@@ -43,20 +43,27 @@ struct PracticeStateResolver {
     }
 
     static func calculateEveningUnlock(morningCompleteAt: Date?, now: Date = Date()) -> Date {
+        let cal = Calendar.current
+
+        // Build the fallback hour — if today's fallback is already past, use tomorrow's
+        let fallback: Date = {
+            let todayFallback = cal.date(bySettingHour: AppConfig.eveningUnlockFallbackHour,
+                                         minute: 0, second: 0, of: now) ?? now
+            if todayFallback > now {
+                return todayFallback
+            }
+            // Today's fallback already passed — use tomorrow
+            return cal.date(byAdding: .day, value: 1, to: todayFallback) ?? todayFallback
+        }()
+
         guard let morningDone = morningCompleteAt else {
-            // morningCompleteAt is nil — this can happen if the timestamp was not persisted
-            // or failed to parse. Fall back to current time + unlock hours so the evening
-            // session does not unlock immediately.
+            // morningCompleteAt is nil — fall back to now + unlock hours,
+            // capped by the fallback hour so it never unlocks immediately
             let hoursFromNow = now.addingTimeInterval(TimeInterval(AppConfig.eveningUnlockHours * 3600))
-            let fallback = Calendar.current.date(bySettingHour: AppConfig.eveningUnlockFallbackHour,
-                                                 minute: 0, second: 0, of: now) ?? now
             return min(hoursFromNow, fallback)
         }
 
         let hoursLater = morningDone.addingTimeInterval(TimeInterval(AppConfig.eveningUnlockHours * 3600))
-        let fallback = Calendar.current.date(bySettingHour: AppConfig.eveningUnlockFallbackHour,
-                                             minute: 0, second: 0, of: now) ?? now
-
         return min(hoursLater, fallback)
     }
 }

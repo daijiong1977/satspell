@@ -65,6 +65,7 @@ struct EveningSessionCard: View {
         }
         .buttonStyle(.plain)
         .disabled(locked)
+        .accessibilityIdentifier(locked ? "eveningSessionCardLocked" : "eveningSessionCard")
         .onAppear { startTimer() }
         .onDisappear { timer?.invalidate() }
     }

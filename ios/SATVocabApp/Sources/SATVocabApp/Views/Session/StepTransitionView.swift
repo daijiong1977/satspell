@@ -6,6 +6,8 @@ struct StepTransitionView: View {
     let nextStepLabel: String
     let onContinue: () -> Void
 
+    @State private var autoAdvanceTask: Task<Void, Never>?
+
     var body: some View {
         VStack(spacing: 24) {
             Spacer()
@@ -52,10 +54,24 @@ struct StepTransitionView: View {
 
             Spacer()
 
-            Button3D("Continue", action: onContinue)
+            Button3D("Continue", action: {
+                autoAdvanceTask?.cancel()
+                onContinue()
+            })
                 .padding(.horizontal, 40)
                 .padding(.bottom, 30)
         }
         .background(Color.white)
+        .onAppear {
+            autoAdvanceTask = Task {
+                try? await Task.sleep(nanoseconds: 3_000_000_000)
+                if !Task.isCancelled {
+                    await MainActor.run { onContinue() }
+                }
+            }
+        }
+        .onDisappear {
+            autoAdvanceTask?.cancel()
+        }
     }
 }
