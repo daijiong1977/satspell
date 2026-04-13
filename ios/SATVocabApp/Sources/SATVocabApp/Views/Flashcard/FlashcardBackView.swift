@@ -40,6 +40,8 @@ struct FlashcardBackView: View {
                                 .font(.system(size: 26, weight: .black, design: .rounded))
                                 .foregroundColor(Color(hex: "#FFC800"))
                                 .tracking(0.5)
+                                .minimumScaleFactor(0.7)
+                                .lineLimit(1)
 
                             if let pos = card.pos, !pos.isEmpty {
                                 Text(pos)
@@ -99,11 +101,11 @@ struct FlashcardBackView: View {
                         }
                     }
 
-                    // Usage Context
+                    // Usage Context — bold the word, font +2
                     if let satContext = card.satContext, !satContext.isEmpty {
                         sectionView(label: "USAGE CONTEXT") {
-                            Text(satContext)
-                                .font(.system(size: 20, weight: .regular))
+                            Text(highlightedContext(satContext, word: card.lemma))
+                                .font(.system(size: 22, weight: .regular))
                                 .foregroundColor(Color(hex: "#666666"))
                                 .lineSpacing(3)
                                 .fixedSize(horizontal: false, vertical: true)
@@ -157,6 +159,18 @@ struct FlashcardBackView: View {
         if let range = attr.range(of: word, options: .caseInsensitive) {
             attr[range].font = .system(size: 24, weight: .bold)
             attr[range].foregroundColor = Color(hex: "#FFC800")
+        }
+        return attr
+    }
+
+    private func highlightedContext(_ text: String, word: String) -> AttributedString {
+        var attr = AttributedString(text)
+        // Bold all occurrences of the word (case insensitive)
+        var searchStart = attr.startIndex
+        while let range = attr[searchStart...].range(of: word, options: .caseInsensitive) {
+            attr[range].font = .system(size: 22, weight: .bold)
+            attr[range].foregroundColor = Color(hex: "#4B4B4B")
+            searchStart = range.upperBound
         }
         return attr
     }
